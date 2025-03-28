@@ -1,84 +1,61 @@
-# Turborepo starter
+<a href="https://snappy-ui-nu.vercel.app/">
+  <h1 align="center">Snappy UI</h1>
+</a>
 
-This Turborepo starter is maintained by the Turborepo core team.
+<p align="center">
+  A minimal and intuitive component library.
+</p>
 
-## Using this example
+<br>
 
-Run the following command:
+<p align="center">
+  <a href="#introduction"><strong>Introduction</strong></a>
+  ·&nbsp;<a href="#features"><strong>Features</strong></a>
+  ·&nbsp;<a href="#tech-stack"><strong>Tech Stack</strong></a>
+  ·&nbsp;<a href="#contributing"><strong>Contributing</strong></a>
+</p>
+<br>
 
-```sh
-npx create-turbo@latest
-```
+## <a name="introduction">📌 &nbsp; Introduction</a>
 
-## What's inside?
+Snappy UI is a **lightweight and efficient** component library designed to help you **build user interfaces** effortlessly. Whether you're creating personal projects or professional web applications, Snappy UI provides a clean, responsive, and user-friendly set of components.
 
-This Turborepo includes the following packages/apps:
+<br>
 
-### Apps and Packages
+## <a name="features">🚀 &nbsp; Features</a>
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- **Pre-built Components**: Use a variety of ready-to-use UI components like buttons, forms, modals, and more.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- **Customizable Themes**: Easily customize the look and feel using Tailwind CSS utility classes.
 
-### Utilities
+- **React & TypeScript Integration**: Build applications with type safety and modern JavaScript features.
 
-This Turborepo has some additional tools already setup for you:
+- **Responsive Design**: Components are fully responsive and adapt seamlessly across all devices.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- **Light & Dark Mode**: Toggle between light and dark themes for a better user experience.
 
-### Build
+- **Smooth Animations**: Enjoy smooth and polished animations for a better UI experience.
 
-To build all apps and packages, run the following command:
+- **Easy Setup**: Get started quickly with minimal configuration.
 
-```
-cd my-turborepo
-pnpm build
-```
+- **Version Control**: Integrated with Git for seamless version control and collaboration.
 
-### Develop
+- **Deployment with Vercel**: Easily deploy your application to the cloud with Vercel.
 
-To develop all apps and packages, run the following command:
+<br>
 
-```
-cd my-turborepo
-pnpm dev
-```
+## <a name="tech-stack">⚙️ &nbsp; Tech Stack</a>
 
-### Remote Caching
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) – structuring
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+- [Tailwind CSS](https://tailwindcss.com/) – utility-first styling
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- [React](https://reactjs.org/) – ui library
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – functionality
 
-```
-cd my-turborepo
-npx turbo login
-```
+- [TypeScript](https://www.typescriptlang.org/) – typed javaScript
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+- [Git](https://git-scm.com/) – version control
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- [Vercel](https://vercel.com/) – deployment
