@@ -12,6 +12,13 @@
     "check-types": "tsc --noEmit",
     "build": "tsc"
   },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.3",
+    "lucide-react": "^0.485.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2"
+  },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
@@ -21,12 +28,5 @@
     "@types/react-dom": "19.0.4",
     "eslint": "^9.23.0",
     "typescript": "5.8.2"
-  },
-  "dependencies": {
-    "@radix-ui/react-accordion": "^1.2.3",
-    "lucide-react": "^0.485.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.0.2"
   }
 }
