@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center w-screen h-screen relative overflow-hidden">
+    <main className="flex flex-1 flex-col items-center justify-center w-screen h-screen relative overflow-hidden bg-white dark:bg-[#09090B]">
       {/* Background Image */}
       <Image
         src="./Ellipse 2.svg"
@@ -17,27 +17,27 @@ export default function HomePage() {
       />
 
       {/* Content on top */}
-      <div className="flex flex-col items-center justify-center w-full h-screen text-white text-center relative z-10">
-        <p className="w-[852px] h-[148px] font-bold text-6xl">
+      <div className="flex flex-col items-center justify-center w-full h-screen text-gray-900 dark:text-white text-center relative z-10 px-4">
+        <p className="w-full max-w-[852px] font-bold text-4xl md:text-6xl">
           Build lightning-fast, pixel-
-          <br />
+          <br className="hidden md:block" />
           perfect UIs with Snappy UI.
         </p>
-        <p className="text-gray-300 pt-3 text-2xl">
+        <p className="text-gray-600 dark:text-gray-300 pt-3 text-lg md:text-2xl">
           A complete design system made for developers who care about
-          <br />
+          <br className="hidden md:block" />
           performance and aesthetics.
         </p>
-        <div className="flex flex-row gap-5 items-center justify-center mt-10">
+        <div className="flex flex-row md:flex-row gap-5 items-center justify-center mt-10">
           <Link
             href="/docs"
-            className="p-4 bg-gray-800 mt-2.5 rounded-lg hover:bg-gray-700 transition-colors"
+            className="p-4 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
           >
             Go to Docs
           </Link>
           <Link
             href="https://github.com/your-repo"
-            className="p-4 bg-gray-800 mt-2.5 rounded-lg hover:bg-gray-700 transition-colors flex flex-row items-center gap-2"
+            className="p-4 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors flex flex-row items-center gap-2"
           >
             <GitHubIcon />
             {" "}
