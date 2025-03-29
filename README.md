@@ -59,3 +59,9 @@ Snappy UI is a **lightweight and efficient** component library designed to help 
 - [Git](https://git-scm.com/) – version control
 
 - [Vercel](https://vercel.com/) – deployment
+
+<br>
+
+## 🪪&nbsp;&nbsp; Licensing Information
+
+This project is licensed under the [MIT License](./LICENSE). Feel free to learn, add upon, and share!
