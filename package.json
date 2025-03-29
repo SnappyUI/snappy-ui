@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "dev": "turbo run dev", 
+    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
     "check-types": "turbo run check-types"
