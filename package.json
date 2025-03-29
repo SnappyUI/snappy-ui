@@ -3,13 +3,17 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "turbo run build",
+    "dev": "turbo run dev", 
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check-types": "turbo run check-types"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -30,11 +34,12 @@
     "globals": "^15.15.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
+    "turbo": "^2.4.4",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
   },
   "lint-staged": {
-    "*": "pnpm lint"
+    "*.{js,ts,tsx,jsx}": ["eslint --fix"]
   }
 }
