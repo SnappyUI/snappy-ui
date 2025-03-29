@@ -1,3 +1,5 @@
+"use client";
+
 import { Github as GitHubIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,8 +38,9 @@ export default function HomePage() {
             Go to Docs
           </Link>
           <Link
-            href="https://github.com/your-repo"
-            className="p-4 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors flex flex-row items-center gap-2"
+            href="/"
+            onClick={(e) => { e.preventDefault(); }}
+            className="p-4 bg-gray-200 cursor-not-allowed dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors flex flex-row items-center gap-2"
           >
             <GitHubIcon />
             {" "}
