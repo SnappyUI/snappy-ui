@@ -19,6 +19,5 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "noUncheckedSideEffectImports": true
-  },
-  "include": ["vite.config.ts"]
+  }
 }
