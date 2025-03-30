@@ -1,9 +1,3 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@repo/ui/accordion";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -23,16 +17,6 @@ export default function HomePage() {
         and see the documentation.
       </p>
 
-      <div className="flex w-fit">
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
     </main>
   );
 }
