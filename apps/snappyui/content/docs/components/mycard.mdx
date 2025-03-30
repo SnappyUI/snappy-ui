@@ -1,0 +1,94 @@
+---
+title: Snappy Card
+description: A versatile card component for modern web applications
+---
+
+import SnappyCard from "@snappy/ui/snappycard";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+# MyCard Component
+
+A flexible card component that supports images, titles, and custom content with various styling variants.
+
+---
+
+
+## Installation
+
+```bash
+npm install @snappy/ui  # Install Snappy UI npmx package comeing soon
+
+```
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6">
+  <SnappyCard
+    title="Simple Card"
+    variant="dark"
+    className="text-gray-500"
+  >
+    Basic card example with title and content.
+  </SnappyCard>
+</div>
+
+<Tabs items={["dark", "default", "primary", "success", "warning"]}>
+  <Tab value="dark">
+    <SnappyCard title="Default Card" variant="dark" className="text-gray-500">
+      Basic card example with title and content.
+    </SnappyCard>
+  </Tab>
+  <Tab value="default">
+    <SnappyCard title="Default Card" variant="default" className="text-gray-500">
+      Basic card example with title and content.
+    </SnappyCard>
+  </Tab>
+  <Tab value="primary">
+    <SnappyCard title="Primary Card" variant="primary" className="text-gray-500">
+      Basic card example with title and content.
+    </SnappyCard>
+  </Tab>
+  <Tab value="success">
+    <SnappyCard title="Success Card" variant="success" className="text-gray-500">
+      Basic card example with title and content.
+    </SnappyCard>
+  </Tab>
+  <Tab value="warning">
+    <SnappyCard title="Warning Card" variant="warning" className="text-gray-500">
+      Basic card example with title and content.
+    </SnappyCard>
+  </Tab>
+</Tabs>
+
+---
+
+## Code Example
+
+```tsx
+<div className="flex flex-col items-center justify-center mb-6">
+  <SnappyCard
+    title="Simple Card"
+    variant="primary"
+    image="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+    className="text-gray-500"
+  >
+    Basic card example with title and content.
+  </SnappyCard>
+</div>
+```
+
+
+---
+
+## Props
+
+| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
+|------------|-------------|-----------|------------------------------------------|
+| **title**  | string      | -         | The title of the card                   |
+| **className** | string    | -         | Additional CSS classes                  |
+| **content** | string     | -         | The main content of the card            |
+| **image**  | string      | -         | URL of the card's image                 |
+| **variant** | string     | 'default' | The style variant of the card           |
+| **children** | ReactNode | -         | Allows passing React nodes into the component |
+
+---
