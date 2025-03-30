@@ -20,4 +20,3 @@ jobs:
             node-version: 18.x
         - run: pnpm i
         - run: pnpm build
-        
