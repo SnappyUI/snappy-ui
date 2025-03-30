@@ -62,6 +62,14 @@ Snappy UI is a **lightweight and efficient** component library designed to help 
 
 <br>
 
+## Contributing
+
+Contributions are always welcome!
+
+See [contributing.md](./contributing.md) for ways to get started.
+
+<br>
+
 ## 🪪&nbsp;&nbsp; Licensing Information
 
 This project is licensed under the [MIT License](./LICENSE). Feel free to learn, add upon, and share!
