@@ -8,6 +8,7 @@ export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center w-screen h-screen relative overflow-hidden bg-white dark:bg-[#09090B]">
       {/* Background Image */}
+
       <Image
         src="./Ellipse 2.svg"
         width={0}
