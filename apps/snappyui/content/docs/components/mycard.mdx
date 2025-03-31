@@ -3,10 +3,10 @@ title: Snappy Card
 description: A versatile card component for modern web applications
 ---
 
-import SnappyCard from "@snappy/ui/snappycard";
+import SnappyCard from "@snappy/ui/SnappyCard";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-# MyCard Component
+# Snappy Card Component
 
 A flexible card component that supports images, titles, and custom content with various styling variants.
 
@@ -24,12 +24,13 @@ npm install @snappy/ui  # Install Snappy UI npmx package comeing soon
 
 <div className="flex flex-col items-center justify-center mb-6">
   <SnappyCard
-    title="Simple Card"
+    title="Image Card"
     variant="dark"
-    className="text-gray-500"
   >
-    Basic card example with title and content.
+    <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
+    <p>Random image from Lorem Picsum</p>
   </SnappyCard>
+
 </div>
 
 <Tabs items={["dark", "default", "primary", "success", "warning"]}>
@@ -91,4 +92,3 @@ npm install @snappy/ui  # Install Snappy UI npmx package comeing soon
 | **variant** | string     | 'default' | The style variant of the card           |
 | **children** | ReactNode | -         | Allows passing React nodes into the component |
 
----
