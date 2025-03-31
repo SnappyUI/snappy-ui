@@ -25,4 +25,7 @@ export const baseOptions: BaseLayoutProps = {
       active: "nested-url",
     },
   ],
+  themeSwitch: {
+    enabled: true,
+  },
 };
