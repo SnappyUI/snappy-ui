@@ -1,5 +1,6 @@
 "use client";
 
+import { SnappyText } from "@snappy/ui/snappy-colourful-text";
 import { Github as GitHubIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,7 +25,10 @@ export default function HomePage() {
         <p className="w-full max-w-[852px] font-bold text-4xl md:text-6xl  ">
           Build lightning-fast, pixel-
           <br className="hidden md:block" />
-          perfect UIs with Snappy UI.
+          perfect UIs with
+          {" "}
+          <SnappyText text="Snappy UI" />
+          .
         </p>
         <p className="text-gray-600 dark:text-gray-300 pt-3 text-lg md:text-2xl">
           A complete design system made for developers who care about
