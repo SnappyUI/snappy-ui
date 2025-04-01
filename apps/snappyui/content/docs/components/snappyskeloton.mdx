@@ -1,0 +1,88 @@
+---
+title: Skelton
+description: A versatile Skeloton component for modern web applications
+---
+
+import { SnappySkelton } from "@snappy/ui/snappy-skelton";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Installation
+
+```bash
+npm install @snappy/ui  # Install Snappy UI npmx package comeing soon
+
+```
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 gap-1 border-zinc-800 rounded-lg py-5">
+
+<div className="flex flex-row gap-1">
+  <SnappySkelton variant="circular" width={40} height={40} />
+  <div className="flex flex-col gap-1">
+    <SnappySkelton variant="text" width={160} />
+    <SnappySkelton variant="text" width={160} />
+  </div>
+</div>
+  <SnappySkelton variant="rounded" width={200} height={30} />
+</div>
+
+<Tabs items={["Default", "Circular", "Rectangular", "Text", "No animation","Color" ]}>
+  <Tab value="Default">
+   <div className="flex items-center justify-center">
+      <SnappySkelton  width={200} height={100}  />
+   </div>
+  </Tab>
+  <Tab value="Circular">
+    <div className="flex items-center justify-center">
+      <SnappySkelton variant="circular" width={40} height={40}  />
+    </div>
+  </Tab>
+  <Tab value="Rectangular">
+    <div className="flex items-center justify-center">
+      <SnappySkelton variant="rectangular" width={200} height={100}  />
+    </div>
+  </Tab>
+  <Tab value="Text">
+    <div className="flex items-center justify-center">
+      <SnappySkelton variant="text" width={160} />
+    </div>  
+  </Tab>
+  <Tab value="No animation">
+     <div className="flex items-center justify-center">
+      <SnappySkelton width={160} animation={false} />
+    </div>  
+  </Tab>
+  <Tab value="Color">
+     <div className="flex items-center justify-center">
+       <SnappySkelton variant="rounded" width={200} height={100} className="bg-green-200"  />
+    </div>  
+  </Tab>
+</Tabs>
+
+---
+
+## Code Example
+
+```tsx
+import { SnappySkelton } from "@snappy/ui/snappy-skelton";
+
+<div className="flex items-center justify-center">
+      <SnappySkelton variant="rectangular" width={200} height={100}  />
+</div>
+```
+
+---
+
+## Props
+
+| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
+|------------|-------------|-----------|------------------------------------------|
+| **variant**  | string      | rectangular         | variant choose from text, circular, rectangular, rounded                   |
+| **className** | string    | -         | Additional CSS classes                  |
+| **animation** | string     | pulse        | Animation options from pulse or false            |
+| **width**  | number      | 100%        | Custom width                 |
+| **height** | strnumberng     | - | Custom Height          |
+

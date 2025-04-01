@@ -16,6 +16,8 @@ export const baseOptions: BaseLayoutProps = {
         <Image src="./Logo.svg" width={150} height={80} alt="Logo" />
       </>
     ),
+    // enabled:false,
+    transparentMode: "none",
   },
 
   links: [
@@ -25,7 +27,6 @@ export const baseOptions: BaseLayoutProps = {
       active: "nested-url",
     },
   ],
-  themeSwitch: {
-    enabled: true,
-  },
+  themeSwitch: { enabled: false },
+
 };

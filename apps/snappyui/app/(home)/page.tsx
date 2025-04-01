@@ -10,7 +10,7 @@ export default function HomePage() {
       {/* Background Image */}
 
       <Image
-        src="./Ellipse 2.svg"
+        src="./Ellipse2.svg"
         width={0}
         height={0}
         sizes="100vw"
@@ -21,7 +21,7 @@ export default function HomePage() {
 
       {/* Content on top */}
       <div className="flex flex-col items-center justify-center w-full h-screen text-gray-900 dark:text-white text-center relative z-10 px-4">
-        <p className="w-full max-w-[852px] font-bold text-4xl md:text-6xl">
+        <p className="w-full max-w-[852px] font-bold text-4xl md:text-6xl  ">
           Build lightning-fast, pixel-
           <br className="hidden md:block" />
           perfect UIs with Snappy UI.
