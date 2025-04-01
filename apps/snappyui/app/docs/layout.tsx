@@ -10,9 +10,10 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout
       {...baseOptions}
       // the position of navbar
-      nav={{ ...baseOptions.nav, mode: "top" }}
+
+      themeSwitch={{ enabled: false }}
       // the position of Sidebar Tabs
-      tabMode="navbar"
+      tabMode="sidebar"
       tree={source.pageTree}
     >
       {children}

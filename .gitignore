@@ -21,4 +21,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-apps/*/test
+apps/*/app/test
+
