@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "./utils/cn";
+import { cn } from "@/lib/cn";
 
 type SkeletonType = "text" | "circular" | "rectangular" | "rounded";
 type AnimationType = "pulse" | false;
