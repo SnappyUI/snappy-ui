@@ -1,0 +1,75 @@
+---
+title: Button
+description: A highly customizable button component for modern web applications
+---
+
+import SnappyButton from "@/components/snappy-button";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+# Snappy Button Component
+
+A flexible button component with multiple variants and sizes for different use cases.
+
+---
+
+## Installation
+
+```bash
+npm install @snappy/ui  # Install Snappy UI package
+```
+
+## Basic Usage
+
+<div className="flex flex-col items-center gap-4">
+  <SnappyButton variant="primary" size="lg">Primary Button</SnappyButton>
+  <SnappyButton variant="success" size="default">Success Button</SnappyButton>
+  <SnappyButton variant="destructive" size="sm">Destructive Button</SnappyButton>
+</div>
+
+<Tabs items={["default", "primary", "success", "destructive", "outline", "ghost", "warning", "gradient"]}>
+  <Tab value="default">
+    <SnappyButton variant="default">Default Button</SnappyButton>
+  </Tab>
+  <Tab value="primary">
+    <SnappyButton variant="primary">Primary Button</SnappyButton>
+  </Tab>
+  <Tab value="success">
+    <SnappyButton variant="success">Success Button</SnappyButton>
+  </Tab>
+  <Tab value="destructive">
+    <SnappyButton variant="destructive">Destructive Button</SnappyButton>
+  </Tab>
+  <Tab value="outline">
+    <SnappyButton variant="outline">Outline Button</SnappyButton>
+  </Tab>
+  <Tab value="ghost">
+    <SnappyButton variant="ghost">Ghost Button</SnappyButton>
+  </Tab>
+  <Tab value="warning">
+    <SnappyButton variant="warning">Warning Button</SnappyButton>
+  </Tab>
+  <Tab value="gradient">
+    <SnappyButton variant="gradient">Gradient Button</SnappyButton>
+  </Tab>
+</Tabs>
+
+---
+
+## Code Example
+
+```tsx
+<SnappyButton variant="primary" size="lg">
+  Click Me
+</SnappyButton>
+```
+
+---
+
+## Props
+
+| Name        | Type           | Default   | Description                     |
+|------------|---------------|-----------|---------------------------------|
+| **variant**  | string       | 'default' | Button style variant            |
+| **size**     | string       | 'default' | Button size (sm, default, lg, xl) |
+| **disabled** | boolean      | false     | Disables the button if true     |
+| **children** | ReactNode    | -         | Button label or content         |
