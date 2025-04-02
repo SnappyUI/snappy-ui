@@ -29,7 +29,7 @@ npm install @snappy/ui  # coming soon
       forceHoverState={false}
       text='Snappy Globe'
       textColor='white'
-      textSize='text-2xl'
+      textSize='text-md'
   />
 </div>
 
@@ -51,6 +51,38 @@ npm install @snappy/ui  # coming soon
     />
 </div>
 ```
+
+## Globe for BcakGround
+
+``` tsx 
+
+import SnappyGlobe from '@snappy/ui/snappy-globe'
+import React from 'react'
+
+export default function page() {
+  return (
+    <div className="h-screen w-screen relative">
+      <div className="absolute inset-0 z-0">
+        <SnappyGlobe
+          hoverIntensity={1}
+          rotateOnHover={true}
+          hue={100}
+          forceHoverState={false}
+          text='Snappy Globe'
+          textColor='white'
+          textSize='text-2xl'
+        />
+      </div>
+      {/* Add your content here with z-10 to appear above the globe */}
+      <div className="relative z-10 flex items-center justify-center h-full text-white">
+        
+      </div>
+    </div>
+  )
+}
+```
+
+
 
 ---
 
