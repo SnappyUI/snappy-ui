@@ -1,0 +1,71 @@
+---
+title: Globe
+description: A Globe component for modern web applications
+---
+
+import SnappyGlobe from '@snappy/ui/snappy-globe'
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+# Snappy Globe Component
+
+A versatile globe component that supports interactive animations, customizable text, and various styling options.
+
+---
+
+## Installation
+
+```bash
+npm install @snappy/ui  # coming soon
+
+```
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
+  <SnappyGlobe
+      hoverIntensity={1}
+      rotateOnHover={true}
+      hue={100}
+      forceHoverState={false}
+      text='Snappy Globe'
+      textColor='white'
+      textSize='text-2xl'
+  />
+</div>
+
+
+---
+
+## Code Example
+
+```tsx
+<div className="flex flex-col items-center justify-center mb-6 ">
+  <SnappyGlobe
+      hoverIntensity={1}
+      rotateOnHover={true}
+      hue={100}
+      forceHoverState={false}
+      text='Snappy Globe'
+      textColor='white'
+      textSize='text-2xl'
+    />
+</div>
+```
+
+---
+
+## Props
+
+| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
+|------------|-------------|-----------|------------------------------------------|
+| **hoverIntensity**  | number      | -         | Controls the intensity of the hover effect.                 |
+| **rotateOnHover** | bool    | -         | 	Enables rotation on hover.                  |
+| **hue** | number     | you can enter any number you what         | Adjusts the color hue of the globe.            |
+| **forceHoverState**  | bool      | -         | Forces the hover state permanently.                 |
+| **text** | string     | - | Sets the text displayed on the globe.           |
+| **textColor** | color name or code | -         | Defines the text color. |
+| **textSize** | tailwind class | -         | Sets the size of the text. |
+| **image** | image | -         | Allows an image to be displayed on the globe.
+ |
+
+
