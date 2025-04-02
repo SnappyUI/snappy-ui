@@ -21,6 +21,7 @@
     "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "snappy-tooltip": "link:snappy/ui/snappy-tooltip",
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {

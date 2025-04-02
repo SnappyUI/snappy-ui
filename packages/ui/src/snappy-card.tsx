@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "./utils/cn";
+import { cn } from "../lib/cn";
 
 type CardVariant = "dark" | "default" | "primary" | "success" | "warning";
 
@@ -13,7 +13,7 @@ type CardProps = {
   children?: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export default function SnappyCard({
+export default function Card({
   title,
   description,
   variant = "dark",

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "../lib/cn";
 
 type SkeletonType = "text" | "circular" | "rectangular" | "rounded";
 type AnimationType = "pulse" | false;
@@ -13,7 +13,7 @@ type SkeletonProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-function SnappySkelton({
+export default function Skelton({
   variant = "rectangular",
   animation = "pulse",
   width,
@@ -57,12 +57,3 @@ function SnappySkelton({
     />
   );
 }
-
-// Add keyframes for wave animation to your global CSS
-// @keyframes wave {
-//   100% {
-//     transform: translateX(100%);
-//   }
-// }
-
-export { SnappySkelton };

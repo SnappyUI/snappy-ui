@@ -2,7 +2,7 @@
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import * as React from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "../lib/cn";
 
 // Enhanced configuration options
 type TooltipOptions = {
@@ -18,8 +18,6 @@ const Tooltip = TooltipPrimitive.Root;
 Tooltip.displayName = "Tooltip";
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
-
-// Fixed arrow implementation
 
 function TooltipArrow({ ref, variant = "default", className, ...props }: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow> & { variant?: string } & { ref?: React.RefObject<React.ElementRef<typeof TooltipPrimitive.Arrow> | null> }) {
   const variantArrowColors = {

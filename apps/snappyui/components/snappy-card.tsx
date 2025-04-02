@@ -1,4 +1,6 @@
-import { cn } from "@/lib/cn";
+import React from "react";
+
+import { cn } from "../lib/cn";
 
 type CardVariant = "dark" | "default" | "primary" | "success" | "warning";
 
@@ -11,7 +13,7 @@ type CardProps = {
   children?: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export default function SnappyCard({
+export default function Card({
   title,
   description,
   variant = "dark",
@@ -22,7 +24,7 @@ export default function SnappyCard({
   ...props
 }: CardProps) {
   const variantStyles = {
-    dark: "bg-gray-800 text-gray-100 border-gray-700 hover:bg-gray-750 hover:shadow-lg shadow-gray-900/20",
+    dark: "bg-black-800 text-black-100 border-gray-700 hover:bg-gray-750 hover:shadow-lg shadow-gray-900/20",
     default: "bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:shadow-lg border-gray-200 dark:border-gray-700",
     primary: "bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/50",
     success: "bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800 hover:bg-green-100 dark:hover:bg-green-900/50",
