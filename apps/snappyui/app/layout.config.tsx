@@ -17,7 +17,7 @@ export const baseOptions: BaseLayoutProps = {
       </>
     ),
     // enabled:false,
-    transparentMode: "none",
+    transparentMode: "always",
   },
 
   links: [
@@ -27,6 +27,6 @@ export const baseOptions: BaseLayoutProps = {
       active: "nested-url",
     },
   ],
-  themeSwitch: { enabled: false },
+  themeSwitch: { enabled: true },
 
 };

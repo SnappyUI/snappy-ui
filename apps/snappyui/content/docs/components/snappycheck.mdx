@@ -3,8 +3,8 @@ title: "Check"
 description: "A customizable animated checkbox component with animation variants"
 ---
 
-
-import Check from "@snappy/ui/snappy-check";
+import Check from "@/components/ui/snappy-checkbox";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 # Check Component
 
@@ -12,14 +12,33 @@ The `Check` component provides a collection of beautifully animated checkboxes f
 
 ## Installation
 
-```bash
-npm install snappy-check #coming soon
-```
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+</Tabs>
 
 ## Basic Usage
 
 ```tsx
-import Check from "@snappy/ui/snappy-check";
+import Check from "@/components/ui/snappy-checkbox";
 
 export default function Example() {
   
@@ -61,8 +80,6 @@ The component comes with 10 unique animation variants to enhance user experience
   ))}
 </div>
 
-
-
 ### Props
 
 | Prop | Type | Default | Description |
@@ -96,7 +113,7 @@ type CheckboxVariant =
 ### Form Integration
 
 ```tsx
-import Check from "@snappy/ui/snappy-check";
+import Check from "@/components/ui/snappy-checkbox";
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -152,7 +169,7 @@ export default function ContactForm() {
 ### Custom Styling
 
 ```tsx
-import Check from "@snappy/ui/snappy-check";
+import Check from "@/components/ui/snappy-checkbox";
 import { cn } from '@/lib/utils';
 
 export default function CustomStyleExample() {
@@ -181,21 +198,3 @@ export default function CustomStyleExample() {
 }
 ```
 
-## Accessibility
-
-The component is built with accessibility in mind:
-
-- Uses semantic HTML with proper label association
-- Maintains focus states
-- Works with keyboard navigation
-- Includes proper ARIA attributes
-
-
-## Browser Support
-
-The component is compatible with all modern browsers:
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Opera (latest)

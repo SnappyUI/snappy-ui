@@ -11,7 +11,7 @@ type ButtonProps = {
   disabled?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function SnappyButton({
+export default function Button({
   children,
   className,
   variant = "default",

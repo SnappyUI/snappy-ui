@@ -3,7 +3,8 @@ title: Card
 description: A versatile card component for modern web applications
 ---
 
-import Card from "@snappy/ui/snappy-card";
+import Card from "@/components/ui/snappy-card";
+
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 # Snappy Card Component
@@ -14,10 +15,28 @@ A flexible card component that supports images, titles, and custom content with 
 
 ## Installation
 
-```bash
-npm install @snappy/ui  # Install Snappy UI npmx package coming soon
-
-```
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+</Tabs>
 
 ## Basic Usage
 
@@ -65,6 +84,8 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 ## Code Example
 
 ```tsx
+import Card from "@/components/ui/snappy-card";
+
 <div className="flex flex-col items-center justify-center mb-6">
   <Card
     title="Simple Card"
@@ -81,12 +102,11 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 
 ## Props
 
-| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
-|------------|-------------|-----------|------------------------------------------|
-| **title**  | string      | -         | The title of the card                   |
-| **className** | string    | -         | Additional CSS classes                  |
-| **content** | string     | -         | The main content of the card            |
-| **image**  | string      | -         | URL of the card's image                 |
-| **variant** | string     | 'default' | The style variant of the card           |
-| **children** | ReactNode | -         | Allows passing React nodes into the component |
-
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **title**     | string      | -              | The title of the card                         |
+| **className** | string      | -              | Additional CSS classes                        |
+| **content**   | string      | -              | The main content of the card                  |
+| **image**     | string      | -              | URL of the card's image                       |
+| **variant**   | string      | 'default'      | The style variant of the card                 |
+| **children**  | ReactNode   | -              | Allows passing React nodes into the component |

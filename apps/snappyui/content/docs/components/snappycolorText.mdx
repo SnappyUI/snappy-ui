@@ -3,7 +3,7 @@ title: ColorText
 description: A versatile ColorText component for modern web applications
 ---
 
-import {ColourfulText,OceanText, SunsetText, NeonText, MonochromeText,ForestText,GalaxyText,CyberpunkText,VintageText,CandyText,MatrixText,PastelText,SnappyText} from "@snappy/ui/snappy-colourful-text";
+import { ColourfulText, OceanText, SunsetText, NeonText, MonochromeText, ForestText, GalaxyText, CyberpunkText, VintageText, CandyText, MatrixText, PastelText, SnappyText } from "@/components/ui/snappy-colorful-text";
 
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
@@ -11,10 +11,28 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Installation
 
-```bash
-npm install @snappy/ui  # Install Snappy UI npmx package coming soon
-
-```
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/colorful-text
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/colorful-text
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/colorful-text
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/colorful-text
+    ```
+  </Tab>
+</Tabs>
 
 ## Basic Usage
 
@@ -26,7 +44,7 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 
 </div>
 
-<Tabs scroll="true" items={["SnappyText", "PastelText", "MatrixText", "CandyText",
+<Tabs scroll="true" items={["SnappyText", "PastelText", "MatrixText", 
 ,"VintageText","CyberpunkText","GalaxyText","ForestText"]}>
   <Tab value="SnappyText">
    <div className="flex items-center justify-center">
@@ -43,11 +61,7 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
         Let's try <MatrixText text="SnappyUi" />  
     </div>
   </Tab>
- <Tab value="CandyText">
-     <div className="flex items-center justify-center">
-        Let's try <CandyText text="SnappyUi" />  
-     </div>  
-  </Tab>
+ 
   <Tab value="VintageText">
      <div className="flex items-center justify-center">
         Let's try <VintageText text="SnappyUi" /> 
@@ -70,11 +84,16 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
   </Tab>
 </Tabs>
 
-<Tabs scroll="true" items={["MonochromeText","NeonText","SunsetText","OceanText","ColourfulText"  ]}>
+<Tabs scroll="true" items={["MonochromeText","NeonText","SunsetText","OceanText","CandyText","ColourfulText"  ]}>
   <Tab value="MonochromeText">
    <div className="flex items-center justify-center">
       Let's try <MonochromeText text="SnappyUi" /> 
    </div>
+  </Tab>
+  <Tab value="CandyText">
+     <div className="flex items-center justify-center">
+        Let's try <CandyText text="SnappyUi" />  
+     </div>  
   </Tab>
   <Tab value="NeonText">
     <div className="flex items-center justify-center">
@@ -103,7 +122,7 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 ## Code Example
 
 ```tsx
-import {ColourfulText,OceanText, SunsetText, NeonText, MonochromeText,ForestText,GalaxyText,CyberpunkText,VintageText,CandyText,MatrixText,PastelText,SnappyText} from "@snappy/ui/snappy-colourful-text";
+import {ColourfulText,OceanText, SunsetText, NeonText, MonochromeText,ForestText,GalaxyText,CyberpunkText,VintageText,CandyText,MatrixText,PastelText,SnappyText} from "@/components/ui/snappy-colorful-text";
 
 <div className="flex items-center justify-center">
       Let's try <SnappyText text="SnappyUi" />

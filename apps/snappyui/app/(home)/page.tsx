@@ -1,6 +1,6 @@
 "use client";
 
-import { SnappyText } from "@snappy/ui/snappy-colourful-text";
+import { SnappyText } from "@snappy-ui/src/snappy-colourful-text";
 import { Github as GitHubIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
