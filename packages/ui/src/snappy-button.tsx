@@ -1,3 +1,5 @@
+import type { MouseEventHandler } from "react";
+
 import { cn } from "../lib/cn";
 
 type ButtonVariant = "default" | "primary" | "success" | "destructive" | "outline" | "ghost" | "warning" | "gradient";
@@ -8,7 +10,7 @@ type ButtonProps = {
   className?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  onClick: any;
+  onClick: MouseEventHandler;
   disabled?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
