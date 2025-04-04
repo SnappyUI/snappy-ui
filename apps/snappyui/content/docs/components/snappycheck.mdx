@@ -3,28 +3,47 @@ title: "Check"
 description: "A customizable animated checkbox component with animation variants"
 ---
 
+import Check from "@/components/ui/snappy-checkbox";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-import SnappyCheck from "@snappy/ui/snappy-check";
+# Check Component
 
-# SnappyCheck Component
-
-The `SnappyCheck` component provides a collection of beautifully animated checkboxes for React applications using TypeScript and Tailwind CSS.
+The `Check` component provides a collection of beautifully animated checkboxes for React applications using TypeScript and Tailwind CSS.
 
 ## Installation
 
-```bash
-npm install snappy-check #coming soon
-```
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+</Tabs>
 
 ## Basic Usage
 
 ```tsx
-import SnappyCheck from "@snappy/ui/snappy-check";
+import Check from "@/components/ui/snappy-checkbox";
 
 export default function Example() {
   
   return (
-    <SnappyCheck
+    <Check
       label="Accept terms and conditions"
       variant="bounce"
     />
@@ -53,15 +72,13 @@ The component comes with 10 unique animation variants to enhance user experience
       key={variant}
       className="flex flex-col items-center gap-2 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
     >
-      <SnappyCheck label={label} variant={variant} />
+      <Check label={label} variant={variant} />
       <code className="text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">
         {variant}
       </code>
     </div>
   ))}
 </div>
-
-
 
 ### Props
 
@@ -96,7 +113,7 @@ type CheckboxVariant =
 ### Form Integration
 
 ```tsx
-import SnappyCheck from "@snappy/ui/snappy-check";
+import Check from "@/components/ui/snappy-checkbox";
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -119,7 +136,7 @@ export default function ContactForm() {
       {/* Other form fields */}
       
       <div className="space-y-2">
-        <SnappyCheck
+        <Check
           label="I accept the terms and conditions"
           variant="bounce"
           checked={formState.acceptTerms}
@@ -129,7 +146,7 @@ export default function ContactForm() {
           )}
         />
         
-        <SnappyCheck
+        <Check
           label="Send me marketing emails"
           variant="fade"
           checked={formState.acceptMarketing}
@@ -152,25 +169,25 @@ export default function ContactForm() {
 ### Custom Styling
 
 ```tsx
-import SnappyCheck from "@snappy/ui/snappy-check";
+import Check from "@/components/ui/snappy-checkbox";
 import { cn } from '@/lib/utils';
 
 export default function CustomStyleExample() {
   return (
     <div className="space-y-4">
-      <SnappyCheck
+      <Check
         label="Default checkbox"
         variant="bounce"
       />
       
-      <SnappyCheck
+      <Check
         label="Custom styled checkbox"
         variant="bounce"
         className="font-medium text-lg"
       />
       
       <div className="dark bg-gray-800 p-4 rounded-lg">
-        <SnappyCheck
+        <Check
           label="Dark mode checkbox"
           variant="pulse"
           className="text-white"
@@ -181,21 +198,3 @@ export default function CustomStyleExample() {
 }
 ```
 
-## Accessibility
-
-The component is built with accessibility in mind:
-
-- Uses semantic HTML with proper label association
-- Maintains focus states
-- Works with keyboard navigation
-- Includes proper ARIA attributes
-
-
-## Browser Support
-
-The component is compatible with all modern browsers:
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Opera (latest)

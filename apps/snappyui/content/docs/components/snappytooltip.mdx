@@ -7,17 +7,35 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@snappy/ui/snappy-tooltip"
+} from "@/components/ui/snappy-tooltip"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
 
 ## Installation
 
-```bash
-npm install @snappy/ui  # Install Snappy UI npmx package coming soon
-
-```
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+</Tabs>
 
 ## Basic Usage
 
@@ -131,7 +149,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@snappy/ui/snappy-tooltip"
+} from "@/components/ui/snappy-tooltip"
 
 <div className="flex items-center justify-center">
       <TooltipProvider>

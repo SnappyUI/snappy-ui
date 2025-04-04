@@ -8,13 +8,14 @@ import { source } from "@/lib/source";
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
-      {...baseOptions}
-      // the position of navbar
 
-      themeSwitch={{ enabled: false }}
+      // the position of navbar
+      nav={{ ...baseOptions.nav, mode: "top" }}
+      themeSwitch={{ enabled: false, mode: "light-dark-system" }}
       // the position of Sidebar Tabs
       tabMode="sidebar"
       tree={source.pageTree}
+
     >
       {children}
     </DocsLayout>

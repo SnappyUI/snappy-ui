@@ -1,19 +1,37 @@
 ---
-title: Skelton
-description: A versatile Skeloton component for modern web applications
+title: Skeleton
+description: A versatile Skeleton component for modern web applications
 ---
 
-import { SnappySkelton } from "@snappy/ui/snappy-skelton";
+import Skelton from "@/components/ui/snappy-skeleton";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
 
 ## Installation
 
-```bash
-npm install @snappy/ui  # Install Snappy UI npmx package coming soon
-
-```
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/skeleton
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/skeleton
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/skeleton
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/skeleton
+    ```
+  </Tab>
+</Tabs>
 
 ## Basic Usage
 
@@ -21,45 +39,45 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 
 <div className="flex flex-row gap-1">
 
-  <SnappySkelton variant="circular" width={40} height={40} animation="pulse" className="bg-zinc-500"/>
+  <Skelton variant="circular" width={40} height={40} animation="pulse" />
 
   <div className="flex flex-col gap-1">
-    <SnappySkelton variant="text" width={160} />
-    <SnappySkelton variant="text" width={160} />
+    <Skelton variant="text" width={160} />
+    <Skelton variant="text" width={160} />
   </div>
 </div>
-  <SnappySkelton variant="rounded" width={200} height={30} />
+  <Skelton variant="rounded" width={200} height={30} />
 </div>
 
 <Tabs items={["Default", "Circular", "Rectangular", "Text", "No animation","Color" ]}>
   <Tab value="Default">
    <div className="flex items-center justify-center">
-      <SnappySkelton  width={200} height={100}  />
+      <Skelton  width={200} height={100}  />
    </div>
   </Tab>
   <Tab value="Circular">
     <div className="flex items-center justify-center">
-      <SnappySkelton variant="circular" width={40} height={40}  />
+      <Skelton variant="circular" width={40} height={40}  />
     </div>
   </Tab>
   <Tab value="Rectangular">
     <div className="flex items-center justify-center">
-      <SnappySkelton variant="rectangular" width={200} height={100}  />
+      <Skelton variant="rectangular" width={200} height={100}  />
     </div>
   </Tab>
   <Tab value="Text">
     <div className="flex items-center justify-center">
-      <SnappySkelton variant="text" width={160} />
+      <Skelton variant="text" width={160} />
     </div>  
   </Tab>
   <Tab value="No animation">
      <div className="flex items-center justify-center">
-      <SnappySkelton width={160} animation={false} />
+      <Skelton width={160} animation={false} />
     </div>  
   </Tab>
   <Tab value="Color">
      <div className="flex items-center justify-center">
-       <SnappySkelton variant="rounded" width={200} height={100} className="bg-green-200"  />
+       <Skelton variant="rounded" width={200} height={100} className="bg-gray-800"  />
     </div>  
   </Tab>
 </Tabs>
@@ -69,10 +87,10 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 ## Code Example
 
 ```tsx
-import { SnappySkelton } from "@snappy/ui/snappy-skelton";
+import Skelton from "@/components/ui/snappy-skeleton";
 
 <div className="flex items-center justify-center">
-      <SnappySkelton variant="rectangular" width={200} height={100}  />
+      <Skelton variant="rectangular" width={200} height={100}  />
 </div>
 ```
 

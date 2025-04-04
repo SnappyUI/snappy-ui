@@ -19,8 +19,6 @@ Tooltip.displayName = "Tooltip";
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
-// Fixed arrow implementation
-
 function TooltipArrow({ ref, variant = "default", className, ...props }: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow> & { variant?: string } & { ref?: React.RefObject<React.ElementRef<typeof TooltipPrimitive.Arrow> | null> }) {
   const variantArrowColors = {
     default: "fill-gray-500",

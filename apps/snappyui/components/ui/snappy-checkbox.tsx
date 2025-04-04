@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 import { cn } from "@/lib/cn";
@@ -25,7 +27,7 @@ type CheckboxProps = {
   id?: string;
 };
 
-const SnappyCheck: React.FC<CheckboxProps> = ({
+const Check: React.FC<CheckboxProps> = ({
   label,
   variant = "bounce",
   checked = false,
@@ -141,4 +143,4 @@ const SnappyCheck: React.FC<CheckboxProps> = ({
   );
 };
 
-export default SnappyCheck;
+export default Check;

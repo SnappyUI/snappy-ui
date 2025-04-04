@@ -3,7 +3,8 @@ title: Card
 description: A versatile card component for modern web applications
 ---
 
-import SnappyCard from "@snappy/ui/snappy-card";
+import Card from "@/components/ui/snappy-card";
+
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 # Snappy Card Component
@@ -14,49 +15,67 @@ A flexible card component that supports images, titles, and custom content with 
 
 ## Installation
 
-```bash
-npm install @snappy/ui  # Install Snappy UI npmx package coming soon
-
-```
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/card
+    ```
+  </Tab>
+</Tabs>
 
 ## Basic Usage
 
 <div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-  <SnappyCard
+  <Card
     title="Image Card"
     variant="dark"
   >
     <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
     <p>Random image from Lorem Picsum</p>
-  </SnappyCard>
+  </Card>
 
 </div>
 
 <Tabs items={["dark", "default", "primary", "success", "warning"]}>
   <Tab value="dark">
-    <SnappyCard title="Default Card" variant="dark" className="text-gray-500">
+    <Card title="Default Card" variant="dark" className="text-gray-500">
       Basic card example with title and content.
-    </SnappyCard>
+    </Card>
   </Tab>
   <Tab value="default">
-    <SnappyCard title="Default Card" variant="default" className="text-gray-500">
+    <Card title="Default Card" variant="default" className="text-gray-500">
       Basic card example with title and content.
-    </SnappyCard>
+    </Card>
   </Tab>
   <Tab value="primary">
-    <SnappyCard title="Primary Card" variant="primary" className="text-gray-500">
+    <Card title="Primary Card" variant="primary" className="text-gray-500">
       Basic card example with title and content.
-    </SnappyCard>
+    </Card>
   </Tab>
   <Tab value="success">
-    <SnappyCard title="Success Card" variant="success" className="text-gray-500">
+    <Card title="Success Card" variant="success" className="text-gray-500">
       Basic card example with title and content.
-    </SnappyCard>
+    </Card>
   </Tab>
   <Tab value="warning">
-    <SnappyCard title="Warning Card" variant="warning" className="text-gray-500">
+    <Card title="Warning Card" variant="warning" className="text-gray-500">
       Basic card example with title and content.
-    </SnappyCard>
+    </Card>
   </Tab>
 </Tabs>
 
@@ -65,15 +84,17 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 ## Code Example
 
 ```tsx
+import Card from "@/components/ui/snappy-card";
+
 <div className="flex flex-col items-center justify-center mb-6">
-  <SnappyCard
+  <Card
     title="Simple Card"
     variant="primary"
     image="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
     className="text-gray-500"
   >
     Basic card example with title and content.
-  </SnappyCard>
+  </Card>
 </div>
 ```
 
@@ -81,12 +102,11 @@ npm install @snappy/ui  # Install Snappy UI npmx package coming soon
 
 ## Props
 
-| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
-|------------|-------------|-----------|------------------------------------------|
-| **title**  | string      | -         | The title of the card                   |
-| **className** | string    | -         | Additional CSS classes                  |
-| **content** | string     | -         | The main content of the card            |
-| **image**  | string      | -         | URL of the card's image                 |
-| **variant** | string     | 'default' | The style variant of the card           |
-| **children** | ReactNode | -         | Allows passing React nodes into the component |
-
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **title**     | string      | -              | The title of the card                         |
+| **className** | string      | -              | Additional CSS classes                        |
+| **content**   | string      | -              | The main content of the card                  |
+| **image**     | string      | -              | URL of the card's image                       |
+| **variant**   | string      | 'default'      | The style variant of the card                 |
+| **children**  | ReactNode   | -              | Allows passing React nodes into the component |
