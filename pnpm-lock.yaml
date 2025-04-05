@@ -117,9 +117,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
-      snappy-tooltip:
-        specifier: link:snappy/ui/snappy-tooltip
-        version: link:snappy/ui/snappy-tooltip
       tailwind-merge:
         specifier: ^3.0.2
         version: 3.0.2
