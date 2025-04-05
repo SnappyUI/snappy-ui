@@ -1,9 +1,10 @@
 "use client";
 
-import { SnappyText } from "@snappy-ui/src/snappy-colourful-text";
 import { Github as GitHubIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+import { ColourfulText } from "@/components/ui/snappy-colorful-text";
 
 export default function HomePage() {
   return (
@@ -27,7 +28,7 @@ export default function HomePage() {
           <br className="hidden md:block" />
           perfect UIs with
           {" "}
-          <SnappyText text="Snappy UI" />
+          <ColourfulText text="Snappy UI" />
           .
         </p>
         <p className="text-gray-600 dark:text-gray-300 pt-3 text-lg md:text-2xl">

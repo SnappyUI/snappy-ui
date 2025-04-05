@@ -1,5 +1,3 @@
-import type { MouseEventHandler } from "react";
-
 import { cn } from "@/lib/cn";
 
 type ButtonVariant = "default" | "primary" | "success" | "destructive" | "outline" | "ghost" | "warning" | "gradient";
@@ -10,17 +8,15 @@ type ButtonProps = {
   className?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  onClick: MouseEventHandler;
   disabled?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function Button({
+export default function SnappyButton({
   children,
   className,
   variant = "default",
   size = "default",
   disabled = false,
-  onClick,
   ...props
 }: ButtonProps) {
   const variantStyles = {
@@ -52,7 +48,6 @@ export default function Button({
         className,
       )}
       disabled={disabled}
-      onClick={onClick}
       {...props}
     >
       {children}

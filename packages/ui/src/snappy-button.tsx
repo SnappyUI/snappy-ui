@@ -1,6 +1,6 @@
 import type { MouseEventHandler } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "../lib/cn";
 
 type ButtonVariant = "default" | "primary" | "success" | "destructive" | "outline" | "ghost" | "warning" | "gradient";
 type ButtonSize = "sm" | "default" | "lg" | "xl";
@@ -14,7 +14,7 @@ type ButtonProps = {
   disabled?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function Button({
+export default function SnappyButton({
   children,
   className,
   variant = "default",
