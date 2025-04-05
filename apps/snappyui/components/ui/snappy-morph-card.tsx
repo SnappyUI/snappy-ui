@@ -13,7 +13,7 @@ export default function MorphCard({
   containerClassName?: string;
   className?: string;
 }) {
-  const [_mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [blobPosition, setBlobPosition] = useState({ x: 50, y: 50 });
 
