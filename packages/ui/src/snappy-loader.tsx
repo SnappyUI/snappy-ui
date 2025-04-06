@@ -4,39 +4,97 @@ import { cn } from "@/lib/cn";
 
 type LoaderProps = {
   size?: "small" | "medium" | "large";
-  color?: "primary" | "secondary" | "accent";
+  // Allow default color names or a custom CSS class string
+  color?: "primary" | "secondary" | "accent" | string;
 };
 
-const Loader: React.FC<LoaderProps> = ({ size = "medium", color = "primary" }) => {
-  const sizeClasses = {
-    small: "w-8 h-8",
-    medium: "w-12 h-12",
-    large: "w-16 h-16",
-  };
+const sizeClasses: Record<NonNullable<LoaderProps["size"]>, string> = {
+  small: "w-8 h-8",
+  medium: "w-12 h-12",
+  large: "w-16 h-16",
+};
 
-  const colorClasses = {
-    primary: "bg-gradient-to-r from-pink-500 to-gray-800",
-    secondary: "bg-gradient-to-r from-blue-500 to-gray-800",
-    accent: "bg-gradient-to-r from-green-500 to-gray-800",
+const innerSizeClasses: Record<NonNullable<LoaderProps["size"]>, string> = {
+  small: "w-6 h-6",
+  medium: "w-9 h-9",
+  large: "w-12 h-12",
+};
+
+const defaultColorClasses: Record<"primary" | "secondary" | "accent", string> = {
+  primary: "bg-gradient-to-r from-pink-500 to-gray-800",
+  secondary: "bg-gradient-to-r from-blue-500 to-gray-800",
+  accent: "bg-gradient-to-r from-green-500 to-gray-800",
+};
+
+function getColorClass(color: LoaderProps["color"]) {
+  return defaultColorClasses[color as "primary" | "secondary" | "accent"] || color;
+}
+
+export const Loader: React.FC<LoaderProps> = ({
+  size = "medium",
+  color = "primary",
+}) => (
+  <div className={cn("relative flex items-center justify-center", sizeClasses[size])}>
+    <div
+      className={cn("absolute rounded-full animate-spin", sizeClasses[size], getColorClass(color))}
+    />
+    <div className={cn("absolute bg-gray-900 rounded-full", innerSizeClasses[size])} />
+  </div>
+);
+
+export const DotLoader: React.FC<LoaderProps> = ({
+  size = "medium",
+  color = "primary",
+}) => {
+  const dotSize = {
+    small: "w-2 h-2",
+    medium: "w-3 h-3",
+    large: "w-4 h-4",
   };
 
   return (
-    <div className={cn("relative flex items-center justify-center", sizeClasses[size])}>
+    <div className="flex space-x-2">
       <div
-        className={cn(
-          "absolute rounded-full animate-spin",
-          sizeClasses[size],
-          colorClasses[color],
-        )}
+        className={cn("rounded-full animate-bounce", dotSize[size], getColorClass(color))}
+        style={{ animationDelay: "0ms" }}
       />
       <div
-        className={cn(
-          "absolute bg-gray-900 rounded-full",
-          size === "small" ? "w-6 h-6" : size === "medium" ? "w-9 h-9" : "w-12 h-12",
-        )}
+        className={cn("rounded-full animate-bounce", dotSize[size], getColorClass(color))}
+        style={{ animationDelay: "150ms" }}
+      />
+      <div
+        className={cn("rounded-full animate-bounce", dotSize[size], getColorClass(color))}
+        style={{ animationDelay: "300ms" }}
       />
     </div>
   );
 };
 
-export default Loader;
+type BarLoaderProps = LoaderProps & {
+  progress?: number; // progress percentage from 0 to 100
+};
+
+export const BarLoader: React.FC<BarLoaderProps> = ({
+  size = "medium",
+  color = "primary",
+  progress = 50,
+}) => {
+  const barHeight = {
+    small: "h-1",
+    medium: "h-2",
+    large: "h-3",
+  };
+
+  return (
+    <div className="w-full bg-gray-300 rounded overflow-hidden">
+      <div
+        className={cn(
+          "rounded bg-gradient-to-r animate-[progress_2s_infinite]",
+          barHeight[size],
+          getColorClass(color),
+        )}
+        style={{ width: `${progress}%` }}
+      />
+    </div>
+  );
+};
