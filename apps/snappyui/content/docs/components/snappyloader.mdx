@@ -1,17 +1,17 @@
 ---
 title: Loader
-description: A versatile card component for modern web applications
+description: Loader component for Snappy UI
 ---
 
 
-import Card from "@/components/ui/snappy-card";
+import { BarLoader, DotLoader, Loader } from '@/components/ui/snappy-loader'
 
 
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-# Snappy Card Component
+# Snappy Loader Component
 
-A flexible card component that supports images, titles, and custom content with various styling variants.
+Snappy Loader is a simple and customizable loader component for React applications. It provides three types of loaders: DotLoader, BarLoader, and Loader. You can easily customize the color and size of the loaders to fit your application's design.
 
 ---
 
@@ -20,83 +20,83 @@ A flexible card component that supports images, titles, and custom content with 
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
   <Tab value="pnpm">
     ```bash
-    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/loader
     ```
   </Tab>
   <Tab value="npm">
     ```bash
-    npx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/loader
     ```
   </Tab>
   <Tab value="yarn">
     ```bash
-    npx shadcn@latest add http://dev.snappyui.in/api/registry/card
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/loader
     ```
   </Tab>
   <Tab value="bun">
     ```bash
-    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/card
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/loader
     ```
   </Tab>
 </Tabs>
 
 ## Basic Usage
 
-<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-  <Card
-    title="Image Card"
-    variant="dark"
-  >
-    <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
-    <p>Random image from Lorem Picsum</p>
-  </Card>
+  
+{/* color?: "primary" | "secondary" | "accent"; */}
 
+<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
+    <DotLoader color='primary' />
+      <div className='flex items-center justify-center w-[350px]'>
+        <BarLoader size='small' progress={75} />
+      </div>
+    <Loader />
 </div>
 
-<Tabs items={["dark", "default", "primary", "success", "warning"]}>
-  <Tab value="dark">
-    <Card title="Default Card" variant="dark" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
+---
+
+## Example
+
+
+
+<Tabs items={["Dot", "Bar", "Loader"]}>
+  <Tab value="Dot">
+    <div className='flex flex-col justify-center items-center gap-5'>
+      <DotLoader color='primary' />
+      <DotLoader color='secondary' />
+      <DotLoader color='accent' />
+    </div>
   </Tab>
-  <Tab value="default">
-    <Card title="Default Card" variant="default" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
+  <Tab value="Bar">
+    <div className='flex flex-col justify-center items-center gap-5'>
+      <BarLoader color="primary" progress={65} />
+      <BarLoader color="secondary" progress={85} />
+      <BarLoader color="accent" progress={100} />
+    </div>
   </Tab>
-  <Tab value="primary">
-    <Card title="Primary Card" variant="primary" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
+  <Tab value="Loader">
+  <div className='flex justify-center items-center gap-5'>
+    <Loader color="primary"/>
+    <Loader color="secondary"/>
+    <Loader color="accent"/>
+    </div>
   </Tab>
-  <Tab value="success">
-    <Card title="Success Card" variant="success" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="warning">
-    <Card title="Warning Card" variant="warning" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-</Tabs>
+</Tabs> 
 
 ---
 
 ## Code Example
 
 ```tsx
-import Card from "@/components/ui/snappy-card";
+import { BarLoader, DotLoader, Loader } from '@/components/ui/snappy-loader'
 
-<div className="flex flex-col items-center justify-center mb-6">
-  <Card
-    title="Simple Card"
-    variant="primary"
-    image="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-    className="text-gray-500"
-  >
-    Basic card example with title and content.
-  </Card>
+
+<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
+    <DotLoader color='primary' />
+      <div className='flex items-center justify-center w-[350px]'>
+        <BarLoader size='small' progress={75} />
+      </div>
+    <Loader />
 </div>
 ```
 
@@ -106,9 +106,7 @@ import Card from "@/components/ui/snappy-card";
 
 | <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
 | ------------- | ----------- | -------------- | --------------------------------------------- |
-| **title**     | string      | -              | The title of the card                         |
-| **className** | string      | -              | Additional CSS classes                        |
-| **content**   | string      | -              | The main content of the card                  |
-| **image**     | string      | -              | URL of the card's image                       |
-| **variant**   | string      | 'default'      | The style variant of the card                 |
-| **children**  | ReactNode   | -              | Allows passing React nodes into the component |
+| **color**     | string      | 'primary','secondary','accent','string for coutome color(tailwind)'| You can change color of the Loader |
+| **size**   | string      | 'small','medium','large'| Size of Loader                  |
+| **progress**     | Number      | -              | Only for BarLoader                       |
+
