@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 type LoaderProps = {
   size?: "small" | "medium" | "large";
   // Allow default color names or a custom CSS class string
-  color?: "primary" | "secondary" | "accent" | string;
+  color?: "primary" | "secondary" | "accent" | "classic" | string;
 };
 
 const sizeClasses: Record<NonNullable<LoaderProps["size"]>, string> = {
@@ -20,14 +20,15 @@ const innerSizeClasses: Record<NonNullable<LoaderProps["size"]>, string> = {
   large: "w-12 h-12",
 };
 
-const defaultColorClasses: Record<"primary" | "secondary" | "accent", string> = {
+const defaultColorClasses: Record<"primary" | "secondary" | "accent" | "classic", string> = {
   primary: "bg-gradient-to-r from-pink-500 to-gray-800",
   secondary: "bg-gradient-to-r from-blue-500 to-gray-800",
   accent: "bg-gradient-to-r from-green-500 to-gray-800",
+  classic: "bg-gradient-to-r from-white to-gray-800",
 };
 
 function getColorClass(color: LoaderProps["color"]) {
-  return defaultColorClasses[color as "primary" | "secondary" | "accent"] || color;
+  return defaultColorClasses[color as "primary" | "secondary" | "accent" | "classic"] || color;
 }
 
 export const Loader: React.FC<LoaderProps> = ({
@@ -38,7 +39,14 @@ export const Loader: React.FC<LoaderProps> = ({
     <div
       className={cn("absolute rounded-full animate-spin", sizeClasses[size], getColorClass(color))}
     />
-    <div className={cn("absolute bg-gray-900 rounded-full", innerSizeClasses[size])} />
+    <div
+      className={cn(
+        "absolute rounded-full",
+        // Use white for the inner circle in classic theme, otherwise default gray.
+        color === "classic" ? "bg-white" : "bg-gray-900",
+        innerSizeClasses[size],
+      )}
+    />
   </div>
 );
 

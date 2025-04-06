@@ -65,12 +65,14 @@ Snappy Loader is a simple and customizable loader component for React applicatio
       <DotLoader color='primary' />
       <DotLoader color='secondary' />
       <DotLoader color='accent' />
+      <DotLoader color='classic' />
     </div>
   </Tab>
   <Tab value="Bar">
     <div className='flex flex-col justify-center items-center gap-5'>
       <BarLoader color="primary" progress={65} />
       <BarLoader color="secondary" progress={85} />
+      <BarLoader color="classic" progress={75} />
       <BarLoader color="accent" progress={100} />
     </div>
   </Tab>
@@ -79,6 +81,7 @@ Snappy Loader is a simple and customizable loader component for React applicatio
     <Loader color="primary"/>
     <Loader color="secondary"/>
     <Loader color="accent"/>
+    <Loader color="classic"/>
     </div>
   </Tab>
 </Tabs> 
@@ -106,7 +109,7 @@ import { BarLoader, DotLoader, Loader } from '@/components/ui/snappy-loader'
 
 | <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
 | ------------- | ----------- | -------------- | --------------------------------------------- |
-| **color**     | string      | 'primary','secondary','accent','string for coutome color(tailwind)'| You can change color of the Loader |
+| **color**     | string      | 'classic','primary','secondary','accent','string for coutome color(tailwind)'| You can change color of the Loader |
 | **size**   | string      | 'small','medium','large'| Size of Loader                  |
 | **progress**     | Number      | -              | Only for BarLoader                       |
 
