@@ -1,0 +1,115 @@
+---
+title: Loader
+description: Loader component for Snappy UI
+---
+
+
+import { BarLoader, DotLoader, Loader } from '@/components/ui/snappy-loader'
+
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+# Snappy Loader Component
+
+Snappy Loader is a simple and customizable loader component for React applications. It provides three types of loaders: DotLoader, BarLoader, and Loader. You can easily customize the color and size of the loaders to fit your application's design.
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/loader
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/loader
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/loader
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/loader
+    ```
+  </Tab>
+</Tabs>
+
+## Basic Usage
+
+  
+{/* color?: "primary" | "secondary" | "accent"; */}
+
+<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
+    <DotLoader color='primary' />
+      <div className='flex items-center justify-center w-[350px]'>
+        <BarLoader size='small' progress={75} />
+      </div>
+    <Loader />
+</div>
+
+---
+
+## Example
+
+
+
+<Tabs items={["Dot", "Bar", "Loader"]}>
+  <Tab value="Dot">
+    <div className='flex flex-col justify-center items-center gap-5'>
+      <DotLoader color='primary' />
+      <DotLoader color='secondary' />
+      <DotLoader color='accent' />
+      <DotLoader color='classic' />
+    </div>
+  </Tab>
+  <Tab value="Bar">
+    <div className='flex flex-col justify-center items-center gap-5'>
+      <BarLoader color="primary" progress={65} />
+      <BarLoader color="secondary" progress={85} />
+      <BarLoader color="classic" progress={75} />
+      <BarLoader color="accent" progress={100} />
+    </div>
+  </Tab>
+  <Tab value="Loader">
+  <div className='flex justify-center items-center gap-5'>
+    <Loader color="primary"/>
+    <Loader color="secondary"/>
+    <Loader color="accent"/>
+    <Loader color="classic"/>
+    </div>
+  </Tab>
+</Tabs> 
+
+---
+
+## Code Example
+
+```tsx
+import { BarLoader, DotLoader, Loader } from '@/components/ui/snappy-loader'
+
+
+<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
+    <DotLoader color='primary' />
+      <div className='flex items-center justify-center w-[350px]'>
+        <BarLoader size='small' progress={75} />
+      </div>
+    <Loader />
+</div>
+```
+
+---
+
+## Props
+
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **color**     | string      | 'classic','primary','secondary','accent','string for coutome color(tailwind)'| You can change color of the Loader |
+| **size**   | string      | 'small','medium','large'| Size of Loader                  |
+| **progress**     | Number      | -              | Only for BarLoader                       |
+
