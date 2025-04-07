@@ -1,6 +1,7 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
@@ -8,12 +9,6 @@
     },
     "outDir": "dist"
   },
-  "include": [
-    "src",
-    "lib"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src", "lib", "../../apps/snappyui/components/ui/snappy-tab.tsx"],
+  "exclude": ["node_modules", "dist"]
 }
