@@ -114,7 +114,7 @@ function MovingBorderButton({
   onClick?: MouseEventHandler;
   borderColor?: string;
   borderClassName?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) {
   return (
     <button
@@ -164,17 +164,13 @@ export function MovingBorder({
   duration = 3000,
   rx,
   ry,
-  borderColor,
-  borderClassName,
   ...otherProps
 }: {
   children: React.ReactNode;
   duration?: number;
   rx?: string;
   ry?: string;
-  borderColor?: string;
-  borderClassName?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) {
   const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
