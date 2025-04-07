@@ -1,3 +1,4 @@
+"use client";
 import type { ReactNode } from "react";
 
 import { DocsLayout } from "fumadocs-ui/layouts/notebook";

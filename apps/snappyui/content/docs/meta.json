@@ -1,11 +1,4 @@
 {
   "root": true,
-  "pages": [
-
-    "dark-mode",
-
-    "---Components---",
-    "...components"
-
-  ]
+  "pages": ["dark-mode", "---Components---", "...components"]
 }
