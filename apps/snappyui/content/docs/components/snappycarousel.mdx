@@ -1,0 +1,85 @@
+---
+title: Carousel
+description: Carousel is a component that allows you to create a carousel of items with various options for customization and behavior.
+---
+
+import AnimatedCarousel from '@/components/ui/snappy-carousel';
+import carouselItems from '@/lib/data'
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+### Demo
+
+
+        <div className=" flex flex-col lg:flex-row gap-6 items-center justify-center w-full overflow-hidden border-1 border-gray-800 rounded-lg min-h-[500px] p-4">
+            <div className="w-full h-64 flex flex-col items-center justify-center">
+            <h1 className="text-2xl w-64 font-bold mb-6 text-center">Horizontal Carousel</h1>
+            <AnimatedCarousel
+                items={carouselItems}
+                variant="horizontal"
+                className="rounded-lg shadow-lg w-full h-full"
+            />
+            </div>
+
+            <div className="w-full h-64 flex flex-col items-center justify-center">
+            <h1 className="text-2xl font-bold mb-6 text-center">Vertical Carousel</h1>
+            <AnimatedCarousel
+                items={carouselItems}
+                variant="vertical"
+                autoPlay={true}
+                className="rounded-lg shadow-lg w-full h-full"
+            />
+            </div>
+        </div>
+
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/carousel
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/carousel
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/carousel
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/carousel
+    ```
+  </Tab>
+</Tabs>
+
+
+### code example
+
+```tsx  
+    <AnimatedCarousel
+        items={carouselItems}
+        variant="horizontal"
+        className="rounded-lg shadow-lg w-full h-full"
+    />
+```
+
+## Props
+
+| **Name**        | **Type**     | **Default** | **Description**|
+|-----------------|--------------|-------------|----------------|
+| items           | `Array`      | `[]`        | An array of items to be displayed in the carousel. Each item should have a `title`, `description`, and `image`. |
+| variant         | `string`     | `horizontal`| The variant of the carousel. Can be `horizontal` or `vertical`. |
+| autoPlay        | `boolean`    | `false`     | Whether the carousel should automatically play. |
+| interval        | `number`     | `3000`      | The interval between slides in milliseconds. Only applicable if `autoPlay` is `true`. |
+| className       | `string`     | `''`        | Additional classes to be applied to the carousel. |
+| showArrows    | `boolean`    | `true`      | Whether to show the navigation arrows. |
+| showDots      | `boolean`    | `true`      | Whether to show the navigation dots. |

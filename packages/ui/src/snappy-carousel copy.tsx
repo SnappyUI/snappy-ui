@@ -166,7 +166,7 @@ const AnimatedCarousel: React.FC<CarouselProps> = ({
             onDragEnd={handleDragEnd}
             className="absolute w-full h-full"
           >
-            {items[currentIndex].content}
+            {items[currentIndex]?.content}
           </motion.div>
         </AnimatePresence>
       </div>
