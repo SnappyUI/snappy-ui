@@ -1,166 +1,228 @@
 "use client";
-import type { ReactNode } from "react";
+
+import type { PanInfo } from "motion/react";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useCallback, useEffect, useState } from "react";
-
-import { cn } from "@/lib/utils";
+import React, { useEffect, useRef, useState } from "react";
 
 type CarouselProps = {
-  children: ReactNode[];
+  items: {
+    id: string | number;
+    content: React.ReactNode;
+  }[];
+  variant?: "vertical" | "horizontal";
   autoPlay?: boolean;
   interval?: number;
-  loop?: boolean;
-  rounded?: "none" | "sm" | "md" | "lg" | "full";
-  shadow?: "none" | "sm" | "md" | "lg";
-  buttonStyle?: "default" | "minimal" | "outline";
-  indicatorStyle?: "default" | "dots" | "numbers";
-  direction?: "horizontal" | "vertical";
+  showArrows?: boolean;
+  showDots?: boolean;
+  className?: string;
 };
 
-export default function Carousel({
-  children,
-  autoPlay = false,
-  interval = 3000,
-  loop = true,
-  rounded = "md",
-  shadow = "md",
-  buttonStyle = "default",
-  indicatorStyle = "dots",
-  direction = "horizontal",
-}: CarouselProps) {
+/**
+ * AnimatedCarousel - A reusable animated carousel component with vertical and horizontal variants
+ *
+ * @param items - Array of items to display in the carousel
+ * @param variant - 'horizontal' (default) or 'vertical' scrolling
+ * @param autoPlay - Whether to auto-play the carousel (default: true)
+ * @param interval - Auto-play interval in milliseconds (default: 5000)
+ * @param showArrows - Whether to show navigation arrows (default: true)
+ * @param showDots - Whether to show navigation dots (default: true)
+ * @param className - Optional additional classes
+ */
+const AnimatedCarousel: React.FC<CarouselProps> = ({
+  items,
+  variant = "horizontal",
+  autoPlay = true,
+  interval = 5000,
+  showArrows = true,
+  showDots = true,
+  className = "",
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => {
-      if (loop)
-        return (prev + 1) % children.length;
-      return prev < children.length - 1 ? prev + 1 : prev;
-    });
-  }, [children.length, loop]);
+  const isHorizontal = variant === "horizontal";
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => {
-      if (loop)
-        return (prev - 1 + children.length) % children.length;
-      return prev > 0 ? prev - 1 : prev;
-    });
-  };
-
+  // Reset the timer when current index changes
   useEffect(() => {
-    if (!autoPlay)
-      return;
-    const timer = setInterval(() => {
-      nextSlide();
-    }, interval);
-    return () => clearInterval(timer);
-  }, [autoPlay, interval, children.length, loop, currentIndex, nextSlide]);
+    if (autoPlay) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
 
-  // Base Styles
-  let containerClasses = "relative w-full overflow-hidden";
-  const slideClasses = "w-full overflow-hidden";
-  let buttonClasses = "absolute z-10 p-2 rounded-full";
+      timeoutRef.current = setTimeout(() => {
+        setDirection(1);
+        setCurrentIndex(prevIndex => (prevIndex + 1) % items.length);
+      }, interval);
+    }
 
-  containerClasses = cn(containerClasses, "bg-white dark:bg-gray-900 text-black dark:text-white");
-  buttonClasses = cn(buttonClasses, "bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600");
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [currentIndex, autoPlay, interval, items.length]);
 
-  // Rounded Styles
-  const roundedClasses = {
-    none: "rounded-none",
-    sm: "rounded-sm",
-    md: "rounded-md",
-    lg: "rounded-lg",
-    full: "rounded-full",
+  // Handle navigation
+  const handleNext = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setDirection(1);
+    setCurrentIndex(prevIndex => (prevIndex + 1) % items.length);
   };
-  containerClasses = cn(containerClasses, roundedClasses[rounded]);
 
-  // Shadow Styles
-  const shadowClasses = {
-    none: "shadow-none",
-    sm: "shadow-sm",
-    md: "shadow-md",
-    lg: "shadow-lg",
+  const handlePrev = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setDirection(-1);
+    setCurrentIndex(prevIndex => (prevIndex - 1 + items.length) % items.length);
   };
-  containerClasses = cn(containerClasses, shadowClasses[shadow]);
 
-  // Button Styles
-  switch (buttonStyle) {
-    case "minimal":
-      buttonClasses = cn(buttonClasses, "bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700");
-      break;
-    case "outline":
-      buttonClasses = cn(buttonClasses, "border border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800");
-      break;
-    default: // "default"
-      buttonClasses = cn(buttonClasses, "shadow-md");
-      break;
-  }
+  const handleDotClick = (index: number) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setDirection(index > currentIndex ? 1 : -1);
+    setCurrentIndex(index);
+  };
 
-  // Indicator Styles
-  let indicatorClasses = "absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2";
-  const indicatorItemClasses = "h-2 w-2 rounded-full bg-gray-400 dark:bg-gray-600";
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const threshold = 50;
+    if (isHorizontal) {
+      if (info.offset.x > threshold) {
+        handlePrev();
+      }
+      else if (info.offset.x < -threshold) {
+        handleNext();
+      }
+    }
+    else {
+      if (info.offset.y > threshold) {
+        handlePrev();
+      }
+      else if (info.offset.y < -threshold) {
+        handleNext();
+      }
+    }
+  };
 
-  // Directional Classes and logic
-  const transformDirection = direction === "horizontal" ? { opacity: 0, x: 50 } : { opacity: 0, y: 50 };
-  const exitDirection = direction === "horizontal" ? { opacity: 0, x: -50 } : { opacity: 0, y: -50 };
-  let navButtonContainerClasses = "relative flex w-full items-center justify-center";
-  let prevButtonClass = `${buttonClasses} left-2`;
-  let nextButtonClass = `${buttonClasses} right-2`;
-
-  if (direction === "vertical") {
-    navButtonContainerClasses = "relative flex h-full w-full items-center justify-between";
-    indicatorClasses = "absolute right-2 top-1/2 -translate-y-1/2 flex flex-col space-y-2";
-    prevButtonClass = `${buttonClasses} top-2`;
-    nextButtonClass = `${buttonClasses} bottom-2`;
-  }
+  // Animation variants - fixed to ensure correct direction for both variants
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: isHorizontal ? direction * 500 : 0,
+      y: !isHorizontal ? direction * 500 : 0,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+    exit: (direction: number) => ({
+      x: isHorizontal ? -direction * 500 : 0,
+      y: !isHorizontal ? -direction * 500 : 0,
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeIn",
+      },
+    }),
+  };
 
   return (
-    <div className={containerClasses}>
-      <div className={navButtonContainerClasses}>
-        <button
-          onClick={prevSlide}
-          type="button"
-          className={prevButtonClass}
-          aria-label="Previous Slide"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-black dark:text-white">
-            <path fillRule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clipRule="evenodd" />
-          </svg>
-        </button>
-
-        <div className={slideClasses}>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={transformDirection}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              exit={exitDirection}
-              transition={{ duration: 0.4 }}
-            >
-              {children[currentIndex]}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        <button onClick={nextSlide} type="button" className={nextButtonClass} aria-label="Next Slide">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-black dark:text-white">
-            <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clipRule="evenodd" />
-          </svg>
-        </button>
+    <div
+      className={`relative overflow-hidden ${className}`}
+      style={{ height: isHorizontal ? "100%" : "24rem" }} // Fixed height for vertical, responsive for horizontal
+      onMouseEnter={() => {
+        if (timeoutRef.current && autoPlay) {
+          clearTimeout(timeoutRef.current);
+        }
+      }}
+      onMouseLeave={() => {
+        if (autoPlay) {
+          timeoutRef.current = setTimeout(handleNext, interval);
+        }
+      }}
+    >
+      <div className="relative w-full h-full">
+        <AnimatePresence initial={false} custom={direction} mode="wait">
+          <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            drag={isHorizontal ? "x" : "y"}
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            dragElastic={0.2}
+            onDragEnd={handleDragEnd}
+            className="absolute w-full h-full"
+          >
+            {items[currentIndex]?.content}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Indicators */}
-      {indicatorStyle === "dots" && (
-        <div className={indicatorClasses}>
-          {children.map((_, i) => (
-            <div
-              key={i}
-              className={cn(indicatorItemClasses, i === currentIndex && "bg-gray-900 dark:bg-gray-100")}
-            />
-          ))}
-        </div>
+      {/* Navigation Arrows - Properly positioned for each variant */}
+      {showArrows && items.length > 1 && (
+        <>
+          <button
+            onClick={handlePrev}
+            className={`absolute z-10 p-2 bg-white bg-opacity-50 rounded-full shadow-md text-gray-800 hover:bg-opacity-75 transition-all focus:outline-none ${isHorizontal
+              ? "top-1/2 left-4 transform -translate-y-1/2"
+              : "left-1/2 top-4 transform -translate-x-1/2"
+            }`}
+            aria-label="Previous"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${!isHorizontal && "transform rotate-90"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={handleNext}
+            className={`absolute z-10 p-2 bg-white bg-opacity-50 rounded-full shadow-md text-gray-800 hover:bg-opacity-75 transition-all focus:outline-none ${isHorizontal
+              ? "top-1/2 right-4 transform -translate-y-1/2"
+              : "left-1/2 bottom-4 transform -translate-x-1/2"
+            }`}
+            aria-label="Next"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${!isHorizontal && "transform rotate-90"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </>
       )}
 
+      {/* Navigation Dots - Properly positioned for each variant */}
+      {showDots && items.length > 1 && (
+        <div className={`absolute z-10 ${isHorizontal
+          ? "bottom-4 left-0 right-0 flex justify-center"
+          : "right-4 top-0 bottom-0 flex flex-col items-center justify-center"
+        }`}
+        >
+          <div className={`flex ${isHorizontal ? "flex-row space-x-2" : "flex-col space-y-2"}`}>
+            {items.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? "bg-blue-500 transform scale-125" : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
+
+export default AnimatedCarousel;
