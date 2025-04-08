@@ -17,6 +17,7 @@
     "@snappy-ui": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.6.3",
     "fumadocs-core": "15.1.2",
     "fumadocs-mdx": "11.5.7",
