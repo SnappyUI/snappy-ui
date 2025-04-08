@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@next/third-parties": "^15.2.4",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-navigation-menu": "^1.2.5",
@@ -17,6 +18,7 @@
     "@snappy-ui": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.6.3",
     "fumadocs-core": "15.1.2",
