@@ -1,0 +1,304 @@
+---
+title: Animated Card
+description: A versatile card component for modern web applications
+---
+
+import GlowCard from "@/components/ui/snappy-glow-card";
+import ParallaxCard from "@/components/ui/snappy-parallax-card";
+import MagneticCard from "@/components/ui/snappy-magnetic-card";
+import FloatingCard from "@/components/ui/snappy-floating-card";
+import MorphCard from "@/components/ui/snappy-morph-card";
+import RippleCard from "@/components/ui/snappy-ripple-card";
+import NeonCard from "@/components/ui/snappy-neon-card";
+import HolographicCard from "@/components/ui/snappy-holographic-card";
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg p-5 gap-5">
+  
+        <GlowCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Cursor-Following Glow Effect</h3>
+              <p>This card creates a subtle radial glow that follows your cursor position.</p>
+            </div>
+          </GlowCard>
+
+           <ParallaxCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">3D Parallax Layers</h3>
+              <p>This card creates a depth effect with multiple parallax layers that move at different speeds.</p>
+            </div>
+          </ParallaxCard>
+
+          <MagneticCard strength={30} className="bg-red-400">
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Magnetic Pull Effect</h3>
+              <p>This card is attracted to your cursor with physics-based spring animation.</p>
+            </div>
+          </MagneticCard>
+
+          <FloatingCard particleCount={25}>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Floating Particles Effect</h3>
+              <p>This card features animated particles and a gentle floating animation on hover.</p>
+            </div>
+          </FloatingCard>
+
+          <MorphCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Morphing</h3>
+              <p>Background morphs and follows cursor.</p>
+            </div>
+          </MorphCard>
+
+          <RippleCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Ripple</h3>
+              <p>Creates ripple effects on mouse movement</p>
+            </div>
+          </RippleCard>
+
+          <NeonCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Neon Card</h3>
+              <p>Vibrant neon border glow effect</p>
+            </div>
+          </NeonCard>
+
+          <HolographicCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Holographic Card</h3>
+              <p>Rainbow holographic effect that changes with angle</p>
+            </div>
+          </HolographicCard>
+
+</div>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/glowcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/parallaxcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/magneticcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/floatingcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/morphcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/ripplecard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/neoncard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/holographiccard
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/glowcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/parallaxcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/magneticcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/floatingcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/morphcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/ripplecard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/neoncard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/holographiccard
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/glowcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/parallaxcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/magneticcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/floatingcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/morphcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/ripplecard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/neoncard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/holographiccard
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/glowcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/parallaxcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/magneticcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/floatingcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/morphcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/ripplecard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/neoncard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/holographiccard
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Code Example
+
+<Tabs items={["GlowCard", "ParallaxCard", "MagneticCard", "FloatingCard", "MorphCard","RippleCard","NeonCard","HolographicCard"]}>
+  <Tab value="GlowCard">
+    ```tsx
+    import GlowCard from "@/components/ui/snappy-glow-card";
+
+    <GlowCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Cursor-Following Glow Effect</h3>
+              <p>This card creates a subtle radial glow that follows your cursor position.</p>
+            </div>
+    </GlowCard>
+    ```
+  </Tab>
+  <Tab value="ParallaxCard">
+   ```tsx
+   import ParallaxCard from "@/components/ui/snappy-parallax-card";
+
+   <ParallaxCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">3D Parallax Layers</h3>
+              <p>This card creates a depth effect with multiple parallax layers that move at different speeds.</p>
+            </div>
+   </ParallaxCard>
+    ```  
+  </Tab>
+  <Tab value="MagneticCard">
+    ```tsx
+    import MagneticCard from "@/components/ui/snappy-magnetic-card";
+
+    <MagneticCard strength={30}>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Magnetic Pull Effect</h3>
+              <p>This card is attracted to your cursor with physics-based spring animation.</p>
+            </div>
+    </MagneticCard>
+    ``` 
+  </Tab>
+  <Tab value="FloatingCard">
+   ```tsx
+   import FloatingCard from "@/components/ui/snappy-floating-card";
+
+   <FloatingCard particleCount={25}>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Floating Particles Effect</h3>
+              <p>This card features animated particles and a gentle floating animation on hover.</p>
+            </div>
+   </FloatingCard>
+     ```  
+  </Tab>
+  <Tab value="MorphCard">
+   ```tsx
+   import MorphCard from "@/components/ui/snappy-morph-card";
+
+   <MorphCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Morphing</h3>
+              <p>Background morphs and follows cursor.</p>
+            </div>
+   </MorphCard>
+    ```    
+  </Tab>
+  <Tab value="RippleCard">
+   ```tsx
+   import RippleCard from "@/components/ui/snappy-ripple-card";
+
+   <RippleCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Ripple</h3>
+              <p>Creates ripple effects on mouse movement</p>
+            </div>
+   </RippleCard>
+    ```    
+  </Tab>
+  <Tab value="NeonCard">
+   ```tsx
+   import NeonCard from "@/components/ui/snappy-neon-card";
+
+   <NeonCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Neon Card</h3>
+              <p>Vibrant neon border glow effect</p>
+            </div>
+   </NeonCard>
+    ```    
+  </Tab>
+  <Tab value="HolographicCard">
+   ```tsx
+   import HolographicCard from "@/components/ui/snappy-holographic-card";
+
+   <HolographicCard>
+            <div className="text-white">
+              <h3 className="text-xl font-bold mb-2">Holographic Card</h3>
+              <p>Rainbow holographic effect that changes with angle</p>
+            </div>
+   </HolographicCard>
+    ```    
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| <b>Name</b>   | <b>Type</b> | <b>Default</b>| <b>Card</b>  | <b>Description</b>         |                   
+| ------------- | ----------- | --------------|------ | --------------------------------------------- |
+| **strength**     | number      | 40       | MagneticCard      | The strength of the magnetic pull effect |                        
+| **particleCount**     | number      | -        | FloatingCard      | The number of particles for the floating effect |                        
+| **className**     | string      | -        |All Cards      | This prop is applied to the motion.div element, which represents the card itself and undergoes the motion effect. |                        
+| **containerClassName**     | string      | -        |All Cards      | This prop is applied to the outermost div element, which acts as the container for the entire magnetic card effect. |                        
+| **neonColor**     | string      | #ff00ff        |MagneticCard      | The color of the neon glow effect |                        

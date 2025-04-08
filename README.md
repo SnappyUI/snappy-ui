@@ -46,8 +46,6 @@ Snappy UI is a **lightweight and efficient** component library designed to help 
 
 ## <a name="tech-stack">⚙️ &nbsp; Tech Stack</a>
 
-- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) – structuring
-
 - [Tailwind CSS](https://tailwindcss.com/) – utility-first styling
 
 - [React](https://reactjs.org/) – ui library

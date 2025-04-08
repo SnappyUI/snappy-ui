@@ -1,0 +1,144 @@
+---
+title: Lamp
+description: A customizable spotlight lamp effect component for creating engaging visual focus in your applications
+---
+
+import { LampContainer, LampDemo, SpotlightLamp, GradientLamp, NeonLamp, CustomLamp } from "@/components/ui/snappy-lamp";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+# Snappy Lamp Component
+
+A versatile lamp component that creates attractive spotlight effects to highlight content with various styles, colors, and animations.
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/lamp
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/lamp
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/lamp
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/lamp
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Basic Usage
+
+<div className="flex flex-col p-5  items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
+  <LampContainer variant="default" size="lg">
+                <h1 className="mt-8 bg-gradient-to-br from-gray-400 to-gray-600 py-4 bg-clip-text text-center text-2xl font-bold tracking-tight text-transparent md:text-6xl">
+                  Metallic Lamp <br /> Auto Animated
+                </h1>
+            </LampContainer>
+</div>
+
+---
+
+
+
+## Example Lamp Components
+
+### Spotlight Lamp
+
+<div className="flex flex-col p-5  items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
+   <LampContainer variant="spotlight" size="lg">
+                <h1 className="mt-8 bg-clip-text text-center text-4xl font-bold tracking-tight text-white md:text-6xl">
+                  Spotlight Lamp <br /> Auto Animated
+                </h1>
+            </LampContainer>
+</div>
+
+
+
+### Gradient Lamp
+ 
+<div className="flex flex-col p-5  items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
+  <LampContainer variant="gradient" size="lg">
+                   <h1 className="mt-8 bg-gradient-to-t from-gray-400 to-gray-600 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-6xl">
+                    Gradient Lamp <br /> Auto Animated
+                  </h1>
+            </LampContainer>
+</div>
+
+
+
+### Neon Lamp
+
+<div className="flex flex-col p-5  items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
+  <LampContainer variant="neon" size="lg">
+                   <h1 className="mt-8 bg-gradient-to-t from-gray-400 to-gray-600 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-6xl">
+                    Neon Lamp <br /> Auto Animated
+                  </h1>
+            </LampContainer>
+</div>
+
+### Soft Lamp
+
+<div className="flex flex-col p-5 items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
+  <LampContainer variant="soft" size="lg">
+                   <h1 className="mt-8 bg-gradient-to-t from-gray-400 to-gray-600 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-6xl">
+                    Soft Lamp <br /> Auto Animated
+                  </h1>
+            </LampContainer>
+</div>
+
+---
+## code Example
+
+```tsx 
+    <LampContainer variant="neon" size="lg">
+           <h1 className="mt-8 bg-gradient-to-t from-gray-400 to-gray-600 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-6xl">
+            Neon Lamp <br /> Auto Animated
+          </h1>
+    </LampContainer>
+```
+
+---
+
+## Props use main container of Lamp
+
+| Name                | Type       | Default    | Description                                      |
+| ------------------- | ---------- | ---------- | ------------------------------------------------ |
+| **variant**         | string     | 'default'  | Lamp style variant                               |
+| **size**            | string     | 'default'  | Lamp size (sm, default, lg, xl)                  |
+| **children**        | ReactNode  | -          | Lamp content                                     |
+| **className**       | string     | -          | Extra Tailwind/custom classes (optional)         |
+| **spotlightColor**  | string     | '#0ea5e9'  | Color of the main spotlight                      |
+| **glowColor**       | string     | '#0ea5e9'  | Color of the glow effect                         |
+| **backgroundColor** | string     | 'black'    | Background color (for default variant)           |
+| **backgroundOpacity** | number   | 0.95       | Background opacity (0-1)                         |
+| **glowOpacity**     | number     | 0.3        | Opacity of the glow effect (0-1)                 |
+| **borderRadius**    | string     | '1.75rem'  | Border radius for lamp container                 |
+| **intensity**       | number     | 20         | Intensity of glow effect (blur amount in px)     |
+| **animated**        | boolean    | true       | Enable/disable animation effects                 |
+
+---
+
+## Lamp Variants
+
+| Variant      | Description                                       |
+| ------------ | ------------------------------------------------- |
+| **default**  | Standard lamp with basic spotlight                |
+| **spotlight**| Enhanced spotlight effect with softer background  |
+| **gradient** | Gradient background with spotlight effect         |
+| **soft**     | Soft diffused light effect                        |
+| **neon**     | Vibrant glow effects with enhanced intensity      |
+
+---

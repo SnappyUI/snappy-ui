@@ -1,0 +1,73 @@
+---
+title: Loader
+description: Loader component for Snappy UI
+---
+
+
+import CircularLoader from '@/components/ui/snappy-loader'
+
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { fromTheme } from 'tailwind-merge';
+
+# Snappy Loader Component
+
+Snappy Loader is a simple and customizable loader component for React applications.
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/loader
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/loader
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/loader
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/loader
+    ```
+  </Tab>
+</Tabs>
+
+### Basic Usage
+
+
+<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
+    <CircularLoader />
+</div>
+
+---
+
+## Code Example
+
+```tsx
+import CircularLoader from '@/components/ui/snappy-loader'
+
+
+<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
+    <CircularLoader />
+</div>
+```
+
+---
+
+## Props
+
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **color**     | string      | -| You can change color of the Loader |
+| **thicknees**   | "thin" or | "normal" or "thick"     | Size of Loader                  |
+| **speed**     | "slow" or "normal" or "fast"      | -              | Only for BarLoader                       |
+| **size**      | "small" or "medium" or "large      | -             | Size of Loader                             |

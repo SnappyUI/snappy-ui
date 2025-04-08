@@ -1,0 +1,112 @@
+---
+title: Accordion
+description: A versatile Accordion component for modern web applications
+---
+
+import { Accordion } from '@/components/ui/snappy-accordion';
+import Card from "@/components/ui/snappy-card";
+
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/accordion
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/accordion
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/accordion
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/accordion
+    ```
+  </Tab>
+</Tabs>
+
+## Basic Usage
+<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5 px-5">
+            <Accordion title="Accordion Title" variant="glassmorphic">
+                <div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
+                    <Card
+                        title="Image Card"
+                        variant="dark"
+                    >
+                        <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg" />
+                        <p>Random image from Lorem Picsum</p>
+                    </Card>
+                </div>
+            </Accordion>
+</div>
+
+<Tabs items={["default", "bordered", "glassmorphic", "shadowed", "minimal", "gradient", "elevated"]}>
+  <Tab value="default">
+    <Accordion title="Accordion Title" variant="default">
+                This is the accordion content.
+            </Accordion>
+  </Tab>
+  <Tab value="bordered">
+    <Accordion title="Accordion Title" variant="bordered" >
+                This is the accordion content.
+            </Accordion>
+  </Tab>
+  <Tab value="glassmorphic">
+     <Accordion title="Accordion Title" variant="glassmorphic">
+                This is the accordion content.
+            </Accordion>
+  </Tab>
+  <Tab value="shadowed">
+    <Accordion title="Accordion Title" variant="shadowed">
+                This is the accordion content.
+            </Accordion>
+  </Tab>
+  <Tab value="minimal">
+    <Accordion title="Accordion Title" variant="minimal">
+                This is the accordion content.
+            </Accordion>
+  </Tab>
+  <Tab value="gradient">
+    <Accordion title="Accordion Title" variant="gradient">
+                This is the accordion content.
+            </Accordion>
+  </Tab>
+  <Tab value="elevated">
+    <Accordion title="Accordion Title" variant="elevated">
+                    This is the accordion content.
+                </Accordion>
+  </Tab>
+</Tabs>
+
+---
+
+## Code Example
+
+```tsx 
+    <Accordion title="Accordion Title" variant="elevated">
+        This is the accordion content.
+    </Accordion>
+```
+
+---
+
+## Props
+
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **title**     | string      | -              | Title of accordion                        |
+| **children** | ReactNode      | -              | inside of accordion                        |
+| **variant**   | "default" or "bordered" or "shadowed" or "minimal" or "glassmorphic" or "gradient" or "elevated"| "default" | variants of accordion |
+| **isOpen**     | boolean      | false             | Set default state|
+| **className**   | string      | -      | you can pass tailwind classes|

@@ -1,0 +1,200 @@
+---
+title: "Check"
+description: "A customizable animated checkbox component with animation variants"
+---
+
+import Check from "@/components/ui/snappy-checkbox";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+# Check Component
+
+The `Check` component provides a collection of beautifully animated checkboxes for React applications using TypeScript and Tailwind CSS.
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/checkbox
+    ```
+  </Tab>
+</Tabs>
+
+## Basic Usage
+
+```tsx
+import Check from "@/components/ui/snappy-checkbox";
+
+export default function Example() {
+  
+  return (
+    <Check
+      label="Accept terms and conditions"
+      variant="bounce"
+    />
+  );
+}
+```
+
+## Animation Variants
+
+The component comes with 10 unique animation variants to enhance user experience.
+
+<div className="flex flex-wrap gap-6 my-8 border-1 border-zinc-800 rounded-lg py-5 px-5 justify-center">
+  {[
+    { label: "Click me", variant: "bounce" },
+    { label: "Click me", variant: "fade" },
+    { label: "Click me", variant: "slide" },
+    { label: "Click me", variant: "pulse" },
+    { label: "Click me", variant: "flip" },
+    { label: "Click me", variant: "scale" },
+    { label: "Click me", variant: "rotate" },
+    { label: "Click me", variant: "jello" },
+    { label: "Click me", variant: "sweep" },
+    { label: "Click me", variant: "wave" },
+  ].map(({ label, variant }) => (
+    <div
+      key={variant}
+      className="flex flex-col items-center gap-2 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
+    >
+      <Check label={label} variant={variant} />
+      <code className="text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">
+        {variant}
+      </code>
+    </div>
+  ))}
+</div>
+
+### Props
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `label` | `string` | `undefined` | Text label for the checkbox |
+| `variant` | `CheckboxVariant` | `'bounce'` | Animation style to apply |
+| `checked` | `boolean` | `false` | Controlled checked state |
+| `onChange` | `(checked: boolean) => void` | `undefined` | Callback when checked state changes |
+| `disabled` | `boolean` | `false` | Whether the checkbox is disabled |
+| `className` | `string` | `''` | Additional CSS classes |
+| `id` | `string` | `undefined` | HTML ID attribute (auto-generated if not provided) |
+
+### CheckboxVariant Type
+
+```typescript
+type CheckboxVariant =
+  | 'bounce'
+  | 'fade'
+  | 'slide'
+  | 'pulse'
+  | 'flip'
+  | 'scale'
+  | 'rotate'
+  | 'jello'
+  | 'sweep'
+  | 'wave';
+```
+
+## Examples
+
+### Form Integration
+
+```tsx
+import Check from "@/components/ui/snappy-checkbox";
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
+
+export default function ContactForm() {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    acceptTerms: false,
+    acceptMarketing: false
+  });
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Submit form logic
+    console.log('Form submitted:', formState);
+  };
+  
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Other form fields */}
+      
+      <div className="space-y-2">
+        <Check
+          label="I accept the terms and conditions"
+          variant="bounce"
+          checked={formState.acceptTerms}
+          onChange={(checked) => setFormState({...formState, acceptTerms: checked})}
+          className={cn(
+            formState.acceptTerms ? 'text-green-700' : 'text-gray-700'
+          )}
+        />
+        
+        <Check
+          label="Send me marketing emails"
+          variant="fade"
+          checked={formState.acceptMarketing}
+          onChange={(checked) => setFormState({...formState, acceptMarketing: checked})}
+        />
+      </div>
+      
+      <button 
+        type="submit"
+        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        disabled={!formState.acceptTerms}
+      >
+        Submit
+      </button>
+    </form>
+  );
+}
+```
+
+### Custom Styling
+
+```tsx
+import Check from "@/components/ui/snappy-checkbox";
+import { cn } from '@/lib/utils';
+
+export default function CustomStyleExample() {
+  return (
+    <div className="space-y-4">
+      <Check
+        label="Default checkbox"
+        variant="bounce"
+      />
+      
+      <Check
+        label="Custom styled checkbox"
+        variant="bounce"
+        className="font-medium text-lg"
+      />
+      
+      <div className="dark bg-gray-800 p-4 rounded-lg">
+        <Check
+          label="Dark mode checkbox"
+          variant="pulse"
+          className="text-white"
+        />
+      </div>
+    </div>
+  );
+}
+```
+

@@ -1,0 +1,94 @@
+---
+title: Navbar
+description: A versatile Navbar component for modern web applications
+---
+
+import {
+  Menu,
+  MenuItem,
+  SubmenuItem
+} from "@/components/ui/snappy-nav"
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { MyNavbar } from "@/lib/helper-function"
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/navbar
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/navbar
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/navbar
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/navbar
+    ```
+  </Tab>
+</Tabs>
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 gap-1 border-zinc-800 rounded-lg py-5">
+ <div className="relative w-full flex items-center justify-center">
+        <MyNavbar />
+        <p className="text-black dark:text-white">
+          The Navbar will appear at the top of the page.
+        </p>
+      </div>
+</div>
+
+---
+
+## Code Example
+
+```tsx
+import {
+  Menu,
+  MenuItem,
+  SubmenuItem
+} from "@/components/ui/snappy-nav"
+
+export function MyNavbar() {
+  const [active, setActive] = useState<string | null>(null);
+  return (
+    <Menu setActive={setActive} className="text-white">
+      <MenuItem setActive={setActive} active={active} item="Home" href="/abc">
+      </MenuItem>
+      <MenuItem setActive={setActive} active={active} item="Service">
+        <div className="flex flex-col space-y-4 text-sm">
+          <SubmenuItem href="/web-dev">Web Development</SubmenuItem>
+          <SubmenuItem href="/web-dev">Mobile Development</SubmenuItem>
+        </div>
+      </MenuItem>
+      <MenuItem setActive={setActive} active={active} item="About US">
+      </MenuItem>
+      <MenuItem setActive={setActive} active={active} item="Contact US">
+      </MenuItem>
+    </Menu>
+  )
+}
+
+```
+
+---
+
+## Props
+
+| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
+|------------|-------------|-----------|------------------------------------------|
+| **setActive**  | -      | -         |   Callback to update the active item                 |
+| **className** | string    | -         | Additional CSS classes                  |
+| **active** | string or null     | -        | Currently active menu item           |
+| **href**  | string(url)      | -       | Optional URL. If set, wraps item with link|

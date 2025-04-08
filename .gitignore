@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.turbo/
 dist
 dist-ssr
 *.local
@@ -20,3 +21,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+apps/*/app/test
+
