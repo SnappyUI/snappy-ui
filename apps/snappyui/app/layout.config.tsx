@@ -14,6 +14,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         <Image src="./Logo.svg" width={150} height={80} alt="Logo" />
+
       </>
     ),
     // enabled:false,
