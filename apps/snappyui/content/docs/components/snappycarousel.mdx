@@ -72,6 +72,59 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     />
 ```
 
+## items array example
+
+```tsx 
+// Example items for the carousel
+    const carouselItems = [
+        {
+            id: 1,
+            content: (
+                <div className="bg-blue-500 text-white w-full h-full flex items-center justify-center">
+                    <div className="text-center p-8">
+                        <h2 className="text-3xl font-bold mb-4">First Slide</h2>
+                        <p className="text-xl">This is the first carousel slide</p>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            id: 2,
+            content: (
+                <div className="bg-green-500 text-white w-full h-full flex items-center justify-center">
+                    <div className="text-center p-8">
+                        <h2 className="text-3xl font-bold mb-4">Second Slide</h2>
+                        <p className="text-xl">This is the second carousel slide</p>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            id: 3,
+            content: (
+                <div className="bg-purple-500 text-white w-full h-full flex items-center justify-center">
+                    <div className="text-center p-8">
+                        <h2 className="text-3xl font-bold mb-4">Third Slide</h2>
+                        <p className="text-xl">This is the third carousel slide</p>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            id: 4,
+            content: (
+                <div className="bg-red-500 text-white w-full h-full flex items-center justify-center">
+                    <div className="text-center p-8">
+                        <h2 className="text-3xl font-bold mb-4">Fourth Slide</h2>
+                        <p className="text-xl">This is the fourth carousel slide</p>
+                    </div>
+                </div>
+            ),
+        },
+    ];
+
+```
+
 ## Props
 
 | **Name**        | **Type**     | **Default** | **Description**|
