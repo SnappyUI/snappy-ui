@@ -1,0 +1,180 @@
+---
+title: Tooltip
+description: A versatile Tooltip component for modern web applications
+---
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/snappy-tooltip"
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://dev.snappyui.in/api/registry/tooltip
+    ```
+  </Tab>
+</Tabs>
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 gap-1 border-zinc-800 rounded-lg py-5">
+
+  <TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger>Warning info</TooltipTrigger>
+    <TooltipContent 
+      variant="default" 
+      size="md" 
+      hasArrow={true}
+       >
+      Important notice!
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+
+</div>
+
+<Tabs items={["Default", "Info", "Warning",  "Error","Success" ]}>
+  <Tab value="Default">
+   <div className="flex items-center justify-center">
+      <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger>Hover me !</TooltipTrigger>
+            <TooltipContent 
+            variant="default" 
+            size="md" 
+            hasArrow={true}
+            >
+            Important notice!
+            </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+   </div>
+  </Tab>
+  <Tab value="Info">
+    <div className="flex items-center justify-center">
+      <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger className="border-1 border-blue-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+            <TooltipContent 
+            variant="info" 
+            size="md" 
+            hasArrow={true}
+            >
+            Important notice!
+            </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>
+  </Tab>
+  <Tab value="Warning">
+    <div className="flex items-center justify-center">
+      <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger className="border-1 border-amber-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+            <TooltipContent 
+            variant="warning" 
+            size="md" 
+            hasArrow={true}
+            >
+            Important notice!
+            </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>
+  </Tab>
+ <Tab value="Error">
+     <div className="flex items-center justify-center">
+      <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger className="border-1 border-red-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+            <TooltipContent 
+            variant="error" 
+            size="md" 
+            hasArrow={true}
+            >
+            Important notice!
+            </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>  
+  </Tab>
+  <Tab value="Success">
+     <div className="flex items-center justify-center">
+       <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger className="border-1 border-green-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+            <TooltipContent 
+            variant="success" 
+            size="md" 
+            hasArrow={true}
+            >
+            Important notice!
+            </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>  
+  </Tab>
+</Tabs>
+
+---
+
+## Code Example
+
+```tsx
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/snappy-tooltip"
+
+<div className="flex items-center justify-center">
+      <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger>Hover me !</TooltipTrigger>
+            <TooltipContent 
+            variant="default" 
+            size="md" 
+            hasArrow={true}
+            >
+            Important notice!
+            </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+</div>
+```
+
+---
+
+## Props
+
+| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
+|------------|-------------|-----------|------------------------------------------|
+| **variant**  | string      | default         | variant choose from default, info, warning, error, success                   |
+| **size**  | string      | md         | size choose from sm, md, lg           |
+| **className** | string    | -         | Additional CSS classes                  |
+| **hasArrow** | boolean     | false        | HasArrow options from true or false            |
+

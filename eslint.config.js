@@ -11,8 +11,16 @@ export default antfu({
     quotes: "double",
   },
 }, {
+  ignores: [
+    ".github",
+  ],
+}, {
   rules: {
     "ts/no-redeclare": "off",
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      { "ts-ignore": "allow-with-description" },
+    ],
     "ts/consistent-type-definitions": ["error", "type"],
     "no-console": ["warn"],
     "antfu/no-top-level-await": ["off"],
