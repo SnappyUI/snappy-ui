@@ -1,0 +1,107 @@
+---
+title: Price table
+description: A versatile Price Table component for modern web applications
+---
+
+
+import { PriceTable, CardHeader, Price, Features, PurchaseButton } from "@/components/ui/snappy-price-table";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 gap-1 border-zinc-800 rounded-lg overflow-y-auto py-15">
+
+      <PriceTable mostPopular={true} >
+        <CardHeader title="Warrior" />
+        <Price price={"$1999"} timeFrame="mothly" />
+        <Features text="24/7 Gym Access" />
+        <Features text="Personal Training (2x/week)" />
+        <Features text="Nutrition Guide" />
+        <Features text="Group Classes" disable={true} />
+        <PurchaseButton />
+      </PriceTable>
+
+</div>
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/pricetable
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/pricetable
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/pricetable
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/pricetable
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Code Example
+
+```tsx
+import { PriceTable, CardHeader, Price, Features, PurchaseButton } from "@/components/ui/snappy-price-table";
+
+<div className='flex items-center justify-center h-screen gap-9 border-1 flex-row'>
+
+      <PriceTable>
+        <CardHeader title="Beginner" />
+        <Price price={"$999"} timeFrame="mothly" />
+        <Features text="Basic Equipment Access" />
+        <Features text="Guided Workout Plan" />
+        <Features text="Locker Facility" />
+        <Features text="Personal Training" disable={true} />
+        <PurchaseButton />
+      </PriceTable>
+
+      <PriceTable mostPopular={true}>
+        <CardHeader title="Warrior" />
+        <Price price={"$1999"} timeFrame="mothly" />
+        <Features text="24/7 Gym Access" />
+        <Features text="Personal Training (2x/week)" />
+        <Features text="Nutrition Guide" />
+        <Features text="Group Classes" disable={true} />
+        <PurchaseButton/>
+      </PriceTable>
+
+      <PriceTable>
+        <CardHeader title="Champion" />
+        <Price price={"$3999"} timeFrame="mothly" />
+        <Features text="All Warrior Benefits" />
+        <Features text="Daily Personal Training" />
+        <Features text="Custom Meal Plans" />
+        <Features text="Recovery Spa Access" />
+        <PurchaseButton/>
+      </PriceTable>
+
+    </div>
+```
+
+---
+
+## Props
+
+| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
+|------------|-------------|-----------|------------------------------------------|
+| **mostPopular**  | boolean      | false         | Highlights the card as "Most Popular" if true                   |
+| **className** | string    | -         | Additional CSS classes                  |
+| **title** | string     | -        | The  title of the pricing card/Feature            |
+| **price**  | string      | -        | Price value (e.g., "$29")                |
+| **disable** | boolean     | false | If true, feature is marked as unavailable       |
+| **onClick** | clickEventFunction     | - | Click handler function for the button       |
+
