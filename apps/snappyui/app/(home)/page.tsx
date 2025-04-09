@@ -36,14 +36,14 @@ export default function HomePage() {
         <div className="flex flex-row md:flex-row gap-5 items-center justify-center mt-10">
           <Link
             href="/docs"
-            className="p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className=" bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors py-4 min-w-7/12 justify-center"
           >
-            Go to Docs
+            Documentation
           </Link>
           <button
             type="button"
             disabled
-            className="p-4 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex flex-row items-center gap-2 cursor-not-allowed"
+            className=" bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors flex flex-row items-center gap-2 cursor-not-allowed py-4 min-w-7/12 justify-center"
           >
             <svg
               role="img"

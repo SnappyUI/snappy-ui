@@ -57,25 +57,22 @@ The component comes with 10 unique animation variants to enhance user experience
 
 <div className="flex flex-wrap gap-6 my-8 border-1 border-zinc-800 rounded-lg py-5 px-5 justify-center">
   {[
-    { label: "Click me", variant: "bounce" },
-    { label: "Click me", variant: "fade" },
-    { label: "Click me", variant: "slide" },
-    { label: "Click me", variant: "pulse" },
-    { label: "Click me", variant: "flip" },
-    { label: "Click me", variant: "scale" },
-    { label: "Click me", variant: "rotate" },
-    { label: "Click me", variant: "jello" },
-    { label: "Click me", variant: "sweep" },
-    { label: "Click me", variant: "wave" },
-  ].map(({ label, variant }) => (
+    { label: "bounce", variant: "bounce" },
+    { label: "fade", variant: "fade" },
+    { label: "slide", variant: "slide" },
+    { label: "pulse", variant: "pulse" },
+    { label: "flip", variant: "flip" },
+    { label: "scale", variant: "scale" },
+    { label: "rotate", variant: "rotate" },
+    { label: "jello", variant: "jello" },
+    { label: "sweep", variant: "sweep" },
+    { label: "wave", variant: "wave" },
+  ].map(({ label }) => (
     <div
-      key={variant}
+      key={label}
       className="flex flex-col items-center gap-2 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
     >
-      <Check label={label} variant={variant} />
-      <code className="text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">
-        {variant}
-      </code>
+      <Check label={label} variant={label} />
     </div>
   ))}
 </div>
