@@ -4,23 +4,23 @@ description: A highly customizable button component for modern web applications
 ---
 
 import {
-    DropdownMenu,
-    DropdownMenuTrigger,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuCheckboxItem,
-    DropdownMenuRadioItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuGroup,
-    DropdownMenuSub,
-    DropdownMenuSubTrigger,
-    DropdownMenuSubContent,
-    DropdownMenuRadioGroup,
-    DropdownMenuAction,
-    DropdownMenuHeader,
-    DropdownMenuFooter,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuGroup,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuAction,
+  DropdownMenuHeader,
+  DropdownMenuFooter,
 } from "@/components/ui/snappy-dropdown"
 import { Settings, User, LogOut, Edit, Trash, Plus, FileText, Home, Bell, MoreHorizontal, MoreVertical, ArrowRight } from "lucide-react"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
@@ -57,8 +57,8 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 <div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
   <DropdownMenu>
       <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuHeader 
+      <DropdownMenuContent  className="w-56"  side="bottom">
+        <DropdownMenuHeader  
           title="John Doe" 
           description="john.doe@example.com" 
           icon={<User />} 
@@ -144,7 +144,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     <div className="flex items-center justify-center">
         <DropdownMenu>
             <DropdownMenuTrigger>Default</DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent side="bottom">
                 <DropdownMenuItem>Profile</DropdownMenuItem>
                 <DropdownMenuItem>Settings </DropdownMenuItem>
                 <DropdownMenuSeparator/>
