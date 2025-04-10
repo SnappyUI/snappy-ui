@@ -6,38 +6,9 @@ description: A highly customizable button component for modern web applications
 import Button from "@/components/ui/snappy-button";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-# Snappy Button Component
-
-A flexible button component with multiple variants, sizes, and a unique moving border animation for creating engaging user interfaces.
-
 ---
 
-## Installation
 
-<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
-  <Tab value="pnpm">
-    ```bash
-    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/button
-    ```
-  </Tab>
-  <Tab value="npm">
-    ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/button
-    ```
-  </Tab>
-  <Tab value="yarn">
-    ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/button
-    ```
-  </Tab>
-  <Tab value="bun">
-    ```bash
-    bunx --bun shadcn@latest add http://snappyui.in/api/registry/button
-    ```
-  </Tab>
-</Tabs>
-
----
 
 ## Basic Usage
 
@@ -65,7 +36,7 @@ export default function ButtonExample() {
 
 ---
 
-## Variants
+### Variants
 
 <Tabs
   items={[
@@ -123,7 +94,7 @@ export default function ButtonExample() {
 
 ---
 
-## Sizes
+### Sizes
 
 <Tabs items={["sm", "default", "lg", "xl"]}>
   <Tab value="sm">
@@ -149,7 +120,7 @@ export default function ButtonExample() {
 
 ---
 
-## MovingBorder Component
+### MovingBorder Component
 
 The `MovingBorder` component can be used independently:
 
@@ -172,7 +143,7 @@ export default function CustomMovingBorder() {
 }
 ```
 
-## Moving Border Animation
+### Moving Border Animation
 
 The moving border variant creates a dynamic animated border effect.
 
@@ -227,7 +198,7 @@ You can also use a custom border style with Tailwind classes:
 
 ---
 
-## Custom Border Radius
+### Custom Border Radius
 
 <Tabs items={["default", "rounded", "square", "pill"]}>
   <Tab value="default">
@@ -253,7 +224,7 @@ You can also use a custom border style with Tailwind classes:
 
 ---
 
-## Disabled State
+### Disabled State
 
 <div className="flex flex-col items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
   <div className="flex flex-wrap justify-center gap-4">
@@ -271,7 +242,7 @@ You can also use a custom border style with Tailwind classes:
 
 ---
 
-## Event Handling
+### Event Handling
 
 ```tsx
 import Button from "@/components/ui/snappy-button";
@@ -288,6 +259,31 @@ export default function ButtonWithEvent() {
   );
 }
 ```
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/button
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/button
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/button
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/button
+    ```
+  </Tab>
+</Tabs>
 
 ---
 

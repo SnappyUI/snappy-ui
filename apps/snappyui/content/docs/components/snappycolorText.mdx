@@ -9,7 +9,62 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
 
-## Installation
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 gap-1 border-zinc-800 rounded-lg py-5">
+
+  <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <SnappyText text="SnappyUi" />  
+  </h6>
+
+</div>
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+  {[
+    { Component: SnappyText, name: "SnappyUi" },
+    { Component: PastelText, name: "SnappyUi" },
+    { Component: MatrixText, name: "SnappyUi" },
+    { Component: VintageText, name: "SnappyUi" },
+    { Component: CyberpunkText, name: "SnappyUi" },
+    { Component: GalaxyText, name: "SnappyUi" },
+    { Component: ForestText, name: "SnappyUi" },
+    { Component: MonochromeText, name: "SnappyUi" },
+    { Component: CandyText, name: "SnappyUi" },
+    { Component: NeonText, name: "SnappyUi" },
+    { Component: SunsetText, name: "SnappyUi" },
+    { Component: OceanText, name: "SnappyUi" },
+    { Component: ColourfulText, name: "SnappyUi" },
+  ].map(({ Component, name }, index) => (
+    <div
+      key={index}
+      className="flex items-center justify-center p-5 bg-white/10 backdrop-blur-xl rounded-xl shadow-md border border-white/20 hover:scale-105 hover:shadow-lg transition-all duration-300"
+    >
+      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 whitespace-nowrap">
+        Let's try <Component text={name} className="text-xl md:text-2xl font-bold" />
+      </p>
+    </div>
+  ))}
+</div>
+
+
+
+
+---
+
+### Code Example
+
+```tsx
+import {ColourfulText,OceanText, SunsetText, NeonText, MonochromeText,ForestText,GalaxyText,CyberpunkText,VintageText,CandyText,MatrixText,PastelText,SnappyText} from "@/components/ui/snappy-colorful-text";
+
+<div className="flex items-center justify-center">
+      Let's try <SnappyText text="SnappyUi" />
+</div>
+```
+
+---
+
+### Installation
 
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
   <Tab value="pnpm">
@@ -33,103 +88,6 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     ```
   </Tab>
 </Tabs>
-
-## Basic Usage
-
-<div className="flex flex-col items-center justify-center mb-6 border-1 gap-1 border-zinc-800 rounded-lg py-5">
-
-  <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
-        Let's try <SnappyText text="SnappyUi" />  
-  </h6>
-
-</div>
-
-<Tabs scroll="true" items={["SnappyText", "PastelText", "MatrixText", 
-,"VintageText","CyberpunkText","GalaxyText","ForestText"]}>
-  <Tab value="SnappyText">
-   <div className="flex items-center justify-center">
-       Let's try <SnappyText text="SnappyUi" />  
-   </div>
-  </Tab>
-  <Tab value="PastelText">
-    <div className="flex items-center justify-center">
-       Let's try <PastelText text="SnappyUi" />  
-    </div>
-  </Tab>
-  <Tab value="MatrixText">
-    <div className="flex items-center justify-center">
-        Let's try <MatrixText text="SnappyUi" />  
-    </div>
-  </Tab>
- 
-  <Tab value="VintageText">
-     <div className="flex items-center justify-center">
-        Let's try <VintageText text="SnappyUi" /> 
-     </div>  
-  </Tab>
-  <Tab value="CyberpunkText">
-     <div className="flex items-center justify-center">
-         Let's try <CyberpunkText text="SnappyUi" /> 
-     </div>  
-  </Tab>
-  <Tab value="GalaxyText">
-     <div className="flex items-center justify-center">
-         Let's try <GalaxyText text="SnappyUi" /> 
-     </div>  
-  </Tab>
-  <Tab value="ForestText">
-     <div className="flex items-center justify-center">
-        Let's try <ForestText text="SnappyUi" /> 
-     </div>  
-  </Tab>
-</Tabs>
-
-<Tabs scroll="true" items={["MonochromeText","NeonText","SunsetText","OceanText","CandyText","ColourfulText"  ]}>
-  <Tab value="MonochromeText">
-   <div className="flex items-center justify-center">
-      Let's try <MonochromeText text="SnappyUi" /> 
-   </div>
-  </Tab>
-  <Tab value="CandyText">
-     <div className="flex items-center justify-center">
-        Let's try <CandyText text="SnappyUi" />  
-     </div>  
-  </Tab>
-  <Tab value="NeonText">
-    <div className="flex items-center justify-center">
-      Let's try <NeonText text="SnappyUi" />
-    </div>
-  </Tab>
-  <Tab value="SunsetText">
-    <div className="flex items-center justify-center">
-      Let's try <SunsetText text="SnappyUi" />
-    </div>
-  </Tab>
- <Tab value="OceanText">
-     <div className="flex items-center justify-center">
-        Let's try <OceanText text="SnappyUi" />
-     </div>  
-  </Tab>
-  <Tab value="ColourfulText">
-     <div className="flex items-center justify-center">
-       Let's try <ColourfulText text="SnappyUi" />
-     </div>  
-  </Tab>
-</Tabs>
-
----
-
-## Code Example
-
-```tsx
-import {ColourfulText,OceanText, SunsetText, NeonText, MonochromeText,ForestText,GalaxyText,CyberpunkText,VintageText,CandyText,MatrixText,PastelText,SnappyText} from "@/components/ui/snappy-colorful-text";
-
-<div className="flex items-center justify-center">
-      Let's try <SnappyText text="SnappyUi" />
-</div>
-```
-
----
 
 ## Props
 

@@ -10,13 +10,17 @@ import CircularLoader from '@/components/ui/snappy-loader'
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { fromTheme } from 'tailwind-merge';
 
-# Snappy Loader Component
 
-Snappy Loader is a simple and customizable loader component for React applications.
+
+## Basic Usage
+
+
+<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
+    <CircularLoader />
+</div>
 
 ---
-
-## Installation
+### Installation
 
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
   <Tab value="pnpm">
@@ -40,17 +44,9 @@ Snappy Loader is a simple and customizable loader component for React applicatio
     ```
   </Tab>
 </Tabs>
-
-### Basic Usage
-
-
-<div className="flex flex-col items-center justify-center gap-7 mb-6 border-1 border-zinc-800 rounded-lg py-5">
-    <CircularLoader />
-</div>
-
 ---
 
-## Code Example
+### Code Example
 
 ```tsx
 import CircularLoader from '@/components/ui/snappy-loader'

@@ -10,12 +10,116 @@ import Card from "@/components/ui/snappy-card";
 
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-# Snappy Card Component
-
-A flexible card component that supports images, titles, and custom content with various styling variants.
-
 ---
 
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
+  <Card
+    title="Image Card"
+    variant="dark"
+  >
+    <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
+    <p>Random image from Lorem Picsum</p>
+  </Card>
+
+</div>
+
+<Tabs items={["dark", "default", "primary", "success", "warning", "delete"]}>
+  <Tab value="dark">
+    <Card title="Default Card" variant="dark" className="text-gray-500">
+      Basic card example with title and content.
+    </Card>
+    ---
+    ```tsx 
+      <Card
+        title="Simple Card"
+        variant="dark"
+        className="text-gray-500"
+      >
+        Basic card example with title and content.
+      </Card>
+    ``` 
+  </Tab>
+  <Tab value="default">
+    <Card title="Default Card" variant="default" className="text-gray-500">
+      Basic card example with title and content.
+    </Card>
+    ---
+    ```tsx 
+      <Card
+        title="Simple Card"
+        variant="default"
+        className="text-gray-500"
+      >
+        Basic card example with title and content.
+      </Card>
+    ``` 
+  </Tab>
+  <Tab value="primary">
+   <Card title="Primary Card" variant="primary" className="text-gray-500">
+      Basic card example with title and content.
+    </Card>
+    ---
+    ```tsx 
+      <Card
+        title="Simple Card"
+        variant="primary"
+        className="text-gray-500"
+      >
+        Basic card example with title and content.
+      </Card>
+    ```
+  </Tab>
+  <Tab value="success">
+    <Card title="Success Card" variant="success" className="text-gray-500">
+      Basic card example with title and content.
+    </Card>
+    ---
+    ```tsx 
+      <Card
+        title="Simple Card"
+        variant="success"
+        className="text-gray-500"
+      >
+        Basic card example with title and content.
+      </Card>
+    ```
+  </Tab>
+  <Tab value="warning">
+    <Card title="Warning Card" variant="warning" className="text-gray-500">
+      Basic card example with title and content.
+    </Card>
+    ---
+    ```tsx 
+      <Card
+        title="Simple Card"
+        variant="warning"
+        className="text-gray-500"
+      >
+        Basic card example with title and content.
+      </Card>
+    ```
+  </Tab>
+  <Tab value="delete">
+    <Card title="Delete Card" variant="delete" className="text-gray-500">
+      Basic card example with title and content.
+    </Card>
+    ---
+    ```tsx 
+      <Card
+        title="Simple Card"
+        variant="delete"
+        className="text-gray-500"
+      >
+        Basic card example with title and content.
+      </Card>
+    ```
+  </Tab>
+</Tabs>
+
+---
 ## Installation
 
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
@@ -40,48 +144,6 @@ A flexible card component that supports images, titles, and custom content with 
     ```
   </Tab>
 </Tabs>
-
-## Basic Usage
-
-<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-  <Card
-    title="Image Card"
-    variant="dark"
-  >
-    <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
-    <p>Random image from Lorem Picsum</p>
-  </Card>
-
-</div>
-
-<Tabs items={["dark", "default", "primary", "success", "warning"]}>
-  <Tab value="dark">
-    <Card title="Default Card" variant="dark" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="default">
-    <Card title="Default Card" variant="default" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="primary">
-    <Card title="Primary Card" variant="primary" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="success">
-    <Card title="Success Card" variant="success" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="warning">
-    <Card title="Warning Card" variant="warning" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-</Tabs>
-
 ---
 
 ## Code Example
