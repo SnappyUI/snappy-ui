@@ -10,7 +10,117 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
 
-## Installation
+
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 p-5 border-1 border-zinc-800 rounded-lg py-5">
+
+ <TextTypingEffect words="This text will animate character by character" className="text-3xl"/>
+  
+</div>
+
+<Tabs items={["TextTypingEffect", "TextDirectionalFade", "TextColorTransition", "TextScaleEffect", "TextSplitEffect"]}>
+  <Tab value="TextTypingEffect">
+    <TextTypingEffect 
+        words="Welcome to my portfolio website" 
+        typingSpeed={0.7} 
+        className="text-3xl text-blue-400" 
+    />
+    ---
+    ```tsx
+    import { TextTypingEffect } from "@/components/ui/snappy-text-generate";
+
+    <TextTypingEffect 
+        words="Welcome to my portfolio website" 
+        typingSpeed={0.7} 
+        className="text-3xl text-blue-400" 
+    />
+    ```
+  </Tab>
+  <Tab value="TextDirectionalFade">
+    <TextDirectionalFade 
+        words="Animated text from different directions" 
+        direction="left" 
+        staggerTime={0.08} 
+        duration={0.6} 
+        className="text-4xl text-purple-300"
+      />
+      ---
+       ```tsx
+    import { TextDirectionalFade } from "@/components/ui/snappy-text-generate";
+
+    <TextDirectionalFade 
+        words="Animated text from different directions" 
+        direction="left" 
+        staggerTime={0.08} 
+        duration={0.6} 
+        className="text-4xl text-purple-300"
+      />
+    ```  
+  </Tab>
+  <Tab value="TextColorTransition">
+     <TextColorTransition 
+        words="Text that transitions between colors" 
+        fromColor="rgb(100, 100, 100)" 
+        toColor="rgb(255, 215, 0)" 
+        duration={5} 
+        className="text-3xl"
+      />
+      ---
+      ```tsx
+    import {TextColorTransition} from "@/components/ui/snappy-text-generate";
+
+     <TextColorTransition 
+        words="Text that transitions between colors" 
+        fromColor="rgb(100, 100, 100)" 
+        toColor="rgb(255, 215, 0)" 
+        duration={5} 
+        className="text-3xl"
+      />
+    ```
+  </Tab>
+  <Tab value="TextScaleEffect">
+    <TextScaleEffect 
+        words="Words that scale up with a bounce effect" 
+        staggerTime={0.15} 
+        duration={0.6} 
+        rotation={true} 
+        className="text-3xl text-green-500"
+      />
+      ---
+      ```tsx
+   import { TextScaleEffect } from "@/components/ui/snappy-text-generate";
+
+    <TextScaleEffect 
+        words="Words that scale up with a bounce effect" 
+        staggerTime={0.15} 
+        duration={0.6} 
+        rotation={true} 
+        className="text-3xl text-green-500"
+      />
+     ```
+  </Tab>
+  <Tab value="TextSplitEffect">
+    <TextSplitEffect 
+        words="Each letter animates individually" 
+        duration={1.2} 
+        className="text-2xl text-rose-300"
+      />
+      ---
+      ```tsx
+   import { TextSplitEffect } from "@/components/ui/snappy-text-generate";
+
+    <TextSplitEffect 
+        words="Each letter animates individually" 
+        duration={1.2} 
+        className="text-2xl text-rose-300"
+      />
+    ```
+  </Tab>
+</Tabs>
+
+### Installation
 
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
   <Tab value="pnpm">
@@ -35,127 +145,8 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
   </Tab>
 </Tabs>
 
-## Basic Usage
-
-<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-
- <TextTypingEffect words="This text will animate character by character" className="text-3xl"/>
-  
-</div>
-
-<Tabs items={["TextTypingEffect", "TextDirectionalFade", "TextColorTransition", "TextScaleEffect", "TextSplitEffect"]}>
-  <Tab value="TextTypingEffect">
-    <TextTypingEffect 
-        words="Welcome to my portfolio website" 
-        typingSpeed={0.7} 
-        className="text-3xl text-blue-400" 
-    />
-  </Tab>
-  <Tab value="TextDirectionalFade">
-    <TextDirectionalFade 
-        words="Animated text from different directions" 
-        direction="left" 
-        staggerTime={0.08} 
-        duration={0.6} 
-        className="text-4xl text-purple-300"
-      />
-  </Tab>
-  <Tab value="TextColorTransition">
-     <TextColorTransition 
-        words="Text that transitions between colors" 
-        fromColor="rgb(100, 100, 100)" 
-        toColor="rgb(255, 215, 0)" 
-        duration={5} 
-        className="text-3xl"
-      />
-  </Tab>
-  <Tab value="TextScaleEffect">
-    <TextScaleEffect 
-        words="Words that scale up with a bounce effect" 
-        staggerTime={0.15} 
-        duration={0.6} 
-        rotation={true} 
-        className="text-3xl text-green-500"
-      />
-  </Tab>
-  <Tab value="TextSplitEffect">
-    <TextSplitEffect 
-        words="Each letter animates individually" 
-        duration={1.2} 
-        className="text-2xl text-rose-300"
-      />
-  </Tab>
-</Tabs>
-
 ---
 
-## Code Example
-
-<Tabs items={["TextTypingEffect", "TextDirectionalFade", "TextColorTransition", "TextScaleEffect", "TextSplitEffect"]}>
-  <Tab value="TextTypingEffect">
-    ```tsx
-    import { TextTypingEffect } from "@/components/ui/snappy-text-generate";
-
-    <TextTypingEffect 
-        words="Welcome to my portfolio website" 
-        typingSpeed={0.7} 
-        className="text-3xl text-blue-400" 
-    />
-    ```
-  </Tab>
-  <Tab value="TextDirectionalFade">
-   ```tsx
-    import { TextDirectionalFade } from "@/components/ui/snappy-text-generate";
-
-    <TextDirectionalFade 
-        words="Animated text from different directions" 
-        direction="left" 
-        staggerTime={0.08} 
-        duration={0.6} 
-        className="text-4xl text-purple-300"
-      />
-    ```  
-  </Tab>
-  <Tab value="TextColorTransition">
-    ```tsx
-    import {TextColorTransition} from "@/components/ui/snappy-text-generate";
-
-     <TextColorTransition 
-        words="Text that transitions between colors" 
-        fromColor="rgb(100, 100, 100)" 
-        toColor="rgb(255, 215, 0)" 
-        duration={5} 
-        className="text-3xl"
-      />
-    ``` 
-  </Tab>
-  <Tab value="TextScaleEffect">
-   ```tsx
-   import { TextScaleEffect } from "@/components/ui/snappy-text-generate";
-
-    <TextScaleEffect 
-        words="Words that scale up with a bounce effect" 
-        staggerTime={0.15} 
-        duration={0.6} 
-        rotation={true} 
-        className="text-3xl text-green-500"
-      />
-     ```  
-  </Tab>
-  <Tab value="TextSplitEffect">
-   ```tsx
-   import { TextSplitEffect } from "@/components/ui/snappy-text-generate";
-
-    <TextSplitEffect 
-        words="Each letter animates individually" 
-        duration={1.2} 
-        className="text-2xl text-rose-300"
-      />
-    ```    
-  </Tab>
-</Tabs>
-
----
 
 ## Props
 
