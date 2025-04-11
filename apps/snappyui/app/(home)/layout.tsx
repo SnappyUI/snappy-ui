@@ -1,9 +1,20 @@
 import type { ReactNode } from "react";
 
-import { HomeLayout } from "fumadocs-ui/layouts/home";
-
-import { baseOptions } from "@/app/layout.config";
+import { RootProvider } from "fumadocs-ui/provider";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <HomeLayout className="dark:bg-[#0a0b11] bg-white" {...baseOptions}>{children}</HomeLayout>;
+  return (
+    <RootProvider
+      theme={{
+        enableSystem: true,
+        defaultTheme: "dark",
+      }}
+    >
+
+      <div className="flex flex-col items-center bg-transparent ">
+
+        {children}
+      </div>
+    </RootProvider>
+  );
 }
