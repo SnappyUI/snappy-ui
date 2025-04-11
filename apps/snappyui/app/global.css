@@ -7,7 +7,7 @@
 
 :root {
   /* --fd-layout-width: 1400px; */
-  --fd-layout-width: 1536px;
+  /* --fd-layout-width: 1536px; */
 
   --radius: 0.625rem;
 
@@ -217,10 +217,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-html,
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
 }

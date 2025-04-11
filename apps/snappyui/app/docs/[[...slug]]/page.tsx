@@ -23,8 +23,10 @@ export default async function Page(props: {
 
   return (
     <DocsPage
+
       tableOfContent={{
         style: "clerk",
+        header: <div className="w-10 h-4"></div>,
       }}
       toc={page.data.toc}
       full={page.data.full}
