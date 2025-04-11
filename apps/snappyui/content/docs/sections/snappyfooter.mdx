@@ -1,0 +1,649 @@
+---
+title: Footer
+description: A versatile footer component with multiple variants for modern web applications
+---
+
+import Footer from "@/components/ui/snappy-footer";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+
+
+## Basic Usage
+
+<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg p-5 gap-5">
+  <Footer
+    variant="simple"
+    copyright="© 2025 SnappyUI. All rights reserved."
+    columns={[
+      {
+        title: "Products",
+        links: [
+          { label: "Features", href: "/features" },
+          { label: "Pricing", href: "/pricing" },
+        ],
+      },
+      {
+        title: "Resources",
+        links: [
+          { label: "Documentation", href: "/docs" },
+          { label: "Blog", href: "/blog" },
+        ],
+      },
+    ]}
+    socialLinks={[
+      { label: "Twitter", href: "https://twitter.com" },
+      { label: "GitHub", href: "https://github.com" },
+    ]}
+  />
+</div>
+
+## Variants
+
+<Tabs items={["simple", "detailed", "minimal", "centered", "modern", "classic", "elegant"]}>
+  <Tab value="simple">
+    <Footer
+      variant="simple"
+      copyright="© 2025 SnappyUI. All rights reserved."
+      columns={[
+        {
+          title: "Products",
+          links: [
+            { label: "Features", href: "/features" },
+            { label: "Pricing", href: "/pricing" },
+          ],
+        },
+        {
+          title: "Resources",
+          links: [
+            { label: "Documentation", href: "/docs" },
+            { label: "Blog", href: "/blog" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+      ]}
+    />
+  </Tab>
+
+  <Tab value="detailed">
+    <Footer
+      variant="detailed"
+      copyright="© 2025 SnappyUI. All rights reserved."
+      columns={[
+        {
+          title: "PRODUCTS",
+          links: [
+            { label: "Features", href: "/features" },
+            { label: "Pricing", href: "/pricing" },
+            { label: "Templates", href: "/templates" },
+          ],
+        },
+        {
+          title: "RESOURCES",
+          links: [
+            { label: "Documentation", href: "/docs" },
+            { label: "Blog", href: "/blog" },
+            { label: "Support", href: "/support" },
+          ],
+        },
+        {
+          title: "COMPANY",
+          links: [
+            { label: "About", href: "/about" },
+            { label: "Contact", href: "/contact" },
+            { label: "Careers", href: "/careers" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+        { label: "LinkedIn", href: "https://linkedin.com" },
+      ]}
+      bottomText="Making web development snappy since 2023"
+    />
+  </Tab>
+
+  <Tab value="minimal">
+    <Footer
+      variant="minimal"
+      copyright="© 2025 SnappyUI"
+      columns={[
+        {
+          links: [
+            { label: "Terms", href: "/terms" },
+            { label: "Privacy", href: "/privacy" },
+            { label: "Cookies", href: "/cookies" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+      ]}
+    />
+  </Tab>
+
+  <Tab value="centered">
+    <Footer
+      variant="centered"
+      copyright="© 2025 SnappyUI. All rights reserved."
+      columns={[
+        {
+          links: [
+            { label: "Features", href: "/features" },
+            { label: "Pricing", href: "/pricing" },
+            { label: "Documentation", href: "/docs" },
+            { label: "About", href: "/about" },
+            { label: "Contact", href: "/contact" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+        { label: "LinkedIn", href: "https://linkedin.com" },
+        { label: "YouTube", href: "https://youtube.com" },
+      ]}
+    />
+  </Tab>
+
+  {/* <Tab value="dark">
+    <Footer
+      variant="dark"
+      copyright="© 2025 SnappyUI. All rights reserved."
+      columns={[
+        {
+          title: "PRODUCTS",
+          links: [
+            { label: "Components", href: "/components" },
+            { label: "Templates", href: "/templates" },
+            { label: "Pricing", href: "/pricing" }, 
+          ],
+        },
+        {
+          title: "RESOURCES",
+          links: [
+            { label: "Documentation", href: "/docs" },
+            { label: "API Reference", href: "/api" },
+            { label: "Examples", href: "/examples" },
+          ],
+        },
+        {
+          title: "COMPANY",
+          links: [
+            { label: "About", href: "/about" },
+            { label: "Blog", href: "/blog" },
+            { label: "Careers", href: "/careers" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+        { label: "Discord", href: "https://discord.com" },
+      ]}
+      bottomText="Building modern UIs for the web"
+    />
+  </Tab> */}
+
+  <Tab value="modern">
+    <Footer
+      variant="modern"
+      copyright="© 2025 SnappyUI. All rights reserved."
+      columns={[
+        {
+          title: "Products",
+          links: [
+            { label: "Features", href: "/features" },
+            { label: "Pricing", href: "/pricing" },
+            { label: "Templates", href: "/templates" },
+          ],
+        },
+        {
+          title: "Resources",
+          links: [
+            { label: "Documentation", href: "/docs" },
+            { label: "API", href: "/api" },
+            { label: "Guides", href: "/guides" },
+          ],
+        },
+        {
+          title: "Company",
+          links: [
+            { label: "About", href: "/about" },
+            { label: "Blog", href: "/blog" },
+            { label: "Careers", href: "/careers" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+        { label: "LinkedIn", href: "https://linkedin.com" },
+      ]}
+      bottomText="Creating modern user interfaces with style"
+    />
+  </Tab>
+
+  <Tab value="classic">
+    <Footer
+      variant="classic"
+      copyright="© 2025 SnappyUI. All rights reserved."
+      columns={[
+        {
+          title: "Services",
+          links: [
+            { label: "Web Design", href: "/web-design" },
+            { label: "Development", href: "/development" },
+            { label: "Consulting", href: "/consulting" },
+          ],
+        },
+        {
+          title: "Learn",
+          links: [
+            { label: "Tutorials", href: "/tutorials" },
+            { label: "Resources", href: "/resources" },
+            { label: "Blog", href: "/blog" },
+          ],
+        },
+        {
+          title: "About",
+          links: [
+            { label: "Our Story", href: "/story" },
+            { label: "Team", href: "/team" },
+            { label: "Contact", href: "/contact" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+        { label: "LinkedIn", href: "https://linkedin.com" },
+      ]}
+      bottomText="Crafting digital experiences since 2020"
+    />
+  </Tab>
+
+  <Tab value="elegant">
+    <Footer
+      variant="elegant"
+      copyright="© 2025 SnappyUI. All rights reserved."
+      columns={[
+        {
+          title: "Solutions",
+          links: [
+            { label: "Enterprise", href: "/enterprise" },
+            { label: "Startups", href: "/startups" },
+            { label: "Personal", href: "/personal" },
+          ],
+        },
+        {
+          title: "Resources",
+          links: [
+            { label: "Documentation", href: "/docs" },
+            { label: "Case Studies", href: "/case-studies" },
+            { label: "Whitepapers", href: "/whitepapers" },
+          ],
+        },
+        {
+          title: "Company",
+          links: [
+            { label: "About", href: "/about" },
+            { label: "Values", href: "/values" },
+            { label: "Contact", href: "/contact" },
+          ],
+        },
+      ]}
+      socialLinks={[
+        { label: "Twitter", href: "https://twitter.com" },
+        { label: "GitHub", href: "https://github.com" },
+        { label: "LinkedIn", href: "https://linkedin.com" },
+      ]}
+      bottomText="Elegant solutions for modern challenges"
+    />
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash 
+    pnpm dlx shadcn@latest add http://dev.snappyui.in/api/registry/footer 
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash 
+    npx shadcn@latest add http://dev.snappyui.in/api/registry/footer 
+    ```
+
+  </Tab>
+  <Tab value="yarn">
+    ```bash 
+    yarn dlx shadcn@latest add http://dev.snappyui.in/api/registry/footer 
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash 
+    bunx --bun shadcn@latest add  http://dev.snappyui.in/api/registry/footer 
+    ```
+  </Tab>
+</Tabs>
+
+## Code Example
+
+<Tabs items={["simple", "detailed", "minimal", "centered", "modern", "classic", "elegant"]}>
+  <Tab value="simple">
+```tsx
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="simple" 
+  copyright="© 2025 SnappyUI. All rights reserved." 
+  columns={[
+    { 
+      title: "Products", 
+      links: [
+        { label: "Features", href: "/features" }, 
+        { label: "Pricing", href: "/pricing" }
+      ] 
+    }, 
+    { 
+      title: "Resources", 
+      links: [
+        { label: "Documentation", href: "/docs" }, 
+        { label: "Blog", href: "/blog" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }
+  ]} 
+/>
+```
+  </Tab>
+
+  <Tab value="detailed">
+```tsx
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="detailed" 
+  copyright="© 2025 SnappyUI. All rights reserved." 
+  columns={[
+    { 
+      title: "PRODUCTS", 
+      links: [
+        { label: "Features", href: "/features" }, 
+        { label: "Pricing", href: "/pricing" }, 
+        { label: "Templates", href: "/templates" }
+      ] 
+    }, 
+    { 
+      title: "RESOURCES", 
+      links: [
+        { label: "Documentation", href: "/docs" }, 
+        { label: "Blog", href: "/blog" }, 
+        { label: "Support", href: "/support" }
+      ] 
+    }, 
+    { 
+      title: "COMPANY", 
+      links: [
+        { label: "About", href: "/about" }, 
+        { label: "Contact", href: "/contact" }, 
+        { label: "Careers", href: "/careers" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }, 
+    { label: "LinkedIn", href: "https://linkedin.com" }
+  ]} 
+  bottomText="Making web development snappy since 2023" 
+/>
+```
+  </Tab>
+
+  <Tab value="minimal">
+```tsx 
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="minimal" 
+  copyright="© 2025 SnappyUI" 
+  columns={[
+    { 
+      links: [
+        { label: "Terms", href: "/terms" }, 
+        { label: "Privacy", href: "/privacy" }, 
+        { label: "Cookies", href: "/cookies" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }
+  ]} 
+/>
+```
+  </Tab>
+
+  <Tab value="centered">
+```tsx 
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="centered" 
+  copyright="© 2025 SnappyUI. All rights reserved." 
+  columns={[
+    { 
+      links: [
+        { label: "Features", href: "/features" }, 
+        { label: "Pricing", href: "/pricing" }, 
+        { label: "Documentation", href: "/docs" }, 
+        { label: "About", href: "/about" }, 
+        { label: "Contact", href: "/contact" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }, 
+    { label: "LinkedIn", href: "https://linkedin.com" }, 
+    { label: "YouTube", href: "https://youtube.com" }
+  ]} 
+/>
+```
+  </Tab>
+
+  {/* <Tab value="dark">
+```tsx
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="dark" 
+  copyright="© 2025 SnappyUI. All rights reserved." 
+  columns={[
+    { 
+      title: "PRODUCTS", 
+      links: [
+        { label: "Components", href: "/components" }, 
+        { label: "Templates", href: "/templates" }, 
+        { label: "Pricing", href: "/pricing" }
+      ] 
+    }, 
+    { 
+      title: "RESOURCES", 
+      links: [
+        { label: "Documentation", href: "/docs" }, 
+        { label: "API Reference", href: "/api" }, 
+        { label: "Examples", href: "/examples" }
+      ] 
+    }, 
+    { 
+      title: "COMPANY", 
+      links: [
+        { label: "About", href: "/about" }, 
+        { label: "Blog", href: "/blog" }, 
+        { label: "Careers", href: "/careers" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }, 
+    { label: "Discord", href: "https://discord.com" }
+  ]} 
+  bottomText="Building modern UIs for the web" 
+/>
+```
+  </Tab> */}
+
+  <Tab value="modern">
+```tsx
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="modern" 
+  copyright="© 2025 SnappyUI. All rights reserved." 
+  columns={[
+    { 
+      title: "Products", 
+      links: [
+        { label: "Features", href: "/features" }, 
+        { label: "Pricing", href: "/pricing" }, 
+        { label: "Templates", href: "/templates" }
+      ] 
+    }, 
+    { 
+      title: "Resources", 
+      links: [
+        { label: "Documentation", href: "/docs" }, 
+        { label: "API", href: "/api" }, 
+        { label: "Guides", href: "/guides" }
+      ] 
+    }, 
+    { 
+      title: "Company", 
+      links: [
+        { label: "About", href: "/about" }, 
+        { label: "Blog", href: "/blog" }, 
+        { label: "Careers", href: "/careers" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }, 
+    { label: "LinkedIn", href: "https://linkedin.com" }
+  ]} 
+  bottomText="Creating modern user interfaces with style" 
+/>
+```
+  </Tab>
+
+  <Tab value="classic">
+```tsx
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="classic" 
+  copyright="© 2025 SnappyUI. All rights reserved." 
+  columns={[
+    { 
+      title: "Services", 
+      links: [
+        { label: "Web Design", href: "/web-design" }, 
+        { label: "Development", href: "/development" }, 
+        { label: "Consulting", href: "/consulting" }
+      ] 
+    }, 
+    { 
+      title: "Learn", 
+      links: [
+        { label: "Tutorials", href: "/tutorials" }, 
+        { label: "Resources", href: "/resources" }, 
+        { label: "Blog", href: "/blog" }
+      ] 
+    }, 
+    { 
+      title: "About", 
+      links: [
+        { label: "Our Story", href: "/story" }, 
+        { label: "Team", href: "/team" }, 
+        { label: "Contact", href: "/contact" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }, 
+    { label: "LinkedIn", href: "https://linkedin.com" }
+  ]} 
+  bottomText="Crafting digital experiences since 2020" 
+/>
+```
+  </Tab>
+  
+  <Tab value="elegant">
+```tsx
+import Footer from "@/components/ui/snappy-footer";
+
+<Footer 
+  variant="elegant" 
+  copyright="© 2025 SnappyUI. All rights reserved." 
+  columns={[
+    { 
+      title: "Solutions", 
+      links: [
+        { label: "Enterprise", href: "/enterprise" }, 
+        { label: "Startups", href: "/startups" }, 
+        { label: "Personal", href: "/personal" }
+      ] 
+    }, 
+    { 
+      title: "Resources", 
+      links: [
+        { label: "Documentation", href: "/docs" }, 
+        { label: "Case Studies", href: "/case-studies" }, 
+        { label: "Whitepapers", href: "/whitepapers" }
+      ] 
+    }, 
+    { 
+      title: "Company", 
+      links: [
+        { label: "About", href: "/about" }, 
+        { label: "Values", href: "/values" }, 
+        { label: "Contact", href: "/contact" }
+      ] 
+    }
+  ]} 
+  socialLinks={[
+    { label: "Twitter", href: "https://twitter.com" }, 
+    { label: "GitHub", href: "https://github.com" }, 
+    { label: "LinkedIn", href: "https://linkedin.com" }
+  ]} 
+  bottomText="Elegant solutions for modern challenges" 
+/>
+```
+  </Tab>
+</Tabs>
+
+## Props
+
+| **Name**      | **Type**         | **Default** | **Description**                                                                                          |
+| ------------- | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------- |
+| `variant`     | `string`         | `'simple'`  | Footer style variant: 'simple', 'detailed', 'minimal', 'centered', 'modern', 'classic', 'elegant' |
+| `size`        | `string`         | `'default'` | Footer size: 'sm', 'default', 'lg'                                                                       |
+| `logo`        | `ReactNode`      | `-`         | Logo component to display in the footer                                                                  |
+| `copyright`   | `string`         | `-`         | Copyright text to display                                                                                |
+| `columns`     | `FooterColumn[]` | `[]`        | Navigation columns with links                                                                            |
+| `socialLinks` | `FooterLink[]`   | `[]`        | Social media links                                                                                       |
+| `bottomText`  | `string`         | `-`         | Additional text displayed at the bottom                                                                  |
+| `className`   | `string`         | `-`         | Additional CSS classes for the footer                                                                    |
