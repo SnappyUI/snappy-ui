@@ -1,6 +1,7 @@
 import "./global.css";
 
 import type { ReactNode } from "react";
+// import Image from "next/image";
 
 import { RootProvider } from "fumadocs-ui/provider";
 import { Inter } from "next/font/google";
@@ -22,6 +23,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         }}
         >
           <NavbarProvider>
+
             <Navbar />
             {children}
           </NavbarProvider>
