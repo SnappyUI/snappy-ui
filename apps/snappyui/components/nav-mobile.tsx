@@ -32,6 +32,7 @@ export const navMenu: {
   }[];
 }[] = [
   {
+
     name: "Home",
     path: "/",
   },

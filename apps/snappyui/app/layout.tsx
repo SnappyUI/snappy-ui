@@ -23,7 +23,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         }}
         >
           <NavbarProvider>
-
             <Navbar />
             {children}
           </NavbarProvider>
