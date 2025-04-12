@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// import { ThemeToggle } from "@/components/theme-toggler";
-// import { NavbarMobile, NavbarMobileBtn } from "./nav-mobile";
 import { NavLink } from "./nav-link";
+// import { ThemeToggle } from "@/components/theme-toggler";
+import { NavbarMobile, NavbarMobileBtn } from "./nav-mobile";
 
 // put dark and white images
 // import DarkPng from "../public/branding/better-auth-logo-dark.png";
@@ -106,11 +106,11 @@ export function Navbar() {
               </svg>
             </NavLink>
           </ul>
-          {/* <ThemeToggle />
-                    <NavbarMobileBtn /> */}
+          {/* <ThemeToggle /> */}
+          <NavbarMobileBtn />
         </div>
       </nav>
-      {/* <NavbarMobile /> */}
+      <NavbarMobile />
     </div>
 
   );
