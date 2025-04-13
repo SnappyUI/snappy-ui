@@ -49,7 +49,7 @@ export const contents: Content[] = [
         href: "/docs/components/snappycheck",
       },
       {
-        title: "snappycolorText",
+        title: "Color Text",
         href: "/docs/components/snappycolorText",
       },
       {
@@ -73,10 +73,14 @@ export const contents: Content[] = [
         href: "/docs/components/snappysplashscreen",
       },
       {
+        title: "Toggle",
+        href: "/docs/components/snappytoggle",
+        isNew: true,
+      },
+      {
         title: "Tooltip",
         href: "/docs/components/snappytooltip",
       },
-
     ],
   },
   {
@@ -86,6 +90,11 @@ export const contents: Content[] = [
       {
         title: "Footer",
         href: "/docs/sections/snappyfooter",
+      },
+      {
+        title: "Header",
+        href: "/docs/sections/snappyheader",
+        isNew: true,
       },
       {
         title: "Lamp",
