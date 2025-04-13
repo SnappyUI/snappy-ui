@@ -1,49 +1,66 @@
-import { Palette, ScreenShare, Sliders } from "lucide-react";
+import Image from "next/image";
 import React from "react";
+
+import MorphCard from "@/components/ui/snappy-morph-card";
 
 function Features() {
   const features = [
     {
-      icon: <Palette className="w-6 h-6 text-snappy-blue" strokeWidth={1.5} />,
-      title: "Beautifully designed",
-      description: "Snappy UI allows you build beautiful and modern websites regardless of your design skills.",
+      icon: "/design.svg",
+      title: "Beautifully Designed",
+      description:
+        "Snappy UI allows you to build beautiful and modern websites regardless of your design skills.",
     },
     {
-      icon: <ScreenShare className="w-6 h-6 text-snappy-blue" strokeWidth={1.5} />,
+      icon: "/scale.svg",
       title: "Fully Responsive",
-      description: "Responsive designed components and templates that look great on any screen.",
+      description:
+        "Responsive designed components and templates that look great on any screen.",
     },
     {
-      icon: <Sliders className="w-6 h-6 text-snappy-blue" strokeWidth={1.5} />,
+      icon: "/customizable.svg",
       title: "Customizable",
-      description: "Snappy UI allows you build beautiful and modern websites regardless of your design skills.",
+      description:
+        "Tailor each component to your brand and layout with ease using Snappy UI.",
     },
   ];
 
   return (
-    <section className="py-16 px-6 md:px-16 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-3 animate-slide-up">
-        Turn Your Ideas Into
-        {" "}
-        <span className="text-snappy-blue">Reality</span>
+    <section className="py-16 md:py-20 px-6 md:px-16 max-w-7xl mx-auto">
+      {/* Section Title */}
+      <h2 className="text-4xl font-bold text-center mb-4 animate-slide-up text-[#1976D2] dark:text-[#42A5F5]">
+        Turn Your Ideas Into Reality
       </h2>
-      <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-xl mx-auto text-sm md:text-base animate-slide-up" style={{ transitionDelay: "100ms" }}>
-        Snappy UI offer all the vital building blocks you need to transform your idea into a great-looking startup.
+
+      {/* Section Subtitle */}
+      <p
+        className="text-[#1a1a1a] dark:text-[#B9B9B9] text-center mb-16 max-w-xl mx-auto text-md md:text-lg animate-slide-up"
+        style={{ transitionDelay: "100ms" }}
+      >
+        Snappy UI offers all the vital building blocks you need to transform your idea into a great-looking startup.
       </p>
 
+      {/* Feature Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-zinc-400 dark:bg-[#111111] rounded-xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up animate-glow"
-            style={{ transitionDelay: `${(index + 1) * 150}ms` }}
-          >
-            <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-fit transition-transform duration-300 hover:rotate-3">
-              {feature.icon}
+          <MorphCard key={index} className="p-6 rounded-xl animate-slide-up">
+            <div className="flex flex-col gap-4">
+              {/* Icon with theme-aware background */}
+              <div className="p-3 rounded-full w-fit bg-blue-900/20 transition-transform duration-300 hover:rotate-3">
+                <Image src={feature.icon} alt={feature.title} width={22} height={22} />
+              </div>
+
+              {/* Title with responsive font sizes */}
+              <h3 className="text-lg md:text-xl font-semibold text-white">
+                {feature.title}
+              </h3>
+
+              {/* Description with responsive font sizes */}
+              <p className="text-sm md:text-base text-[#D4D3D7] leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-            <h3 className="text-xl font-semibold">{feature.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">{feature.description}</p>
-          </div>
+          </MorphCard>
         ))}
       </div>
     </section>
