@@ -32,12 +32,12 @@ function Hero() {
 
       {/* CTA Buttons */}
       <div
-        className="flex flex-wrap gap-4 justify-center animate-fade-in"
+        className="flex flex-wrap gap-4 md:gap-6 justify-center animate-fade-in"
         style={{ animationDelay: "0.5s" }}
       >
         {/* Get Started */}
         <Link href="/docs">
-          <button type="button" className="rounded-full cursor-pointer bg-[#f6f6f6] dark:bg-[#222223] text-black border dark:text-white font-medium px-6 py-3 transition-all duration-300 hover:opacity-90 text-md lg:text-xl">
+          <button type="button" className="rounded-full cursor-pointer bg-[#f6f6f6] dark:bg-[#222223] text-black border dark:text-white font-medium px-6 py-3 transition-all duration-300 hover:opacity-90 text-sm md:text-lg lg:text-xl">
             Get started
           </button>
         </Link>
@@ -48,7 +48,7 @@ function Hero() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button type="button" className="rounded-full cursor-pointer bg-[#f6f6f6] dark:bg-[#222223] text-black border dark:text-white font-medium px-6 py-3 transition-all duration-300 flex items-center gap-2 hover:opacity-90 text-md lg:text-xl">
+          <button type="button" className="rounded-full cursor-pointer bg-[#f6f6f6] dark:bg-[#222223] text-black border dark:text-white font-medium px-6 py-3 transition-all duration-300 flex items-center gap-2 hover:opacity-90 text-sm md:text-lg lg:text-xl">
             <Github size={18} className="text-[#1976D2] dark:text-[#42A5F5]" />
             Star on GitHub
           </button>
