@@ -47,7 +47,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`py-4 px-6 md:px-16 flex justify-between items-center sticky top-0 z-30 transition-all duration-300 ${
+      className={`py-4 px-6 md:py-6 md:px-16 flex justify-between items-center sticky top-0 z-30 transition-all duration-300 ${
         scrolled ? "backdrop-blur-sm shadow-sm" : ""
       }`}
     >
@@ -55,8 +55,8 @@ export function Navbar() {
       <Link href="/" className="flex items-center gap-2">
         <Image
           src={mounted && isDark ? "/logo.png" : "/logo-light.png"}
-          width={128}
-          height={128}
+          width={142}
+          height={142}
           alt="Snappy UI Logo"
         />
       </Link>

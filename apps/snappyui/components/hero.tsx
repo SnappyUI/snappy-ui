@@ -6,50 +6,53 @@ import { ColourfulText } from "./ui/snappy-colorful-text";
 
 function Hero() {
   return (
-    <section className="w-screen h-screen justify-center text-center flex flex-col items-center dark:bg-black bg-white relative overflow-hidden">
-      {/* Glow effect container */}
+    <section className="min-h-[600px] py-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 dark:bg-black bg-white relative overflow-hidden">
+      {/* Optional Glow */}
       <div className="glow-effect"></div>
 
-      {/* Content */}
+      {/* Heading */}
       <h1
-        className="text-4xl md:text-5xl font-bold mb-4 max-w-[900px] animate-fade-in"
+        className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 max-w-[900px] animate-fade-in"
         style={{ animationDelay: "0.1s" }}
       >
-        Build
+        Ship
         {" "}
-        <span className="text-[#42A5F5]">
-          sleek, lightning-fast, pixel-perfect
-          {" "}
-        </span>
-        UIs with
+        <span className="text-[#1976D2] dark:text-[#42A5F5]">Faster</span>
+        {" "}
+        with
         {" "}
         <ColourfulText text="Snappy UI." />
       </h1>
-      <p
-        className="text-gray-600 dark:text-gray-400 mb-10 max-w-xl text-sm md:text-base animate-fade-in"
-        style={{ animationDelay: "0.3s" }}
-      >
+
+      {/* Subheading */}
+      <p className="text-[#1a1a1a] dark:text-[#B9B9B9] mb-10 max-w-2xl text-lg md:text-xl lg:text-2xl">
         A complete design system made for developers who care about performance
         and aesthetics.
       </p>
 
+      {/* CTA Buttons */}
       <div
-        className="flex flex-row gap-4 justify-center animate-fade-in"
+        className="flex flex-wrap gap-4 justify-center animate-fade-in"
         style={{ animationDelay: "0.5s" }}
       >
-        <button
-          type="button"
-          className="bg-black min-w-7/12 text-white dark:bg-white dark:text-black rounded-md px-6 py-2.5 font-medium hover:opacity-90 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+        {/* Get Started */}
+        <Link href="/docs">
+          <button type="button" className="rounded-full cursor-pointer bg-[#f6f6f6] dark:bg-[#222223] text-black border dark:text-white font-medium px-6 py-3 transition-all duration-300 hover:opacity-90 text-md lg:text-xl">
+            Get started
+          </button>
+        </Link>
+
+        {/* GitHub Star */}
+        <a
+          href="https://github.com/SnappyUI/snappy-ui"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <Link href="/docs">Get started</Link>
-        </button>
-        <button
-          type="button"
-          className="bg-transparent border min-w-7/12 border-gray-300 dark:border-gray-700 text-black dark:text-white rounded-md px-6 py-2.5 font-medium hover:border-gray-500 transition-all duration-300 flex items-center gap-2 hover:shadow-md hover:-translate-y-0.5"
-        >
-          <Github size={18} />
-          Star on GitHub
-        </button>
+          <button type="button" className="rounded-full cursor-pointer bg-[#f6f6f6] dark:bg-[#222223] text-black border dark:text-white font-medium px-6 py-3 transition-all duration-300 flex items-center gap-2 hover:opacity-90 text-md lg:text-xl">
+            <Github size={18} className="text-[#1976D2] dark:text-[#42A5F5]" />
+            Star on GitHub
+          </button>
+        </a>
       </div>
     </section>
   );
