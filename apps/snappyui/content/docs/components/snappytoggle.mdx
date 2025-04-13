@@ -1,0 +1,308 @@
+---
+title: Toggle
+description: A versatile toggle switch component with multiple variants for modern web applications
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { ToggleExample, ToggleSizesExample, ToggleWithLabelsExample, ToggleDisabledExample } from "@/components/toggle-demo";
+
+# Toggle Component
+
+An interactive toggle switch component for indicating on/off states with multiple design variants.
+
+## Basic Usage
+
+The toggle component allows users to switch between two states. By default, it uses the "simple" variant.
+
+<div className="flex items-center justify-start p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
+  <ToggleExample />
+</div>
+
+```tsx
+import { Toggle } from "@/components/ui/snappy-toggle";
+
+export function MyComponent() {
+  const [checked, setChecked] = useState(false);
+  
+  return (
+    <Toggle 
+      checked={checked}
+      onChange={setChecked}
+    />
+  );
+}
+```
+
+## Variants
+
+The toggle component comes with multiple design variants to fit different UI styles.
+
+<Tabs items={["simple", "dark", "primary", "minimal", "circular", "indicator", "elegant", "pill", "modern", "labeled", "themed"]}>
+  <Tab value="simple">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="simple" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="simple"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="dark">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="dark" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="dark"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="primary">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="primary" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="primary"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="minimal">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="minimal" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="minimal"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+  
+  <Tab value="circular">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="circular" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="circular"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="indicator">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="indicator" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="indicator"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="elegant">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="elegant" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="elegant"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="pill">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample 
+        variant="pill"
+        onLabel="Active"
+        offLabel="Inactive"
+      />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="pill"
+      onLabel="Active"
+      offLabel="Inactive"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="modern">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample variant="modern" />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="modern"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="labeled">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample 
+        variant="labeled"
+        onLabel="ON" 
+        offLabel="OFF"
+      />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="labeled"
+      onLabel="ON"
+      offLabel="OFF"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+
+  <Tab value="themed">
+    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+      <ToggleExample 
+        variant="themed"
+        onLabel="Dark" 
+        offLabel="Light"
+      />
+    </div>
+    
+    ```tsx
+    <Toggle 
+      variant="themed"
+      onLabel="Dark"
+      offLabel="Light"
+      checked={checked}
+      onChange={setChecked}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+The toggle component supports three sizes: small, default, and large.
+
+<div className="p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
+  <ToggleSizesExample />
+</div>
+
+```tsx
+// Small size
+<Toggle size="sm" checked={checked} onChange={setChecked} />
+
+// Default size
+<Toggle size="default" checked={checked} onChange={setChecked} />
+
+// Large size
+<Toggle size="lg" checked={checked} onChange={setChecked} />
+```
+
+## With Labels
+
+Some toggle variants support labels for on and off states.
+
+<div className="p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
+  <ToggleWithLabelsExample />
+</div>
+
+```tsx
+// Labeled variant
+<Toggle 
+  variant="labeled"
+  onLabel="ON"
+  offLabel="OFF"
+  checked={checked}
+  onChange={setChecked}
+/>
+
+// Pill variant
+<Toggle 
+  variant="pill"
+  onLabel="Active"
+  offLabel="Inactive"
+  checked={checked}
+  onChange={setChecked}
+/>
+
+// Themed variant
+<Toggle 
+  variant="themed"
+  onLabel="Dark"
+  offLabel="Light"
+  checked={checked}
+  onChange={setChecked}
+/>
+```
+
+## Disabled State
+
+Toggles can be disabled to prevent user interaction.
+
+<div className="p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
+  <ToggleDisabledExample />
+</div>
+
+```tsx
+// Disabled in the "on" state
+<Toggle 
+  disabled
+  checked={true}
+  onChange={setChecked}
+/>
+
+// Disabled in the "off" state
+<Toggle 
+  disabled
+  checked={false}
+  onChange={setChecked}
+/>
+```
+
+## API Reference
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `string` | `"simple"` | Toggle style variant |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Size of the toggle |
+| `checked` | `boolean` | `false` | Controlled checked state |
+| `defaultChecked` | `boolean` | `false` | Initial checked state (uncontrolled) |
+| `onChange` | `(checked: boolean) => void` | — | Callback when toggle state changes |
+| `disabled` | `boolean` | `false` | Whether the toggle is disabled |
+| `onLabel` | `string` | — | Label for the "on" state (for variants that support labels) |
+| `offLabel` | `string` | — | Label for the "off" state (for variants that support labels) |
+| `children` | `ReactNode` | — | Optional child elements |
