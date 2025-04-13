@@ -16,6 +16,7 @@
     "check-types": "turbo run check-types"
   },
   "dependencies": {
+    "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
