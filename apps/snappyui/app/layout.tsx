@@ -7,6 +7,7 @@ import { Inter } from "next/font/google";
 
 import { NavbarProvider } from "@/components/nav-mobile";
 import { Navbar } from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,10 +22,12 @@ export default function Layout({ children }: { children: ReactNode }) {
           defaultTheme: "dark",
         }}
         >
-          <NavbarProvider>
-            <Navbar />
-            {children}
-          </NavbarProvider>
+          <ThemeProvider>
+            <NavbarProvider>
+              <Navbar />
+              {children}
+            </NavbarProvider>
+          </ThemeProvider>
         </RootProvider>
 
       </body>
