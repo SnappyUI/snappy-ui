@@ -31,7 +31,7 @@ import Toggle from "./ui/snappy-toggle";
 function Components() {
   const [buttonVariant, setButtonVariant] = useState("default");
   const [checkboxAnim, setCheckboxAnim] = useState("bounce");
-  const [colorTextVariant, setColorTextVariant] = useState("SunsetText");
+  const [colorTextVariant, setColorTextVariant] = useState("MatrixText");
   const [dropdownVariant, setDropdownVariant] = useState("default");
   const [toggleVariant, setToggleVariant] = useState("simple");
   const [isOn, setIsOn] = useState(false);
@@ -52,7 +52,7 @@ function Components() {
         Beautiful and powerful, right out of the box.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* Button */}
         <ComponentCard
           variants={["default", "primary", "success", "gradient"]}
