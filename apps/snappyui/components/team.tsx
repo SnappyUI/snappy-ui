@@ -1,21 +1,69 @@
-import React from "react";
+"use client";
 
-function Team() {
+import clsx from "clsx";
+
+const avatars = [
+  {
+    name: "Ajay Patel",
+    src: "/avatars/ajay-patel.png",
+  },
+  {
+    name: "Jay Kadlag",
+    src: "/avatars/jay-kadlag.png",
+  },
+  {
+    name: "Ayush Bhagat",
+    src: "/avatars/ayush-bhagat.png",
+  },
+  {
+    name: "Ajay Panigrahi",
+    src: "/avatars/ajay-panigrahi.png",
+  },
+  {
+    name: "Ankit Raj",
+    src: "/avatars/ankit-raj.png",
+  },
+  {
+    name: "Jatin Verma",
+    src: "/avatars/jatin-verma.png",
+  },
+  {
+    name: "Aditya Raj",
+    src: "/avatars/aditya-raj.png",
+  },
+];
+
+export default function StackedAvatars() {
   return (
-    <section className="py-16 bg-white dark:bg-[#050505] text-center">
-      <h2 className="text-3xl font-bold text-center mb-12 text-snappy-blue">Curated By</h2>
-
-      <div className="flex justify-center">
-        <div className="flex overflow-hidden transition-transform duration-300 hover:scale-105">
-          <img
-            src="/lovable-uploads/a6037c22-affd-477e-82fb-a651c31e79ef.png"
-            alt="Team members"
-            className="w-auto h-[80px] mx-auto hover:shadow-lg transition-shadow duration-300"
-          />
-        </div>
+    <section className="py-12 md:py-20 px-6 md:px-16 max-w-7xl mx-auto">
+      {/* Section Title */}
+      <h2 className="text-4xl font-bold text-center mb-24 animate-slide-up text-[#1976D2] dark:text-[#42A5F5]">
+        Curated By
+      </h2>
+      <div className="mb-2 flex flex-row items-center justify-center pr-4">
+        {avatars.map(avatar => (
+          <div
+            key={avatar.name}
+            className={clsx(
+              "group relative -mr-4 transition-transform duration-300",
+              "hover:z-30 hover:scale-110",
+            )}
+          >
+            <div className="group relative">
+              <img
+                src={avatar.src}
+                alt={avatar.name}
+                width={56}
+                height={56}
+                className="size-14 md:size-18 rounded-full border-2 border-bg object-cover transition duration-300 group-hover:z-30 group-hover:scale-110"
+              />
+              <div className="absolute text-md bottom-full mb-2 left-1/2 -translate-x-1/2 scale-90 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 bg-black text-white rounded px-2 py-1 whitespace-nowrap z-40">
+                {avatar.name}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
-
-export default Team;

@@ -75,7 +75,7 @@ function Components() {
 
         {/* ColorText */}
         <ComponentCard
-          variants={["SunsetText", "MatrixText", "CandyText"]}
+          variants={["MatrixText", "SunsetText", "CandyText"]}
           selected={colorTextVariant}
           onVariantChange={setColorTextVariant}
           componentName="ColorText"
