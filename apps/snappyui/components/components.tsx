@@ -1,181 +1,178 @@
-import { ArrowRight, Bell, Edit, FileText, LogOut, Plus, Settings, Trash, User } from "lucide-react";
-import React from "react";
+"use client";
 
 import {
+  LogOut,
+  MoreHorizontal,
+  MoreVertical,
+  Settings,
+  User,
+} from "lucide-react";
+import React, { useState } from "react";
+
+import ComponentCard from "@/components/ui/component-card";
+import Button from "@/components/ui/snappy-button";
+import Check from "@/components/ui/snappy-checkbox";
+import {
+  CandyText,
+  MatrixText,
+  SunsetText,
+} from "@/components/ui/snappy-colorful-text";
+import {
   DropdownMenu,
-  DropdownMenuAction,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuFooter,
-  DropdownMenuGroup,
-  DropdownMenuHeader,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/snappy-dropdown";
+import Skeleton from "@/components/ui/snappy-skeleton";
 
-import Button from "./ui/snappy-button";
-import Check from "./ui/snappy-checkbox";
-import { ColourfulText } from "./ui/snappy-colorful-text";
-import { TextTypingEffect } from "./ui/snappy-text-generate";
+import Toggle from "./ui/snappy-toggle";
 
 function Components() {
+  const [buttonVariant, setButtonVariant] = useState("default");
+  const [checkboxAnim, setCheckboxAnim] = useState("bounce");
+  const [colorTextVariant, setColorTextVariant] = useState("SunsetText");
+  const [dropdownVariant, setDropdownVariant] = useState("default");
+  const [toggleVariant, setToggleVariant] = useState("simple");
+  const [isOn, setIsOn] = useState(false);
+  const [skeletonVariant, setSkeletonVariant] = useState("default");
+
+  const colorfulVariants: Record<string, React.ElementType> = {
+    SunsetText,
+    MatrixText,
+    CandyText,
+  };
+
   return (
-    <section className="py-16 px-6 md:px-16 max-w-7xl mx-auto bg-black text-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-3 text-blue-400 animate-slide-up">
+    <section className="py-16 md:py-20 px-6 md:px-16 max-w-7xl mx-auto">
+      <h2 className="text-4xl font-bold text-center mb-4 text-[#1976D2] dark:text-[#42A5F5]">
         Production-ready components
       </h2>
-      <p
-        className="text-gray-400 text-center mb-12 text-sm md:text-base animate-slide-up"
-        style={{ transitionDelay: "100ms" }}
-      >
+      <p className="text-gray-700 dark:text-gray-300 text-center mb-16 max-w-xl mx-auto text-md md:text-lg">
         Beautiful and powerful, right out of the box.
       </p>
 
-      <div
-        className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-slide-up rounded-xl overflow-hidden"
-        style={{ transitionDelay: "200ms" }}
-      >
-        {/* Column 1 - Button */}
-        <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col items-center justify-center transition-all duration-300 hover:border-blue-500/30 hover:bg-gray-900/80">
-          <div className="mb-6 text-lg font-medium text-blue-400">Button Component</div>
-          <Button variant="moving-border" borderColor="#0ea5e9" size="lg">
-            This is Button
-          </Button>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Button */}
+        <ComponentCard
+          variants={["default", "primary", "success", "gradient"]}
+          selected={buttonVariant}
+          onVariantChange={setButtonVariant}
+          componentName="Button"
+        >
+          <Button variant={buttonVariant as any}>Button</Button>
+        </ComponentCard>
 
-        {/* Column 2 - Checkbox */}
-        <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col items-center justify-center transition-all duration-300 hover:border-blue-500/30 hover:bg-gray-900/80">
-          <div className="mb-6 text-lg font-medium text-blue-400">Checkbox Component</div>
-          <div className="flex items-center gap-2 group">
-            <Check
-              label="Accept terms and conditions"
-              variant="jello"
-            />
+        {/* Checkbox */}
+        <ComponentCard
+          variants={["bounce", "fade", "pulse", "jello"]}
+          selected={checkboxAnim}
+          onVariantChange={setCheckboxAnim}
+          componentName="Checkbox"
+        >
+          <Check label="Click me" variant={checkboxAnim as any} />
+        </ComponentCard>
+
+        {/* ColorText */}
+        <ComponentCard
+          variants={["SunsetText", "MatrixText", "CandyText"]}
+          selected={colorTextVariant}
+          onVariantChange={setColorTextVariant}
+          componentName="ColorText"
+        >
+          <div className="text-xl text-center font-medium">
+            Let’s try
+            {" "}
+            {React.createElement(colorfulVariants[colorTextVariant], {
+              text: "SnappyUi",
+            })}
           </div>
-        </div>
+        </ComponentCard>
 
-        {/* Column 3 - Text */}
-        <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col items-center justify-center transition-all duration-300 hover:border-blue-500/30 hover:bg-gray-900/80">
-          <div className="mb-6 text-lg font-medium text-blue-400">Text Component</div>
-          <div className="transition-all duration-300 text-4xl">
-            <span className="font-medium">Let&#39;s try </span>
-            <ColourfulText text="Snappy UI." />
-          </div>
-        </div>
-
-        {/* Column 4 - Dropdown */}
-        <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col items-center justify-center transition-all duration-300 hover:border-blue-500/30 hover:bg-gray-900/80">
-          <div className="mb-6 text-lg font-medium text-blue-400">Dropdown Component</div>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="bg-white px-4 py-2 rounded-lg border border-gray-700 hover:bg-gray-400  transition-colors duration-200">
-              User Menu
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-gray-900 border border-gray-800" side="bottom">
-              <DropdownMenuHeader
-                title="John Doe"
-                description="john.doe@example.com"
-                icon={<User className="text-blue-400" />}
-              />
-
-              <DropdownMenuGroup>
-                <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
-                <DropdownMenuItem icon={<User className="text-blue-400" />}>
-                  Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>
-
-                <DropdownMenuItem
-                  icon={<Settings className="text-blue-400" />}
-                  description="Manage your account settings and preferences"
-                >
+        {/* Dropdown */}
+        <ComponentCard
+          variants={["default", "outline", "ghost"]}
+          selected={dropdownVariant}
+          onVariantChange={setDropdownVariant}
+          componentName="Dropdown"
+        >
+          {/* Render UI based on variant */}
+          {dropdownVariant === "default" && (
+            <DropdownMenu>
+              <DropdownMenuTrigger variant="default">
+                Default
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem icon={<User />}>Profile</DropdownMenuItem>
+                <DropdownMenuItem icon={<Settings />}>
                   Settings
                 </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem icon={<LogOut />}>Logout</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
 
-                <DropdownMenuItem icon={<Bell className="text-blue-400" />} iconRight={<ArrowRight />}>
-                  Notifications
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
+          {dropdownVariant === "outline" && (
+            <DropdownMenu>
+              <DropdownMenuTrigger variant="outline">
+                Outline
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
 
-              <DropdownMenuSeparator />
+          {dropdownVariant === "ghost" && (
+            <div className="flex justify-center gap-4">
+              <DropdownMenu>
+                <DropdownMenuTrigger variant="ghost">
+                  <MoreHorizontal />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-              <DropdownMenuGroup>
-                <DropdownMenuLabel>Content</DropdownMenuLabel>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger icon={<FileText className="text-blue-400" />}>
-                    Documents
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent className="bg-gray-900 border border-gray-800">
-                    <DropdownMenuItem icon={<Plus className="text-blue-400" />}>New Document</DropdownMenuItem>
-                    <DropdownMenuItem icon={<Edit className="text-blue-400" />}>Edit</DropdownMenuItem>
-                    <DropdownMenuItem icon={<Trash className="text-blue-400" />}>Delete</DropdownMenuItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
+              <DropdownMenu>
+                <DropdownMenuTrigger variant="ghost">
+                  <MoreVertical />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          )}
+        </ComponentCard>
 
-                <DropdownMenuCheckboxItem
-                  description="Enable dark mode for better viewing at night"
-                  checked={true}
-                >
-                  Dark Mode
-                </DropdownMenuCheckboxItem>
-              </DropdownMenuGroup>
-
-              <DropdownMenuSeparator />
-
-              <DropdownMenuRadioGroup value="public">
-                <DropdownMenuLabel>Visibility</DropdownMenuLabel>
-                <DropdownMenuRadioItem value="public" description="Anyone can see this document">
-                  Public
-                </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="private" description="Only you can access this document">
-                  Private
-                </DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-
-              <DropdownMenuFooter>
-                <DropdownMenuAction variant="outline">
-                  Help
-                </DropdownMenuAction>
-                <DropdownMenuAction variant="ghost">
-                  <LogOut className="mr-2 h-4 w-4 text-blue-400" />
-                  Logout
-                </DropdownMenuAction>
-              </DropdownMenuFooter>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-
-        {/* Column 5 - Animated Text */}
-        <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col items-center justify-center transition-all duration-300 hover:border-blue-500/30 hover:bg-gray-900/80">
-          <div className="mb-6 text-lg font-medium text-blue-400">Text Typing Effect</div>
-          <TextTypingEffect
-            words="Welcome to Snappy UI."
-            typingSpeed={0.2}
-            className="text-3xl text-blue-400"
+        {/* Toggle */}
+        <ComponentCard
+          variants={["simple", "indicator", "dark"]}
+          selected={toggleVariant}
+          onVariantChange={setToggleVariant}
+          componentName="Toggle"
+        >
+          <Toggle
+            variant={toggleVariant as any}
+            checked={isOn}
+            onChange={() => setIsOn(!isOn)}
           />
-        </div>
+        </ComponentCard>
 
-        {/* Column 6 - Learn More */}
-        <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col items-start justify-center transition-all duration-300 hover:border-blue-500/30 hover:bg-gray-900/80">
-          <div className="mb-6 text-lg font-medium text-blue-400 self-center">Documentation</div>
-          <div className="mb-4 text-lg font-medium">Want to see more?</div>
-          <p className="text-sm text-gray-400 mb-4">
-            Check out the docs for details of the complete library
-          </p>
-          <div className="text-blue-400 text-sm font-medium group flex items-center transition-all duration-300 hover:translate-x-1 cursor-pointer">
-            Learn More
-            <span className="transition-transform duration-300 inline-block group-hover:translate-x-1 ml-1">
-              →
-            </span>
-          </div>
-        </div>
+        {/* Skeleton */}
+        <ComponentCard
+          variants={["default", "text", "rounded"]}
+          selected={skeletonVariant}
+          onVariantChange={setSkeletonVariant}
+          componentName="Skeleton"
+        >
+          <Skeleton variant={skeletonVariant as any}></Skeleton>
+        </ComponentCard>
       </div>
     </section>
   );
