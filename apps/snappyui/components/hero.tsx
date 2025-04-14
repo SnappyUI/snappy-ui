@@ -6,13 +6,13 @@ import { ColourfulText } from "./ui/snappy-colorful-text";
 
 function Hero() {
   return (
-    <section className="min-h-[600px] py-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 dark:bg-black bg-white relative overflow-hidden">
+    <section className="min-h-screen py-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 dark:bg-black bg-white relative overflow-hidden">
       {/* Optional Glow */}
       <div className="glow-effect"></div>
 
       {/* Heading */}
       <h1
-        className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 max-w-[900px] animate-fade-in"
+        className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-8 max-w-[900px] animate-fade-in"
         style={{ animationDelay: "0.1s" }}
       >
         Ship

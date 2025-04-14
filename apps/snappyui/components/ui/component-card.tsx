@@ -24,6 +24,7 @@ export default function ComponentCard({
       <div className="flex gap-4 mb-6 text-sm">
         {variants.map(variant => (
           <button
+            type="button"
             key={variant}
             className={`capitalize transition cursor-pointer ${
               selected === variant

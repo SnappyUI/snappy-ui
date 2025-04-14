@@ -20,6 +20,7 @@ export function AsideLink({
   children,
   className,
   activeClassName,
+  startWith,
   ...props
 }: Props) {
   const segment = useSelectedLayoutSegment();
@@ -36,7 +37,7 @@ export function AsideLink({
         "w-full transition-colors flex items-center gap-x-2.5 hover:bg-primary/10 px-5 py-1",
         className,
       )}
-      {...props}
+      {...props} // This now no longer includes `startWith`
     >
       {children}
     </Link>

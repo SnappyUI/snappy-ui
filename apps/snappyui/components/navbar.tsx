@@ -47,7 +47,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`py-4 px-6 md:py-6 md:px-16 flex justify-between items-center sticky top-0 z-30 transition-all duration-300 ${
+      className={`fixed py-4 px-6 md:py-6 md:px-16 flex justify-between items-center w-full top-0 z-30 transition-all duration-300 ${
         scrolled ? "backdrop-blur-sm shadow-sm" : ""
       }`}
     >
