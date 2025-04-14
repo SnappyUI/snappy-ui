@@ -21,10 +21,12 @@ export default function Layout({ children }: { children: ReactNode }) {
           defaultTheme: "dark",
         }}
         >
+
           <NavbarProvider>
             <Navbar />
             {children}
           </NavbarProvider>
+
         </RootProvider>
 
       </body>
