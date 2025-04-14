@@ -1,10 +1,10 @@
 "use client";
 
-import Components from "@/components/Components";
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Team from "@/components/Team";
+import Components from "@/components/components";
+import Features from "@/components/features";
+import Footer from "@/components/footer";
+import Hero from "@/components/hero";
+import Team from "@/components/team";
 
 // import Image from "next/image";
 // import Link from "next/link";
