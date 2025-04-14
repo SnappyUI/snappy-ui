@@ -218,8 +218,12 @@
     @apply bg-background text-foreground;
   }
 }
-/*
-html,
+
+* {
+  box-sizing: border-box;
+}
+
+/* html,
 body {
   overflow-x: hidden;
   overflow-y: auto;
@@ -242,7 +246,12 @@ body {
   width: 1200px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.5) 0%, rgba(37, 99, 235, 0.2) 40%, transparent 70%);
+  background: radial-gradient(
+    ellipse,
+    rgba(59, 130, 246, 0.5) 0%,
+    rgba(37, 99, 235, 0.2) 40%,
+    transparent 70%
+  );
   transform: translate(-50%, 0) scale(1);
   opacity: 0;
   animation: topGlowBreathing 8s ease-in-out infinite;
@@ -262,5 +271,14 @@ body {
 
 /* Dark mode adjustment - stronger glow */
 .dark .glow-effect::before {
-  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.6) 0%, rgba(37, 99, 235, 0.3) 40%, transparent 70%);
+  background: radial-gradient(
+    ellipse,
+    rgba(59, 130, 246, 0.6) 0%,
+    rgba(37, 99, 235, 0.3) 40%,
+    transparent 70%
+  );
+}
+/* Scrollbar */
+body::-webkit-scrollbar {
+  display: none;
 }
