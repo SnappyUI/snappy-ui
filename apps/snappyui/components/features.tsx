@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import MorphCard from "@/components/ui/snappy-morph-card";
+import NeonCard from "./ui/snappy-neon-card";
 
 function Features() {
   const features = [
@@ -43,7 +43,7 @@ function Features() {
       {/* Feature Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (
-          <MorphCard key={index} className="p-6 rounded-xl animate-slide-up">
+          <NeonCard neonColor="#1976D2" key={index} className="p-6 bg-[#151518] rounded-xl animate-slide-up">
             <div className="flex flex-col gap-4">
               {/* Icon with theme-aware background */}
               <div className="p-3 rounded-full w-fit bg-blue-900/20 transition-transform duration-300 hover:rotate-3">
@@ -60,7 +60,7 @@ function Features() {
                 {feature.description}
               </p>
             </div>
-          </MorphCard>
+          </NeonCard>
         ))}
       </div>
     </section>
