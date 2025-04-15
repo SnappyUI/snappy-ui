@@ -2,15 +2,22 @@ import { Github } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
+import FloatingDots from "./floating-dots";
 import { ColourfulText } from "./ui/snappy-colorful-text";
 
 function Hero() {
   return (
     <section className="min-h-screen py-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 dark:bg-black bg-white relative overflow-hidden">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50 dark:from-transparent dark:to-blue-950/20 opacity-40"></div>
 
-      <div className="glow-effect py-48"></div>
+      {/* Top left glow effect */}
+      <div className="absolute top-0 left-0 w-84 h-96 bg-blue-400/20 dark:bg-blue-400/30 rounded-full blur-3xl -translate-x-1/4 -translate-y-1/4 z-10 pointer-events-none"></div>
+
+      {/* Bottom right glow effect */}
+      <div className="absolute bottom-12 right-0 w-96 h-96 bg-blue-400/20 dark:bg-blue-400/30 rounded-full blur-3xl translate-x-1/2 z-10 pointer-events-none"></div>
+
+      {/* Floating dots background */}
+      <FloatingDots />
+
       {/* Content */}
       <div className="relative z-10">
         {/* Heading */}
@@ -26,32 +33,28 @@ function Hero() {
           {" "}
           <ColourfulText text="Snappy UI" />
         </h1>
-
-        {/* Subheading with improved styling */}
-        <p className="text-[#1a1a1a] dark:text-[#B9B9B9] mb-12 max-w-2xl text-lg md:text-xl lg:text-2xl mx-auto">
-          A complete design system made for developers who care about performance
-          and aesthetics.
+        {/* Subheading */}
+        <p className="text-gray-900 dark:text-gray-300 mb-12 max-w-2xl text-lg md:text-xl lg:text-2xl mx-auto">
+          Copy paste the most trending components and use them in your websites without having to worry about styling and animations.
         </p>
-
-        {/* CTA Buttons with improved styling */}
+        {/* CTA Buttons */}
         <div
           className="flex flex-wrap gap-4 md:gap-6 justify-center animate-fade-in"
           style={{ animationDelay: "0.5s" }}
         >
           {/* Get Started */}
           <Link href="/docs">
-            <button type="button" className="rounded-full cursor-pointer bg-[#1976D2] text-white font-medium px-6 md:px-8 py-3 md:py-4 transition-all duration-300 hover:bg-[#1565C0] shadow-lg shadow-blue-200 dark:shadow-blue-900/20 text-sm md:text-lg">
+            <button type="button" className="rounded-full cursor-pointer bg-[#1976D2] dark:bg-[#42A5F5] text-white font-medium px-6 md:px-8 py-3 transition-all duration-300 hover:opacity-90 shadow-md dark:shadow-blue-900/20 text-sm md:text-lg">
               Get started
             </button>
           </Link>
-
           {/* GitHub Star */}
           <a
             href="https://github.com/SnappyUI/snappy-ui"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button type="button" className="rounded-full cursor-pointer bg-[#f6f6f6] dark:bg-[#222223] text-black border dark:text-white font-medium px-6 md:px-8 py-3 md:py-4 transition-all duration-300 flex items-center gap-3 hover:opacity-90 hover:shadow-md text-sm md:text-lg">
+            <button type="button" className="rounded-full cursor-pointer bg-gray-100 dark:bg-gray-800 text-black border dark:text-white font-medium px-6 md:px-8 py-3 transition-all duration-300 flex items-center gap-3 hover:opacity-90 hover:shadow-md text-sm md:text-lg">
               <Github size={20} className="text-[#1976D2] dark:text-[#42A5F5]" />
               Star on GitHub
             </button>

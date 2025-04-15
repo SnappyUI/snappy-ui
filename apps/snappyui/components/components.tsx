@@ -32,6 +32,7 @@ import Skeleton from "@/components/ui/snappy-skeleton";
 
 import type { ToggleVariant } from "./ui/snappy-toggle";
 
+import FloatingDots from "./floating-dots";
 import Toggle from "./ui/snappy-toggle";
 
 function Components() {
@@ -50,135 +51,134 @@ function Components() {
   };
 
   return (
-    <section className="py-16 md:py-20 px-6 md:px-16 max-w-7xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-4 text-[#1976D2] dark:text-[#42A5F5]">
-        Production-ready components
-      </h2>
-      <p className="text-gray-700 dark:text-gray-300 text-center mb-16 max-w-xl mx-auto text-md md:text-lg">
-        Beautiful and powerful, right out of the box.
-      </p>
+    <section className="relative w-screen py-16 md:py-20 px-6 md:px-16 mx-auto">
+      {/* Floating dots behind */}
+      <FloatingDots />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* Button */}
-        <ComponentCard
-          variants={["default", "primary", "success", "gradient"]}
-          selected={buttonVariant}
-          onVariantChange={setButtonVariant}
-          componentName="Button"
-        >
-          <Button variant={buttonVariant as ButtonVariant}>Button</Button>
-        </ComponentCard>
+      {/* Glow effect in top right */}
+      <div className="absolute -top-20 right-0 w-96 h-96 bg-blue-400/20 dark:bg-blue-400/30 rounded-full blur-3xl translate-x-[60%] z-10 pointer-events-none" />
 
-        {/* Checkbox */}
-        <ComponentCard
-          variants={["bounce", "fade", "pulse", "jello"]}
-          selected={checkboxAnim}
-          onVariantChange={setCheckboxAnim}
-          componentName="Checkbox"
-        >
-          <Check label="Click me" variant={checkboxAnim as CheckboxVariant} />
-        </ComponentCard>
+      {/* Actual content */}
+      <div className="relative z-10">
+        <h2 className="text-4xl font-bold text-center mb-4 text-[#1976D2] dark:text-[#42A5F5]">
+          Production-ready components
+        </h2>
+        <p className="text-gray-700 dark:text-gray-300 text-center mb-16 max-w-xl mx-auto text-md md:text-lg">
+          Beautiful and powerful, right out of the box.
+        </p>
 
-        {/* ColorText */}
-        <ComponentCard
-          variants={["MatrixText", "SunsetText", "CandyText"]}
-          selected={colorTextVariant}
-          onVariantChange={setColorTextVariant}
-          componentName="ColorText"
-        >
-          <div className="text-xl text-center font-medium">
-            Let’s try
-            {" "}
-            {React.createElement(colorfulVariants[colorTextVariant], {
-              text: "SnappyUi",
-            })}
-          </div>
-        </ComponentCard>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* Button */}
+          <ComponentCard
+            variants={["default", "primary", "success", "gradient"]}
+            selected={buttonVariant}
+            onVariantChange={setButtonVariant}
+            componentName="Button"
+          >
+            <Button variant={buttonVariant as ButtonVariant}>Button</Button>
+          </ComponentCard>
 
-        {/* Dropdown */}
-        <ComponentCard
-          variants={["default", "outline", "ghost"]}
-          selected={dropdownVariant}
-          onVariantChange={setDropdownVariant}
-          componentName="Dropdown"
-        >
-          {/* Render UI based on variant */}
-          {dropdownVariant === "default" && (
-            <DropdownMenu>
-              <DropdownMenuTrigger variant="default">
-                Default
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem icon={<User />}>Profile</DropdownMenuItem>
-                <DropdownMenuItem icon={<Settings />}>
-                  Settings
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem icon={<LogOut />}>Logout</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          )}
+          {/* Checkbox */}
+          <ComponentCard
+            variants={["bounce", "fade", "pulse", "jello"]}
+            selected={checkboxAnim}
+            onVariantChange={setCheckboxAnim}
+            componentName="Checkbox"
+          >
+            <Check label="Click me" variant={checkboxAnim as CheckboxVariant} />
+          </ComponentCard>
 
-          {dropdownVariant === "outline" && (
-            <DropdownMenu>
-              <DropdownMenuTrigger variant="outline">
-                Outline
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          )}
-
-          {dropdownVariant === "ghost" && (
-            <div className="flex justify-center gap-4">
-              <DropdownMenu>
-                <DropdownMenuTrigger variant="ghost">
-                  <MoreHorizontal />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Settings</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              <DropdownMenu>
-                <DropdownMenuTrigger variant="ghost">
-                  <MoreVertical />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Settings</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+          {/* ColorText */}
+          <ComponentCard
+            variants={["MatrixText", "SunsetText", "CandyText"]}
+            selected={colorTextVariant}
+            onVariantChange={setColorTextVariant}
+            componentName="ColorText"
+          >
+            <div className="text-xl text-center font-medium">
+              Let’s try
+              {" "}
+              {React.createElement(colorfulVariants[colorTextVariant], {
+                text: "SnappyUi",
+              })}
             </div>
-          )}
-        </ComponentCard>
+          </ComponentCard>
 
-        {/* Toggle */}
-        <ComponentCard
-          variants={["simple", "indicator", "dark"]}
-          selected={toggleVariant}
-          onVariantChange={setToggleVariant}
-          componentName="Toggle"
-        >
-          <Toggle
-            variant={toggleVariant as ToggleVariant}
-            checked={isOn}
-            onChange={() => setIsOn(!isOn)}
-          />
-        </ComponentCard>
+          {/* Dropdown */}
+          <ComponentCard
+            variants={["default", "outline", "ghost"]}
+            selected={dropdownVariant}
+            onVariantChange={setDropdownVariant}
+            componentName="Dropdown"
+          >
+            {dropdownVariant === "default" && (
+              <DropdownMenu>
+                <DropdownMenuTrigger variant="default">Default</DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem icon={<User />}>Profile</DropdownMenuItem>
+                  <DropdownMenuItem icon={<Settings />}>Settings</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem icon={<LogOut />}>Logout</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
+            {dropdownVariant === "outline" && (
+              <DropdownMenu>
+                <DropdownMenuTrigger variant="outline">Outline</DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
+            {dropdownVariant === "ghost" && (
+              <div className="flex justify-center gap-4">
+                <DropdownMenu>
+                  <DropdownMenuTrigger variant="ghost">
+                    <MoreHorizontal />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Settings</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu>
+                  <DropdownMenuTrigger variant="ghost">
+                    <MoreVertical />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Settings</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            )}
+          </ComponentCard>
 
-        {/* Skeleton */}
-        <ComponentCard
-          variants={["default", "text", "rounded"]}
-          selected={skeletonVariant}
-          onVariantChange={setSkeletonVariant}
-          componentName="Skeleton"
-        >
-          <Skeleton variant={skeletonVariant as SkeletonType}></Skeleton>
-        </ComponentCard>
+          {/* Toggle */}
+          <ComponentCard
+            variants={["simple", "indicator", "dark"]}
+            selected={toggleVariant}
+            onVariantChange={setToggleVariant}
+            componentName="Toggle"
+          >
+            <Toggle
+              variant={toggleVariant as ToggleVariant}
+              checked={isOn}
+              onChange={() => setIsOn(!isOn)}
+            />
+          </ComponentCard>
+
+          {/* Skeleton */}
+          <ComponentCard
+            variants={["default", "text", "rounded"]}
+            selected={skeletonVariant}
+            onVariantChange={setSkeletonVariant}
+            componentName="Skeleton"
+          >
+            <Skeleton variant={skeletonVariant as SkeletonType}></Skeleton>
+          </ComponentCard>
+        </div>
       </div>
     </section>
   );
