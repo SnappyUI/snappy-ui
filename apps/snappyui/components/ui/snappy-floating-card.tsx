@@ -70,7 +70,7 @@ export default function FloatingCard({
       )}
     >
       <div
-        className="relative h-full px-4 py-20 sm:px-10 overflow-hidden"
+        className="relative h-full px-4 py-10 sm:px-10 overflow-hidden"
         style={{
           boxShadow: isHovering
             ? "0 25px 50px rgba(123, 97, 255, 0.3), 0 0 0 1px rgba(123, 97, 255, 0.2)"

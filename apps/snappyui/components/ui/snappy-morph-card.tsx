@@ -76,7 +76,7 @@ export default function MorphCard({
         />
 
         {/* Content container */}
-        <div className={cn("relative z-10 h-full px-4 py-20 sm:px-10", className)}>
+        <div className={cn("relative z-10 h-full px-4 py-10 sm:px-10", className)}>
           {children}
         </div>
 

@@ -83,7 +83,7 @@ export default function MagneticCard({
         )}
       >
         <div
-          className="relative h-full px-4 py-20 sm:px-10 overflow-hidden"
+          className="relative h-full px-4 py-10 sm:px-10 overflow-hidden"
           style={{
             boxShadow: isHovering
               ? `0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1), ${position.x * -0.2}px ${position.y * -0.2}px 20px rgba(0, 0, 0, 0.2)`
