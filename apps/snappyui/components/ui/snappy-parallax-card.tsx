@@ -81,7 +81,7 @@ export default function ParallaxCard({
             transform: `translateZ(60px) rotateX(${-rotateX * 0.8}deg) rotateY(${-rotateY * 0.8}deg)`,
             transition: "transform 0.2s ease-out",
           }}
-          className="relative z-10 px-4 py-20 sm:px-10 h-full"
+          className="relative z-10 px-4 py-10 sm:px-10 h-full"
         >
           <div className="relative z-20">{children}</div>
         </motion.div>
