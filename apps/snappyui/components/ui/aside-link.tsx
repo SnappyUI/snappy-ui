@@ -20,7 +20,6 @@ export function AsideLink({
   children,
   className,
   activeClassName,
-  startWith,
   ...props
 }: Props) {
   const segment = useSelectedLayoutSegment();

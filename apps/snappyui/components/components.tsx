@@ -9,6 +9,10 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 
+import type { ButtonVariant } from "@/components/ui/snappy-button";
+import type { CheckboxVariant } from "@/components/ui/snappy-checkbox";
+import type { SkeletonType } from "@/components/ui/snappy-skeleton";
+
 import ComponentCard from "@/components/ui/component-card";
 import Button from "@/components/ui/snappy-button";
 import Check from "@/components/ui/snappy-checkbox";
@@ -25,6 +29,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/snappy-dropdown";
 import Skeleton from "@/components/ui/snappy-skeleton";
+
+import type { ToggleVariant } from "./ui/snappy-toggle";
 
 import Toggle from "./ui/snappy-toggle";
 
@@ -60,7 +66,7 @@ function Components() {
           onVariantChange={setButtonVariant}
           componentName="Button"
         >
-          <Button variant={buttonVariant as any}>Button</Button>
+          <Button variant={buttonVariant as ButtonVariant}>Button</Button>
         </ComponentCard>
 
         {/* Checkbox */}
@@ -70,7 +76,7 @@ function Components() {
           onVariantChange={setCheckboxAnim}
           componentName="Checkbox"
         >
-          <Check label="Click me" variant={checkboxAnim as any} />
+          <Check label="Click me" variant={checkboxAnim as CheckboxVariant} />
         </ComponentCard>
 
         {/* ColorText */}
@@ -158,7 +164,7 @@ function Components() {
           componentName="Toggle"
         >
           <Toggle
-            variant={toggleVariant as any}
+            variant={toggleVariant as ToggleVariant}
             checked={isOn}
             onChange={() => setIsOn(!isOn)}
           />
@@ -171,7 +177,7 @@ function Components() {
           onVariantChange={setSkeletonVariant}
           componentName="Skeleton"
         >
-          <Skeleton variant={skeletonVariant as any}></Skeleton>
+          <Skeleton variant={skeletonVariant as SkeletonType}></Skeleton>
         </ComponentCard>
       </div>
     </section>

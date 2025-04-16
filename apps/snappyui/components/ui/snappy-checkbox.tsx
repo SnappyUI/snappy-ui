@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { cn } from "@/lib/cn";
 
 // Types for our checkbox component
-type CheckboxVariant =
+export type CheckboxVariant =
   | "bounce"
   | "fade"
   | "slide"

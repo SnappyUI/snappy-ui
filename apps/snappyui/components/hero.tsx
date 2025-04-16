@@ -10,7 +10,7 @@ function Hero() {
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50 dark:from-transparent dark:to-blue-950/20 opacity-40"></div>
 
-      <div className="glow-effect"></div>
+      <div className="glow-effect py-48"></div>
       {/* Content */}
       <div className="relative z-10">
         {/* Heading */}

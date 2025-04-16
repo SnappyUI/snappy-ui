@@ -2,7 +2,7 @@ import React from "react";
 
 import { cn } from "@/lib/cn";
 
-type SkeletonType = "text" | "circular" | "rectangular" | "rounded";
+export type SkeletonType = "text" | "circular" | "rectangular" | "rounded";
 type AnimationType = "pulse" | false;
 
 type SkeletonProps = {

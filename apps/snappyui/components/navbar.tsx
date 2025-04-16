@@ -45,8 +45,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky py-4 lg:py-5 px-6 md:px-16 flex justify-between items-center w-full top-0 z-30 transition-all duration-300 ${
-        scrolled ? "backdrop-blur-sm shadow-sm" : ""
+      className={`sticky py-4 lg:py-5 px-6 md:px-16 flex justify-between items-center w-full top-0 z-30 transition-all duration-300 ${scrolled ? "backdrop-blur-sm shadow-sm" : ""
       }`}
     >
       {/* Left: Logo that changes with theme */}

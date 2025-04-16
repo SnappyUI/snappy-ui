@@ -92,7 +92,7 @@ export const contents: Content[] = [
         href: "/docs/sections/snappyfooter",
       },
       {
-        title: "Header",
+        title: "Hero",
         href: "/docs/sections/snappyheader",
         isNew: true,
       },
@@ -106,7 +106,7 @@ export const contents: Content[] = [
         isNew: true,
       },
       {
-        title: "Price table",
+        title: "Pricing Section",
         href: "/docs/sections/snappypricetable",
       },
 
