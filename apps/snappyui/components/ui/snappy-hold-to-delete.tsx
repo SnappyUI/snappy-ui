@@ -1,46 +1,108 @@
 "use client";
-import { useState } from "react";
 
-export default function HoldToDelete() {
+import { useCallback, useEffect, useState } from "react";
+
+type HoldToDeleteProps = {
+  holdDuration?: number;
+  label?: string;
+  className?: string;
+  deleteClassName?: string;
+  icon?: React.ReactNode;
+  onDelete?: () => void;
+  deleteLabel?: string;
+  showProgress?: boolean;
+};
+
+export default function HoldToDelete({
+  holdDuration = 1500,
+  label = "Hold to Delete",
+  className = "",
+  deleteClassName = "",
+  icon = <DeleteIcon />,
+  onDelete,
+  deleteLabel = "Hold to Delete",
+  showProgress = true,
+}: HoldToDeleteProps) {
   const [isHolding, setIsHolding] = useState(false);
+  const [holdTimeout, setHoldTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [clipDone, setClipDone] = useState(false);
 
-  const handleStart = () => setIsHolding(true);
-  const handleEnd = () => setIsHolding(false);
+  const startHold = useCallback(() => {
+    setIsHolding(true);
+    setClipDone(false);
+
+    const timeout = setTimeout(() => {
+      onDelete?.();
+      setIsHolding(false);
+      setClipDone(true);
+
+      setTimeout(() => {
+        setClipDone(false);
+      }, 250);
+    }, holdDuration);
+
+    setHoldTimeout(timeout);
+  }, [holdDuration, onDelete]);
+
+  const cancelHold = useCallback(() => {
+    if (holdTimeout) {
+      clearTimeout(holdTimeout);
+      setHoldTimeout(null);
+    }
+    setIsHolding(false);
+    setClipDone(false);
+  }, [holdTimeout]);
+
+  useEffect(() => {
+    return () => {
+      if (holdTimeout)
+        clearTimeout(holdTimeout);
+    };
+  }, [holdTimeout]);
+
+  const baseClasses
+    = "group relative flex h-10 items-center gap-2 rounded-full bg-[#f6f5f5] px-6 font-medium text-[#21201c] transition-transform active:scale-95 overflow-hidden";
+  const deleteClasses = `absolute inset-0 flex items-center justify-center gap-2 rounded-full bg-[#ffdbdc] text-[#e5484d] ${deleteClassName}`;
 
   return (
     <button
       type="button"
-      onMouseDown={handleStart}
-      onMouseUp={handleEnd}
-      onMouseLeave={handleEnd}
-      onTouchStart={handleStart}
-      onTouchEnd={handleEnd}
-      className="group relative flex h-10 items-center gap-2 rounded-full bg-[#f6f5f5] px-6 font-medium text-[#21201c] transition-transform active:scale-95 overflow-hidden"
+      onMouseDown={startHold}
+      onMouseUp={cancelHold}
+      onMouseLeave={cancelHold}
+      onTouchStart={startHold}
+      onTouchEnd={cancelHold}
+      className={`${baseClasses} ${className}`}
+      aria-label={label}
     >
       <div
-        className={`absolute inset-0 flex items-center justify-center gap-2 rounded-full bg-[#ffdbdc] text-[#e5484d] ${
-          isHolding
-            ? "clip-path-animating"
-            : "clip-path-reset"
-        }`}
+        className={deleteClasses}
+        style={{
+          clipPath: isHolding
+            ? "inset(0 0 0 0)"
+            : clipDone
+              ? "inset(0 100% 0 0)"
+              : "inset(0 100% 0 0)",
+          transition: isHolding
+            ? `clip-path ${holdDuration}ms linear`
+            : clipDone
+              ? "clip-path 250ms ease-out"
+              : "clip-path 150ms ease-out",
+        }}
       >
-        <DeleteIcon />
-        Hold to Delete
+        {icon}
+        {deleteLabel}
       </div>
-      <style jsx>
-        {`
-        .clip-path-reset {
-          clip-path: inset(0 100% 0 0);
-          transition: clip-path 0.2s ease-out;
-        }
-        .clip-path-animating {
-          clip-path: inset(0 0 0 0);
-          transition: clip-path 1.5s linear;
-        }
-      `}
-      </style>
-      <DeleteIcon />
-      Hold to Delete
+
+      {icon}
+      {label}
+
+      {showProgress && isHolding && (
+        <div
+          className="absolute bottom-0 left-0 right-0 h-1 bg-[#e5484d]/20 animate-progress"
+          style={{ animationDuration: `${holdDuration}ms` }}
+        />
+      )}
     </button>
   );
 }
