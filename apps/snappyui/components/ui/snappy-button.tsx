@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-type ButtonVariant =
+export type ButtonVariant =
   | "default"
   | "primary"
   | "success"
