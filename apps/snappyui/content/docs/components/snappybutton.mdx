@@ -8,257 +8,462 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
 
-
-
 ## Basic Usage
-
-<div className="flex flex-col items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
-  <div className="flex flex-col items-center gap-4">
-    <Button variant="primary" size="lg">Primary Button</Button>
-    <Button variant="success" size="default">Success Button</Button>
-    <Button variant="destructive" size="sm">Destructive Button</Button>
-  </div>
-</div>
-
-```tsx
-import Button from "@/components/ui/snappy-button";
-
-export default function ButtonExample() {
-  return (
-    <div className="flex flex-col items-center gap-4">
-      <Button variant="primary" size="lg">Primary Button</Button>
-      <Button variant="success" size="default">Success Button</Button>
-      <Button variant="destructive" size="sm">Destructive Button</Button>
-    </div>
-  );
-}
-```
-
----
-
-### Variants
 
 <Tabs
   items={[
-    "default",
-    "primary",
-    "success",
-    "destructive",
-    "outline",
-    "ghost",
-    "warning",
-    "gradient",
-    "moving-border",
+    "Preview",
+    "Code",
   ]}
 >
-  <Tab value="default">
-    <Button variant="default">Default Button</Button>
-  </Tab>
-  <Tab value="primary">
-    <Button variant="primary">Primary Button</Button>
-  </Tab>
-  <Tab value="success">
-    <Button variant="success">Success Button</Button>
-  </Tab>
-  <Tab value="destructive">
-    <Button variant="destructive">Destructive Button</Button>
-  </Tab>
-  <Tab value="outline">
-    <Button variant="outline">Outline Button</Button>
-  </Tab>
-  <Tab value="ghost">
-    <Button variant="ghost">Ghost Button</Button>
-  </Tab>
-  <Tab value="warning">
-    <Button variant="warning">Warning Button</Button>
-  </Tab>
-  <Tab value="gradient">
-    <Button variant="gradient">Gradient Button</Button>
-  </Tab>
-  <Tab value="moving-border">
-    <Button variant="moving-border">Moving Border</Button>
-  </Tab>
-</Tabs>
 
-```tsx
-<Button variant="default">Default Button</Button>
-<Button variant="primary">Primary Button</Button>
-<Button variant="success">Success Button</Button>
-<Button variant="destructive">Destructive Button</Button>
-<Button variant="outline">Outline Button</Button>
-<Button variant="ghost">Ghost Button</Button>
-<Button variant="warning">Warning Button</Button>
-<Button variant="gradient">Gradient Button</Button>
-<Button variant="moving-border">Moving Border</Button>
-```
+    <Tab value="Preview">
+
+      <Button variant="default">Default</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="default">Default</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ---
 
-### Sizes
+## Variations
 
-<Tabs items={["sm", "default", "lg", "xl"]}>
-  <Tab value="sm">
-    <Button size="sm">Small Button</Button>
-  </Tab>
-  <Tab value="default">
-    <Button size="default">Default Button</Button>
-  </Tab>
-  <Tab value="lg">
-    <Button size="lg">Large Button</Button>
-  </Tab>
-  <Tab value="xl">
-    <Button size="xl">Extra Large Button</Button>
-  </Tab>
-</Tabs>
+### Primary
 
-```tsx
-<Button size="sm">Small Button</Button>
-<Button size="default">Default Button</Button>
-<Button size="lg">Large Button</Button>
-<Button size="xl">Extra Large Button</Button>
-```
-
----
-
-### MovingBorder Component
-
-The `MovingBorder` component can be used independently:
-
-```tsx
-import { MovingBorder } from "@/components/ui/snappy-button";
-
-export default function CustomMovingBorder() {
-  return (
-    <div className="relative h-40 w-40">
-      <MovingBorder duration={2000} rx="30%" ry="30%" borderColor="#22c55e">
-        <div className="h-20 w-20 opacity-80" 
-          style={{ background: "radial-gradient(#22c55e 40%, transparent 60%)" }} 
-        />
-      </MovingBorder>
-      <div className="relative flex h-full w-full items-center justify-center">
-        Your content here
-      </div>
-    </div>
-  );
-}
-```
-
-### Moving Border Animation
-
-The moving border variant creates a dynamic animated border effect.
-
-<div className="flex flex-col items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
-  <div className="flex flex-wrap justify-center gap-4">
-    <Button 
-      variant="moving-border" 
-      borderColor="#0ea5e9"
-    >
-      Default Blue
-    </Button>
-    <Button 
-      variant="moving-border" 
-      borderColor="#22c55e"
-    >
-      Custom Green
-    </Button>
-    <Button 
-      variant="moving-border" 
-      borderColor="#ef4444"
-      duration={2000}
-    >
-      Faster Red
-    </Button>
-  </div>
-</div>
-
-```tsx
-<Button variant="moving-border" borderColor="#0ea5e9">
-  Default Blue
-</Button>
-
-<Button variant="moving-border" borderColor="#22c55e">
-  Custom Green
-</Button>
-
-<Button variant="moving-border" borderColor="#ef4444" duration={2000}>
-  Faster Red
-</Button>
-```
-
-You can also use a custom border style with Tailwind classes:
-
-```tsx
-<Button 
-  variant="moving-border" 
-  borderClassName="bg-gradient-to-r from-purple-500 to-pink-500"
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
 >
-  Gradient Border
-</Button>
-```
+
+    <Tab value="Preview">
+
+       <Button variant="primary">Primary</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="primary">Primary</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Success
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="success">Success</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="success">Success</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Destructive
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="destructive">Destructive</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="destructive">Destructive</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Outline
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="outline">Outline</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="outline">Outline</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Ghost
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="ghost">Ghost</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="ghost">Ghost</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Warning
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="warning">Warning</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="warning">Warning</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Gradient
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="gradient">Gradient</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="gradient">Gradient</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ---
 
-### Custom Border Radius
+## Moving Border Component
 
-<Tabs items={["default", "rounded", "square", "pill"]}>
-  <Tab value="default">
-    <Button variant="primary" borderRadius="1.75rem">Default Radius</Button>
-  </Tab>
-  <Tab value="rounded">
-    <Button variant="primary" borderRadius="0.5rem">Rounded</Button>
-  </Tab>
-  <Tab value="square">
-    <Button variant="primary" borderRadius="0">Square</Button>
-  </Tab>
-  <Tab value="pill">
-    <Button variant="primary" borderRadius="9999px">Pill</Button>
-  </Tab>
+### Default
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="moving-border"> Default Blue </Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="moving-border"> Default Blue </Button>
+
+      ```
+
+    </Tab>
+
 </Tabs>
 
-```tsx
-<Button variant="primary" borderRadius="1.75rem">Default Radius</Button>
-<Button variant="primary" borderRadius="0.5rem">Rounded</Button>
-<Button variant="primary" borderRadius="0">Square</Button>
-<Button variant="primary" borderRadius="9999px">Pill</Button>
-```
+### Custom Color
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="moving-border"  borderColor="#22c55e"> Custom Green </Button>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+      <Button variant="moving-border"  borderColor="#22c55e"> Custom Green </Button>
+
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Custom Speed
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="moving-border" borderColor="#ef4444"duration={2000}>Faster Red</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+       <Button variant="moving-border" borderColor="#ef4444"duration={2000}>Faster Red</Button>
+
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Custom Gradient
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+       <Button variant="moving-border" borderClassName="bg-gradient-to-r from-red-500 to-blue-500">Gradient Border</Button>
+
+    </Tab>
+
+    <Tab value="Code">
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+       <Button variant="moving-border" borderClassName="bg-gradient-to-r from-red-500 to-blue-500">Gradient Border</Button>
+
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ---
 
 ### Disabled State
 
-<div className="flex flex-col items-center justify-center mb-6 border border-zinc-800 rounded-lg py-5">
-  <div className="flex flex-wrap justify-center gap-4">
-    <Button disabled>Disabled Default</Button>
-    <Button variant="primary" disabled>Disabled Primary</Button>
-    <Button variant="moving-border" disabled>Disabled Moving</Button>
-  </div>
-</div>
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
 
-```tsx
-<Button disabled>Disabled Default</Button>
-<Button variant="primary" disabled>Disabled Primary</Button>
-<Button variant="moving-border" disabled>Disabled Moving</Button>
-```
+    <Tab value="Preview">
+
+       <div className="flex flex-wrap justify-center items-center gap-4">
+        <Button disabled>Disabled Default</Button>
+        <Button variant="primary" disabled>Disabled Primary</Button>
+        <Button variant="moving-border" disabled>Disabled Moving</Button>
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+        <Button disabled>Disabled Default</Button>
+        <Button variant="primary" disabled>Disabled Primary</Button>
+        <Button variant="moving-border" disabled>Disabled Moving</Button>
+
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ---
 
-### Event Handling
+### Sizes
 
-```tsx
-import Button from "@/components/ui/snappy-button";
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
 
-export default function ButtonWithEvent() {
-  const handleClick = () => {
-    alert("Button clicked!");
-  };
+    <Tab value="Preview">
 
-  return (
-    <Button onClick={handleClick} variant="primary">
-      Click Me
-    </Button>
-  );
-}
-```
+
+       <div className="flex flex-wrap justify-center items-center gap-4">
+        <Button size="sm">Small</Button>
+        <Button size="default">Default</Button>
+        <Button size="lg">Large</Button>
+        <Button size="xl">Extra Large</Button>
+      </div>
+
+    </Tab>
+
+    <Tab value="Code">
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+        <Button size="sm">Small Button</Button>
+        <Button size="default">Default Button</Button>
+        <Button size="lg">Large Button</Button>
+        <Button size="xl">Extra Large Button</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+
+### Custom Border Radius
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+
+       <div className="flex flex-wrap justify-center items-center gap-4">
+          <Button variant="primary" borderRadius="1.75rem">Default Radius</Button>
+          <Button variant="primary" borderRadius="0.5rem">Rounded</Button>
+          <Button variant="primary" borderRadius="0">Square</Button>
+          <Button variant="primary" borderRadius="9999px">Pill</Button>
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      
+      ```tsx
+      import Button from "@/components/ui/snappy-button";
+
+          <Button variant="primary" borderRadius="1.75rem">Default Radius</Button>
+          <Button variant="primary" borderRadius="0.5rem">Rounded</Button>
+          <Button variant="primary" borderRadius="0">Square</Button>
+          <Button variant="primary" borderRadius="9999px">Pill</Button>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
 
 ## Installation
 

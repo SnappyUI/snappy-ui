@@ -3,7 +3,8 @@ title: ColorText
 description: A versatile ColorText component for modern web applications
 ---
 
-import { ColourfulText, OceanText, SunsetText, NeonText, MonochromeText, ForestText, GalaxyText, CyberpunkText, VintageText, CandyText, MatrixText, PastelText, SnappyText } from "@/components/ui/snappy-colorful-text";
+import { ColourfulText, OceanText, SunsetText, NeonText, MonochromeText, ForestText, GalaxyText, CyberpunkText,
+ VintageText, CandyText, MatrixText, PastelText, SnappyText } from "@/components/ui/snappy-colorful-text";
 
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
@@ -12,55 +13,403 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Basic Usage
 
-<div className="flex flex-col items-center justify-center mb-6 border-1 gap-1 border-zinc-800 rounded-lg py-5">
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
 
-  <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
         Let's try <SnappyText text="SnappyUi" />  
-  </h6>
+      </h6>  
+    </Tab>
 
-</div>
+    <Tab value="Code">
 
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
-  {[
-    { Component: SnappyText, name: "SnappyUi" },
-    { Component: PastelText, name: "SnappyUi" },
-    { Component: MatrixText, name: "SnappyUi" },
-    { Component: VintageText, name: "SnappyUi" },
-    { Component: CyberpunkText, name: "SnappyUi" },
-    { Component: GalaxyText, name: "SnappyUi" },
-    { Component: ForestText, name: "SnappyUi" },
-    { Component: MonochromeText, name: "SnappyUi" },
-    { Component: CandyText, name: "SnappyUi" },
-    { Component: NeonText, name: "SnappyUi" },
-    { Component: SunsetText, name: "SnappyUi" },
-    { Component: OceanText, name: "SnappyUi" },
-    { Component: ColourfulText, name: "SnappyUi" },
-  ].map(({ Component, name }, index) => (
-    <div
-      key={index}
-      className="flex items-center justify-center p-5 bg-white/10 backdrop-blur-xl rounded-xl shadow-md border border-white/20 hover:scale-105 hover:shadow-lg transition-all duration-300"
-    >
-      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 whitespace-nowrap">
-        Let's try <Component text={name} className="text-xl md:text-2xl font-bold" />
-      </p>
-    </div>
-  ))}
-</div>
+      ```tsx
+      import { SnappyText } from "@/components/ui/snappy-colorful-text";
 
 
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <SnappyText text="SnappyUi" />  
+      </h6>
+      
+      ```
 
+    </Tab>
+
+</Tabs>
 
 ---
 
-### Code Example
+## Variations
 
-```tsx
-import {ColourfulText,OceanText, SunsetText, NeonText, MonochromeText,ForestText,GalaxyText,CyberpunkText,VintageText,CandyText,MatrixText,PastelText,SnappyText} from "@/components/ui/snappy-colorful-text";
+### Colourful Text
 
-<div className="flex items-center justify-center">
-      Let's try <SnappyText text="SnappyUi" />
-</div>
-```
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <ColourfulText text="SnappyUi" />  
+        </h6>  
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { ColourfulText } from "@/components/ui/snappy-colorful-text";
+
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <ColourfulText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Ocean Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <OceanText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { OceanText } from "@/components/ui/snappy-colorful-text";
+
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <OceanText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Sunset Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <SunsetText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { SunsetText } from "@/components/ui/snappy-colorful-text";
+
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <SunsetText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Neon Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+     <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <NeonText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { NeonText } from "@/components/ui/snappy-colorful-text";
+
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <NeonText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Monochrome Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <MonochromeText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { MonochromeText } from "@/components/ui/snappy-colorful-text";
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <MonochromeText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Forest Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <ForestText text="SnappyUi" />  
+        </h6>  
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { ForestText } from "@/components/ui/snappy-colorful-text";
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <ForestText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Galaxy Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <GalaxyText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { GalaxyText } from "@/components/ui/snappy-colorful-text";
+
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <GalaxyText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Cyberpunk Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <CyberpunkText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { CyberpunkText } from "@/components/ui/snappy-colorful-text";
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <CyberpunkText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Vintage Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <VintageText text="SnappyUi" />  
+        </h6>  
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { VintageText } from "@/components/ui/snappy-colorful-text";
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <VintageText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Candy Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <CandyText text="SnappyUi" />  
+        </h6>  
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { CandyText } from "@/components/ui/snappy-colorful-text";
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <CandyText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Matrix Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <MatrixText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { MatrixText } from "@/components/ui/snappy-colorful-text";
+
+     <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <MatrixText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
+
+### Pastel Text
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <PastelText text="SnappyUi" />  
+        </h6> 
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { PastelText } from "@/components/ui/snappy-colorful-text";
+
+      <h6 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white relative z-2 font-sans">
+        Let's try <PastelText text="SnappyUi" />  
+        </h6>
+      
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ---
 
