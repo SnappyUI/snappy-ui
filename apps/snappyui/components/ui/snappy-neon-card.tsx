@@ -14,6 +14,7 @@ export default function NeonCard({
   containerClassName?: string;
   className?: string;
   neonColor?: string;
+  style?: React.CSSProperties;
 }) {
   const [isHovering, setIsHovering] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

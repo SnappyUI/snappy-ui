@@ -17,7 +17,7 @@ export default function ComponentCard({
     <div
       className="p-6 rounded-xl border transition-all duration-300 flex flex-col justify-between
       bg-white border-gray-200 text-black
-      dark:bg-[#151518] dark:border-gray-800 dark:text-white
+      dark:bg-gray-950 dark:border-gray-800 dark:text-white
       hover:border-blue-500/30"
     >
       {/* Variant Tabs */}
