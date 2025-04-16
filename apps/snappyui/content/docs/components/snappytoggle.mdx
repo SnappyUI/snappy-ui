@@ -6,146 +6,175 @@ description: A versatile toggle switch component with multiple variants for mode
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { ToggleExample, ToggleSizesExample, ToggleWithLabelsExample, ToggleDisabledExample } from "@/components/toggle-demo";
 
-# Toggle Component
-
-An interactive toggle switch component for indicating on/off states with multiple design variants.
-
 ## Basic Usage
 
 The toggle component allows users to switch between two states. By default, it uses the "simple" variant.
 
-<div className="flex items-center justify-start p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
-  <ToggleExample />
-</div>
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
 
-```tsx
-import { Toggle } from "@/components/ui/snappy-toggle";
-
-export function MyComponent() {
-  const [checked, setChecked] = useState(false);
-  
-  return (
-    <Toggle 
-      checked={checked}
-      onChange={setChecked}
-    />
-  );
-}
-```
-
-## Variants
-
-The toggle component comes with multiple design variants to fit different UI styles.
-
-<Tabs items={["simple", "dark", "primary", "minimal", "circular", "indicator", "elegant", "pill", "modern", "labeled", "themed"]}>
-  <Tab value="simple">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
       <ToggleExample variant="simple" />
-    </div>
-    
+
+    </Tab>
+
+    <Tab value="Code">
+
     ```tsx
+    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+
     <Toggle 
       variant="simple"
       checked={checked}
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
+</Tabs>
 
-  <Tab value="dark">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
-      <ToggleExample variant="dark" />
-    </div>
-    
-    ```tsx
-    <Toggle 
-      variant="dark"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-  </Tab>
+---
 
-  <Tab value="primary">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+## Variants
+
+The toggle component comes with multiple design variants to fit different UI styles.
+
+### Primary
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample variant="primary" />
-    </div>
-    
+
+    </Tab>
+
+    <Tab value="Code">
+
     ```tsx
+    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+
     <Toggle 
       variant="primary"
       checked={checked}
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
+</Tabs>
 
-  <Tab value="minimal">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+### Minimal
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample variant="minimal" />
-    </div>
-    
+
+    </Tab>
+
+    <Tab value="Code">
+
     ```tsx
+    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
     <Toggle 
       variant="minimal"
       checked={checked}
       onChange={setChecked}
     />
     ```
-  </Tab>
-  
-  <Tab value="circular">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+    </Tab>
+</Tabs>
+
+### Circular
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample variant="circular" />
-    </div>
-    
+
+    </Tab>
+
+    <Tab value="Code">
+
     ```tsx
+    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
     <Toggle 
       variant="circular"
       checked={checked}
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
+</Tabs>
 
-  <Tab value="indicator">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+### Indicator
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample variant="indicator" />
-    </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
     
     ```tsx
+    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
     <Toggle 
       variant="indicator"
       checked={checked}
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
+</Tabs>
 
-  <Tab value="elegant">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
-      <ToggleExample variant="elegant" />
-    </div>
-    
-    ```tsx
-    <Toggle 
-      variant="elegant"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-  </Tab>
+### Pill
 
-  <Tab value="pill">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample 
         variant="pill"
         onLabel="Active"
         offLabel="Inactive"
       />
-    </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
     
-    ```tsx
+   ```tsx
+   import type { ToggleVariant } from "@/components/ui/snappy-toggle";
     <Toggle 
       variant="pill"
       onLabel="Active"
@@ -154,32 +183,60 @@ The toggle component comes with multiple design variants to fit different UI sty
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
+</Tabs>
 
-  <Tab value="modern">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+### Modern
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample variant="modern" />
-    </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
     
-    ```tsx
+   ```tsx
+   import type { ToggleVariant } from "@/components/ui/snappy-toggle";
     <Toggle 
       variant="modern"
       checked={checked}
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
+</Tabs>
 
-  <Tab value="labeled">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+### Labeled
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample 
         variant="labeled"
         onLabel="ON" 
         offLabel="OFF"
       />
-    </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
     
-    ```tsx
+   ```tsx
+   import type { ToggleVariant } from "@/components/ui/snappy-toggle";
     <Toggle 
       variant="labeled"
       onLabel="ON"
@@ -188,18 +245,32 @@ The toggle component comes with multiple design variants to fit different UI sty
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
+</Tabs>
 
-  <Tab value="themed">
-    <div className="p-4 border border-gray-200 rounded-md dark:border-gray-800">
+### Themed
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+
       <ToggleExample 
         variant="themed"
         onLabel="Dark" 
         offLabel="Light"
       />
-    </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
     
     ```tsx
+    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
     <Toggle 
       variant="themed"
       onLabel="Dark"
@@ -208,18 +279,31 @@ The toggle component comes with multiple design variants to fit different UI sty
       onChange={setChecked}
     />
     ```
-  </Tab>
+    </Tab>
 </Tabs>
+
+---
 
 ## Sizes
 
 The toggle component supports three sizes: small, default, and large.
 
-<div className="p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
-  <ToggleSizesExample />
-</div>
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
 
-```tsx
+    <Tab value="Preview">
+
+      <ToggleSizesExample />
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
 // Small size
 <Toggle size="sm" checked={checked} onChange={setChecked} />
 
@@ -230,15 +314,30 @@ The toggle component supports three sizes: small, default, and large.
 <Toggle size="lg" checked={checked} onChange={setChecked} />
 ```
 
+    </Tab>
+
+</Tabs>
+
 ## With Labels
 
 Some toggle variants support labels for on and off states.
 
-<div className="p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
-  <ToggleWithLabelsExample />
-</div>
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
 
-```tsx
+      <ToggleWithLabelsExample />
+
+    </Tab>
+
+    <Tab value="Code">
+
+    
+    ```tsx
 // Labeled variant
 <Toggle 
   variant="labeled"
@@ -266,16 +365,29 @@ Some toggle variants support labels for on and off states.
   onChange={setChecked}
 />
 ```
+    </Tab>
+</Tabs>
 
 ## Disabled State
 
 Toggles can be disabled to prevent user interaction.
 
-<div className="p-4 mb-6 border border-gray-200 rounded-md dark:border-gray-800">
-  <ToggleDisabledExample />
-</div>
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
 
-```tsx
+      <ToggleDisabledExample />
+
+    </Tab>
+
+    <Tab value="Code">
+
+    
+    ```tsx
 // Disabled in the "on" state
 <Toggle 
   disabled
@@ -290,8 +402,8 @@ Toggles can be disabled to prevent user interaction.
   onChange={setChecked}
 />
 ```
-
-## API Reference
+    </Tab>
+</Tabs>
 
 ### Props
 

@@ -5,25 +5,57 @@ description: Carousel is a component that allows you to create a carousel of ite
 
 import AnimatedCarousel from '@/components/ui/snappy-carousel';
 import carouselItems from '@/lib/data'
-
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
-### Demo
 
+## Variations
 
-        <div className=" flex flex-col lg:flex-row gap-6 items-center justify-center w-full overflow-hidden border-1 border-gray-800 rounded-lg min-h-[500px] p-4">
-            <div className="w-full h-64 flex flex-col items-center justify-center">
-            <h1 className="text-2xl w-64 font-bold mb-6 text-center">Horizontal Carousel</h1>
-            <AnimatedCarousel
-                items={carouselItems}
-                variant="horizontal"
-                className="rounded-lg shadow-lg w-full h-full"
-            />
-            </div>
+### Horizontal Carousel
 
-            <div className="w-full h-64 flex flex-col items-center justify-center">
-            <h1 className="text-2xl font-bold mb-6 text-center">Vertical Carousel</h1>
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+     <div className="w-full h-64 flex flex-col items-center justify-center">
+        <AnimatedCarousel items={carouselItems} variant="horizontal" className="rounded-lg shadow-lg w-full h-full"/>
+    </div>
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+    import AnimatedCarousel from '@/components/ui/snappy-carousel';
+    import carouselItems from '@/lib/data'
+
+      <div className="w-full h-64 flex flex-col items-center justify-center">
+        <AnimatedCarousel items={carouselItems} variant="horizontal" className="rounded-lg shadow-lg w-full h-full"/>
+    </div>
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+
+### Vertical Carousel
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+     <div className="w-full h-64 flex flex-col items-center justify-center">
             <AnimatedCarousel
                 items={carouselItems}
                 variant="vertical"
@@ -31,8 +63,27 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
                 className="rounded-lg shadow-lg w-full h-full"
             />
             </div>
-        </div>
+    </Tab>
 
+    <Tab value="Code">
+
+      ```tsx
+    import AnimatedCarousel from '@/components/ui/snappy-carousel';
+    import carouselItems from '@/lib/data'
+
+      <div className="w-full h-64 flex flex-col items-center justify-center">
+            <AnimatedCarousel
+                items={carouselItems}
+                variant="vertical"
+                autoPlay={true}
+                className="rounded-lg shadow-lg w-full h-full"
+            />
+            </div>
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ---
 
@@ -61,16 +112,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
   </Tab>
 </Tabs>
 
-
-### code example
-
-```tsx  
-    <AnimatedCarousel
-        items={carouselItems}
-        variant="horizontal"
-        className="rounded-lg shadow-lg w-full h-full"
-    />
-```
+---
 
 ## items array example
 
