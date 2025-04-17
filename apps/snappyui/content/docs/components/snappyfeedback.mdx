@@ -1,0 +1,99 @@
+---
+title: Feedback Popover
+description: A small, elegant feedback form component with animation and state management.
+---
+
+import { Feedback } from "@/components/ui/snappy-feedback";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="bg-white rounded-xl border w-full max-w-md py-10">
+      <Feedback />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { Feedback } from "@/components/ui/snappy-feedback";
+
+    <Feedback />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Variants
+
+### Customized Labels
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="bg-white rounded-xl border w-full max-w-md py-10">
+      <Feedback 
+        buttonLabel="Send Feedback"
+        placeholder="What can we improve?"
+        successTitle="Thanks!"
+        successDescription="We appreciate your input."
+      />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { Feedback } from "@/components/ui/snappy-feedback";
+
+    <Feedback 
+      buttonLabel="Send Feedback"
+      placeholder="What can we improve?"
+      successTitle="Thanks!"
+      successDescription="We appreciate your input."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/feedback
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/feedback
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/feedback
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx shadcn@latest add http://snappyui.in/api/registry/feedback
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| **Name**             | **Type**     | **Default**       | **Description**                                              |
+|----------------------|--------------|-------------------|--------------------------------------------------------------|
+| `buttonLabel`        | `string`     | "Feedback"        | The label on the feedback trigger button                     |
+| `placeholder`        | `string`     | "Feedback"        | Placeholder text inside the textarea                         |
+| `successTitle`       | `string`     | "Feedback received!" | Title shown after successful submission                    |
+| `successDescription` | `string`     | "Thanks for helping me improve this." | Message under the success title              |
+
+---

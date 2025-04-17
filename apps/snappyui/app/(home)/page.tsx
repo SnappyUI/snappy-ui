@@ -13,8 +13,8 @@ export default function HomePage() {
 
       <div className="w-full mx-auto">
         <Hero />
-        <Features />
         <Components />
+        <Features />
         <StackedAvatars avatars={avatarData} />
       </div>
 
