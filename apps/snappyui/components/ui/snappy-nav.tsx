@@ -11,7 +11,7 @@ const MotionChevron = motion(ChevronDown);
 const Menu: React.FC<{ setActive: (item: string | null) => void; children: React.ReactNode; className?: string }> = ({ setActive, children, className }) => (
   <nav
     onMouseLeave={() => setActive(null)}
-    className={cn("rounded-full border border-black bg-fd-secondary text-black shadow-input dark:bg-black dark:border-white/[0.2] dark:text-fd-secondary flex space-x-4 px-8 py-2 fixed top-5 inset-x-0 max-w-2xl mx-auto z-50 justify-between gap-2", className)}
+    className={cn("rounded-full border border-black bg-fd-secondary text-black shadow-input dark:bg-black dark:border-white/[0.2] dark:text-fd-secondary flex space-x-4 px-8  fixed top-5 inset-x-0 max-w-2xl mx-auto z-50 justify-between gap-2", className)}
   >
     {children}
   </nav>

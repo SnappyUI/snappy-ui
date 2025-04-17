@@ -36,17 +36,17 @@ export default function ArticleLayout() {
   const cts = contents;
 
   return (
-    <div className={cn("fixed top-0")}>
+    <div className={cn("fixed top-0 ")}>
       <aside
         className={cn(
           "md:transition-all",
-          "border-r border-lines md:flex hidden md:w-[268px] lg:w-[286px] overflow-y-auto absolute top-[58px] h-[92dvh] flex-col justify-between w-[var(--fd-sidebar-width)]",
+          "border-r border-lines md:flex hidden md:w-[268px] lg:w-[286px] overflow-y-auto absolute top-[58px] h-[92dvh] flex-col justify-between w-[var(--fd-sidebar-width)] m-4",
         )}
       >
         <div>
 
           <button
-            className="flex w-full items-center gap-2 px-5 py-2.5 border-b text-muted-foreground dark:bg-zinc-950 dark:border-t-zinc-900/30 dark:border-t"
+            className="flex w-full items-center gap-2 px-5 py-2.5 border-b text-muted-foreground dark:bg-zinc-950 dark:border-t-zinc-900/30 dark:border-t "
             onClick={() => {
               setOpenSearch(true);
             }}
@@ -144,7 +144,7 @@ export default function ArticleLayout() {
   );
 }
 
-function NewBadge({ isSelected }: { isSelected?: boolean }) {
+export function NewBadge({ isSelected }: { isSelected?: boolean }) {
   return (
     <div className="flex items-center justify-end w-full">
       <Badge
