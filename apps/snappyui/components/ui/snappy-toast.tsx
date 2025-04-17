@@ -13,6 +13,8 @@ type ToastProps = {
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
   className?: string;
   buttonText?: string;
+  index?: number;
+  total?: number;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 type ToastState = {
@@ -35,25 +37,92 @@ function Toast({
   duration = 3000,
   position = "bottom-right",
   className,
+  index = 0,
+  total = 1,
   ...rest
 }: ToastProps) {
   const [mounted, setMounted] = useState(false);
+  const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setMounted(false), duration - 200);
+    const timer = setTimeout(() => {
+      setExiting(true);
+      setTimeout(() => setMounted(false), 200 * (total - index));
+    }, duration - 200);
     setMounted(true);
     return () => clearTimeout(timer);
-  }, [duration]);
+  }, [duration, index, total]);
+
+  const getInitialPosition = () => {
+    if (position.includes("top")) {
+      return { transform: "translateY(-40px)", opacity: 0 };
+    }
+    else {
+      return { transform: "translateY(40px)", opacity: 0 };
+    }
+  };
+
+  const getStackStyles = () => {
+    if (total <= 1)
+      return {};
+
+    const reverseIndex = total - 1 - index;
+
+    if (reverseIndex === 0)
+      return {};
+
+    const offset = reverseIndex * 10;
+    const scale = 1 - reverseIndex * 0.05;
+    const opacity = 1 - reverseIndex * 0.2;
+    const translateDirection = position.includes("top") ? offset : -offset;
+
+    return {
+      transform: `translateY(${translateDirection}px) scale(${scale})`,
+      opacity,
+      zIndex: 50 - reverseIndex,
+      transition: `transform 300ms cubic-bezier(0.2, 0, 0, 1), opacity 500ms ease-out`,
+    };
+  };
+
+  const getExitAnimation = () => {
+    if (!exiting)
+      return {};
+
+    if (position.includes("top")) {
+      return {
+        transform: "translateY(-40px) scale(0.95)",
+        opacity: 0,
+        transition: `transform 200ms cubic-bezier(0.4, 0, 1, 1), opacity 200ms ease-in`,
+      };
+    }
+    else {
+      return {
+        transform: "translateY(40px) scale(0.95)",
+        opacity: 0,
+        transition: `transform 200ms cubic-bezier(0.4, 0, 1, 1), opacity 200ms ease-in`,
+      };
+    }
+  };
 
   return (
     <div
       className={cn(
-        "fixed z-50 w-[90%] sm:w-[320px] max-w-sm p-4 rounded-lg shadow-xl text-sm transition-all duration-500",
+        "fixed z-50 w-[90%] sm:w-[320px] max-w-sm p-4 rounded-lg shadow-xl text-sm",
         positionClassMap[position],
-        mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none",
         "bg-white text-black dark:bg-gray-900 dark:text-white",
         className,
       )}
+      style={{
+        ...(!mounted
+          ? getInitialPosition()
+          : {
+              transform: "translateY(0) scale(1)",
+              opacity: 1,
+            }),
+        transition: "transform 300ms cubic-bezier(0, 0, 0.2, 1), opacity 300ms ease-out",
+        ...getStackStyles(),
+        ...getExitAnimation(),
+      }}
       {...rest}
     >
       {variant === "with-title" && (
@@ -104,7 +173,10 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   const showToast = (props: ToastProps) => {
     const id = Date.now();
 
-    setToasts(prev => [...prev, { id, props }]);
+    setToasts((prev) => {
+      const newToasts = [...prev, { id, props }];
+      return newToasts.slice(-3);
+    });
 
     setTimeout(() => {
       hideToast(id);
@@ -116,8 +188,13 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
     <ToastContext value={{ showToast, hideToast }}>
       {children}
-      {toasts.map(toast => (
-        <Toast key={toast.id} {...toast.props} />
+      {toasts.map((toast, index) => (
+        <Toast
+          key={toast.id}
+          {...toast.props}
+          index={toasts.length - 1 - index}
+          total={toasts.length}
+        />
       ))}
     </ToastContext>
   );
@@ -132,31 +209,46 @@ export default function Toaster({
   duration,
   buttonText = "Show Toast",
 }: ToastProps) {
-  const [activeToast, setActiveToast] = useState<number | null>(null);
+  const [toasts, setToasts] = useState<ToastState[]>([]);
 
   const showToast = () => {
     const id = Date.now();
-    setActiveToast(null);
+    const newToast = {
+      id,
+      props: {
+        variant: variant || "with-action",
+        title: title || "Event has been created",
+        description: description || "Sunday, December 03, 2023 at 9:00 AM",
+        action: action || (
+          <button
+            type="button"
+            className="px-4 py-1 bg-white text-black rounded-md hover:bg-gray-100 transition-colors"
+          >
+            Undo
+          </button>
+        ),
+        duration: duration || 3000,
+        position: position || "bottom-right",
+      },
+    };
+
+    setToasts((prev) => {
+      const newToasts = [...prev, newToast];
+      return newToasts.slice(-3);
+    });
 
     setTimeout(() => {
-      setActiveToast(id);
-      setTimeout(() => setActiveToast(null), duration || 3000);
-    }, 50);
+      setToasts(prev => prev.filter(toast => toast.id !== id));
+    }, duration || 3000);
   };
 
   return (
     <div className="relative flex flex-col items-center justify-end p-6 min-h-[50px]">
-      {activeToast && (
-        <Toast
-          variant={variant || "simple"}
-          title={title || (variant === "with-title" || variant === "with-action" ? "Event Created" : undefined)}
-          description={description || (variant === "simple" ? "This is a toast notification" : "Monday, January 3rd at 6:00pm")}
-          action={action || (variant === "with-action" ? <button className="text-blue-500 text-sm hover:underline">Undo</button> : undefined)}
-          duration={duration || 3000}
-          position={position || "bottom-right"}
-        />
-      )}
+      {toasts.map((toast, index) => (
+        <Toast key={toast.id} {...toast.props} index={index} total={toasts.length} />
+      ))}
       <button
+        type="button"
         onClick={showToast}
         className="mt-6 px-4 h-9 text-sm font-medium bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-black dark:text-white rounded-full shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition"
       >
