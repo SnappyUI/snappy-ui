@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 
-import FloatingDots from "./floating-dots";
+import FloatingDots from "./snappy-floating-dots";
 
 const avatars = [
   {

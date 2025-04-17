@@ -2,8 +2,8 @@ import { Github } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-import FloatingDots from "./floating-dots";
 import { ColourfulText } from "./ui/snappy-colorful-text";
+import FloatingDots from "./ui/snappy-floating-dots";
 
 function Hero() {
   return (
