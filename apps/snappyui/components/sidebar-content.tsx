@@ -62,6 +62,11 @@ export const contents: Content[] = [
         isNew: true,
       },
       {
+        title: "Hold To Delete",
+        href: "/docs/components/snappyholdtodelete",
+        isNew: true,
+      },
+      {
         title: "Loader",
         href: "/docs/components/snappyloader",
       },
