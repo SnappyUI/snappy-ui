@@ -4,7 +4,8 @@ import Components from "@/components/components";
 import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
-import Team from "@/components/ui/snappy-avatr";
+import StackedAvatars from "@/components/ui/snappy-avatar";
+import { avatarData } from "@/lib/data";
 
 export default function HomePage() {
   return (
@@ -14,7 +15,7 @@ export default function HomePage() {
         <Hero />
         <Features />
         <Components />
-        <Team />
+        <StackedAvatars avatars={avatarData} />
       </div>
 
       <Footer />

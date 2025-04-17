@@ -1,0 +1,50 @@
+---
+title: Avatar
+description: A versatile Animated Text component for modern web applications
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import StackedAvatars from "@/components/ui/snappy-avatar";
+import { avatarData } from "@/lib/data";
+
+
+## Basic Usage
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+      <div className="flex flex-col  justify-center mb-6  rounded-lg ">
+
+         <StackedAvatars avatars={avatarData} />
+        
+      </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import StackedAvatars from "@/components/ui/snappy-avatar";
+
+        const avatarData = [
+        { name: "Ajay Patel", src: "https://avatars.githubusercontent.com/u/6430569?v=4" },
+        { name: "Jay Kadlag", src: "https://avatars.githubusercontent.com/u/121807304?v=4" },
+        { name: "Ayush Bhagat", src: "https://avatars.githubusercontent.com/u/103896902?s=400&u=7cfa9637b46b0dcffd0902a099c86365151051e4&v=4" },
+        { name: "Ajay Panigrahi", src: "https://avatars.githubusercontent.com/u/168801266?v=4" },
+        { name: "Ankit Raj", src: "https://avatars.githubusercontent.com/u/131615178?v=4" },
+        { name: "Jatin Verma", src: "https://avatars.githubusercontent.com/u/202832380?v=4" },
+        { name: "Aditya Raj", src: "https://avatars.githubusercontent.com/u/83577693?v=4" },
+        ];
+        
+      <StackedAvatars avatars={avatarData} />
+      ```
+
+    </Tab>
+
+</Tabs>
