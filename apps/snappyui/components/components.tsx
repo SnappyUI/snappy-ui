@@ -32,7 +32,7 @@ import Skeleton from "@/components/ui/snappy-skeleton";
 
 import type { ToggleVariant } from "./ui/snappy-toggle";
 
-import FloatingDots from "./floating-dots";
+import FloatingDots from "./ui/snappy-floating-dots";
 import Toggle from "./ui/snappy-toggle";
 
 function Components() {

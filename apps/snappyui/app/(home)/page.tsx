@@ -4,7 +4,7 @@ import Components from "@/components/components";
 import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
-import Team from "@/components/team";
+import Team from "@/components/ui/snappy-avatr";
 
 export default function HomePage() {
   return (
