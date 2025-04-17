@@ -7,34 +7,33 @@ import FloatingDots from "./floating-dots";
 const avatars = [
   {
     name: "Ajay Patel",
-    src: "/avatars/ajay-patel.png",
+    src: "https://avatars.githubusercontent.com/u/6430569?v=4",
   },
   {
     name: "Jay Kadlag",
-    src: "/avatars/jay-kadlag.png",
+    src: "https://avatars.githubusercontent.com/u/121807304?v=4",
   },
   {
     name: "Ayush Bhagat",
-    src: "/avatars/ayush-bhagat.png",
+    src: "https://avatars.githubusercontent.com/u/103896902?s=400&u=7cfa9637b46b0dcffd0902a099c86365151051e4&v=4",
   },
   {
     name: "Ajay Panigrahi",
-    src: "/avatars/ajay-panigrahi.png",
+    src: "https://avatars.githubusercontent.com/u/168801266?v=4",
   },
   {
     name: "Ankit Raj",
-    src: "/avatars/ankit-raj.png",
+    src: "https://avatars.githubusercontent.com/u/131615178?v=4",
   },
   {
     name: "Jatin Verma",
-    src: "/avatars/jatin-verma.png",
+    src: "https://avatars.githubusercontent.com/u/202832380?v=4",
   },
   {
     name: "Aditya Raj",
-    src: "/avatars/aditya-raj.png",
+    src: "https://avatars.githubusercontent.com/u/83577693?v=4",
   },
 ];
-
 export default function StackedAvatars() {
   return (
     <section className="relative w-screen py-12 md:py-20 px-6 md:px-16 mx-auto">
