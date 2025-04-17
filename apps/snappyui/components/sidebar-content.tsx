@@ -84,7 +84,7 @@ export const contents: Content[] = [
       },
       {
         title: "Toast",
-        href: "docs/components/snappytoast",
+        href: "/docs/components/snappytoast",
         isNew: true,
       },
       {
