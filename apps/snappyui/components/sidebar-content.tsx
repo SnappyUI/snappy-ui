@@ -127,5 +127,49 @@ export const contents: Content[] = [
 
     ],
   },
+  {
+    title: "Inputs",
+    isNew: true,
+    list: [
+      {
+        title: "Footer",
+        href: "/docs/sections/snappyfooter",
+      },
+
+    ],
+  },
+  {
+    title: "Auth",
+    isNew: true,
+    list: [
+      {
+        title: "Footer",
+        href: "/docs/sections/snappyfooter",
+      },
+
+    ],
+  },
+  {
+    title: "Responses",
+    isNew: true,
+    list: [
+      {
+        title: "Footer",
+        href: "/docs/sections/snappyfooter",
+      },
+
+    ],
+  },
+  {
+    title: "Enhancers",
+    isNew: true,
+    list: [
+      {
+        title: "Footer",
+        href: "/docs/sections/snappyfooter",
+      },
+
+    ],
+  },
 
 ];

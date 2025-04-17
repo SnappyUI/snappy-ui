@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import FloatingDots from "./floating-dots";
+import FloatingDots from "./ui/snappy-floating-dots";
 import NeonCard from "./ui/snappy-neon-card";
 
 function Features() {
