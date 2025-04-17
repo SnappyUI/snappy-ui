@@ -33,6 +33,7 @@
     "popmotion": "^11.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icon-cloud": "^4.1.7",
     "tailwind-merge": "^3.0.2",
     "tw-animate-css": "^1.2.5"
   },
