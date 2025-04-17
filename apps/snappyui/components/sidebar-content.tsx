@@ -78,6 +78,11 @@ export const contents: Content[] = [
         href: "/docs/components/snappysplashscreen",
       },
       {
+        title: "Toast",
+        href: "docs/components/snappytoast",
+        isNew: true,
+      },
+      {
         title: "Toggle",
         href: "/docs/components/snappytoggle",
         isNew: true,
