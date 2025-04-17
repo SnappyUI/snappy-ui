@@ -4,37 +4,16 @@ import clsx from "clsx";
 
 import FloatingDots from "./snappy-floating-dots";
 
-const avatars = [
-  {
-    name: "Ajay Patel",
-    src: "https://avatars.githubusercontent.com/u/6430569?v=4",
-  },
-  {
-    name: "Jay Kadlag",
-    src: "https://avatars.githubusercontent.com/u/121807304?v=4",
-  },
-  {
-    name: "Ayush Bhagat",
-    src: "https://avatars.githubusercontent.com/u/103896902?s=400&u=7cfa9637b46b0dcffd0902a099c86365151051e4&v=4",
-  },
-  {
-    name: "Ajay Panigrahi",
-    src: "https://avatars.githubusercontent.com/u/168801266?v=4",
-  },
-  {
-    name: "Ankit Raj",
-    src: "https://avatars.githubusercontent.com/u/131615178?v=4",
-  },
-  {
-    name: "Jatin Verma",
-    src: "https://avatars.githubusercontent.com/u/202832380?v=4",
-  },
-  {
-    name: "Aditya Raj",
-    src: "https://avatars.githubusercontent.com/u/83577693?v=4",
-  },
-];
-export default function StackedAvatars() {
+type Avatar = {
+  name: string;
+  src: string;
+};
+
+type StackedAvatarsProps = {
+  avatars: Avatar[];
+};
+
+export default function StackedAvatars({ avatars }: StackedAvatarsProps) {
   return (
     <section className="relative w-screen py-12 md:py-20 px-6 md:px-16 mx-auto">
       {/* Left glow effect */}
