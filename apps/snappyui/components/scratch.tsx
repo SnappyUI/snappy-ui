@@ -17,7 +17,7 @@ export default function Scratch() {
         onComplete={handleComplete}
       >
         <p className="text-9xl">
-          🍑
+          🍵
         </p>
       </ScratchToReveal>
     </div>
