@@ -1,0 +1,113 @@
+---
+title: Clip-Board
+description: A versatile Clip-Board component for modern web applications
+---
+
+import Copy from '@/components/copy'
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+      <div className="flex items-center justify-center mb-6 rounded-lg ">
+
+        <Copy />
+        
+      </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+          "use client"
+          import { ClipboardCopy } from '@/components/ui/snappy-clipbord'
+          import React from 'react'
+
+          export default function Copy() {
+              return (
+                  <div className="space-y-4">
+                      <h2 className="text-xl font-semibold mb-2">Short Text</h2>
+                      <ClipboardCopy value="Welcome to Snappy Ui 🚀" />
+
+                      <h2 className="text-xl font-semibold mb-2">Long Text</h2>
+                      <ClipboardCopy
+                          value="Build sleek, beautifully responsive, pixel-perfect UIs with Snappy Ui."
+                      />
+
+                      <h2 className="text-xl font-semibold mb-2">No Preview</h2>
+                      <ClipboardCopy
+                          value="This text will be shown in full without truncation."
+                          preview={false}
+                      />
+                  </div>
+              )
+          }
+
+
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash 
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/clipboard
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash 
+    npx shadcn@latest add http://snappyui.in/api/registry/clipboard 
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash 
+    npx shadcn@latest add http://snappyui.in/api/registry/clipboard 
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash 
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/clipboard 
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+### ClipboardButton Component
+
+| **Name**      | **Type**                                     | **Default** | **Description**                           |
+| ------------- | -------------------------------------------- | ----------- | ----------------------------------------- |
+| **value**     | string                                       | -           | The text value to copy                    |
+| **onCopied**  | () => void                                   | -           | Optional callback when copy is successful |
+| **className** | string                                       | -           | Optional additional class names           |
+| **variant**   | "default" \| "outline" \| "ghost"            | "outline"   | Button style variant                      |
+| **...props**  | React.ButtonHTMLAttributes\<HTMLButtonElement\> | -        | Any other button props                    |
+
+### ClipboardCopy Component
+
+| **Name**          | **Type**    | **Default** | **Description**                                     |
+| ----------------- | ----------- | ----------- | --------------------------------------------------- |
+| **value**         | string      | -           | The full text value to be copied                    |
+| **preview**       | boolean     | true        | Whether to show a truncated preview                 |
+| **previewLength** | number      | 40          | Max length for the preview                          |
+| **className**     | string      | -           | Optional additional class names for the container   |
+| **onCopied**      | () => void  | -           | Optional callback when copy is successful           |
