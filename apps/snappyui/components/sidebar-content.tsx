@@ -174,8 +174,14 @@ export const contents: Content[] = [
     isNew: true,
     list: [
       {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
+        title: "Terminal",
+        href: "/docs/enhancers/snappyterminal",
+        isNew: true,
+      },
+      {
+        title: "Clipbord",
+        href: "/docs/enhancers/snappyclipboard",
+        isNew: true,
       },
 
     ],
