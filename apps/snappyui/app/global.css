@@ -6,7 +6,8 @@
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
 
 :root {
-  --fd-layout-width: 1400px;
+  --fd-nav-height: 57px;
+
   /* --fd-layout-width: 1536px; */
 
   --radius: 0.625rem;

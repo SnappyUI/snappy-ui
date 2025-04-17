@@ -26,7 +26,7 @@ export default async function Page(props: {
 
       tableOfContent={{
         style: "clerk",
-        header: <div className="w-10 h-4"></div>,
+        header: <div className="fixed w-10 -top-10"></div>,
       }}
       toc={page.data.toc}
       full={page.data.full}
