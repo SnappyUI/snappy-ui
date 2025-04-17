@@ -21,22 +21,6 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
   <Tab value="Code">
 
 ```tsx
-<Toast
-  variant="with-action"
-  title="Event Created"
-  description="Monday, January 3rd at 6:00pm"
-  action={<button className="text-blue-500 hover:underline">Undo</button>}
-/>
-```
-
-  </Tab>
-</Tabs>
-
-## Context API
-
-The Toast component comes with a Context API that allows you to trigger toasts from anywhere in your application.
-
-```tsx
 import { useToast } from "@/components/ui/snappy-toast";
 
 function MyComponent() {
@@ -57,6 +41,9 @@ function MyComponent() {
   return <button onClick={handleShowToast}>Show Toast</button>;
 }
 ```
+
+  </Tab>
+</Tabs>
 
 ## Variants
 
