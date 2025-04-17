@@ -16,7 +16,7 @@ export default function Page() {
     <>
       {isLoading
         ? (
-            <SplashScreen logo={<img src="/Logo.svg" alt="Logo" className="w-[550px] h-24" />} variant="default" />
+            <SplashScreen logo={<img src="/logo.png" alt="Logo" className="w-[550px] h-24" />} variant="default" />
           )
         : (
             <main className="min-h-screen flex items-center justify-center relative">
