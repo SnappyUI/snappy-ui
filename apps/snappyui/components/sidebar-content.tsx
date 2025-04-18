@@ -109,7 +109,6 @@ export const contents: Content[] = [
   },
   {
     title: "Sections",
-    isNew: true,
     list: [
       {
         title: "Footer",
@@ -138,7 +137,7 @@ export const contents: Content[] = [
   },
   {
     title: "Inputs",
-    isNew: true,
+
     list: [
       {
         title: "Footer",
@@ -149,7 +148,7 @@ export const contents: Content[] = [
   },
   {
     title: "Auth",
-    isNew: true,
+
     list: [
       {
         title: "Footer",
@@ -160,7 +159,7 @@ export const contents: Content[] = [
   },
   {
     title: "Responses",
-    isNew: true,
+
     list: [
       {
         title: "Footer",
@@ -171,16 +170,27 @@ export const contents: Content[] = [
   },
   {
     title: "Enhancers",
-    isNew: true,
+
     list: [
+
+      {
+        title: "Clipbord",
+        href: "/docs/enhancers/snappyclipboard",
+        isNew: true,
+      },
+      {
+        title: "Json",
+        href: "/docs/enhancers/snappyjson",
+        isNew: true,
+      },
       {
         title: "Terminal",
         href: "/docs/enhancers/snappyterminal",
         isNew: true,
       },
       {
-        title: "Clipbord",
-        href: "/docs/enhancers/snappyclipboard",
+        title: "QR",
+        href: "/docs/enhancers/snappyqr",
         isNew: true,
       },
 
