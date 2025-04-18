@@ -16,24 +16,21 @@ The toggle component allows users to switch between two states. By default, it u
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleExample variant="simple" />
+  </Tab>
 
-      <ToggleExample variant="simple" />
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
 
-    </Tab>
-
-    <Tab value="Code">
-
-    ```tsx
-    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-
-    <Toggle 
-      variant="simple"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-    </Tab>
+  <Toggle 
+    variant="simple"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ---
@@ -50,24 +47,21 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleExample variant="primary" />
+  </Tab>
 
-      <ToggleExample variant="primary" />
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
 
-    </Tab>
-
-    <Tab value="Code">
-
-    ```tsx
-    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-
-    <Toggle 
-      variant="primary"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-    </Tab>
+  <Toggle 
+    variant="primary"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Minimal
@@ -78,23 +72,21 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleExample variant="minimal" />
+  </Tab>
 
-      <ToggleExample variant="minimal" />
-
-    </Tab>
-
-    <Tab value="Code">
-
-    ```tsx
-    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-    <Toggle 
-      variant="minimal"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-    </Tab>
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="minimal"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Circular
@@ -105,23 +97,21 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleExample variant="circular" />
+  </Tab>
 
-      <ToggleExample variant="circular" />
-
-    </Tab>
-
-    <Tab value="Code">
-
-    ```tsx
-    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-    <Toggle 
-      variant="circular"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-    </Tab>
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="circular"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Indicator
@@ -132,24 +122,21 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleExample variant="indicator" />
+  </Tab>
 
-      <ToggleExample variant="indicator" />
-
-    </Tab>
-
-    <Tab value="Code">
-
-    
-    ```tsx
-    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-    <Toggle 
-      variant="indicator"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-    </Tab>
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="indicator"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Pill
@@ -160,30 +147,27 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
-
-      <ToggleExample 
-        variant="pill"
-        onLabel="Active"
-        offLabel="Inactive"
-      />
-
-    </Tab>
-
-    <Tab value="Code">
-
-    
-   ```tsx
-   import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-    <Toggle 
+  <Tab value="Preview">
+    <ToggleExample 
       variant="pill"
       onLabel="Active"
       offLabel="Inactive"
-      checked={checked}
-      onChange={setChecked}
     />
-    ```
-    </Tab>
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="pill"
+    onLabel="Active"
+    offLabel="Inactive"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Modern
@@ -194,24 +178,21 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleExample variant="modern" />
+  </Tab>
 
-      <ToggleExample variant="modern" />
-
-    </Tab>
-
-    <Tab value="Code">
-
-    
-   ```tsx
-   import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-    <Toggle 
-      variant="modern"
-      checked={checked}
-      onChange={setChecked}
-    />
-    ```
-    </Tab>
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="modern"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Labeled
@@ -222,30 +203,27 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
-
-      <ToggleExample 
-        variant="labeled"
-        onLabel="ON" 
-        offLabel="OFF"
-      />
-
-    </Tab>
-
-    <Tab value="Code">
-
-    
-   ```tsx
-   import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-    <Toggle 
+  <Tab value="Preview">
+    <ToggleExample 
       variant="labeled"
-      onLabel="ON"
+      onLabel="ON" 
       offLabel="OFF"
-      checked={checked}
-      onChange={setChecked}
     />
-    ```
-    </Tab>
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="labeled"
+    onLabel="ON"
+    offLabel="OFF"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Themed
@@ -256,30 +234,27 @@ The toggle component comes with multiple design variants to fit different UI sty
     "Code",
   ]}
 >
-    <Tab value="Preview">
-
-      <ToggleExample 
-        variant="themed"
-        onLabel="Dark" 
-        offLabel="Light"
-      />
-
-    </Tab>
-
-    <Tab value="Code">
-
-    
-    ```tsx
-    import type { ToggleVariant } from "@/components/ui/snappy-toggle";
-    <Toggle 
+  <Tab value="Preview">
+    <ToggleExample 
       variant="themed"
-      onLabel="Dark"
+      onLabel="Dark" 
       offLabel="Light"
-      checked={checked}
-      onChange={setChecked}
     />
-    ```
-    </Tab>
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="themed"
+    onLabel="Dark"
+    offLabel="Light"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ---
@@ -294,28 +269,22 @@ The toggle component supports three sizes: small, default, and large.
     "Code",
   ]}
 >
+  <Tab value="Preview">
+    <ToggleSizesExample />
+  </Tab>
 
-    <Tab value="Preview">
+  <Tab value="Code">
+  ```tsx
+  // Small size
+  <Toggle size="sm" checked={checked} onChange={setChecked} />
 
-      <ToggleSizesExample />
+  // Default size
+  <Toggle size="default" checked={checked} onChange={setChecked} />
 
-    </Tab>
-
-    <Tab value="Code">
-
-      ```tsx
-// Small size
-<Toggle size="sm" checked={checked} onChange={setChecked} />
-
-// Default size
-<Toggle size="default" checked={checked} onChange={setChecked} />
-
-// Large size
-<Toggle size="lg" checked={checked} onChange={setChecked} />
-```
-
-    </Tab>
-
+  // Large size
+  <Toggle size="lg" checked={checked} onChange={setChecked} />
+  ```
+  </Tab>
 </Tabs>
 
 ## With Labels
@@ -328,44 +297,40 @@ Some toggle variants support labels for on and off states.
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleWithLabelsExample />
+  </Tab>
 
-      <ToggleWithLabelsExample />
+  <Tab value="Code">
+  ```tsx
+  // Labeled variant
+  <Toggle 
+    variant="labeled"
+    onLabel="ON"
+    offLabel="OFF"
+    checked={checked}
+    onChange={setChecked}
+  />
 
-    </Tab>
+  // Pill variant
+  <Toggle 
+    variant="pill"
+    onLabel="Active"
+    offLabel="Inactive"
+    checked={checked}
+    onChange={setChecked}
+  />
 
-    <Tab value="Code">
-
-    
-    ```tsx
-// Labeled variant
-<Toggle 
-  variant="labeled"
-  onLabel="ON"
-  offLabel="OFF"
-  checked={checked}
-  onChange={setChecked}
-/>
-
-// Pill variant
-<Toggle 
-  variant="pill"
-  onLabel="Active"
-  offLabel="Inactive"
-  checked={checked}
-  onChange={setChecked}
-/>
-
-// Themed variant
-<Toggle 
-  variant="themed"
-  onLabel="Dark"
-  offLabel="Light"
-  checked={checked}
-  onChange={setChecked}
-/>
-```
-    </Tab>
+  // Themed variant
+  <Toggle 
+    variant="themed"
+    onLabel="Dark"
+    offLabel="Light"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ## Disabled State
@@ -378,43 +343,39 @@ Toggles can be disabled to prevent user interaction.
     "Code",
   ]}
 >
-    <Tab value="Preview">
+  <Tab value="Preview">
+    <ToggleDisabledExample />
+  </Tab>
 
-      <ToggleDisabledExample />
+  <Tab value="Code">
+  ```tsx
+  // Disabled in the "on" state
+  <Toggle 
+    disabled
+    checked={true}
+    onChange={setChecked}
+  />
 
-    </Tab>
-
-    <Tab value="Code">
-
-    
-    ```tsx
-// Disabled in the "on" state
-<Toggle 
-  disabled
-  checked={true}
-  onChange={setChecked}
-/>
-
-// Disabled in the "off" state
-<Toggle 
-  disabled
-  checked={false}
-  onChange={setChecked}
-/>
-```
-    </Tab>
+  // Disabled in the "off" state
+  <Toggle 
+    disabled
+    checked={false}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
 </Tabs>
 
 ### Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `variant` | `string` | `"simple"` | Toggle style variant |
-| `size` | `"sm" \| "default" \| "lg"` | `"default"` | Size of the toggle |
-| `checked` | `boolean` | `false` | Controlled checked state |
-| `defaultChecked` | `boolean` | `false` | Initial checked state (uncontrolled) |
-| `onChange` | `(checked: boolean) => void` | — | Callback when toggle state changes |
-| `disabled` | `boolean` | `false` | Whether the toggle is disabled |
-| `onLabel` | `string` | — | Label for the "on" state (for variants that support labels) |
-| `offLabel` | `string` | — | Label for the "off" state (for variants that support labels) |
-| `children` | `ReactNode` | — | Optional child elements |
+| Prop           | Type                            | Default     | Description                                                  |
+| -------------- | ------------------------------- | ----------- | ------------------------------------------------------------ |
+| variant        | `string`                        | `"simple"`  | Toggle style variant                                         |
+| size           | `"sm"` \| `"default"` \| `"lg"` | `"default"` | Size of the toggle                                           |
+| checked        | `boolean`                       | `false`     | Controlled checked state                                     |
+| defaultChecked | `boolean`                       | `false`     | Initial checked state (uncontrolled)                         | 
+| onChange       | `(checked: boolean) => void`    | `—`         | Callback when toggle state changes                           |
+| disabled       | `boolean`                       | `false`     | Whether the toggle is disabled                               |
+| onLabel        | `string`                        | `—`         | Label for the "on" state (for variants that support labels)  |
+| offLabel       | `string`                        | `—`         | Label for the "off" state (for variants that support labels) |
+| children       | `ReactNode`                     | `—`         | Optional child elements                                      |

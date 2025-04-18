@@ -1,6 +1,6 @@
 ---
 title: Button
-description: A highly customizable button component for modern web applications
+description: A fully customizable button component built for modern interfaces.
 ---
 
 import Button from "@/components/ui/snappy-button";
@@ -10,29 +10,17 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Basic Usage
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="default">Default</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-      <Button variant="default">Default</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="default">Default</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="default">Default</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -41,198 +29,107 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ### Primary
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="primary">Primary</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="primary">Primary</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="primary">Primary</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="primary">Primary</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Success
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="success">Success</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="success">Success</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="success">Success</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="success">Success</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Destructive
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="destructive">Destructive</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="destructive">Destructive</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="destructive">Destructive</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="destructive">Destructive</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Outline
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="outline">Outline</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="outline">Outline</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="outline">Outline</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="outline">Outline</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Ghost
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="ghost">Ghost</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="ghost">Ghost</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="ghost">Ghost</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="ghost">Ghost</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Warning
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="warning">Warning</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="warning">Warning</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="warning">Warning</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="warning">Warning</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Gradient
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="gradient">Gradient</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="gradient">Gradient</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="gradient">Gradient</Button>
-      ```
-
-    </Tab>
-
+    <Button variant="gradient">Gradient</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -241,192 +138,111 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ### Default
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="moving-border"> Default Blue </Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="moving-border"> Default Blue </Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="moving-border"> Default Blue </Button>
-
-      ```
-
-    </Tab>
-
+    <Button variant="moving-border"> Default Blue </Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Custom Color
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="moving-border" borderColor="#22c55e"> Custom Green </Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="moving-border"  borderColor="#22c55e"> Custom Green </Button>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-      <Button variant="moving-border"  borderColor="#22c55e"> Custom Green </Button>
-
-      ```
-
-    </Tab>
-
+    <Button variant="moving-border" borderColor="#22c55e"> Custom Green </Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Custom Speed
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="moving-border" borderColor="#ef4444" duration={2000}>Faster Red</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="moving-border" borderColor="#ef4444"duration={2000}>Faster Red</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-       <Button variant="moving-border" borderColor="#ef4444"duration={2000}>Faster Red</Button>
-
-      ```
-
-    </Tab>
-
+    <Button variant="moving-border" borderColor="#ef4444" duration={2000}>Faster Red</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ### Custom Gradient
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Button variant="moving-border" borderClassName="bg-gradient-to-r from-red-500 to-blue-500">Gradient Border</Button>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <Button variant="moving-border" borderClassName="bg-gradient-to-r from-red-500 to-blue-500">Gradient Border</Button>
-
-    </Tab>
-
-    <Tab value="Code">
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-       <Button variant="moving-border" borderClassName="bg-gradient-to-r from-red-500 to-blue-500">Gradient Border</Button>
-
-      ```
-
-    </Tab>
-
+    <Button variant="moving-border" borderClassName="bg-gradient-to-r from-red-500 to-blue-500">Gradient Border</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ---
 
 ### Disabled State
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-wrap justify-center items-center gap-4">
+      <Button disabled>Disabled Default</Button>
+      <Button variant="primary" disabled>Disabled Primary</Button>
+      <Button variant="moving-border" disabled>Disabled Moving</Button>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-       <div className="flex flex-wrap justify-center items-center gap-4">
-        <Button disabled>Disabled Default</Button>
-        <Button variant="primary" disabled>Disabled Primary</Button>
-        <Button variant="moving-border" disabled>Disabled Moving</Button>
-      </div>
-    </Tab>
-
-    <Tab value="Code">
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-        <Button disabled>Disabled Default</Button>
-        <Button variant="primary" disabled>Disabled Primary</Button>
-        <Button variant="moving-border" disabled>Disabled Moving</Button>
-
-      ```
-
-    </Tab>
-
+    <Button disabled>Disabled Default</Button>
+    <Button variant="primary" disabled>Disabled Primary</Button>
+    <Button variant="moving-border" disabled>Disabled Moving</Button>
+    ```
+  </Tab>
 </Tabs>
 
 ---
 
 ### Sizes
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-wrap justify-center items-center gap-4">
+      <Button size="sm">Small</Button>
+      <Button size="default">Default</Button>
+      <Button size="lg">Large</Button>
+      <Button size="xl">Extra Large</Button>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Button from "@/components/ui/snappy-button";
 
-    <Tab value="Preview">
-
-
-       <div className="flex flex-wrap justify-center items-center gap-4">
-        <Button size="sm">Small</Button>
-        <Button size="default">Default</Button>
-        <Button size="lg">Large</Button>
-        <Button size="xl">Extra Large</Button>
-      </div>
-
-    </Tab>
-
-    <Tab value="Code">
-      
-      ```tsx
-      import Button from "@/components/ui/snappy-button";
-
-        <Button size="sm">Small Button</Button>
-        <Button size="default">Default Button</Button>
-        <Button size="lg">Large Button</Button>
-        <Button size="xl">Extra Large Button</Button>
-      ```
-
-    </Tab>
-
+    <Button size="sm">Small Button</Button>
+    <Button size="default">Default Button</Button>
+    <Button size="lg">Large Button</Button>
+    <Button size="xl">Extra Large Button</Button>
+    ```
+  </Tab>
 </Tabs>
-
-
 
 ---
 
@@ -459,34 +275,31 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Props
 
-| Name             | Type            | Default     | Description                                     |
-| ---------------- | --------------- | ----------- | ----------------------------------------------- |
-| **variant**      | string          | 'default'   | Button style variant                            |
-| **size**         | string          | 'default'   | Button size (sm, default, lg, xl)               |
-| **disabled**     | boolean         | false       | Disables the button if true                     |
-| **children**     | ReactNode       | -           | Button label or content                         |
-| **onClick**      | Function        | -           | Function called when button is clicked          |
-| **className**    | string          | -           | Extra Tailwind/custom classes (optional)        |
-| **duration**     | number          | 3000        | Animation duration for moving-border in ms      |
-| **borderRadius** | string          | "1.75rem"   | Border radius for button                        |
-| **borderColor**  | string          | "#0ea5e9"   | Color for moving border (moving-border variant) |
-| **borderClassName** | string       | -           | Custom Tailwind classes for border element      |
+| Name               | Type        | Default       | Description                                     |
+| ------------------ | ----------- | ------------- | ----------------------------------------------- |
+| **variant**        | `string`    | `'default'`   | Button style variant                            |
+| **size**           | `string`    | `'default'`   | Button size (sm, default, lg, xl)               |
+| **disabled**       | `boolean`   | `false`       | Disables the button if true                     |
+| **children**       | `ReactNode` | `-`           | Button label or content                         |
+| **onClick**        | `Function`  | `-`           | Function called when button is clicked          |
+| **className**      | `string`    | `-`           | Extra Tailwind/custom classes (optional)        |
+| **duration**       | `number`    | `3000`        | Animation duration for moving-border in ms      |
+| **borderRadius**   | `string`    | `"1.75rem"`   | Border radius for button                        |
+| **borderColor**    | `string`    | `"#0ea5e9"`   | Color for moving border (moving-border variant) |
+| **borderClassName**| `string`    | `-`           | Custom Tailwind classes for border element      |
 
 ---
 
 ## Button Variants
 
-| Variant          | Description                                   |
-| ---------------- | --------------------------------------------- |
-| **default**      | Standard button with dark/light mode styles   |
-| **primary**      | Blue-themed button for primary actions        |
-| **success**      | Green-themed button for success actions       |
-| **destructive**  | Red-themed button for destructive actions     |
-| **outline**      | Transparent button with border                |
-| **ghost**        | Transparent button without border             |
-| **warning**      | Yellow-themed warning button                  |
-| **gradient**     | Button with gradient background               |
-| **moving-border**| Button with animated moving border effect     |
-
----
-
+| Variant           | Description                                   |
+| ----------------- | --------------------------------------------- |
+| **default**       | Standard button with dark/light mode styles   |
+| **primary**       | Blue-themed button for primary actions        |
+| **success**       | Green-themed button for success actions       |
+| **destructive**   | Red-themed button for destructive actions     |
+| **outline**       | Transparent button with border                |
+| **ghost**         | Transparent button without border             |
+| **warning**       | Yellow-themed warning button                  |
+| **gradient**      | Button with gradient background               |
+| **moving-border** | Button with animated moving border effect     |

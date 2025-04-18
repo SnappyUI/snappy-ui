@@ -1,62 +1,44 @@
 ---
 title: Skeleton
-description: A versatile Skeleton component for modern web applications
+description: A flexible and lightweight placeholder component to enhance user experience.
+
 ---
 
 import Skelton from "@/components/ui/snappy-skeleton";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-
-
 ## Basic Usage
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 gap-1 rounded-lg py-5">
+      <div className="flex flex-row gap-1">
+        <Skelton variant="circular" width={40} height={40} animation="pulse" />
+        <div className="flex flex-col gap-1">
+          <Skelton variant="text" width={160} />
+          <Skelton variant="text" width={160} />
+        </div>
+      </div>
+      <Skelton variant="rounded" width={200} height={30} />
+    </div>
+  </Tab>
 
-    <Tab value="Preview">
+  <Tab value="Code">
+    ```tsx
+    import Skelton from "@/components/ui/snappy-skeleton";
 
-     <div className="flex flex-col items-center justify-center mb-6 gap-1 rounded-lg py-5">
-
-<div className="flex flex-row gap-1">
-
-  <Skelton variant="circular" width={40} height={40} animation="pulse" />
-
-  <div className="flex flex-col gap-1">
-    <Skelton variant="text" width={160} />
-    <Skelton variant="text" width={160} />
-  </div>
-</div>
-  <Skelton variant="rounded" width={200} height={30} />
-</div>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      ```tsx
-      import Skelton from "@/components/ui/snappy-skeleton";
-
-      <div className="flex flex-col items-center justify-center mb-6 gap-1 rounded-lg py-5">
-
-<div className="flex flex-row gap-1">
-
-  <Skelton variant="circular" width={40} height={40} animation="pulse" />
-
-  <div className="flex flex-col gap-1">
-    <Skelton variant="text" width={160} />
-    <Skelton variant="text" width={160} />
-  </div>
-</div>
-  <Skelton variant="rounded" width={200} height={30} />
-</div>
-      ```
-
-    </Tab>
-
+    <div className="flex flex-col items-center justify-center mb-6 gap-1 rounded-lg py-5">
+      <div className="flex flex-row gap-1">
+        <Skelton variant="circular" width={40} height={40} animation="pulse" />
+        <div className="flex flex-col gap-1">
+          <Skelton variant="text" width={160} />
+          <Skelton variant="text" width={160} />
+        </div>
+      </div>
+      <Skelton variant="rounded" width={200} height={30} />
+    </div>
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -65,160 +47,122 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ### Default
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
+<Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-
-     <div className="flex items-center justify-center">
-      <Skelton  width={200} height={100}  />
+    <div className="flex items-center justify-center">
+      <Skelton width={200} height={100} />
     </div>
   </Tab>
-<Tab value="Code">
 
-     ```tsx
-     import Skelton from "@/components/ui/snappy-skeleton";
-      <div className="flex items-center justify-center">
-      <Skelton  width={200} height={100}  />
-      </div>
-     ```
+  <Tab value="Code">
+    ```tsx
+    import Skelton from "@/components/ui/snappy-skeleton";
 
-    </Tab>
-
+    <div className="flex items-center justify-center">
+      <Skelton width={200} height={100} />
+    </div>
+    ```
+  </Tab>
 </Tabs>
 
 ### Circular
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
+<Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-
-     <div className="flex items-center justify-center">
-      <Skelton variant="circular" width={40} height={40}  />
+    <div className="flex items-center justify-center">
+      <Skelton variant="circular" width={40} height={40} />
     </div>
   </Tab>
-<Tab value="Code">
 
-     ```tsx
-     import Skelton from "@/components/ui/snappy-skeleton";
-      <div className="flex items-center justify-center">
-      <Skelton variant="circular" width={40} height={40}  />
+  <Tab value="Code">
+    ```tsx
+    import Skelton from "@/components/ui/snappy-skeleton";
+
+    <div className="flex items-center justify-center">
+      <Skelton variant="circular" width={40} height={40} />
     </div>
-     ```
-    </Tab>
+    ```
+  </Tab>
 </Tabs>
 
 ### Rectangular
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
+<Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-
-     <div className="flex items-center justify-center">
-      <Skelton variant="rectangular" width={200} height={100}  />
+    <div className="flex items-center justify-center">
+      <Skelton variant="rectangular" width={200} height={100} />
     </div>
   </Tab>
-<Tab value="Code">
 
-     ```tsx
-     import Skelton from "@/components/ui/snappy-skeleton";
-      <div className="flex items-center justify-center">
-      <Skelton variant="rectangular" width={200} height={100}  />
+  <Tab value="Code">
+    ```tsx
+    import Skelton from "@/components/ui/snappy-skeleton";
+
+    <div className="flex items-center justify-center">
+      <Skelton variant="rectangular" width={200} height={100} />
     </div>
-     ```
-    </Tab>
+    ```
+  </Tab>
 </Tabs>
 
 ### Text
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
+<Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-
-     <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <Skelton variant="text" width={160} />
     </div>
   </Tab>
-<Tab value="Code">
 
-     ```tsx
-     import Skelton from "@/components/ui/snappy-skeleton";
-      <div className="flex items-center justify-center">
+  <Tab value="Code">
+    ```tsx
+    import Skelton from "@/components/ui/snappy-skeleton";
+
+    <div className="flex items-center justify-center">
       <Skelton variant="text" width={160} />
     </div>
-     ```
-    </Tab>
+    ```
+  </Tab>
 </Tabs>
 
 ### No Animation
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
+<Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-
-     <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <Skelton width={160} animation={false} />
     </div>
   </Tab>
-<Tab value="Code">
 
-     ```tsx
-     import Skelton from "@/components/ui/snappy-skeleton";
-      <div className="flex items-center justify-center">
+  <Tab value="Code">
+    ```tsx
+    import Skelton from "@/components/ui/snappy-skeleton";
+
+    <div className="flex items-center justify-center">
       <Skelton width={160} animation={false} />
     </div>
-     ```
-    </Tab>
+    ```
+  </Tab>
 </Tabs>
 
 ### Color
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
+<Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-
-     <div className="flex items-center justify-center">
-       <Skelton variant="rounded" width={200} height={100} className="bg-gray-800"  />
-    </div> 
+    <div className="flex items-center justify-center">
+      <Skelton variant="rounded" width={200} height={100} className="bg-gray-800" />
+    </div>
   </Tab>
-<Tab value="Code">
 
-     ```tsx
-     import Skelton from "@/components/ui/snappy-skeleton";
-      <div className="flex items-center justify-center">
-       <Skelton variant="rounded" width={200} height={100} className="bg-gray-800"  />
-    </div> 
-     ```
-    </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Skelton from "@/components/ui/snappy-skeleton";
+
+    <div className="flex items-center justify-center">
+      <Skelton variant="rounded" width={200} height={100} className="bg-gray-800" />
+    </div>
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -231,31 +175,34 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     pnpm dlx shadcn@latest add http://snappyui.in/api/registry/skeleton
     ```
   </Tab>
+
   <Tab value="npm">
     ```bash
     npx shadcn@latest add http://snappyui.in/api/registry/skeleton
     ```
   </Tab>
+
   <Tab value="yarn">
     ```bash
     npx shadcn@latest add http://snappyui.in/api/registry/skeleton
     ```
   </Tab>
+
   <Tab value="bun">
     ```bash
     bunx --bun shadcn@latest add http://snappyui.in/api/registry/skeleton
     ```
   </Tab>
 </Tabs>
+
 ---
 
 ## Props
 
-| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
-|------------|-------------|-----------|------------------------------------------|
-| **variant**  | string      | rectangular         | variant choose from text, circular, rectangular, rounded                   |
-| **className** | string    | -         | Additional CSS classes                  |
-| **animation** | string     | pulse        | Animation options from pulse or false            |
-| **width**  | number      | 100%        | Custom width                 |
-| **height** | number     | - | Custom Height          |
-
+| Name          | Type       | Default        | Description                                              |
+| ------------- | ---------- | -------------- | -------------------------------------------------------- |
+| **variant**   | `string`   | `rectangular`  | Choose from 'text', 'circular', "rectangular", "rounded" |
+| **className** | `string`   | `-`            | Additional CSS classes                                   |
+| **animation** | `string`   | `pulse`        | Options: "pulse" or false                                |
+| **width**     | `number`   | `100%`         | Custom width                                             |
+| **height**    | `number`   | `-`            | Custom height                                            |

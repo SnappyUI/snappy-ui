@@ -1,6 +1,7 @@
 ---
 title: Tooltip
-description: A versatile Tooltip component for modern web applications
+description: A sleek, customizable tooltip component for clear and accessible guidance.
+
 ---
 import {
   Tooltip,
@@ -10,8 +11,6 @@ import {
 } from "@/components/ui/snappy-tooltip"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-
-
 ## Basic Usage
 
 <Tabs
@@ -20,44 +19,41 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     "Code",
   ]}
 >
-
-    <Tab value="Preview">
-
-      <div className="flex items-center justify-center">
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
       <TooltipProvider>
         <Tooltip>
-            <TooltipTrigger>Hover me !</TooltipTrigger>
-            <TooltipContent 
+          <TooltipTrigger>Hover me !</TooltipTrigger>
+          <TooltipContent 
             variant="default" 
             size="md" 
             hasArrow={true}
-            >
+          >
             Important notice!
-            </TooltipContent>
+          </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-   </div>
-    </Tab>
+    </div>
+  </Tab>
 
-    <Tab value="Code">
+  <Tab value="Code">
+  ```tsx
+  import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/snappy-tooltip"
 
-      ```tsx
-      import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/snappy-tooltip"
-
-      <TooltipProvider>
-        <Tooltip>
-            <TooltipTrigger>Hover me !</TooltipTrigger>
-            <TooltipContent 
-            variant="default" 
-            size="md" 
-            hasArrow={true}
-            >
-            Important notice!
-            </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      ```
-    </Tab>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger>Hover me !</TooltipTrigger>
+      <TooltipContent 
+        variant="default" 
+        size="md" 
+        hasArrow={true}
+      >
+        Important notice!
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  ```
+  </Tab>
 </Tabs>
 
 ---
@@ -72,44 +68,41 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     "Code",
   ]}
 >
-
-    <Tab value="Preview">
-
-      <div className="flex items-center justify-center">
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
       <TooltipProvider>
         <Tooltip>
-            <TooltipTrigger className="border-1 border-blue-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
+          <TooltipTrigger className="border-1 border-blue-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+          <TooltipContent 
             variant="info" 
             size="md" 
             hasArrow={true}
-            >
+          >
             Important notice!
-            </TooltipContent>
+          </TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </div>
-    </Tab>
+  </Tab>
 
-    <Tab value="Code">
+  <Tab value="Code">
+  ```tsx
+  import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/snappy-tooltip"
 
-      ```tsx
-      import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/snappy-tooltip"
-
-      <TooltipProvider>
-        <Tooltip>
-            <TooltipTrigger className="border-1 border-blue-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
-            variant="info" 
-            size="md" 
-            hasArrow={true}
-            >
-            Important notice!
-            </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      ```
-    </Tab>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger className="border-1 border-blue-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+      <TooltipContent 
+        variant="info" 
+        size="md" 
+        hasArrow={true}
+      >
+        Important notice!
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  ```
+  </Tab>
 </Tabs>
 
 ### Warning
@@ -120,44 +113,41 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     "Code",
   ]}
 >
-
-    <Tab value="Preview">
-
-      <div className="flex items-center justify-center">
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
       <TooltipProvider>
         <Tooltip>
-            <TooltipTrigger className="border-1 border-amber-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
+          <TooltipTrigger className="border-1 border-amber-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+          <TooltipContent 
             variant="warning" 
             size="md" 
             hasArrow={true}
-            >
+          >
             Important notice!
-            </TooltipContent>
+          </TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </div>
-    </Tab>
+  </Tab>
 
-    <Tab value="Code">
+  <Tab value="Code">
+  ```tsx
+  import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/snappy-tooltip"
 
-      ```tsx
-      import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/snappy-tooltip"
-
-      <TooltipProvider>
-        <Tooltip>
-            <TooltipTrigger className="border-1 border-amber-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
-            variant="warning" 
-            size="md" 
-            hasArrow={true}
-            >
-            Important notice!
-            </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      ```
-    </Tab>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger className="border-1 border-amber-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+      <TooltipContent 
+        variant="warning" 
+        size="md" 
+        hasArrow={true}
+      >
+        Important notice!
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  ```
+  </Tab>
 </Tabs>
 
 ### Error
@@ -168,44 +158,41 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     "Code",
   ]}
 >
-
-    <Tab value="Preview">
-
-      <div className="flex items-center justify-center">
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
       <TooltipProvider>
         <Tooltip>
-            <TooltipTrigger className="border-1 border-red-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
+          <TooltipTrigger className="border-1 border-red-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+          <TooltipContent 
             variant="error" 
             size="md" 
             hasArrow={true}
-            >
+          >
             Important notice!
-            </TooltipContent>
+          </TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </div>
-    </Tab>
+  </Tab>
 
-    <Tab value="Code">
+  <Tab value="Code">
+  ```tsx
+  import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/snappy-tooltip"
 
-      ```tsx
-      import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/snappy-tooltip"
-
-      <TooltipProvider>
-        <Tooltip>
-            <TooltipTrigger className="border-1 border-red-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
-            variant="error" 
-            size="md" 
-            hasArrow={true}
-            >
-            Important notice!
-            </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      ```
-    </Tab>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger className="border-1 border-red-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+      <TooltipContent 
+        variant="error" 
+        size="md" 
+        hasArrow={true}
+      >
+        Important notice!
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  ```
+  </Tab>
 </Tabs>
 
 ### Success
@@ -216,44 +203,41 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     "Code",
   ]}
 >
-
-    <Tab value="Preview">
-
-      <div className="flex items-center justify-center">
-       <TooltipProvider>
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
+      <TooltipProvider>
         <Tooltip>
-            <TooltipTrigger className="border-1 border-green-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
+          <TooltipTrigger className="border-1 border-green-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+          <TooltipContent 
             variant="success" 
             size="md" 
             hasArrow={true}
-            >
+          >
             Important notice!
-            </TooltipContent>
+          </TooltipContent>
         </Tooltip>
       </TooltipProvider>
     </div>
-    </Tab>
+  </Tab>
 
-    <Tab value="Code">
+  <Tab value="Code">
+  ```tsx
+  import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/snappy-tooltip"
 
-      ```tsx
-      import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/snappy-tooltip"
-
-      <TooltipProvider>
-        <Tooltip>
-            <TooltipTrigger className="border-1 border-green-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
-            <TooltipContent 
-            variant="success" 
-            size="md" 
-            hasArrow={true}
-            >
-            Important notice!
-            </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      ```
-    </Tab>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger className="border-1 border-green-500 p-1 rounded-lg">Hover me !</TooltipTrigger>
+      <TooltipContent 
+        variant="success" 
+        size="md" 
+        hasArrow={true}
+      >
+        Important notice!
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  ```
+  </Tab>
 </Tabs>
 
 ---
@@ -261,24 +245,24 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
   <Tab value="pnpm">
-    ```bash
-    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/tooltip
-    ```
+  ```bash
+  pnpm dlx shadcn@latest add http://snappyui.in/api/registry/tooltip
+  ```
   </Tab>
   <Tab value="npm">
-    ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/tooltip
-    ```
+  ```bash
+  npx shadcn@latest add http://snappyui.in/api/registry/tooltip
+  ```
   </Tab>
   <Tab value="yarn">
-    ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/tooltip
-    ```
+  ```bash
+  npx shadcn@latest add http://snappyui.in/api/registry/tooltip
+  ```
   </Tab>
   <Tab value="bun">
-    ```bash
-    bunx --bun shadcn@latest add http://snappyui.in/api/registry/tooltip
-    ```
+  ```bash
+  bunx --bun shadcn@latest add http://snappyui.in/api/registry/tooltip
+  ```
   </Tab>
 </Tabs>
 
@@ -286,10 +270,9 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Props
 
-| <b>Name</b>        | <b>Type</b>         | <b>Default</b>   | <b>Description</b>                              |
-|------------|-------------|-----------|------------------------------------------|
-| **variant**  | string      | default         | variant choose from default, info, warning, error, success                   |
-| **size**  | string      | md         | size choose from sm, md, lg           |
-| **className** | string    | -         | Additional CSS classes                  |
-| **hasArrow** | boolean     | false        | HasArrow options from true or false            |
-
+| Name      | Type      | Default   | Description                                                | 
+| --------- | --------- | --------- | ---------------------------------------------------------- |
+| variant   | `string`  | `default` | variant choose from default, info, warning, error, success |
+| size      | `string`  | `md`      | size choose from sm, md, lg                                |
+| className | `string`  | `-`       | Additional CSS classes                                     |
+| hasArrow  | `boolean` | `false`   | HasArrow options from true or false                        |
