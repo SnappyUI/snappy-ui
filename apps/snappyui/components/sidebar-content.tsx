@@ -193,6 +193,11 @@ export const contents: Content[] = [
         isNew: true,
       },
       {
+        title: "Sticky Note",
+        href: "/docs/enhancers/snappystickynote",
+        isNew: true,
+      },
+      {
         title: "QR",
         href: "/docs/enhancers/snappyqr",
         isNew: true,

@@ -1,0 +1,162 @@
+---
+title: Sticky Note
+description: An interactive command-line interface modeled after macOS Terminal. Great for demos.
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import Stickynote from '@/components/sticky-note-demo'
+
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <Stickynote />
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+        "use client"
+
+import StickyNote from '@/components/ui/snappy-sticky-note'; // Adjust path if necessary
+import React, { useRef, useState, RefObject } from 'react';
+
+// Import the type definition for colors from StickyNote
+// This assumes StickyNote exports colorHexMap or its keys type
+// If StickyNote doesn't export it, you might need to redefine it here
+// matching the StickyNote's definition or ideally export it from StickyNote.
+// For now, assuming StickyNote's color keys are 'yellow' | 'blue' | 'green' | 'pink' | 'purple'
+type StickyNoteColor = 'yellow' | 'blue' | 'green' | 'pink' | 'purple';
+
+export default function Stickynote() {
+    // Correctly declare constraintsRef at the top level of the component
+    // Also updated the type annotation for better clarity.
+    const constraintsRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
+
+    // Ensure initial notes use colors defined in StickyNote's colorHexMap
+    const [notes, setNotes] = useState([
+        { id: 1, content: 'Hello World!', color: 'yellow' as StickyNoteColor, position: { x: 40, y: 60 }, rotation: -2 },
+        { id: 2, content: 'React is Awesome!', color: 'blue' as StickyNoteColor, position: { x: 180, y: 120 }, rotation: 3 },
+        { id: 3, content: 'Keep Coding!', color: 'purple' as StickyNoteColor, position: { x: 320, y: 80 }, rotation: -1 },
+        { id: 4, content: 'Breaking Bad: 9.5', color: 'green' as StickyNoteColor, position: { x: 100, y: 220 }, rotation: 1 },
+        { id: 5, content: 'Fight Club: 8.8', color: 'pink' as StickyNoteColor, position: { x: 280, y: 240 }, rotation: -3 },
+    ]);
+
+
+    // Handle content changes
+    const handleContentChange = (id: string | number, content: string) => {
+        console.log(`Note ${id} content: ${content}`);
+        // Update the content for the note with the given id
+        setNotes(prevNotes =>
+            prevNotes.map(note =>
+                note.id === id ? { ...note, content: content } : note
+            )
+        );
+    };
+
+    // Handle position changes
+    const handlePositionChange = (id: string | number, position: { x: number; y: number }) => {
+        console.log(`Note ${id} position:`, position);
+        // Update the position for the note with the given id
+        setNotes(prevNotes =>
+            prevNotes.map(note =>
+                note.id === id ? { ...note, position: position } : note
+            )
+        );
+    };
+
+    // Handle color selection
+    // The color type should match the keys of colorHexMap in StickyNote
+    const handleColorChange = (id: string | number, color: StickyNoteColor) => {
+        console.log(`Note ${id} color: ${color}`);
+        // Update the color for the note with the given id
+        setNotes(prevNotes =>
+            prevNotes.map(note =>
+                note.id === id ? { ...note, color: color } : note
+            )
+        );
+    };
+
+    // Handle note deletion
+    const handleDelete = (id: string | number) => {
+        console.log(`Delete note ${id}`);
+        // Filter out the note with the given id
+        setNotes(prevNotes => prevNotes.filter(n => n.id !== id));
+    };
+
+    return (
+        <div ref={constraintsRef} className="relative w-[750px] h-[500px] bg-gray-100 overflow-hidden">
+            {notes.map(note => (
+                <StickyNote
+                    key={note.id}
+                    id={note.id}
+                    initialContent={note.content}
+                    initialColor={note.color} // Now type should match
+                    initialPosition={note.position}
+                    initialRotation={note.rotation}
+                    onContentChange={handleContentChange}
+                    onPositionChange={handlePositionChange}
+                    onColorChange={handleColorChange}
+                    onDelete={handleDelete}
+                />
+            ))}
+            {/* Add button or interaction to create new notes */}
+        </div>
+    );
+}
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/or
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/or
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/or
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/or
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+
+
+### QRCode Component
+
+
+| **Name**               | **Type**                                          | **Default**                                       | **Description**                                                                  |
+| ---------------------- | ------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **id**                 | string \| number                                  | -                                                 | Unique identifier for the sticky note (required)                                 |
+| **initialContent**     | string                                            | ""                                                | Initial text content displayed in the note                                       |
+| **initialColor**       | "yellow" \| "blue" \| "green" \| "pink" \| "purple" | "yellow"                                          | Initial background color of the note                                             |
+| **initialPosition**    | `{ x: number; y: number }`                          | `{ x: Math.random() * 200, y: Math.random() * 200 }` | Initial position coordinates for the note                                        |
+| **initialRotation**    | number                                            | `Math.random() * 6 - 3`                           | Initial rotation angle in degrees                                                |
+| **editable**           | boolean                                           | true                                              | Whether the note content can be edited                                           |
+| **onContentChange**    | (id: string \| number, content: string) => void   | -                                                 | Callback when note content changes                                               |
+| **onPositionChange**   | (id: string \| number, position: `{ x: number; y: number }`) => void | -                               | Callback when note position changes                                              |
+| **onColorChange**      | (id: string \| number, color: keyof typeof colorHexMap) => void | -                                  | Callback when note color changes                                                 |
+| **onDelete**           | (id: string \| number) => void                    | -                                                 | Callback when note is deleted                                                    |
+| **dragConstraintsRef** | `React.RefObject<Element> `                         | -                                                 | Reference to constrain dragging within a specific element                        |
+| **className**          | string                                            | ""                                                | Additional CSS classes to apply to the note                                      |
