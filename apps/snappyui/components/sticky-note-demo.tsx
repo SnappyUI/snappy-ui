@@ -69,7 +69,7 @@ export default function Stickynote() {
   };
 
   return (
-    <div ref={constraintsRef} className="relative w-[750px] h-[500px] bg-[#f5f5f5] dark:bg-[#110f0f] overflow-hidden">
+    <div ref={constraintsRef} className="relative w-[700px] h-[500px] bg-[#f5f5f5] dark:bg-[#110f0f] overflow-hidden">
       {notes.map(note => (
         <StickyNote
           key={note.id}
@@ -78,6 +78,7 @@ export default function Stickynote() {
           initialColor={note.color} // Now type should match
           initialPosition={note.position}
           initialRotation={note.rotation}
+          dragConstraintsRef={constraintsRef as RefObject<Element>}
           onContentChange={handleContentChange}
           onPositionChange={handlePositionChange}
           onColorChange={handleColorChange}
