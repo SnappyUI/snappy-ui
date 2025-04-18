@@ -25,6 +25,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "content/docs/Enhancers/snappyterminal.mdx", "content/docs/enhancers/snappyqr.mdx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "content/docs/Enhancers/snappyterminal.mdx", "content/docs/enhancers/snappyqr.mdx", "content/docs/components/snappydialog.mdx"],
   "exclude": ["node_modules"]
 }

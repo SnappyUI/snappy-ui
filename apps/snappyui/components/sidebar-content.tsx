@@ -109,6 +109,10 @@ export const contents: Content[] = [
         title: "Tooltip",
         href: "/docs/components/snappytooltip",
       },
+      {
+        title: "Dialog",
+        href: "/docs/components/snappydialog",
+      },
     ],
   },
   {
