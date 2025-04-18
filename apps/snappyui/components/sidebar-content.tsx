@@ -61,6 +61,10 @@ export const contents: Content[] = [
         href: "/docs/components/snappydropdown",
       },
       {
+        title: "Feedback",
+        href: "/docs/components/snappyfeedback",
+      },
+      {
         title: "Icon Cloud",
         href: "/docs/components/snappyiconcloud",
         isNew: true,

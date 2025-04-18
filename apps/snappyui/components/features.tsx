@@ -28,8 +28,8 @@ function Features() {
 
   return (
     <section className="py-16 min-w-screen md:py-20 px-6 md:px-16 max-w-7xl mx-auto relative overflow-hidden">
-      {/* Left glow effect */}
-      <div className="absolute top-16 left-0 w-64 h-64 bg-blue-400/20 dark:bg-blue-400/30 rounded-full blur-3xl -translate-x-1/4 z-10 pointer-events-none"></div>
+      {/* Right glow effect */}
+      <div className="absolute top-16 -right-100 w-92 h-92 bg-blue-400/20 dark:bg-blue-400/30 rounded-full blur-[108px] -translate-x-1/2 z-10 pointer-events-none"></div>
 
       {/* Floating dots background */}
       <FloatingDots />
