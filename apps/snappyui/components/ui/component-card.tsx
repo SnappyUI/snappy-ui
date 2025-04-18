@@ -1,9 +1,9 @@
 type Props = {
   variants: string[];
-  selected: string;
+  selected?: string;
   onVariantChange: (variant: string) => void;
-  componentName: string;
-  children: React.ReactNode;
+  componentName?: string;
+  children?: React.ReactNode;
 };
 
 export default function ComponentCard({
@@ -26,10 +26,9 @@ export default function ComponentCard({
           <button
             type="button"
             key={variant}
-            className={`capitalize transition cursor-pointer ${
-              selected === variant
-                ? "text-[#1976D2] dark:text-[#42A5F5] underline underline-offset-4"
-                : "text-gray-500 dark:text-gray-400"
+            className={`capitalize transition cursor-pointer ${selected === variant
+              ? "text-[#1976D2] dark:text-[#42A5F5] underline underline-offset-4"
+              : "text-gray-500 dark:text-gray-400"
             }`}
             onClick={() => onVariantChange(variant)}
           >

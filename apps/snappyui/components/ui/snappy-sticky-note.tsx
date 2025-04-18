@@ -1,4 +1,4 @@
-import { motion, useMotionValue } from "framer-motion";
+import { animate, motion, useMotionValue } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 type StickyNoteProps = {
@@ -53,6 +53,8 @@ const StickyNote: React.FC<StickyNoteProps> = ({
   const [isDragging, setIsDragging] = useState(false);
 
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const noteRef = useRef<HTMLDivElement>(null);
+
   const x = useMotionValue(initialPosition.x);
   const y = useMotionValue(initialPosition.y);
   const rotate = useMotionValue(initialRotation);
@@ -83,9 +85,71 @@ const StickyNote: React.FC<StickyNoteProps> = ({
     setIsDragging(true);
     rotate.set(initialRotation + Math.random() * 4 - 2);
   };
+
+  const bounceBackIfOutOfBounds = () => {
+    const parent = dragConstraintsRef?.current;
+    const note = noteRef.current;
+
+    if (!parent || !note)
+      return;
+
+    const parentRect = parent.getBoundingClientRect();
+    const noteRect = note.getBoundingClientRect();
+
+    console.log(`Note ${id} - Parent Rect:`, parentRect);
+    console.log(`Note ${id} - Note Rect:`, noteRect);
+
+    let targetX = x.get();
+    let targetY = y.get();
+    let corrected = false;
+
+    if (noteRect.left < parentRect.left) {
+      const correction = parentRect.left - noteRect.left;
+      targetX += correction;
+      console.log(`Note ${id} needs LEFT correction: ${correction}. New targetX: ${targetX}`);
+      corrected = true;
+    }
+    if (noteRect.right > parentRect.right) {
+      const correction = noteRect.right - parentRect.right;
+      targetX -= correction;
+      console.log(`Note ${id} needs RIGHT correction: ${correction}. New targetX: ${targetX}`);
+      corrected = true;
+    }
+    if (noteRect.top < parentRect.top) {
+      const correction = parentRect.top - noteRect.top;
+      targetY += correction;
+      console.log(`Note ${id} needs TOP correction: ${correction}. New targetY: ${targetY}`);
+      corrected = true;
+    }
+    if (noteRect.bottom > parentRect.bottom) {
+      const correction = noteRect.bottom - parentRect.bottom;
+      targetY -= correction;
+      console.log(`Note ${id} needs BOTTOM correction: ${correction}. New targetY: ${targetY}`);
+      corrected = true;
+    }
+
+    if (corrected) {
+      console.log(`Note ${id} - Applying correction. Animating to x: ${targetX}, y: ${targetY}`);
+      animate(x, targetX, { type: "spring", stiffness: 200, damping: 20 });
+      animate(y, targetY, { type: "spring", stiffness: 200, damping: 20 });
+    }
+    else {
+      console.log(`Note ${id} - No correction needed.`);
+    }
+
+    // You might want to update the parent state *after* the bounce animation finishes
+    // or ensure the onPositionChange uses the final bounced position.
+    // For now, let's keep it here but be aware of potential timing issues.
+    // onPositionChange?.(id, { x: x.get(), y: y.get() }); // This will get the value *before* the animation settles.
+    // A better approach might be to use the 'onComplete' callback of the animation if needed,
+    // or simply rely on the next render to pick up the new value if state update triggers render.
+  };
+
   const handleDragEnd = () => {
     setIsDragging(false);
-    onPositionChange?.(id, { x: x.get(), y: y.get() });
+    console.log(`Drag End for note ${id}. Current x: ${x.get()}, y: ${y.get()}`);
+    bounceBackIfOutOfBounds();
+    onPositionChange?.(id, { x: x.get(), y: y.get() }); // Note: This might save the pre-bounce position if not careful
     rotate.set(initialRotation + Math.random() * 2 - 1);
   };
 
@@ -101,10 +165,13 @@ const StickyNote: React.FC<StickyNoteProps> = ({
   };
 
   const currentBgColor
-    = isHovered && !isEditing && !isDragging ? colorHoverHexMap[color] : colorHexMap[color];
+    = isHovered && !isEditing && !isDragging
+      ? colorHoverHexMap[color]
+      : colorHexMap[color];
 
   return (
     <motion.div
+      ref={noteRef}
       drag
       dragConstraints={dragConstraintsRef}
       dragElastic={0.12}
@@ -131,7 +198,7 @@ const StickyNote: React.FC<StickyNoteProps> = ({
       className={`rounded-lg border shadow-md max-w-xs w-64 min-h-[150px] overflow-hidden ${className}`}
       onClickCapture={handleClickToEdit}
     >
-      {/* Text or TextArea */}
+      {/* Content */}
       <div className="p-3 flex-grow text-gray-800">
         {editable && isEditing
           ? (
@@ -154,7 +221,7 @@ const StickyNote: React.FC<StickyNoteProps> = ({
             )}
       </div>
 
-      {/* Color Picker + Delete */}
+      {/* Controls */}
       {editable && (
         <motion.div
           className="absolute bottom-2 right-2 flex items-center space-x-1.5 p-1 bg-white/30 backdrop-blur-sm rounded-full shadow"
@@ -166,7 +233,10 @@ const StickyNote: React.FC<StickyNoteProps> = ({
             <motion.button
               key={colorOption}
               className="color-picker-button w-4 h-4 rounded-full border border-black/20 focus:outline-none"
-              style={{ backgroundColor: colorHexMap[colorOption as keyof typeof colorHexMap] }}
+              style={{
+                backgroundColor:
+                  colorHexMap[colorOption as keyof typeof colorHexMap],
+              }}
               onClick={(e) => {
                 e.stopPropagation();
                 handleColorChange(colorOption as keyof typeof colorHexMap);
@@ -175,6 +245,7 @@ const StickyNote: React.FC<StickyNoteProps> = ({
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             />
           ))}
+
           {/* Delete Button */}
           <motion.button
             onClick={() => onDelete?.(id)}
