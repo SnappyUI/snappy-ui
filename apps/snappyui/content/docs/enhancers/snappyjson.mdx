@@ -1,0 +1,122 @@
+---
+title: Clipboard
+description: A flexible clipboard component built for modern web applications
+---
+
+import JsonViewer from '@/components/ui/snappy-json';
+import { sampleJsonData } from '@/lib/data';
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+            <JsonViewer jsonData={sampleJsonData} initialExpanded={true} />
+  </Tab>
+
+  <Tab value="Code">
+  ``` tsx 
+        "use client"
+import JsonViewer from '@/components/ui/snappy-json';
+import React from 'react'
+
+export default function page() {
+    
+    export const sampleJsonData = {
+  id: 12345,
+  user: {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    isActive: true,
+    roles: ["admin", "editor"],
+    preferences: {
+      theme: "dark",
+      notifications: {
+        email: true,
+        sms: false,
+      },
+      nestedNull: null,
+    },
+  },
+  orders: [
+    { orderId: "A100", amount: 99.95, items: 3 },
+    { orderId: "B205", amount: 12.5, items: 1 },
+  ],
+  metadata: null,
+  tags: ["react", "typescript", "tailwind", "nextjs"],
+  complexArray: [1, "string", true, null, { nested: "value" }],
+  emptyObject: {},
+  emptyArray: [],
+};
+
+    return (
+        <div className="container mx-auto p-8">
+           
+            <h2 className="text-xl font-semibold mt-6 mb-2">Initially Expanded</h2>
+            <JsonViewer jsonData={sampleJsonData} initialExpanded={true} />
+
+        </div>
+    );
+}
+
+
+
+
+  ```
+    
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/clipboard
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/clipboard
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/clipboard
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/clipboard
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+### Props
+
+I've analyzed the JsonViewer component and will create a comprehensive prop table for it. The component has two main interfaces: JsonViewerProps for the primary component and JsonNodeProps for the recursive child component.
+
+Here's the prop table for the JsonViewer component:
+
+| **Name** | **Type** | **Default** | **Description** |
+| --- | --- | --- | --- |
+| **jsonData** | unknown | - | Any valid JSON structure to be displayed |
+| **initialExpanded** | boolean | false | Controls whether nodes are initially expanded or collapsed |
+| **rootName** | string | false | "JSON" | Name for the root node. Use false to hide root name |
+
+And here's the prop table for the internal JsonNode component:
+
+| **Name** | **Type** | **Default** | **Description** |
+| --- | --- | --- | --- |
+| **nodeKey** | string | number | - | The key or index of the current node |
+| **value** | unknown | - | The value to be displayed for this node |
+| **level** | number | - | The nesting depth of the current node |
+| **initiallyExpanded** | boolean | false | Controls whether this node starts expanded or collapsed |
+
