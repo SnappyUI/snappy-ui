@@ -1,0 +1,180 @@
+---
+title: Dialog
+description: A flexible and responsive dialog component designed for seamless modern UI experiences.
+
+---
+import DialogDemoOne from "@/components/demo/snappy-dialog-one";
+import DialogDemoTwo from "@/components/demo/snappy-dailog-two";
+import { Accordion } from "@/components/ui/snappy-accordion";
+import Card from "@/components/ui/snappy-card";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 rounded-lg py-5 px-5">
+       <DialogDemoOne />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import {
+    Dialog,
+    DialogActions,
+    DialogButton,
+    DialogContent,
+    DialogForm,
+    DialogField,
+    DialogLabel,
+    DialogInput
+    } from "@/components/ui/snappy-dialog";
+
+    const [isDefaultOpen, setIsDefaultOpen] = useState(false);
+
+     <div className="p-4 rounded-md">
+
+            <button
+                className="px-6 py-2 bg-background border-1 text-dark dark:text-white rounded-md"
+                onClick={() => setIsDefaultOpen(true)}
+            >
+                Open
+            </button>
+
+            <Dialog
+                isOpen={isDefaultOpen}
+                onClose={() => setIsDefaultOpen(false)}
+                title="Default Dialog"
+            >
+                <DialogContent>
+                    This is a default dialog with standard styling. It uses the center position by default.
+                </DialogContent>
+                <DialogActions>
+                    <DialogButton onClick={() => setIsDefaultOpen(false)}>Cancel</DialogButton>
+                    <DialogButton variant="primary">Confirm</DialogButton>
+                </DialogActions>
+            </Dialog>
+        </div>
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Variations
+
+### Form Dialog
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 rounded-lg py-5 px-5">
+      <DialogDemoTwo />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import {
+    Dialog,
+    DialogActions,
+    DialogButton,
+    DialogForm,
+    DialogField,
+    DialogLabel,
+    DialogInput
+    } from "@/components/ui/snappy-dialog";
+    
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    const [formData, setFormData] = useState({ name: '', email: '' });
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log(`Form submitted with: ${formData.name}, ${formData.email}`);
+
+    };
+
+    <div className="p-4  rounded-md">
+
+      <button
+                    className="px-6 py-2 bg-background border-1 text-dark dark:text-white rounded-md"
+                    onClick={() => setIsFormOpen(true)}
+      >
+                    Open
+                </button>
+
+      <Dialog
+                    isOpen={isFormOpen}
+                    onClose={() => setIsFormOpen(false)}
+                    title="Form Dialog"
+      >
+      <DialogForm onSubmit={handleSubmit}>
+         <DialogField>
+         <DialogLabel htmlFor="name">Name</DialogLabel>
+         <DialogInput
+            id="name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })required
+         />
+     </DialogField>
+
+                        <DialogField>
+                            <DialogLabel htmlFor="email">Email</DialogLabel>
+                            <DialogInput
+                                id="email"
+                                type="email"
+                                value={formData.email}
+                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                required
+                            />
+                        </DialogField>
+
+                        <DialogActions>
+                            <DialogButton type="button" onClick={() => setIsFormOpen(false)}>Cancel</DialogButton>
+                            <DialogButton type="submit" variant="primary">Submit</DialogButton>
+                        </DialogActions>
+                    </DialogForm>
+                </Dialog>
+            </div>
+    ```
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/dialog
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/dialog
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/dialog
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/dialog
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| <b>Name</b>   | <b>Type</b>                                                                                        | <b>Default</b>   | <b>Description</b>           |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+| **title**     | `string`                                                                                           | `-`              | Title of the accordion       |
+| **children**  | `ReactNode`                                                                                        | `-`              | Inside of the accordion      |
+| **variant**   | `"default"` \| `"bordered"` \| `"shadowed"` \| `"minimal"` \| `"glassmorphic"` \| `"gradient"` \| `"elevated"` | `"default"`      | Variants of the accordion    |
+| **isOpen**    | `boolean`                                                                                          | `false`          | Set the default state        |
+| **className** | `string`                                                                                           | `-`              | You can pass Tailwind classes|
