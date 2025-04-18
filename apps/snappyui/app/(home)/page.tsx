@@ -7,7 +7,7 @@ import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import Playground from "@/components/playground";
-import StackedAvatars from "@/components/ui/snappy-avatar";
+import CuratedBy from "@/components/ui/curated-by";
 import { avatarData } from "@/lib/data";
 
 export default function HomePage() {
@@ -33,7 +33,7 @@ export default function HomePage() {
         <Components />
         {!isMobile && <Playground />}
         <Features />
-        <StackedAvatars avatars={avatarData} />
+        <CuratedBy avatars={avatarData} width={84} height={84} />
       </div>
       <Footer />
     </main>
