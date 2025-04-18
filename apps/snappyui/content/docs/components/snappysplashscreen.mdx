@@ -1,16 +1,16 @@
 ---
 title: Splash Screen
-description: A customizable splash screen component with animation variants.
+description: A fully customizable splash screen component with support for smooth animations.
+
 ---
+
 import SplashScreen from '@/components/ui/snappy-splash-screen'
 import Link from 'fumadocs-core/link';
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-
-
 ## Demo
 
-<Link href="/splash">For Demo Click this Link</Link>
+<Link href="/splash">Click here to view the demo!</Link>
 
 ## Usage
 
@@ -85,7 +85,7 @@ export default function AppEntryPoint() {
   </Tab>
   <Tab value="yarn">
     ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/SplashScreen
+    yarn dlx shadcn@latest add http://snappyui.in/api/registry/SplashScreen
     ```
   </Tab>
   <Tab value="bun">
@@ -95,12 +95,11 @@ export default function AppEntryPoint() {
   </Tab>
 </Tabs>
 
-
 ## Props
 
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `logo` | `ReactNode` | *Required* | The logo or content to display in the center of the splash screen |
-| `className` | `string` | `undefined` | Additional CSS classes to apply to the splash screen container |
-| `variant` | `"default" \| "fade"` | `"default"` | Animation style to use for the splash screen |
-| `onAnimationComplete` | `() => void` | `undefined` | Callback function that runs after the exit animation completes |
+| Name                | Type                    | Default     | Description                                                       |
+| ------------------- | ----------------------- | ----------- | ----------------------------------------------------------------- |
+| logo                | `ReactNode`             | *Required*  | The logo or content to display in the center of the splash screen |
+| className           | `string`                | `undefined` | Additional CSS classes to apply to the splash screen container    |
+| variant             | `"default"` \| `"fade"` | `"default"` | Animation style to use for the splash screen                      |
+| onAnimationComplete | `() => void`            | `undefined` | Callback function that runs after the exit animation completes    |

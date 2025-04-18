@@ -1,81 +1,42 @@
 ---
 title: Icon Cloud
-description: Icon Cloud component for Snappy UI
+description: Display icons in an engaging 3D cloud with full interactivity and control.
 ---
 
 import { IconCloudDemo } from "@/components/cloud-demo";
-
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Basic Usage
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
-    <Tab value="Preview">
-
-      <div className="flex justify-center">
-        <IconCloudDemo />
-      </div>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      ```tsx
-     "use clinet"
-
-import { IconCloud } from "./ui/snappy-icnon-cloud";
-
-const slugs = [
-"typescript",
-"javascript",
-"dart",
-"java",
-"react",
-"flutter",
-"android",
-"html5",
-"css3",
-"nodedotjs",
-"express",
-"nextdotjs",
-"prisma",
-"amazonaws",
-"postgresql",
-"firebase",
-"nginx",
-"vercel",
-"testinglibrary",
-"jest",
-"cypress",
-"docker",
-"git",
-"jira",
-"github",
-"gitlab",
-"visualstudiocode",
-"androidstudio",
-"sonarqube",
-"figma",
-]
-
-export function IconCloudDemo() {
-  return (
-    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden px-20 pb-20 pt-8 ">
-      <IconCloud iconSlugs={slugs} />
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center">
+      <IconCloudDemo />
     </div>
-  );
-}
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    "use client"
 
-      ```
+    import { IconCloud } from "./ui/snappy-icnon-cloud";
 
-    </Tab>
+    const slugs = [
+      "typescript", "javascript", "dart", "java", "react", "flutter",
+      "android", "html5", "css3", "nodedotjs", "express", "nextdotjs",
+      "prisma", "amazonaws", "postgresql", "firebase", "nginx", "vercel",
+      "testinglibrary", "jest", "cypress", "docker", "git", "jira", "github",
+      "gitlab", "visualstudiocode", "androidstudio", "sonarqube", "figma",
+    ];
 
+    export function IconCloudDemo() {
+      return (
+        <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden px-20 pb-20 pt-8">
+          <IconCloud iconSlugs={slugs} />
+        </div>
+      );
+    }
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -84,22 +45,22 @@ export function IconCloudDemo() {
 
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
   <Tab value="pnpm">
-    ```bash 
+    ```bash
     pnpm dlx shadcn@latest add http://snappyui.in/api/registry/iconcloud
     ```
   </Tab>
   <Tab value="npm">
-    ```bash 
-    npx shadcn@latest add http://snappyui.in/api/registry/iconcloud 
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/iconcloud
     ```
   </Tab>
   <Tab value="yarn">
-    ```bash 
-    npx shadcn@latest add http://snappyui.in/api/registry/iconcloud 
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/iconcloud
     ```
   </Tab>
   <Tab value="bun">
-    ```bash 
+    ```bash
     bunx --bun shadcn@latest add http://snappyui.in/api/registry/iconcloud
     ```
   </Tab>
@@ -109,45 +70,45 @@ export function IconCloudDemo() {
 
 ## IconCloud
 
-| <b>Name</b>    | <b>Type</b>    | <b>Default</b> | <b>Description</b>                                                                                                        |
-| -------------- | -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **iconSlugs**  | string[]       | -              | An array of icon slugs corresponding to the icons you want to display. Each slug should match a supported icon from the Simple Icons library. |
+| **Name**       | **Type**                                       | **Default**   | **Description**                                                                |
+| -------------- | ---------------------------------------------- | ------------- | ------------------------------------------------------------------------------ |
+| iconSlugs      | `string[]`                                     | `-`           | Array of icon slugs matching Simple Icons                                      |
 
 ## Cloud
 
-There are a number of options for modifying the way the cloud looks and behaves. Go to **https://www.goat1000.com/tagcanvas-options.php** to see the list of all available options for your cloud.
+See all options: [Tag Canvas Options](https://www.goat1000.com/tagcanvas-options.php)
 
-| <b>Name</b>           | <b>Type</b>                                    | <b>Default</b> | <b>Description</b>                                                                   |
-| --------------------- | ---------------------------------------------- | -------------- | ----------------------------------------------------------------------------------- |
-| **canvasProps**       | HTMLAttributes&lt;HTMLCanvasElement&gt; \| undefined | -              | Attributes that will be passed to the underlying canvas element                      |
-| **children**          | Tag[][]                                        | -              | Tags rendered using the provided renderers                                           |
-| **containerProps**    | HTMLAttributes&lt;HTMLDivElement&gt; \| undefined    | -              | Attributes passed to the root div element                                            |
-| **id**                | string \| number \| undefined                  | uuid           | Should be provided when using SSR                                                    |
-| **maxSpeed**          | number                                         | 0.04           | To adjust the rotation speed in idle state                                           |
-| **minSpeed**          | number                                         | 0.02           | To adjust the rotation speed when hovering                                           |
-| **dragControl**       | boolean                                        | false          | Enable or disable the ability to drag and interact with the icon cloud.              |
-| **dragThreshold**     | number                                         | 4              | The number of pixels that the cursor must move to count as a drag instead of a click.|
-| **decel**             | number                                         | 0.95           | Deceleration rate when mouse leaves canvas.                                          |
-| **freezeDecel**       | boolean                                        | false          | Whether to freeze the cloud when dragging stops.                                     |
+| **Name**        | **Type**                                             | **Default** | **Description**                                                                |
+| --------------- | ---------------------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
+| canvasProps     | `HTMLAttributes<HTMLCanvasElement>` \| `undefined`   | `-`         | Props passed to the canvas                                                     |
+| children        | `Tag[][]`                                            | `-`         | Tags rendered using renderers                                                  |
+| containerProps  | `HTMLAttributes<HTMLDivElement> \| undefined`        | `-`         | Props passed to the root div                                                   |
+| id              | `string` \| `number` \| `undefined`                  | `uuid`      | Provide when using SSR                                                         |
+| maxSpeed        | `number`                                             | `0.04`      | Rotation speed at idle                                                         |
+| minSpeed        | `number`                                             | `0.02`      | Rotation speed on hover                                                        |
+| dragControl     | `boolean`                                            | `false`     | Enable drag interaction                                                        |
+| dragThreshold   | `number`                                             | `4`         | Distance to detect drag                                                        |
+| decel           | `number`                                             | `0.95`      | Deceleration after mouse leave                                                 |
+| freezeDecel     | `boolean`                                            | `false`     | Freeze cloud when dragging stops                                               |
 
 ## renderSimpleIcon
 
-Used to create a tag for the Cloud component
+Used to create a tag for the Cloud component.
 
-| <b>Name</b>           | <b>Type</b>                                    | <b>Default</b> | <b>Description</b>                                                                   |
-| --------------------- | ---------------------------------------------- | -------------- | ----------------------------------------------------------------------------------- |
-| **aProps**            | HTMLAttributes&lt;HTMLDivElement&gt; \| undefined    | -              | Attributes passed to the underlying anchor element                                   |
-| **bgHex**             | string \| undefined                            | '#fff'         | The string hex of the background the icon will be rendered on. Ex: '#fff'. Used to determine if the min contrast ratio for the icons default color will be met |
-| **fallbackHex**       | string \| undefined                            | '#000'         | The color of the icon if the minContrastRatio is not met Ex: '#000'                  |
-| **icon**              | any                                            | undefined      | The simple icon object you would like to render. Ex: import icon from "simple-icons/icons/javascript"; |
-| **imgProps**          | HTMLAttributes&lt;HTMLDivElement&gt; \| undefined    | -              | Attributes passed to the underlying img element                                      |
-| **minContrastRatio**  | number \| undefined                            | 10 - 21        | The min contrast ratio between icon and bgHex before the fallbackHex will be used for the icon color |
-| **size**              | number \| undefined                            | 42             | The size in px of the icon                                                           |
+| **Name**           | **Type**                                       | **Default** | **Description**                                                                |
+| ------------------ | ---------------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
+| aProps             | `HTMLAttributes<HTMLDivElement>` \| `undefined`| `-`         | Anchor tag props                                                               |
+| bgHex              | `string` \| `undefined`                        | `'#fff'`    | Background hex used for contrast check                                         |
+| fallbackHex        | `string` \| `undefined`                        | `'#000'`    | Fallback color if contrast is low                                              |
+| icon               | `any`                                          | `-`         | Imported simple-icon                                                           |
+| imgProps           | `HTMLAttributes<HTMLDivElement>` \| `undefined`| `-`         | Image tag props                                                                |
+| minContrastRatio   | `number` \| `undefined`                        | `10-21`     | Minimum contrast ratio                                                         |
+| size               | `number` \| `undefined`                        | `42`        | Icon size in pixels                                                            |
 
 ## fetchSimpleIcons
 
-Used when you cant statically import simple icons during built time. Calling this will use `fetch` to get icons for each provided slug.
+Used when static imports are not possible.
 
-| <b>Name</b>    | <b>Type</b>    | <b>Default</b> | <b>Description</b>                                                                   |
-| -------------- | -------------- | -------------- | ----------------------------------------------------------------------------------- |
-| **slugs**      | string[]       | -              | Slugs to fetch svgs and colors for. The return icons may be passed to renderSimpleIcon |
+| **Name**  | **Type**   | **Default**   | **Description**                                                       |
+| --------- | ---------- | ------------- | --------------------------------------------------------------------- |
+| slugs     | `string[]` | `-`           | Array of slugs to fetch SVGs and colors for use with renderSimpleIcon |

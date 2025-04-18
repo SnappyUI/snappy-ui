@@ -1,10 +1,10 @@
 ---
 title: Carousel
-description: Carousel is a component that allows you to create a carousel of items with various options for customization and behavior.
+description: A flexible, feature-rich component for sliding through content effortlessly.
 ---
 
 import AnimatedCarousel from '@/components/ui/snappy-carousel';
-import carouselItems from '@/lib/data'
+import carouselItems from '@/lib/data';
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
@@ -19,27 +19,22 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     "Code",
   ]}
 >
-
-    <Tab value="Preview">
-
-     <div className="w-full h-64 flex flex-col items-center justify-center">
-        <AnimatedCarousel items={carouselItems} variant="horizontal" className="rounded-lg shadow-lg w-full h-full"/>
+  <Tab value="Preview">
+    <div className="w-full h-64 flex flex-col items-center justify-center">
+      <AnimatedCarousel items={carouselItems} variant="horizontal" className="rounded-lg shadow-lg w-full h-full" />
     </div>
-    </Tab>
+  </Tab>
 
-    <Tab value="Code">
-
-      ```tsx
+  <Tab value="Code">
+    ```tsx
     import AnimatedCarousel from '@/components/ui/snappy-carousel';
     import carouselItems from '@/lib/data'
 
-      <div className="w-full h-64 flex flex-col items-center justify-center">
-        <AnimatedCarousel items={carouselItems} variant="horizontal" className="rounded-lg shadow-lg w-full h-full"/>
+    <div className="w-full h-64 flex flex-col items-center justify-center">
+      <AnimatedCarousel items={carouselItems} variant="horizontal" className="rounded-lg shadow-lg w-full h-full" />
     </div>
-      ```
-
-    </Tab>
-
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -52,37 +47,32 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     "Code",
   ]}
 >
+  <Tab value="Preview">
+    <div className="w-full h-64 flex flex-col items-center justify-center">
+      <AnimatedCarousel
+        items={carouselItems}
+        variant="vertical"
+        autoPlay={true}
+        className="rounded-lg shadow-lg w-full h-full"
+      />
+    </div>
+  </Tab>
 
-    <Tab value="Preview">
-
-     <div className="w-full h-64 flex flex-col items-center justify-center">
-            <AnimatedCarousel
-                items={carouselItems}
-                variant="vertical"
-                autoPlay={true}
-                className="rounded-lg shadow-lg w-full h-full"
-            />
-            </div>
-    </Tab>
-
-    <Tab value="Code">
-
-      ```tsx
+  <Tab value="Code">
+    ```tsx
     import AnimatedCarousel from '@/components/ui/snappy-carousel';
     import carouselItems from '@/lib/data'
 
-      <div className="w-full h-64 flex flex-col items-center justify-center">
-            <AnimatedCarousel
-                items={carouselItems}
-                variant="vertical"
-                autoPlay={true}
-                className="rounded-lg shadow-lg w-full h-full"
-            />
-            </div>
-      ```
-
-    </Tab>
-
+    <div className="w-full h-64 flex flex-col items-center justify-center">
+      <AnimatedCarousel
+        items={carouselItems}
+        variant="vertical"
+        autoPlay={true}
+        className="rounded-lg shadow-lg w-full h-full"
+      />
+    </div>
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -118,63 +108,64 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ```tsx 
 // Example items for the carousel
-    const carouselItems = [
-        {
-            id: 1,
-            content: (
-                <div className="bg-blue-500 text-white w-full h-full flex items-center justify-center">
-                    <div className="text-center p-8">
-                        <h2 className="text-3xl font-bold mb-4">First Slide</h2>
-                        <p className="text-xl">This is the first carousel slide</p>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            id: 2,
-            content: (
-                <div className="bg-green-500 text-white w-full h-full flex items-center justify-center">
-                    <div className="text-center p-8">
-                        <h2 className="text-3xl font-bold mb-4">Second Slide</h2>
-                        <p className="text-xl">This is the second carousel slide</p>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            id: 3,
-            content: (
-                <div className="bg-purple-500 text-white w-full h-full flex items-center justify-center">
-                    <div className="text-center p-8">
-                        <h2 className="text-3xl font-bold mb-4">Third Slide</h2>
-                        <p className="text-xl">This is the third carousel slide</p>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            id: 4,
-            content: (
-                <div className="bg-red-500 text-white w-full h-full flex items-center justify-center">
-                    <div className="text-center p-8">
-                        <h2 className="text-3xl font-bold mb-4">Fourth Slide</h2>
-                        <p className="text-xl">This is the fourth carousel slide</p>
-                    </div>
-                </div>
-            ),
-        },
-    ];
-
+const carouselItems = [
+  {
+    id: 1,
+    content: (
+      <div className="bg-blue-500 text-white w-full h-full flex items-center justify-center">
+        <div className="text-center p-8">
+          <h2 className="text-3xl font-bold mb-4">First Slide</h2>
+          <p className="text-xl">This is the first carousel slide</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    content: (
+      <div className="bg-green-500 text-white w-full h-full flex items-center justify-center">
+        <div className="text-center p-8">
+          <h2 className="text-3xl font-bold mb-4">Second Slide</h2>
+          <p className="text-xl">This is the second carousel slide</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    content: (
+      <div className="bg-purple-500 text-white w-full h-full flex items-center justify-center">
+        <div className="text-center p-8">
+          <h2 className="text-3xl font-bold mb-4">Third Slide</h2>
+          <p className="text-xl">This is the third carousel slide</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 4,
+    content: (
+      <div className="bg-red-500 text-white w-full h-full flex items-center justify-center">
+        <div className="text-center p-8">
+          <h2 className="text-3xl font-bold mb-4">Fourth Slide</h2>
+          <p className="text-xl">This is the fourth carousel slide</p>
+        </div>
+      </div>
+    ),
+  },
+];
 ```
+
+---
 
 ## Props
 
-| **Name**        | **Type**     | **Default** | **Description**|
-|-----------------|--------------|-------------|----------------|
-| items           | `Array`      | `[]`        | An array of items to be displayed in the carousel. Each item should have a `title`, `description`, and `image`. |
-| variant         | `string`     | `horizontal`| The variant of the carousel. Can be `horizontal` or `vertical`. |
-| autoPlay        | `boolean`    | `false`     | Whether the carousel should automatically play. |
-| interval        | `number`     | `3000`      | The interval between slides in milliseconds. Only applicable if `autoPlay` is `true`. |
-| className       | `string`     | `''`        | Additional classes to be applied to the carousel. |
-| showArrows    | `boolean`    | `true`      | Whether to show the navigation arrows. |
-| showDots      | `boolean`    | `true`      | Whether to show the navigation dots. |
+| **Name**      | **Type**   | **Default**    | **Description**                                                                                                |
+| ------------- | ---------- |--------------- | -------------------------------------------------------------------------------------------------------------- |
+| items         | `Array`    | `[]`           | An array of items to be displayed in the carousel. Each item should have a `title`, `description`, and `image` |
+| variant       | `string`   | `horizontal`   | The variant of the carousel. Can be `horizontal` or `vertical`                                                 |
+| autoPlay      | `boolean`  | `false`        | Whether the carousel should automatically play                                                                 |
+| interval      | `number`   | `3000`         | The interval between slides in milliseconds Only applicable if `autoPlay` is `true`                            |
+| className     | `string`   | `''`           | Additional classes to be applied to the carousel                                                               |
+| showArrows    | `boolean`  | `true`         | Whether to show the navigation arrows                                                                          |
+| showDots      | `boolean`  | `true`         | Whether to show the navigation dots                                                                            |
