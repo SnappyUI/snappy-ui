@@ -14,7 +14,7 @@ import { IconCloudDemo } from "./cloud-demo";
 import Scratch from "./scratch";
 import TurminalDemo from "./turminal-demo";
 import FloatingDots from "./ui/snappy-floating-dots";
-import { TextScaleEffect } from "./ui/snappy-text-generate";
+import { ProfileCard, ProfileContactInfo, ProfileContent, ProfileDesignation, ProfileImage, ProfileName, ProfileTags } from "./ui/snappy-profile-card";
 
 function Components() {
   const [buttonVariant, setButtonVariant] = useState("default");
@@ -54,7 +54,7 @@ function Components() {
             variants={[]}
             selected={buttonVariant}
             onVariantChange={setButtonVariant}
-            // componentName="Scratch Card"
+          // componentName="Scratch Card"
           >
             <Scratch />
           </ComponentCard>
@@ -64,7 +64,7 @@ function Components() {
             variants={[]}
             selected={checkboxAnim}
             onVariantChange={setCheckboxAnim}
-            // componentName="Turminal"
+          // componentName="Turminal"
           >
             <TurminalDemo />
           </ComponentCard>
@@ -74,7 +74,7 @@ function Components() {
             variants={[]}
             selected={colorTextVariant}
             onVariantChange={setColorTextVariant}
-            // componentName="ColorText"
+          // componentName="ColorText"
           >
             <div className="text-4xl text-center font-medium">
               Let’s try
@@ -90,7 +90,7 @@ function Components() {
             variants={[]}
             selected={dropdownVariant}
             onVariantChange={setDropdownVariant}
-            // componentName="Icon Cloud"
+          // componentName="Icon Cloud"
           >
             <IconCloudDemo />
           </ComponentCard>
@@ -100,7 +100,7 @@ function Components() {
             variants={[]}
             selected={toggleVariant}
             onVariantChange={setToggleVariant}
-            // componentName="QR-Code-Generator"
+          // componentName="QR-Code-Generator"
           >
             <QRCodeGenerator value="https://snappyui.in/" />
           </ComponentCard>
@@ -110,15 +110,23 @@ function Components() {
             variants={[]}
             selected={skeletonVariant}
             onVariantChange={setSkeletonVariant}
-            // componentName="Skeleton"
+          // componentName="Skeleton"
           >
-            <TextScaleEffect
-              words="Words that scale up with a bounce effect"
-              staggerTime={0.15}
-              duration={0.6}
-              rotation={true}
-              className="text-3xl text-green-500"
-            />
+            <div className="flex items-center justify-center">
+              <ProfileCard variant="default" hoverEffect={true}>
+                <ProfileContent>
+                  <ProfileImage imageUrl="https://media.istockphoto.com/id/1399788030/photo/portrait-of-young-confident-indian-woman-pose-on-background.jpg?b=1&s=612x612&w=0&k=20&c=_VfWQI2t_aONL0FEFJ1Eki3QQkRwgxkAve0_z53oeKY=" imageAlt="Team member" />
+                  <ProfileName name="Alexa Chen" />
+                  <ProfileDesignation designation="Backend Developer" />
+                  <ProfileContactInfo email="robert@example.com" />
+                  <ProfileTags tags={[
+                    { text: "Node.js", color: "blue" },
+                    { text: "MongoDB", color: "green" },
+                  ]}
+                  />
+                </ProfileContent>
+              </ProfileCard>
+            </div>
           </ComponentCard>
         </div>
       </div>

@@ -13,25 +13,12 @@ type Content = {
 };
 
 export const contents: Content[] = [
-  {
-    title: "Get Started",
-    list: [
-      {
-        title: "Get Started",
-        href: "/docs",
-      },
-    ],
-  },
-  {
-    title: "Auth",
-    list: [
-      {
-        title: "SignIn",
-        href: "/docs/components/snappysignin",
-        isNew: true,
-      },
-    ],
-  },
+  // {
+
+  //   title: "Get Started",
+  //   href: "/docs",
+
+  // },
   {
     title: "Components",
     list: [
@@ -65,21 +52,10 @@ export const contents: Content[] = [
         href: "/docs/components/snappycarousel",
       },
       {
-        title: "Check",
-        href: "/docs/components/snappycheck",
-      },
-      {
         title: "Color Text",
         href: "/docs/components/snappycolorText",
       },
-      {
-        title: "Dropdown",
-        href: "/docs/components/snappydropdown",
-      },
-      {
-        title: "Feedback",
-        href: "/docs/components/snappyfeedback",
-      },
+
       {
         title: "Hold To Delete",
         href: "/docs/components/snappyholdtodelete",
@@ -92,30 +68,7 @@ export const contents: Content[] = [
         title: "Skeleton",
         href: "/docs/components/snappyskeleton",
       },
-      {
-        title: "Scratch",
-        href: "/docs/components/snappyscratch",
-        isNew: true,
-      },
-      {
-        title: "Splash Screen",
-        href: "/docs/components/snappysplashscreen",
-      },
-      {
-        title: "Textarea",
-        href: "/docs/components/snappytextarea",
-        isNew: true,
-      },
-      {
-        title: "Toast",
-        href: "/docs/components/snappytoast",
-        isNew: true,
-      },
-      {
-        title: "Toggle",
-        href: "/docs/components/snappytoggle",
-        isNew: true,
-      },
+
       {
         title: "Tooltip",
         href: "/docs/components/snappytooltip",
@@ -128,14 +81,23 @@ export const contents: Content[] = [
       {
         title: "Dialog",
         href: "/docs/responses/snappydialog",
+        isNew: true,
       },
+
       {
         title: "Bell",
         href: "/docs/responses/snappybell",
+        isNew: true,
       },
       {
         title: "Progres bar",
         href: "/docs/responses/snappybar",
+        isNew: true,
+      },
+      {
+        title: "Feedback",
+        href: "/docs/components/snappyfeedback",
+        isNew: true,
       },
     ],
   },
@@ -143,8 +105,18 @@ export const contents: Content[] = [
     title: "Sections",
     list: [
       {
+        title: "SignIn",
+        href: "/docs/components/snappysignin",
+        isNew: true,
+      },
+      {
+        title: "Splash Screen",
+        href: "/docs/components/snappysplashscreen",
+      },
+      {
         title: "Footer",
         href: "/docs/sections/snappyfooter",
+        isNew: true,
       },
       {
         title: "Hero",
@@ -163,10 +135,17 @@ export const contents: Content[] = [
       {
         title: "Pricing Section",
         href: "/docs/sections/snappypricetable",
+        isNew: true,
       },
       {
         title: "Testimonial",
         href: "/docs/sections/snappytestimonial",
+        isNew: true,
+      },
+      {
+        title: "Toast",
+        href: "/docs/components/snappytoast",
+        isNew: true,
       },
 
     ],
@@ -176,12 +155,35 @@ export const contents: Content[] = [
 
     list: [
       {
+        title: "Check",
+        href: "/docs/components/snappycheck",
+        isNew: true,
+      },
+      {
+        title: "Dropdown",
+        href: "/docs/components/snappydropdown",
+        isNew: true,
+      },
+      {
         title: "Date Picker",
         href: "/docs/inputs/snappydatepicker",
+        isNew: true,
       },
       {
         title: "Star Rating",
         href: "/docs/inputs/snappystarrating",
+        isNew: true,
+      },
+      {
+        title: "Textarea",
+        href: "/docs/components/snappytextarea",
+        isNew: true,
+      },
+
+      {
+        title: "Toggle",
+        href: "/docs/components/snappytoggle",
+        isNew: true,
       },
 
     ],
