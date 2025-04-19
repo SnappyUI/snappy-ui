@@ -91,9 +91,10 @@ const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
       ctx.fillStyle = "#ccc";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, "#A97CF8");
-      gradient.addColorStop(0.5, "#F38CB8");
-      gradient.addColorStop(1, "#FDCC92");
+      gradient.addColorStop(0, "#1E3A8A");
+      gradient.addColorStop(0.3, "#42A5F5");
+      gradient.addColorStop(0.7, "#60C4F5");
+      gradient.addColorStop(1, "#A5D8FF");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
