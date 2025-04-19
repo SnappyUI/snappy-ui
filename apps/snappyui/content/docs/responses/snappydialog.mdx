@@ -166,12 +166,75 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
 
-## Props
+# Dialog Component Props
 
-| Name      | Type                                                                                                           | Default     | Description                   |
-| --------- | -------------------------------------------------------------------------------------------------------------- | ----------- | ----------------------------- |
-| title     | `string`                                                                                                       | `-`         | Title of the accordion        |
-| children  | `ReactNode`                                                                                                    | `-`         | Inside of the accordion       |
-| variant   | `"default"` \| `"bordered"` \| `"shadowed"` \| `"minimal"` \| `"glassmorphic"` \| `"gradient"` \| `"elevated"` | `"default"` | Variants of the accordion     |
-| isOpen    | `boolean`                                                                                                      | `false`     | Set the default state         |
-| className | `string`                                                                                                       | `-`         | You can pass Tailwind classes |
+### Dialog
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `isOpen` | `boolean` | Required | Controls the visibility of the dialog |
+| `onClose` | `() => void` | Required | Function called when the dialog should close |
+| `title` | `string` | `undefined` | Optional title for the dialog |
+| `showCloseButton` | `boolean` | `true` | Whether to show the close button (X) |
+| `children` | `React.ReactNode` | Required | Content of the dialog |
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `variant` | `'default' \| 'dark' \| 'light'` | `'default'` | Controls the color scheme |
+| `position` | `'center' \| 'top'` | `'center'` | Controls the position of the dialog |
+| `...props` | `React.HTMLAttributes<HTMLDivElement>` | - | Any other HTML div props |
+
+### DialogForm
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `onSubmit` | `(e: React.FormEvent) => void` | Required | Form submission handler |
+| `children` | `React.ReactNode` | Required | Form content |
+| `className` | `string` | `undefined` | Additional CSS classes |
+
+### DialogContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | Required | Content |
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `...props` | `React.HTMLAttributes<HTMLDivElement>` | - | Any other HTML div props |
+
+### DialogActions
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | Required | Action buttons or content |
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `...props` | `React.HTMLAttributes<HTMLDivElement>` | - | Any other HTML div props |
+
+### DialogField
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | Required | Field content |
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `...props` | `React.HTMLAttributes<HTMLDivElement>` | - | Any other HTML div props |
+
+### DialogLabel
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `htmlFor` | `string` | Required | ID of the form control this label is for |
+| `children` | `React.ReactNode` | Required | Label text |
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `...props` | `React.LabelHTMLAttributes<HTMLLabelElement>` | - | Any other HTML label props |
+
+### DialogInput
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `...props` | `React.InputHTMLAttributes<HTMLInputElement>` | - | Any HTML input props |
+
+### DialogButton
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary'` | `'secondary'` | Button style variant |
+| `children` | `React.ReactNode` | Required | Button text/content |
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `...props` | `React.ButtonHTMLAttributes<HTMLButtonElement>` | - | Any HTML button props |

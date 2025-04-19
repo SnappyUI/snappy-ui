@@ -13,16 +13,22 @@ type Content = {
 };
 
 export const contents: Content[] = [
-  // {
-  //   title: "Get Started",
-  //   href: "/docs",
-  // },
+  {
+    title: "Get Started",
+    list: [
+      {
+        title: "Get Started",
+        href: "/docs",
+      },
+    ],
+  },
   {
     title: "Auth",
     list: [
       {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
+        title: "SignIn",
+        href: "/docs/components/snappysignin",
+        isNew: true,
       },
     ],
   },
@@ -67,10 +73,6 @@ export const contents: Content[] = [
         href: "/docs/components/snappycolorText",
       },
       {
-        title: "Dialog",
-        href: "/docs/components/snappydialog",
-      },
-      {
         title: "Dropdown",
         href: "/docs/components/snappydropdown",
       },
@@ -81,11 +83,6 @@ export const contents: Content[] = [
       {
         title: "Hold To Delete",
         href: "/docs/components/snappyholdtodelete",
-      },
-      {
-        title: "Icon Cloud",
-        href: "/docs/components/snappyiconcloud",
-        isNew: true,
       },
       {
         title: "Loader",
@@ -126,50 +123,19 @@ export const contents: Content[] = [
     ],
   },
   {
-    title: "Enhancers",
-    list: [
-      {
-        title: "Clipbord",
-        href: "/docs/enhancers/snappyclipboard",
-        isNew: true,
-      },
-      {
-        title: "Json",
-        href: "/docs/enhancers/snappyjson",
-        isNew: true,
-      },
-      {
-        title: "QR",
-        href: "/docs/enhancers/snappyqr",
-        isNew: true,
-      },
-      {
-        title: "Sticky Note",
-        href: "/docs/enhancers/snappystickynote",
-        isNew: true,
-      },
-      {
-        title: "Terminal",
-        href: "/docs/enhancers/snappyterminal",
-        isNew: true,
-      },
-    ],
-  },
-  {
-    title: "Inputs",
-    list: [
-      {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
-      },
-    ],
-  },
-  {
     title: "Responses",
     list: [
       {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
+        title: "Dialog",
+        href: "/docs/responses/snappydialog",
+      },
+      {
+        title: "Bell",
+        href: "/docs/responses/snappybell",
+      },
+      {
+        title: "Progres bar",
+        href: "/docs/responses/snappybar",
       },
     ],
   },
@@ -220,17 +186,7 @@ export const contents: Content[] = [
 
     ],
   },
-  {
-    title: "Responses",
 
-    list: [
-      {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
-      },
-
-    ],
-  },
   {
     title: "Enhancers",
 
@@ -271,10 +227,7 @@ export const contents: Content[] = [
         href: "/docs/enhancers/snappyqr",
         isNew: true,
       },
-      {
-        title: "SignIn",
-        href: "/docs/components/snappysignin",
-      },
+
     ],
   },
 
