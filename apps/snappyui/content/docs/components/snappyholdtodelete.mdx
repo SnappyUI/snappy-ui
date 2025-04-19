@@ -18,7 +18,9 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-    <BasicPreview />
+    <div className="flex justify-center items-center">
+      <BasicPreview />
+    </div>
   </Tab>
   <Tab value="Code">
     ```tsx
@@ -37,16 +39,18 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-    <CustomDurationPreview />
+    <div className="flex justify-center items-center">
+      <CustomDurationPreview />
+    </div>
   </Tab>
   <Tab value="Code">
     ```tsx
     import HoldToDelete from "@/components/ui/snappy-hold-to-delete";
 
-  <HoldToDelete 
-    holdDuration={3000} 
-    onDelete={() => alert("Deleted after 3 seconds")} 
-  />
+    <HoldToDelete 
+      holdDuration={3000} 
+      onDelete={() => alert("Deleted after 3 seconds")} 
+    />
     ```
   </Tab>
 </Tabs>
@@ -55,7 +59,9 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-    <CustomStylingPreview />
+    <div className="flex justify-center items-center">
+      <CustomStylingPreview />
+    </div>
   </Tab>
   <Tab value="Code">
     ```tsx
@@ -74,7 +80,9 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-    <CustomIconPreview />
+    <div className="flex justify-center items-center">
+      <CustomIconPreview />
+    </div>
   </Tab>
   <Tab value="Code">
     ```tsx
@@ -115,13 +123,13 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Props
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| **holdDuration** | `number` | `1500` | Duration in milliseconds to hold before triggering |
-| **label** | `string` | `"Hold to Delete"` | Text to display on the button |
-| **deleteLabel** | `string` | `"Hold to Delete"` | Text to display during delete state |
-| **className** | `string` | `""` | Custom class for the button |
-| **deleteClassName** | `string` | `""` | Class for the delete state overlay |
-| **icon** | `React.ReactNode` | `<DeleteIcon />` | Custom icon component |
-| **onDelete** | `() => void` | – | Function to call when hold is completed |
-| **showProgress** | `boolean` | `true` | Show progress indicator during hold |
+| Name            | Type              | Default            | Description                                        |
+| --------------- | ----------------- | ------------------ | -------------------------------------------------- |
+| holdDuration    | `number`          | `1500`             | Duration in milliseconds to hold before triggering |
+| label           | `string`          | `"Hold to Delete"` | Text to display on the button                      |
+| deleteLabel     | `string`          | `"Hold to Delete"` | Text to display during delete state                |
+| className       | `string`          | `""`               | Custom class for the button                        |
+| deleteClassName | `string`          | `""`               | Class for the delete state overlay                 |
+| icon            | `React.ReactNode` | `<DeleteIcon />`   | Custom icon component                              |
+| onDelete        | `() => void`      | `-`                | Function to call when hold is completed            |
+| showProgress    | `boolean`         | `true`             | Show progress indicator during hold                |

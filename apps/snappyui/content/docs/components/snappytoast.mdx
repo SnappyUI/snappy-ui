@@ -1,6 +1,7 @@
 ---
 title: Toast
-description: A global toast notification component with context API support and multiple variants.
+description: A global notification component with context support and flexible variants.
+
 ---
 
 import { ToastProvider, useToast } from "@/components/ui/snappy-toast";
@@ -14,12 +15,11 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     <Toaster
       variant="with-action"
       title="Event Created"
-      description="Monday, January 3rd at 6:00pm"
+      description="Sunday, April 20th at 8:00pm"
       action={<button className="text-blue-500 hover:underline">Undo</button>}
     />
   </Tab>
   <Tab value="Code">
-
 ```tsx
 import { useToast } from "@/components/ui/snappy-toast";
 
@@ -41,7 +41,6 @@ function MyComponent() {
   return <button onClick={handleShowToast}>Show Toast</button>;
 }
 ```
-
   </Tab>
 </Tabs>
 
@@ -54,11 +53,9 @@ function MyComponent() {
     <Toaster variant="simple" description="This is a simple toast!" />
   </Tab>
   <Tab value="Code">
-
 ```tsx
 <Toast variant="simple" description="This is a simple toast!" />
 ```
-
   </Tab>
 </Tabs>
 
@@ -73,7 +70,6 @@ function MyComponent() {
     />
   </Tab>
   <Tab value="Code">
-
 ```tsx
 <Toast
   variant="with-title"
@@ -81,7 +77,6 @@ function MyComponent() {
   description="This toast has a title."
 />
 ```
-
   </Tab>
 </Tabs>
 
@@ -92,22 +87,20 @@ function MyComponent() {
     <Toaster
       variant="with-action"
       title="Event Created"
-      description="Monday, January 3rd at 6:00pm"
+      description="Sunday, April 20th at 8:00pm"
       action={<button className="text-blue-500 hover:underline">Undo</button>}
     />
   </Tab>
   <Tab value="Code">
-
 ```tsx
 <Toast
   variant="with-action"
   title="Event Created"
-  description="Monday, January 3rd at 6:00pm"
+  description="Sunday, April 20th at 8:00 pm"
   buttonText="Test"
   action={<button className="text-blue-500 hover:underline">Undo</button>}
 />
 ```
-
   </Tab>
 </Tabs>
 
@@ -125,36 +118,36 @@ You can position your toast in one of four corners of the screen.
     </div>
   </Tab>
   <Tab value="Code">
-
 ```tsx
 <Toast position="top-left" description="Top left toast" />
+
 <Toast position="top-right" description="Top right toast" />
+
 <Toast position="bottom-left" description="Bottom left toast" />
+
 <Toast position="bottom-right" description="Bottom right toast" />
 ```
-
   </Tab>
 </Tabs>
 
 ## Props
 
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| **variant** | `"simple" \| "with-title" \| "with-action"` | `"simple"` | Type of toast notification |
-| **title** | `string` | - | Toast title for "with-title" and "with-action" variants |
-| **description** | `string` | `"This is a toast!"` | Description or message of the toast |
-| **action** | `React.ReactNode` | - | Action element like a button (only for with-action) |
-| **duration** | `number` | `3000` | Auto-dismiss time in milliseconds |
-| **position** | `"top-left" \| "top-right" \| "bottom-left" \| "bottom-right"` | `"bottom-right"` | Placement on screen |
-| **className** | `string` | - | Custom styles for toast wrapper |
-| **buttonText** | `string` | `"Show Toast"` | Button Text |
+| Name        | Type                                                                 | Default              | Description                                             |
+| ----------- | -------------------------------------------------------------------- | -------------------- | ------------------------------------------------------- |
+| variant     | `"simple"` \| `"with-title"` \| `"with-action"`                      | `"simple"`           | Type of toast notification                              |
+| title       | `string`                                                             | `-`                  | Toast title for "with-title" and "with-action" variants |
+| description | `string`                                                             | `"This is a toast!"` | Description or message of the toast                     |
+| action      | `React.ReactNode`                                                    | `-`                  | Action element like a button (only for with-action)     |
+| duration    | `number`                                                             | `3000`               | Auto-dismiss time in milliseconds                       |
+| position    | `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"` | `"bottom-right"`     | Placement on screen                                     |
+| className   | `string`                                                             | `-`                  | Custom styles for toast wrapper                         |
+| buttonText  | `string`                                                             | `"Show Toast"`       | Button Text                                             |
 
 ## Usage with Provider
 
 For global toast management, wrap your application with `ToastProvider`:
 
 ```tsx
-// In your _app.tsx or layout component
 import { ToastProvider } from "@/components/ui/snappy-toast";
 
 export default function MyApp({ Component, pageProps }) {
@@ -189,3 +182,4 @@ export function MyComponent() {
     </button>
   );
 }
+```
