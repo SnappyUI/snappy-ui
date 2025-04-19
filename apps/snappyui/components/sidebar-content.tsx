@@ -44,7 +44,7 @@ export const contents: Content[] = [
       {
         title: "Avatar",
         href: "/docs/components/snappyavatar",
-        isNew: true
+        isNew: true,
       },
       {
         title: "Button",
@@ -207,6 +207,10 @@ export const contents: Content[] = [
       {
         title: "Date Picker",
         href: "/docs/inputs/snappydatepicker",
+      },
+      {
+        title: "Star Rating",
+        href: "/docs/inputs/snappystarrating",
       },
 
     ],
