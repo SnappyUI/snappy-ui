@@ -123,15 +123,6 @@ export const contents: Content[] = [
     ],
   },
   {
-    title: "Inputs",
-    list: [
-      {
-        title: "Date Picker",
-        href: "/docs/inputs/snappydatepicker",
-      },
-    ],
-  },
-  {
     title: "Responses",
     list: [
       {
@@ -141,6 +132,10 @@ export const contents: Content[] = [
       {
         title: "Bell",
         href: "/docs/responses/snappybell",
+      },
+      {
+        title: "Progres bar",
+        href: "/docs/responses/snappybar",
       },
     ],
   },
@@ -191,17 +186,7 @@ export const contents: Content[] = [
 
     ],
   },
-  {
-    title: "Responses",
 
-    list: [
-      {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
-      },
-
-    ],
-  },
   {
     title: "Enhancers",
 

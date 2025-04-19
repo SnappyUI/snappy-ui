@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 
 import { CircularProgress, ProgressBar } from "../ui/snappy-progress-bar";
