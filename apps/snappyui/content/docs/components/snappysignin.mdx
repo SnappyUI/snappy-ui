@@ -1,0 +1,141 @@
+---
+title: SignIn
+description: A flexible and responsive Signin component designed for seamless modern UI experiences.
+
+---
+
+import SnappySignIn from "@/components/demo/snappy-singin";
+import { Accordion } from "@/components/ui/snappy-accordion";
+import Card from "@/components/ui/snappy-card";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 rounded-lg py-5 px-5">
+      <SnappySignIn />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import {
+    LoginPage,
+    LoginHeader,
+    EmailInput,
+    PasswordInput,
+    ForgotPasswordLink,
+    SubmitButton,
+    SignUpLink
+    } from "@/components/ui/snappy-login";
+
+    <LoginPage  >
+    <LoginHeader title="Welcome Back" subtitle="Log in to your account" />
+    <EmailInput />
+    <PasswordInput />
+    <ForgotPasswordLink />
+    <SubmitButton onClick={(data) => {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        console.log("I will get this data while submitting", data);
+                        resolve(true); // This is important
+                    }, 5000);
+                });
+    }} />
+    <SignUpLink />
+    </LoginPage>
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/signin
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/signin
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/signin
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/signin
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+### LoginPage
+|<b>Name</b> |	<b>Type</b> | <b>Default</b> |	<b>Description</b> |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+| **children**     |`ReactNode`| `-` | Contents of the component |
+| **className**     |`string`| `-` | Tailwind utility classes |
+
+### Login Header
+
+|<b>Name</b> |	<b>Type</b> | <b>Default</b> |	<b>Description</b> |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+| title | string | "Sign In" | Main heading text |  
+subtitle | string | "Enter your credentials to access your account" | Subheading text |
+logo | ReactNode | null | Optional logo element | 
+children | ReactNode | - | Additional elements inside header | 
+ className | string | - | Tailwind utility classes |
+
+### EmailInput
+
+|<b>Name</b> |	<b>Type</b> | <b>Default</b> |	<b>Description</b> |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+label | string | "Email" | Label text |
+placeholder | string | "you@example.com" | Input placeholder |
+ className | string | - | Tailwind utility classes |
+
+### PasswordInput
+
+|<b>Name</b> |	<b>Type</b> | <b>Default</b> |	<b>Description</b> |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+| label | string | "Password" | Label text | 
+placeholder | string | "••••••••" | Input placeholder | 
+showToggle | boolean | true | Show/hide password toggle button | 
+className | string | - | Tailwind utility classes |
+
+### ForgotPasswordLink
+
+|<b>Name</b> |	<b>Type</b> | <b>Default</b> |	<b>Description</b> |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+| text | string | "Forgot password?" | Link text | 
+href | string | "#" | Link destination | 
+className | string | - | Tailwind utility classes |
+
+### SubmitButton
+
+|<b>Name</b> |	<b>Type</b> | <b>Default</b> |	<b>Description</b> |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+| text | string | "Sign In" | Button label | 
+loadingText | string | "Signing in..." | Text shown when loading | 
+className | string | - | Tailwind utility classes | 
+onClick | cb | - | Optional custom submit handler |
+
+### SignUpLink
+
+|<b>Name</b> |	<b>Type</b> | <b>Default</b> |	<b>Description</b> |
+| ------------- | -------------------------------------------------------------------------------------------------- | ---------------- | -----------------------------|
+| text | string | "Don't have an account? Sign up" | Link text | 
+href | string | "#" | Link destination |
+className | string | - | Tailwind utility classes |

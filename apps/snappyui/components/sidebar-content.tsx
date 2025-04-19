@@ -18,6 +18,15 @@ export const contents: Content[] = [
   //   href: "/docs",
   // },
   {
+    title: "Auth",
+    list: [
+      {
+        title: "Footer",
+        href: "/docs/sections/snappyfooter",
+      },
+    ],
+  },
+  {
     title: "Components",
     list: [
       {
@@ -35,6 +44,7 @@ export const contents: Content[] = [
       {
         title: "Avatar",
         href: "/docs/components/snappyavatar",
+        isNew: true
       },
       {
         title: "Button",
@@ -57,6 +67,10 @@ export const contents: Content[] = [
         href: "/docs/components/snappycolorText",
       },
       {
+        title: "Dialog",
+        href: "/docs/components/snappydialog",
+      },
+      {
         title: "Dropdown",
         href: "/docs/components/snappydropdown",
       },
@@ -67,6 +81,10 @@ export const contents: Content[] = [
       {
         title: "Hold To Delete",
         href: "/docs/components/snappyholdtodelete",
+      },
+      {
+        title: "Icon Cloud",
+        href: "/docs/components/snappyiconcloud",
         isNew: true,
       },
       {
@@ -77,7 +95,11 @@ export const contents: Content[] = [
         title: "Skeleton",
         href: "/docs/components/snappyskeleton",
       },
-
+      {
+        title: "Scratch",
+        href: "/docs/components/snappyscratch",
+        isNew: true,
+      },
       {
         title: "Splash Screen",
         href: "/docs/components/snappysplashscreen",
@@ -96,9 +118,53 @@ export const contents: Content[] = [
         title: "Tooltip",
         href: "/docs/components/snappytooltip",
       },
+    ],
+  },
+  {
+    title: "Enhancers",
+    list: [
       {
-        title: "Dialog",
-        href: "/docs/components/snappydialog",
+        title: "Clipbord",
+        href: "/docs/enhancers/snappyclipboard",
+        isNew: true,
+      },
+      {
+        title: "Json",
+        href: "/docs/enhancers/snappyjson",
+        isNew: true,
+      },
+      {
+        title: "QR",
+        href: "/docs/enhancers/snappyqr",
+        isNew: true,
+      },
+      {
+        title: "Sticky Note",
+        href: "/docs/enhancers/snappystickynote",
+        isNew: true,
+      },
+      {
+        title: "Terminal",
+        href: "/docs/enhancers/snappyterminal",
+        isNew: true,
+      },
+    ],
+  },
+  {
+    title: "Inputs",
+    list: [
+      {
+        title: "Footer",
+        href: "/docs/sections/snappyfooter",
+      },
+    ],
+  },
+  {
+    title: "Responses",
+    list: [
+      {
+        title: "Footer",
+        href: "/docs/sections/snappyfooter",
       },
     ],
   },
@@ -127,27 +193,9 @@ export const contents: Content[] = [
         title: "Pricing Section",
         href: "/docs/sections/snappypricetable",
       },
-
-    ],
-  },
-  {
-    title: "Inputs",
-
-    list: [
       {
         title: "Date Picker",
         href: "/docs/inputs/snappydatepicker",
-      },
-
-    ],
-  },
-  {
-    title: "Auth",
-
-    list: [
-      {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
       },
 
     ],
@@ -203,7 +251,10 @@ export const contents: Content[] = [
         href: "/docs/enhancers/snappyqr",
         isNew: true,
       },
-
+      {
+        title: "SignIn",
+        href: "/docs/components/snappysignin",
+      },
     ],
   },
 
