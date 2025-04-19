@@ -1,11 +1,19 @@
 ---
 title: Card
-description: A versatile card component for modern web applications
+description: Organize your content beautifully with a stylish, customizable card layout that fits any design system.
 ---
 
 import SnappyBlogCard from "@/components/demo/snappy-blog-card";
 import SnappyHorizontalCard from "@/components/demo/snappy-horizontal-card";
-import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-card";
+import {
+  HorizontalButton,
+  HorizontalCard,
+  HorizontalCardContent,
+  HorizontalCardFooter,
+  HorizontalCardImage,
+  HorizontalDescription,
+  HorizontalTitle,
+} from "@/components/ui/snappy-card";
 import Card, { BlogCard } from "@/components/ui/snappy-card";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
@@ -13,36 +21,29 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Basic Usage
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 rounded-lg py-5">
+      <SnappyBlogCard />
+    </div>
+  </Tab>
 
-    <Tab value="Preview">
+  <Tab value="Code">
+    ```tsx
+    import Card from "@/components/ui/snappy-card";
 
-      <div className="flex  flex-col items-center justify-center mb-6  rounded-lg py-5">
-         <SnappyBlogCard />
-      </div>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      ```tsx
-      import Card from "@/components/ui/snappy-card";
-
-      <div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-        <Card title="Image Card" variant="dark">
-          <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
-          <p>Random image from Lorem Picsum</p>
-        </Card>
-      </div>
-      ```
-
-    </Tab>
-
+    <div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
+      <Card title="Image Card" variant="dark">
+        <img
+          src="https://picsum.photos/300/200"
+          alt="Random Image"
+          className="rounded-lg"
+        />
+        <p>Random image from Lorem Picsum</p>
+      </Card>
+    </div>
+    ```
+  </Tab>
 </Tabs>
 
 ---
@@ -51,222 +52,178 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ### Horizontal Card
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
+      <HorizontalCard>
+        <HorizontalCardImage
+          imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          imageAlt=""
+        />
+        <HorizontalCardContent>
+          <HorizontalTitle title="Jaipur" />
+          <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
+          <HorizontalCardFooter>
+            <HorizontalButton text="Read More" />
+          </HorizontalCardFooter>
+        </HorizontalCardContent>
+      </HorizontalCard>
+    </div>
+  </Tab>
 
-    <Tab value="Preview">
+  <Tab value="Code">
+    ```tsx
+    import {
+      HorizontalButton,
+      HorizontalCard,
+      HorizontalCardContent,
+      HorizontalCardFooter,
+      HorizontalCardImage,
+      HorizontalDescription,
+      HorizontalTitle,
+    } from "@/components/ui/snappy-card";
 
-     <div className="flex items-center justify-center">
-        <HorizontalCard >
-            <HorizontalCardImage className="" imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" imageAlt="" />
-            <HorizontalCardContent>
-                <HorizontalTitle title="Jaipur" />
-                <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
-                <HorizontalCardFooter >
-                    <HorizontalButton text="Read More"  />
-                </HorizontalCardFooter>
-            </HorizontalCardContent>
-        </HorizontalCard>
-     </div>
-
-    </Tab>
-
-    <Tab value="Code">
-
-      ```tsx
-      import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-card";
-
-      <HorizontalCard >
-            <HorizontalCardImage imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" imageAlt="" />
-            <HorizontalCardContent >
-                <HorizontalTitle title="Jaipur" />
-                <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
-                <HorizontalCardFooter >
-                    <HorizontalButton text="Read More" onClick={() => console.log("Clicked")} />
-                </HorizontalCardFooter>
-            </HorizontalCardContent>
-        </HorizontalCard>
-      ```
-
-    </Tab>
-
+    <HorizontalCard>
+      <HorizontalCardImage
+        imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        imageAlt=""
+      />
+      <HorizontalCardContent>
+        <HorizontalTitle title="Jaipur" />
+        <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
+        <HorizontalCardFooter>
+          <HorizontalButton text="Read More" onClick={() => console.log("Clicked")} />
+        </HorizontalCardFooter>
+      </HorizontalCardContent>
+    </HorizontalCard>
+    ```
+  </Tab>
 </Tabs>
-
 ### Dark
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
-    <Tab value="Preview">
-
-      <Card title="Dark Card" variant="dark" className="text-gray-500">
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Card title="Dark Card" variant="dark" className="text-gray-500">
       Basic card example with title and content.
     </Card>
+  </Tab>
 
-    </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Card from "@/components/ui/snappy-card";
 
-    <Tab value="Code">
-
-      ```tsx
-      import Card from "@/components/ui/snappy-card";
-
-      <Card
-        title="Simple Card"
-        variant="dark"
-        className="text-gray-500"
-      >
-        Basic card example with title and content.
-      </Card>
-      ```
-
-    </Tab>
-
+    <Card
+      title="Simple Card"
+      variant="dark"
+      className="text-gray-500"
+    >
+      Basic card example with title and content.
+    </Card>
+    ```
+  </Tab>
 </Tabs>
 
 ### Primary
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
-    <Tab value="Preview">
-
-      <Card title="Primary Card" variant="primary" className="text-gray-500">
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Card title="Primary Card" variant="primary" className="text-gray-500">
       Basic card example with title and content.
     </Card>
+  </Tab>
 
-    </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Card from "@/components/ui/snappy-card";
 
-    <Tab value="Code">
-
-      ```tsx
-      import Card from "@/components/ui/snappy-card";
-
-      <Card
-        title="Simple Card"
-        variant="primary"
-        className="text-gray-500"
-      >
-        Basic card example with title and content.
-      </Card>
-      ```
-
-    </Tab>
-
+    <Card
+      title="Simple Card"
+      variant="primary"
+      className="text-gray-500"
+    >
+      Basic card example with title and content.
+    </Card>
+    ```
+  </Tab>
 </Tabs>
 
 ### Success
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
-    <Tab value="Preview">
-
-      <Card title="Success Card" variant="success" className="text-gray-500">
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Card title="Success Card" variant="success" className="text-gray-500">
       Basic card example with title and content.
     </Card>
+  </Tab>
 
-    </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Card from "@/components/ui/snappy-card";
 
-    <Tab value="Code">
-
-      ```tsx
-      import Card from "@/components/ui/snappy-card";
-
-      <Card
-        title="Simple Card"
-        variant="success"
-        className="text-gray-500"
-      >
-        Basic card example with title and content.
-      </Card>
-      ```
-
-    </Tab>
-
+    <Card
+      title="Success Card"
+      variant="success"
+      className="text-gray-500"
+    >
+      Basic card example with title and content.
+    </Card>
+    ```
+  </Tab>
 </Tabs>
 
 ### Warning
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
-    <Tab value="Preview">
-
-     <Card title="Warning Card" variant="warning" className="text-gray-500">
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Card title="Warning Card" variant="warning" className="text-gray-500">
       Basic card example with title and content.
     </Card>
+  </Tab>
 
-    </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Card from "@/components/ui/snappy-card";
 
-    <Tab value="Code">
-
-      ```tsx
-      import Card from "@/components/ui/snappy-card";
-
-      <Card title="Warning Card" variant="warning" className="text-gray-500">
+    <Card
+      title="Warning Card"
+      variant="warning"
+      className="text-gray-500"
+    >
       Basic card example with title and content.
     </Card>
-      ```
-
-    </Tab>
-
+    ```
+  </Tab>
 </Tabs>
 
 ### Delete
 
-<Tabs
-  items={[
-    "Preview",
-    "Code",
-  ]}
->
-
-    <Tab value="Preview">
-
-      <Card title="Delete Card" variant="delete" className="text-gray-500">
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Card title="Delete Card" variant="delete" className="text-gray-500">
       Basic card example with title and content.
     </Card>
+  </Tab>
 
-    </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Card from "@/components/ui/snappy-card";
 
-    <Tab value="Code">
-
-      ```tsx
-      import Card from "@/components/ui/snappy-card";
-
-       <Card title="Delete Card" variant="delete" className="text-gray-500">
+    <Card
+      title="Delete Card"
+      variant="delete"
+      className="text-gray-500"
+    >
       Basic card example with title and content.
     </Card>
-      ```
-
-    </Tab>
-
+    ```
+  </Tab>
 </Tabs>
 
 ---
+
 ## Installation
 
-<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+<Tabs items={["pnpm", "npm", "yarn", "bun"]}>
   <Tab value="pnpm">
     ```bash
     pnpm dlx shadcn@latest add http://snappyui.in/api/registry/card
@@ -288,15 +245,16 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     ```
   </Tab>
 </Tabs>
+
 ---
 
 ## Props
 
-| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
-| ------------- | ----------- | -------------- | --------------------------------------------- |
-| **title**     | string      | -              | The title of the card                         |
-| **className** | string      | -              | Additional CSS classes                        |
-| **content**   | string      | -              | The main content of the card                  |
-| **image**     | string      | -              | URL of the card's image                       |
-| **variant**   | string      | 'default'      | The style variant of the card                 |
-| **children**  | ReactNode   | -              | Allows passing React nodes into the component |
+| Name        | Type        | Default       | Description                                   |
+| ----------- | ----------- | ------------- | --------------------------------------------  |
+| title       | `string`    | `-`           | The title of the card                         |
+| className   | `string`    | `-`           | Additional CSS classes                        |
+| content     | `string`    | `-`           | The main content of the card                  |
+| image       | `string`    | `-`           | URL of the card's image                       |
+| variant     | `string`    | `'default'`   | The style variant of the card                 |
+| children    | `ReactNode` | `-`           | Allows passing React nodes into the component |
