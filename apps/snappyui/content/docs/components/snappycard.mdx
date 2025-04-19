@@ -3,7 +3,10 @@ title: Card
 description: A versatile card component for modern web applications
 ---
 
-import Card from "@/components/ui/snappy-card";
+import SnappyBlogCard from "@/components/demo/snappy-blog-card";
+import SnappyHorizontalCard from "@/components/demo/snappy-horizontal-card";
+import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-card";
+import Card, { BlogCard } from "@/components/ui/snappy-card";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ---
@@ -19,11 +22,8 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
     <Tab value="Preview">
 
-      <div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-        <Card title="Image Card" variant="dark">
-          <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
-          <p>Random image from Lorem Picsum</p>
-        </Card>
+      <div className="flex  flex-col items-center justify-center mb-6  rounded-lg py-5">
+         <SnappyBlogCard />
       </div>
 
     </Tab>
@@ -49,7 +49,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Variations
 
-### Default
+### Horizontal Card
 
 <Tabs
   items={[
@@ -60,24 +60,36 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
     <Tab value="Preview">
 
-      <Card title="Default Card" variant="default" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
+     <div className="flex items-center justify-center">
+        <HorizontalCard >
+            <HorizontalCardImage className="" imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" imageAlt="" />
+            <HorizontalCardContent>
+                <HorizontalTitle title="Jaipur" />
+                <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
+                <HorizontalCardFooter >
+                    <HorizontalButton text="Read More"  />
+                </HorizontalCardFooter>
+            </HorizontalCardContent>
+        </HorizontalCard>
+     </div>
 
     </Tab>
 
     <Tab value="Code">
 
       ```tsx
-      import Card from "@/components/ui/snappy-card";
+      import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-card";
 
-      <Card
-        title="Simple Card"
-        variant="default"
-        className="text-gray-500"
-      >
-        Basic card example with title and content.
-      </Card>
+      <HorizontalCard >
+            <HorizontalCardImage imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" imageAlt="" />
+            <HorizontalCardContent >
+                <HorizontalTitle title="Jaipur" />
+                <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
+                <HorizontalCardFooter >
+                    <HorizontalButton text="Read More" onClick={() => console.log("Clicked")} />
+                </HorizontalCardFooter>
+            </HorizontalCardContent>
+        </HorizontalCard>
       ```
 
     </Tab>
