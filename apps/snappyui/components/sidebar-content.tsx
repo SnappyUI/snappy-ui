@@ -65,11 +65,6 @@ export const contents: Content[] = [
         href: "/docs/components/snappyfeedback",
       },
       {
-        title: "Icon Cloud",
-        href: "/docs/components/snappyiconcloud",
-        isNew: true,
-      },
-      {
         title: "Hold To Delete",
         href: "/docs/components/snappyholdtodelete",
         isNew: true,
@@ -79,18 +74,10 @@ export const contents: Content[] = [
         href: "/docs/components/snappyloader",
       },
       {
-        title: "Marquee",
-        href: "/docs/components/snappymarquee",
-      },
-      {
         title: "Skeleton",
         href: "/docs/components/snappyskeleton",
       },
-      {
-        title: "Scratch",
-        href: "/docs/components/snappyscratch",
-        isNew: true,
-      },
+
       {
         title: "Splash Screen",
         href: "/docs/components/snappysplashscreen",
@@ -187,6 +174,11 @@ export const contents: Content[] = [
         isNew: true,
       },
       {
+        title: "Icon Cloud",
+        href: "/docs/enhancers/snappyiconcloud",
+        isNew: true,
+      },
+      {
         title: "Json",
         href: "/docs/enhancers/snappyjson",
         isNew: true,
@@ -194,6 +186,11 @@ export const contents: Content[] = [
       {
         title: "Terminal",
         href: "/docs/enhancers/snappyterminal",
+        isNew: true,
+      },
+      {
+        title: "Scratch",
+        href: "/docs/enhancers/snappyscratch",
         isNew: true,
       },
       {
