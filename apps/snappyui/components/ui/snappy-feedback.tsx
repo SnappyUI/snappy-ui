@@ -23,6 +23,7 @@ export function Feedback({
   const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle");
   const [feedback, setFeedback] = useState("");
   const ref = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useOnClickOutside(ref as React.RefObject<HTMLElement>, () => {
     if (formState !== "success")
@@ -63,6 +64,7 @@ export function Feedback({
             setFormState("idle");
             setFeedback("");
           }}
+          ref={buttonRef}
           className={`flex h-9 items-center border border-gray-200 text-white dark:border-zinc-700 bg-[#292b2b] dark:bg-zinc-900 px-3 text-sm font-medium rounded-md shadow-sm transition-all ${
             open ? "z-10 opacity-100" : "z-0 opacity-100"
           }`}
@@ -78,7 +80,7 @@ export function Feedback({
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               ref={ref}
-              className="bg-white z-10 dark:bg-zinc-800 w-[364px] h-[192px] shadow-xl rounded-xl overflow-hidden flex items-center justify-center"
+              className="bg-white z-10 dark:bg-zinc-800 w-[364px] h-[192px] shadow-xl rounded-xl overflow-hidden flex items-center justify-center absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
               <AnimatePresence mode="wait">
                 {formState === "success"
