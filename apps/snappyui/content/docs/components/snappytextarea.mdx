@@ -1,0 +1,94 @@
+---
+title: Textarea
+description: A versatile Textarea component for modern web applications
+---
+import {TextArea} from "components/ui/snappytextarea";
+
+import TextAreaDemo from "@/components/demo/simple-textarea"
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Textarea Component
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+      <div className="flex items-center justify-center">
+        
+      <TextAreaDemo/>
+
+      </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+        import React, { useState } from "react";
+        import { TextArea} from "components/ui/snappy-textarea";
+
+        const [message, setMessage] = useState('');
+
+        <TextArea
+          id="userMessage"
+          label="Your message"
+          placeholder="Enter text here..."
+          rows={5}
+          value={message}
+          onChange={setMessage}
+          className="mb-1"
+         />
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/textarea
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/textarea
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/textarea
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/textarea
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+
+## Props
+
+| **Name** | **Type** | **Default** | **Required** | **Description** |
+|------------|----------|-------------|--------------|-------------------------------------------------------------------------------|
+| **id** | string   | -           | Yes          | The `id` attribute for the textarea element (for accessibility and linking). |
+| **label** | string   | -           | Yes          | The text to display as the label for the textarea.                            |
+| **placeholder** | string   | `''`        | No           | The placeholder text to display when the textarea is empty.                  |
+| **rows** | number   | `4`         | No           | The initial number of visible text lines in the textarea.                     |
+| **value** | string   | -           | No           | The current value of the textarea (for controlled components).                 |
+| **onChange** | `(newValue: string) => void` | -           | No           | A callback function that is called when the textarea's value changes. It receives the new value as a string. |
+| **className** | string   | `''`        | No           | Additional CSS classes to apply to the textarea container.                    |

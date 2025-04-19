@@ -105,6 +105,11 @@ export const contents: Content[] = [
         href: "/docs/components/snappysplashscreen",
       },
       {
+        title: "Textarea",
+        href: "/docs/components/snappytextarea",
+        isNew: true,
+      },
+      {
         title: "Toast",
         href: "/docs/components/snappytoast",
         isNew: true,
