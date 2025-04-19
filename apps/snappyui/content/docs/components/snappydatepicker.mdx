@@ -1,0 +1,89 @@
+---
+title: DatePicker
+description: A customizable date picker component for modern web applications
+---
+
+import DatePickerDemo from "@/components/datepicker-demo";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+        <div className=" flex justify-center items-center ">
+            <DatePickerDemo placeholder="Select a date" />
+        </div>
+          
+      
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import DatePicker from "@/components/ui/date-picker";
+
+      <DatePicker placeholder="Select a date" />
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/date-picker
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/date-picker
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/date-picker
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/date-picker
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| Name                   | Type                         | Default       | Description                                     |
+| ---------------------- | ---------------------------- | ------------- | ----------------------------------------------- |
+| **initialDate**        | Date                         | -             | Pre-selected date when component renders        |
+| **onChange**           | (date: Date \| null) => void | -             | Function called when date selection changes     |
+| **placeholder**        | string                       | 'Select date' | Placeholder text for the input field            |
+| **format**             | string                       | 'MM/DD/YYYY'  | Date format pattern for display                 |
+| **label**              | string                       | -             | Label text displayed above the input field      |
+| **showClearButton**    | boolean                      | true          | Shows the clear button if true                  |
+| **showTodayButton**    | boolean                      | true          | Shows the today button if true                  |
+| **disabled**           | boolean                      | false         | Disables the date picker if true                |
+| **className**          | string                       | -             | Classes for the wrapper element                 |
+| **containerClassName** | string                       | -             | Classes for the input container                 |
+| **inputClassName**     | string                       | -             | Classes for the input field                     |
+| **calendarClassName**  | string                       | -             | Classes for the calendar dropdown               |
+| **todayButtonClassName**| string                      | -             | Classes for the Today button                    |
+| **clearButtonClassName**| string                      | -             | Classes for the Clear button                    |
+
+---
