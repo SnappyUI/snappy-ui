@@ -1,9 +1,4 @@
 {
   "is_task_list_visible": true,
-<<<<<<< HEAD
-
-  "active_task": null
-=======
->>>>>>> 27f0aa1 (feat: add card component)
   "active_task": "@snappy-ui#build"
 }
