@@ -44,7 +44,7 @@ export const contents: Content[] = [
       {
         title: "Avatar",
         href: "/docs/components/snappyavatar",
-        isNew: true
+        isNew: true,
       },
       {
         title: "Button",
