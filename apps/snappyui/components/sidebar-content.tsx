@@ -18,34 +18,34 @@ export const contents: Content[] = [
     list: [
       {
         title: "Animated Card",
-        href: "/docs/components/snappyanimatedcard",
+        href: "/docs/animated/snappyanimatedcard",
       },
       {
         title: "Animated Text",
-        href: "/docs/components/snappyanimatedtext",
+        href: "/docs/animated/snappyanimatedtext",
+      },
+      {
+        title: "Color Text",
+        href: "/docs/animated/snappycolorText",
+      },
+      {
+        title: "Icon Cloud",
+        href: "/docs/animated/snappyiconcloud",
+        isNew: true,
+      },
+      {
+        title: "Scratch",
+        href: "/docs/animated/snappyscratch",
+        isNew: true,
       },
       {
         title: "Sticky Note",
-        href: "/docs/enhancers/snappystickynote",
+        href: "/docs/animated/snappystickynote",
         isNew: true,
       },
       {
         title: "Terminal",
-        href: "/docs/enhancers/snappyterminal",
-        isNew: true,
-      },
-      {
-        title: "Icon Cloud",
-        href: "/docs/enhancers/snappyiconcloud",
-        isNew: true,
-      },
-      {
-        title: "Color Text",
-        href: "/docs/components/snappycolorText",
-      },
-      {
-        title: "Scratch",
-        href: "/docs/enhancers/snappyscratch",
+        href: "/docs/animated/snappyterminal",
         isNew: true,
       },
     ],
@@ -64,8 +64,7 @@ export const contents: Content[] = [
       },
       {
         title: "Bell",
-        href: "/docs/responses/snappybell",
-        isNew: true,
+        href: "/docs/components/snappybell",
       },
       {
         title: "Button",
@@ -82,27 +81,22 @@ export const contents: Content[] = [
       {
         title: "Check",
         href: "/docs/components/snappycheck",
-        isNew: true,
       },
       {
-        title: "Clipbord",
-        href: "/docs/enhancers/snappyclipboard",
-        isNew: true,
+        title: "Clipboard",
+        href: "/docs/components/snappyclipboard",
       },
       {
         title: "Date Picker",
-        href: "/docs/inputs/snappydatepicker",
-        isNew: true,
+        href: "/docs/components/snappydatepicker",
       },
       {
         title: "Dialog",
-        href: "/docs/responses/snappydialog",
-        isNew: true,
+        href: "/docs/components/snappydialog",
       },
       {
         title: "Dropdown",
         href: "/docs/components/snappydropdown",
-        isNew: true,
       },
       {
         title: "Feedback",
@@ -113,10 +107,9 @@ export const contents: Content[] = [
         title: "Hold To Delete",
         href: "/docs/components/snappyholdtodelete",
       },
-
       {
         title: "Json",
-        href: "/docs/enhancers/snappyjson",
+        href: "/docs/components/snappyjson",
         isNew: true,
       },
       {
@@ -124,18 +117,12 @@ export const contents: Content[] = [
         href: "/docs/components/snappyloader",
       },
       {
-        title: "Progres bar",
-        href: "/docs/responses/snappybar",
-        isNew: true,
+        title: "Progress bar",
+        href: "/docs/components/snappybar",
       },
       {
         title: "QR",
-        href: "/docs/enhancers/snappyqr",
-        isNew: true,
-      },
-      {
-        title: "Scratch",
-        href: "/docs/enhancers/snappyscratch",
+        href: "/docs/components/snappyqr",
         isNew: true,
       },
       {
@@ -144,23 +131,19 @@ export const contents: Content[] = [
       },
       {
         title: "Star Rating",
-        href: "/docs/inputs/snappystarrating",
-        isNew: true,
+        href: "/docs/components/snappystarrating",
       },
       {
         title: "Textarea",
         href: "/docs/components/snappytextarea",
-        isNew: true,
       },
       {
         title: "Toast",
         href: "/docs/components/snappytoast",
-        isNew: true,
       },
       {
         title: "Toggle",
         href: "/docs/components/snappytoggle",
-        isNew: true,
       },
       {
         title: "Tooltip",
@@ -174,40 +157,35 @@ export const contents: Content[] = [
       {
         title: "Footer",
         href: "/docs/sections/snappyfooter",
-        isNew: true,
       },
       {
         title: "Hero",
-        href: "/docs/components/snappyhero",
-        isNew: true,
+        href: "/docs/sections/snappyhero",
       },
       {
         title: "Lamp",
         href: "/docs/sections/snappylamp",
+        isNew: true,
       },
       {
         title: "Navbar",
         href: "/docs/sections/snappynavbar",
-        isNew: true,
       },
       {
         title: "Pricing Section",
         href: "/docs/sections/snappypricetable",
-        isNew: true,
       },
       {
         title: "SignIn",
-        href: "/docs/components/snappysignin",
-        isNew: true,
+        href: "/docs/sections/snappysignin",
       },
       {
         title: "Splash Screen",
-        href: "/docs/components/snappysplashscreen",
+        href: "/docs/sections/snappysplashscreen",
       },
       {
         title: "Testimonial",
         href: "/docs/sections/snappytestimonial",
-        isNew: true,
       },
     ],
   },

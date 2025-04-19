@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta name="twitter:description" content="Build fast and responsive web applications with SnappyUI." />
         <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.png" />
         <link rel="icon" href="/favicon.ico" />
-        <title>SnappyUI - Modern UI Library</title>
+        <title>Snappy UI - Modern UI Library</title>
 
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PNW5GZRGVP"></Script>
         <Script id="google-analytics">
