@@ -1,0 +1,260 @@
+---
+title: Testimonial
+description: A versatile Testimonial component for modern web applications
+---
+import { MinimalTestimonial, PlainTestimonial, ModernTestimonial } from "components/ui/snappy-testimonial";
+
+import MinimalTestimonialDemo from "@/components/demo/minimal-testimonial"
+import PlainTestimonialDemo from "@/components/demo/plain-testimonial"
+import ModernTestimonialDemo from "@/components/demo/modern-testimonial"
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Minimal Testimonial Component
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+      <div className="flex items-center justify-center ">
+        
+      <MinimalTestimonialDemo/>
+
+      </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+        import { MinimalTestimonial} from "components/ui/snappy-testimonial";
+
+         <div className="h-fit">
+            <MinimalTestimonial
+                name="Alice"
+                title="CEO, fintechy.com"
+                quote="As a lazy entrepreneur who got out of bed at 11, I managed to build my SaaS MVP with snappyui in 3 days. Never looked back since then."
+                avatar="https://images.pexels.com/photos/31611945/pexels-photo-31611945/free-photo-of-young-woman-smiling-in-forest-setting.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Alice"
+                className="mx-auto"
+            />
+        </div>
+
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+
+## Props
+
+| **Name** | **Type** | **Default** | **Required** | **Description** |
+|-------------|----------|-------------|--------------|---------------------------------------------------------|
+| **name** | string   | -           | Yes          | The name of the person giving the testimonial.          |
+| **title** | string   | -           | Yes          | The title or position of the person.                    |
+| **quote** | string   | -           | Yes          | The actual testimonial text.                            |
+| **avatar** | string   | -           | Yes          | URL or path to the avatar image.                        |
+| **alt** | string   | -           | Yes          | Alternative text for the avatar image (accessibility). |
+| **className** | string   | -           | No           | Additional CSS classes for the testimonial container.   |
+
+---
+
+## Plain Testimonial Component
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+      <div className="flex items-center justify-center ">
+        
+      <PlainTestimonialDemo/>
+
+      </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+        import { PlainTestimonial} from "components/ui/snappy-testimonial";
+
+          <PlainTestimonial
+                name="Alice Wonderland"
+                title="CEO of Tech Innovators Inc."
+                quote="The team was fantastic! They truly understood our vision and delivered beyond our expectations. Highly recommended!"
+                avatar="https://images.pexels.com/photos/19797385/pexels-photo-19797385/free-photo-of-beautiful-model-in-oregon-wearing-a-forest-green-linen-dress-portrait-taken-by-portland-photographer-lance-reis-on-my-sonya7iii-on-location.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Alice Wonderland"
+                className="mb-8"
+            />
+
+
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+
+## Props
+
+| **Name** | **Type** | **Default** | **Required** | **Description** |
+|-------------|----------|-------------|--------------|---------------------------------------------------------|
+| **name** | string   | -           | Yes          | The name of the person giving the testimonial.          |
+| **title** | string   | -           | Yes          | The title or position of the person.                    |
+| **quote** | string   | -           | Yes          | The actual testimonial text.                            |
+| **avatar** | string   | -           | Yes          | URL or path to the avatar image.                        |
+| **alt** | string   | -           | Yes          | Alternative text for the avatar image (accessibility). |
+| **bgColor** | string   | -           | Yes          | The color for the lower-half. |
+| **className** | string   | -           | No           | Additional CSS classes for the testimonial container.   |
+
+---
+
+## Modern Testimonial Component
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+
+      <div className="flex items-center justify-center ">
+        
+      <ModernTestimonialDemo/>
+
+      </div>
+
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+        import { ModernTestimonial} from "components/ui/snappy-testimonial";
+
+           <ModernTestimonialDemo
+                name="Piyush Garg"
+                title="Software Engineer && Founder of Teachyst"
+                quote="This product completely transformed our workflow and increased productivity by 45%. The team has been incredibly supportive throughout implementation."
+                avatar="https://www.piyushgarg.dev/_next/image?url=%2Fimages%2Favatar.png&w=640&q=75"
+                alt="Piyush Garg"
+                rating={5}
+            />
+
+
+      ```
+
+    </Tab>
+
+</Tabs>
+
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/testimonial
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+
+## Props
+
+| Name                 | Type       | Default   | Description                                       |
+| -------------------- | ---------- | --------- | ------------------------------------------------- |
+| **name**             | string     | -         | Name of the person giving testimonial (required)  |
+| **title**            | string     | -         | Job title or position of the person (required)    |
+| **quote**            | string     | -         | The testimonial text content (required)           |
+| **avatar**           | string     | -         | URL to the avatar image (required)                |
+| **alt**              | string     | -         | Alt text for the avatar image (required)          |
+| **rating**           | number     | 5         | Star rating out of 5 (optional)                   |
+| **className**        | string     | -         | Extra Tailwind/custom classes for container       | testimonial container.   |
