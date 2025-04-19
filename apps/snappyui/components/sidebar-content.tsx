@@ -135,8 +135,8 @@ export const contents: Content[] = [
 
     list: [
       {
-        title: "Footer",
-        href: "/docs/sections/snappyfooter",
+        title: "Date Picker",
+        href: "/docs/inputs/snappydatepicker",
       },
 
     ],
