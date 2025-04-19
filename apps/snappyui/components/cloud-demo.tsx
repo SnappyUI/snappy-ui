@@ -1,5 +1,5 @@
 "use clinet";
-import { IconCloud } from "./ui/snappy-icnon-cloud";
+import { IconCloud } from "./ui/snappy-icon-cloud";
 
 const slugs = [
   "typescript",

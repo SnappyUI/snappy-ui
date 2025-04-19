@@ -10,7 +10,7 @@ type ScratchToRevealProps = {
   children: React.ReactNode;
   width: number;
   height: number;
-  minScratchPercentage?: number; // Minimum percentage of scratched area to be considered as completed (Value between 0 and 100)
+  minScratchPercentage?: number;
   className?: string;
   onComplete?: () => void;
 };
@@ -29,7 +29,6 @@ const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
 
   const controls = useAnimation();
 
-  // ✅ Move this above checkCompletion to satisfy ESLint
   const startAnimation = useCallback(() => {
     controls.start({
       scale: [1, 1.5, 1],
