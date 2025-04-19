@@ -32,10 +32,10 @@ export const contents: Content[] = [
         title: "Animated Text",
         href: "/docs/components/snappyanimatedtext",
       },
-      // {
-      //   title: "Avatar",
-      //   href: "/docs/components/snappyavatar",
-      // },
+      {
+        title: "Avatar",
+        href: "/docs/components/snappyavatar",
+      },
       {
         title: "Button",
         href: "/docs/components/snappybutton",
