@@ -194,6 +194,17 @@ export const contents: Content[] = [
         href: "/docs/sections/snappypricetable",
       },
       {
+        title: "Testimonial",
+        href: "/docs/sections/snappytestimonial",
+      },
+
+    ],
+  },
+  {
+    title: "Inputs",
+
+    list: [
+      {
         title: "Date Picker",
         href: "/docs/inputs/snappydatepicker",
       },
