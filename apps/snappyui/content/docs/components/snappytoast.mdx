@@ -129,6 +129,33 @@ You can position your toast in one of four corners of the screen.
   </Tab>
 </Tabs>
 
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash 
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/footer 
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash 
+    npx shadcn@latest add http://snappyui.in/api/registry/footer 
+    ```
+
+  </Tab>
+  <Tab value="yarn">
+    ```bash 
+    yarn dlx shadcn@latest add http://snappyui.in/api/registry/footer 
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash 
+    bunx --bun shadcn@latest add  http://snappyui.in/api/registry/footer 
+    ```
+  </Tab>
+</Tabs>
+
 ## Props
 
 | Name        | Type                                                                 | Default              | Description                                             |
@@ -141,44 +168,3 @@ You can position your toast in one of four corners of the screen.
 | position    | `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"` | `"bottom-right"`     | Placement on screen                                     |
 | className   | `string`                                                             | `-`                  | Custom styles for toast wrapper                         |
 | buttonText  | `string`                                                             | `"Show Toast"`       | Button Text                                             |
-
-## Usage with Provider
-
-For global toast management, wrap your application with `ToastProvider`:
-
-```tsx
-import { ToastProvider } from "@/components/ui/snappy-toast";
-
-export default function MyApp({ Component, pageProps }) {
-  return (
-    <ToastProvider>
-      <Component {...pageProps} />
-    </ToastProvider>
-  );
-}
-```
-
-Then use the `useToast` hook in any child component:
-
-```tsx
-import { useToast } from "@/components/ui/snappy-toast";
-
-export function MyComponent() {
-  const { showToast } = useToast();
-
-  return (
-    <button
-      onClick={() =>
-        showToast({
-          variant: "with-title",
-          title: "Success",
-          description: "Your changes have been saved",
-          duration: 4000,
-        })
-      }
-    >
-      Save Changes
-    </button>
-  );
-}
-```
