@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-import { TextArea } from "../ui/snappytextarea";
+import { TextArea } from "../ui/snappy-textarea";
 
 export default function TextAreaDemo() {
   const [message, setMessage] = useState("");

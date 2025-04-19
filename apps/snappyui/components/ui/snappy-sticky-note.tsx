@@ -136,20 +136,13 @@ const StickyNote: React.FC<StickyNoteProps> = ({
     else {
       console.log(`Note ${id} - No correction needed.`);
     }
-
-    // You might want to update the parent state *after* the bounce animation finishes
-    // or ensure the onPositionChange uses the final bounced position.
-    // For now, let's keep it here but be aware of potential timing issues.
-    // onPositionChange?.(id, { x: x.get(), y: y.get() }); // This will get the value *before* the animation settles.
-    // A better approach might be to use the 'onComplete' callback of the animation if needed,
-    // or simply rely on the next render to pick up the new value if state update triggers render.
   };
 
   const handleDragEnd = () => {
     setIsDragging(false);
     console.log(`Drag End for note ${id}. Current x: ${x.get()}, y: ${y.get()}`);
     bounceBackIfOutOfBounds();
-    onPositionChange?.(id, { x: x.get(), y: y.get() }); // Note: This might save the pre-bounce position if not careful
+    onPositionChange?.(id, { x: x.get(), y: y.get() });
     rotate.set(initialRotation + Math.random() * 2 - 1);
   };
 

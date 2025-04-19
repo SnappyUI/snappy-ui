@@ -1,4 +1,3 @@
-// QRCode.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -32,7 +31,6 @@ function QRCode({
     }
 
     try {
-      // Using QR Server API
       const encodedValue = encodeURIComponent(value);
       const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodedValue}&size=${size}x${size}&bgcolor=${bgColor.replace("#", "")}&color=${fgColor.replace("#", "")}&qzone=${includeMargin ? 1 : 0}&ecc=${errorCorrectionLevel.toLowerCase()}&format=svg`;
 
