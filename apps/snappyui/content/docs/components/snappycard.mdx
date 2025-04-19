@@ -5,17 +5,11 @@ description: Organize your content beautifully with a stylish, customizable card
 
 import SnappyBlogCard from "@/components/demo/snappy-blog-card";
 import SnappyHorizontalCard from "@/components/demo/snappy-horizontal-card";
-import {
-  HorizontalButton,
-  HorizontalCard,
-  HorizontalCardContent,
-  HorizontalCardFooter,
-  HorizontalCardImage,
-  HorizontalDescription,
-  HorizontalTitle,
-} from "@/components/ui/snappy-card";
-import Card, { BlogCard } from "@/components/ui/snappy-card";
+import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-horizontal-card";
+import Card, { BlogCard } from "@/components/ui/snappy-blog-card";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import SnappyProfileCardDemo from "@/components/demo/snappy-profile-card";
+import { ProfileActionButton, ProfileBio, ProfileCard, ProfileContent, ProfileDesignation, ProfileFooter, ProfileImage, ProfileName, ProfileContactInfo, ProfileTags } from '@/components/ui/snappy-profile-card'
 
 ---
 
@@ -99,18 +93,59 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     ```
   </Tab>
 </Tabs>
-### Dark
 
-<Tabs items={["Preview", "Code"]}>
-  <Tab value="Preview">
-    <Card title="Dark Card" variant="dark" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
+### Simple Profile Card
 
-  <Tab value="Code">
-    ```tsx
-    import Card from "@/components/ui/snappy-card";
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <div className="flex items-center justify-center">
+      <ProfileCard hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage
+                    imageUrl="https://images.pexels.com/photos/3763152/pexels-photo-3763152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    imageAlt="User avatar"
+                />
+                <ProfileName name="Jane Smith" />
+                <ProfileDesignation designation="Product Designer" />
+                <ProfileBio bio="Creative designer with a passion for user experience." />
+                <ProfileFooter>
+                    <ProfileActionButton text="Follow" variant="primary" />
+                    <ProfileActionButton text="Message" variant="outline" />
+                </ProfileFooter>
+            </ProfileContent>
+        </ProfileCard>
+        </div>
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { ProfileActionButton, ProfileBio, ProfileCard, ProfileContent, ProfileDesignation, ProfileFooter, ProfileImage, ProfileName, ProfileContactInfo, ProfileTags } from '@/components/ui/snappy-profile-card'
+
+      <ProfileCard hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage
+                    imageUrl="https://images.pexels.com/photos/3763152/pexels-photo-3763152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    imageAlt="User avatar"
+                />
+                <ProfileName name="Jane Smith" />
+                <ProfileDesignation designation="Product Designer" />
+                <ProfileBio bio="Creative designer with a passion for user experience." />
+                <ProfileFooter>
+                    <ProfileActionButton text="Follow" variant="primary" />
+                    <ProfileActionButton text="Message" variant="outline" />
+                </ProfileFooter>
+            </ProfileContent>
+        </ProfileCard>
+      ```
+
+    </Tab>
 
     <Card
       title="Simple Card"
@@ -122,126 +157,103 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     ```
   </Tab>
 </Tabs>
-
-### Primary
-
-<Tabs items={["Preview", "Code"]}>
-  <Tab value="Preview">
-    <Card title="Primary Card" variant="primary" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-
-  <Tab value="Code">
-    ```tsx
-    import Card from "@/components/ui/snappy-card";
-
-    <Card
-      title="Simple Card"
-      variant="primary"
-      className="text-gray-500"
-    >
-      Basic card example with title and content.
-    </Card>
-    ```
-  </Tab>
-</Tabs>
-
-### Success
-
-<Tabs items={["Preview", "Code"]}>
-  <Tab value="Preview">
-    <Card title="Success Card" variant="success" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-
-  <Tab value="Code">
-    ```tsx
-    import Card from "@/components/ui/snappy-card";
-
-    <Card
-      title="Success Card"
-      variant="success"
-      className="text-gray-500"
-    >
-      Basic card example with title and content.
-    </Card>
-    ```
-  </Tab>
-</Tabs>
-
-### Warning
-
-<Tabs items={["Preview", "Code"]}>
-  <Tab value="Preview">
-    <Card title="Warning Card" variant="warning" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-
-  <Tab value="Code">
-    ```tsx
-    import Card from "@/components/ui/snappy-card";
-
-    <Card
-      title="Warning Card"
-      variant="warning"
-      className="text-gray-500"
-    >
-      Basic card example with title and content.
-    </Card>
-    ```
-  </Tab>
-</Tabs>
-
-### Delete
-
-<Tabs items={["Preview", "Code"]}>
-  <Tab value="Preview">
-    <Card title="Delete Card" variant="delete" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-
-  <Tab value="Code">
-    ```tsx
-    import Card from "@/components/ui/snappy-card";
-
-    <Card
-      title="Delete Card"
-      variant="delete"
-      className="text-gray-500"
-    >
-      Basic card example with title and content.
-    </Card>
-    ```
-  </Tab>
-</Tabs>
-
+ 
 ---
+
+### Team Member Card
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <div className="flex items-center justify-center">
+      <ProfileCard variant="default" hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage imageUrl="https://media.istockphoto.com/id/1399788030/photo/portrait-of-young-confident-indian-woman-pose-on-background.jpg?b=1&s=612x612&w=0&k=20&c=_VfWQI2t_aONL0FEFJ1Eki3QQkRwgxkAve0_z53oeKY=" imageAlt="Team member" />
+                <ProfileName name="Alexa Chen" />
+                <ProfileDesignation designation="Backend Developer" />
+                <ProfileContactInfo email="robert@example.com" />
+                <ProfileTags tags={[
+                    { text: "Node.js", color: "blue" },
+                    { text: "MongoDB", color: "green" }
+                ]} />
+            </ProfileContent>
+        </ProfileCard>
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { ProfileCard, ProfileContactInfo, ProfileContent, ProfileDesignation, ProfileImage, ProfileName, ProfileTags } from '@/components/ui/snappy-profile-card'
+
+      <ProfileCard variant="default" hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage imageUrl="https://media.istockphoto.com/id/1399788030/photo/portrait-of-young-confident-indian-woman-pose-on-background.jpg?b=1&s=612x612&w=0&k=20&c=_VfWQI2t_aONL0FEFJ1Eki3QQkRwgxkAve0_z53oeKY=" imageAlt="Team member" />
+                <ProfileName name="Alexa Chen" />
+                <ProfileDesignation designation="Backend Developer" />
+                <ProfileContactInfo email="robert@example.com" />
+                <ProfileTags tags={[
+                    { text: "Node.js", color: "blue" },
+                    { text: "MongoDB", color: "green" }
+                ]} />
+            </ProfileContent>
+      </ProfileCard>
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ## Installation
 
 <Tabs items={["pnpm", "npm", "yarn", "bun"]}>
   <Tab value="pnpm">
     ```bash
-    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/card
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
   <Tab value="npm">
     ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/card
+    npx shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
   <Tab value="yarn">
     ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/card
+    npx shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
   <Tab value="bun">
     ```bash
-    bunx --bun shadcn@latest add http://snappyui.in/api/registry/card
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
 </Tabs>
@@ -250,11 +262,43 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Props
 
-| Name        | Type        | Default       | Description                                   |
-| ----------- | ----------- | ------------- | --------------------------------------------  |
-| title       | `string`    | `-`           | The title of the card                         |
-| className   | `string`    | `-`           | Additional CSS classes                        |
-| content     | `string`    | `-`           | The main content of the card                  |
-| image       | `string`    | `-`           | URL of the card's image                       |
-| variant     | `string`    | `'default'`   | The style variant of the card                 |
-| children    | `ReactNode` | `-`           | Allows passing React nodes into the component |
+### Horizontal/Blog Card
+
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **className**  | string   | -              | 	Tailwind utility classes |
+| **imageUrl**  | string   | -              | 	Source URL of the image |
+| **imageAlt**  | string   | -              | 	Alt text for the image |
+| **title**  | string   | -              | 	Title text for the card |
+| **description	**  | string   | -              | 	Description text |
+| **text	**  | string   | -              | 	Button label text |
+| **onClick**  | cb   | -              | 	Callback function for button click |
+
+### Profile Card
+
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **variant**     | default,elevated,bordered,minimal      | default              | Visual style of the card                     |
+| **className** | string      | -              | Additional CSS classes                        |
+| **hoverEffect**   | boolean      | false              | Enable hover animation                  |
+| **centered**     | boolean      | true              | Center content(card body)                      |
+| **imageUrl**   | string      | 'default'      | Image source URL  |
+| **imageAlt**  | string   | -              | 	Alt text for the image |
+| **size**  | small,medium,large   | medium              | 	Image size |
+| **bordered**  | boolean   | true              | 	Show border ring |
+| **icon**  | ReactNode   | -              | 	Icon to display |
+| **color**  | "blue" , "green" , "red" , "yellow" , "purple"   | "blue"          | 	Badge color |
+| **name**  | string   | -              | 	Name to display |
+| **designation**  | string   | -              | 	Job title or position |
+| **bio**  | string   | -              | 	Short biography text |
+| **stats**  |label: string, value: string , number []   | -              | 	Array of stats |
+| **icon**  | ReactNode   | -              | 		Icon component |
+| **href**  | string   | -              | 		URL for social link |
+| **label**  | string   | -              | 	ARIA label for accessibility |
+| **email**  | string   | -              | 	Email address |
+| **phone**  | string   | -              | 	Phone number |
+| **location**  | string   | -              | 	User's location |
+| **name**  | string   | -              | 	Skill name |
+| **level**  | number   | -              | 	Skill level (0-100) |
+| **skills**  | name: string, level: number []   | -              | 	Array of skill objects |
+

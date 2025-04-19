@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-card";
+import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-horizontal-card";
 
 export default function SnappyHorizontalCard() {
   return (
