@@ -12,9 +12,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-    <div className="bg-white rounded-xl border w-full max-w-md py-10">
-      <Feedback />
-    </div>
+    <Feedback />
   </Tab>
 
   <Tab value="Code">
@@ -34,14 +32,12 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-    <div className="bg-white rounded-xl border w-full max-w-md py-10">
-      <Feedback 
-        buttonLabel="Send Feedback"
-        placeholder="What can we improve?"
-        successTitle="Thanks!"
-        successDescription="We appreciate your input."
-      />
-    </div>
+    <Feedback 
+      buttonLabel="Send Feedback"
+      placeholder="What can we improve?"
+      successTitle="Thanks!"
+      successDescription="We appreciate your input."
+    />
   </Tab>
 
   <Tab value="Code">
@@ -89,12 +85,10 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 ## Props
 
-| **Name**             | **Type**     | **Default**       | **Description**                                              |
-|----------------------|--------------|-------------------|--------------------------------------------------------------|
-| `buttonLabel`        | `string`     | "Feedback"        | The label on the feedback trigger button                     |
-| `placeholder`        | `string`     | "Feedback"        | Placeholder text inside the textarea                         |
-| `successTitle`       | `string`     | "Feedback received!" | Title shown after successful submission                    |
-| `successDescription` | `string`     | "Thanks for helping me improve this." | Message under the success title              |
-| `onFeedbackSubmit`   | `function`   | `undefined`       | A callback function that is called when the feedback is successfully submitted. |
-
----
+| Name               | Type         | Default                                 | Description                                                                     |
+| ------------------ | -------------| --------------------------------------- | ------------------------------------------------------------------------------- |
+| buttonLabel        | `string`     | `"Feedback"`                            | The label on the feedback trigger button                                        | 
+| placeholder        | `string`     | `"Feedback"`                            | Placeholder text inside the textarea                                            |
+| successTitle       | `string`     | `"Feedback received!"`                  | Title shown after successful submission                                         |
+| successDescription | `string`     | `"Thanks for helping me improve this."` | Message under the success title                                                 |
+| onFeedbackSubmit   | `function`   | `undefined`                             | A callback function that is called when the feedback is successfully submitted. |

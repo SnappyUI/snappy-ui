@@ -54,7 +54,7 @@ export function Feedback({
   }, [open, formState]);
 
   return (
-    <div className="h-[500px] w-full flex justify-center items-center relative">
+    <div className="h-[300px] w-full flex justify-center items-center relative">
       <div className="relative">
         <motion.button
           initial={{ opacity: 1 }}
