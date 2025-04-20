@@ -1,0 +1,70 @@
+---
+title: QR Generator
+description: An interactive command-line interface modeled after macOS Terminal. Great for demos.
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import QRCodeGenerator from '@/components/ui/snappy-qr'
+
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <QRCodeGenerator value='https://snappyui.in/' />
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import QRCodeGenerator from '@/components/ui/snappy-qr'
+
+      <QRCodeGenerator value='https://snappyui.in/' />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/qrcode
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/qrcode
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/qrcode
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/qrcode
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+
+
+### QRCode Component
+
+| **Name**                | **Type**                   | **Default** | **Description**                                          |
+| ----------------------- | -------------------------- | ----------- | -------------------------------------------------------- |
+| **value**               | string                     | -           | The text/URL to encode in the QR code (required)         |
+| **size**                | number                     | 200         | Size of the QR code in pixels (width and height)         |
+| **bgColor**             | string                     | '#FFFFFF'   | Background color in hex format                           |
+| **fgColor**             | string                     | '#000000'   | Foreground color in hex format (QR code color)           |
+| **errorCorrectionLevel**| 'L' | 'M' | 'Q' | 'H'  | 'M'         | Error correction level (L:7%, M:15%, Q:25%, H:30% recovery) |
+| **includeMargin**       | boolean                    | true        | Whether to include a margin/quiet zone around the QR code|

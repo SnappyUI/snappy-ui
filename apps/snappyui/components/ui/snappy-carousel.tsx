@@ -18,17 +18,6 @@ type CarouselProps = {
   className?: string;
 };
 
-/**
- * AnimatedCarousel - A reusable animated carousel component with vertical and horizontal variants
- *
- * @param items - Array of items to display in the carousel
- * @param variant - 'horizontal' (default) or 'vertical' scrolling
- * @param autoPlay - Whether to auto-play the carousel (default: true)
- * @param interval - Auto-play interval in milliseconds (default: 5000)
- * @param showArrows - Whether to show navigation arrows (default: true)
- * @param showDots - Whether to show navigation dots (default: true)
- * @param className - Optional additional classes
- */
 const AnimatedCarousel: React.FC<CarouselProps> = ({
   items,
   variant = "horizontal",
@@ -175,8 +164,9 @@ const AnimatedCarousel: React.FC<CarouselProps> = ({
       {showArrows && items.length > 1 && (
         <>
           <button
+            type="button"
             onClick={handlePrev}
-            className={`absolute z-10 p-2 bg-white bg-opacity-50 rounded-full shadow-md text-gray-800 hover:bg-opacity-75 transition-all focus:outline-none ${isHorizontal
+            className={`absolute z-10 p-2 bg-white bg-opacity-50 rounded-full shadow-md text-gray-800 hover:bg-opacity-75 transition-all focus:outline-none cursor-pointer ${isHorizontal
               ? "top-1/2 left-4 transform -translate-y-1/2"
               : "left-1/2 top-4 transform -translate-x-1/2"
             }`}
@@ -187,8 +177,9 @@ const AnimatedCarousel: React.FC<CarouselProps> = ({
             </svg>
           </button>
           <button
+            type="button"
             onClick={handleNext}
-            className={`absolute z-10 p-2 bg-white bg-opacity-50 rounded-full shadow-md text-gray-800 hover:bg-opacity-75 transition-all focus:outline-none ${isHorizontal
+            className={`absolute z-10 p-2 bg-white bg-opacity-50 rounded-full shadow-md text-gray-800 hover:bg-opacity-75 transition-all focus:outline-none cursor-pointer ${isHorizontal
               ? "top-1/2 right-4 transform -translate-y-1/2"
               : "left-1/2 bottom-4 transform -translate-x-1/2"
             }`}
@@ -211,9 +202,10 @@ const AnimatedCarousel: React.FC<CarouselProps> = ({
           <div className={`flex ${isHorizontal ? "flex-row space-x-2" : "flex-col space-y-2"}`}>
             {items.map((_, index) => (
               <button
+                type="button"
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? "bg-blue-500 transform scale-125" : "bg-gray-300 hover:bg-gray-400"
+                className={`w-3 h-3 rounded-full transition-all cursor-pointer ${index === currentIndex ? "bg-blue-500 transform scale-125" : "bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

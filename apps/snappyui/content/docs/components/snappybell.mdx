@@ -1,0 +1,148 @@
+---
+title: Bell
+description: A responsive, accessible dialog component crafted for seamless modern interfaces.
+
+---
+
+import BellDemo from '@/components/demo/bell-demo'
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="h-[600px] ">
+      <BellDemo />
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+        "use client"
+
+import React, { useState } from 'react'
+import NotificationBell from '../ui/snappy-bell';
+
+export default function BellDemo() {
+    const [notifications, setNotifications] = useState<{
+        id: string;
+        title: string;
+        message: string;
+        time: string;
+        read: boolean;
+        type: 'info' | 'alert' | 'success';
+    }[]>([
+        {
+            id: '1',
+            title: 'New Message',
+            message: 'You received a new message from John.',
+            time: '2 mins ago',
+            read: false,
+            type: 'info',
+        },
+        {
+            id: '2',
+            title: 'System Alert',
+            message: 'Scheduled maintenance tonight at 12:00 AM.',
+            time: '10 mins ago',
+            read: false,
+            type: 'alert',
+        },
+        {
+            id: '3',
+            title: 'Payment Success',
+            message: 'Your payment has been processed.',
+            time: '1 hour ago',
+            read: true,
+            type: 'success',
+        },
+    ]);
+
+    const markAsRead = (id: string) => {
+        setNotifications((prev) =>
+            prev.map((notif) =>
+                notif.id === id ? { ...notif, read: true } : notif
+            )
+        );
+    };
+
+    const clearAll = () => {
+        setNotifications([]);
+    };
+
+    const openSettings = () => {
+        alert('Settings clicked!');
+    };
+
+    return (
+        <div className="flex relative items-end justify-end">
+            <NotificationBell
+                variant="detailed"
+                notifications={notifications}
+                onMarkAsRead={markAsRead}
+                onClearAll={clearAll}
+                onSettingsClick={openSettings}
+            />
+        </div>
+
+    );
+};
+
+
+    ```
+  </Tab>
+</Tabs>
+
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/bell
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/bell
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/bell
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/bell
+    ```
+  </Tab>
+</Tabs>
+
+---
+## Prop
+
+Here's a comprehensive prop table for the NotificationBell component:
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `variant` | `'simple' \| 'detailed'` | Yes | `'simple'` | Controls the display style of notifications. `'simple'` shows just title and time, while `'detailed'` includes the message text. |
+| `notifications` | `NotificationItem[]` | Yes | `[]` | Array of notification objects to display. |
+| `onMarkAsRead` | `(id: string) => void` | Yes | - | Callback function called when a notification is marked as read. Receives notification ID as parameter. |
+| `onClearAll` | `() => void` | Yes | - | Callback function called when the "Clear all" button is clicked. |
+| `onSettingsClick` | `() => void` | Yes | - | Callback function called when the settings button is clicked. |
+| `className` | `string` | No | - | Optional CSS class name to apply to the root element. |
+
+### NotificationItem Interface
+
+The `notifications` prop accepts an array of objects that conform to the following interface:
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `id` | `string` | Yes | Unique identifier for the notification. |
+| `title` | `string` | Yes | Title/heading of the notification. |
+| `message` | `string` | Yes | Body text of the notification (displayed only in `'detailed'` variant). |
+| `time` | `string` | Yes | Time or date string for when the notification was received. |
+| `read` | `boolean` | Yes | Indicates whether the notification has been read. |
+| `type` | `'info' \| 'alert' \| 'success'` | Yes | Type of notification that determines the color styling. |

@@ -1,0 +1,170 @@
+---
+title: Toast
+description: A global notification component with context support and flexible variants.
+
+---
+
+import { ToastProvider, useToast } from "@/components/ui/snappy-toast";
+import Toaster from "@/components/ui/snappy-toast";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Toaster
+      variant="with-title"
+      title="Notification"
+      description="This toast has a title."
+    />
+  </Tab>
+  <Tab value="Code">
+```tsx
+import { useToast } from "@/components/ui/snappy-toast";
+
+function MyComponent() {
+  const { showToast, hideToast } = useToast();
+
+  const handleShowToast = () => {
+    const id = showToast({
+      title: "Hello",
+      description: "This is a toast message",
+      variant: "with-title",
+      duration: 5000,
+    });
+
+    // Optionally hide the toast manually
+    // setTimeout(() => hideToast(id), 2000);
+  };
+
+  return <button onClick={handleShowToast}>Show Toast</button>;
+}
+```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Simple
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Toaster variant="simple" description="This is a simple toast!" />
+  </Tab>
+  <Tab value="Code">
+```tsx
+<Toast variant="simple" description="This is a simple toast!" />
+```
+  </Tab>
+</Tabs>
+
+### With Title
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Toaster
+      variant="with-title"
+      title="Notification"
+      description="This toast has a title."
+    />
+  </Tab>
+  <Tab value="Code">
+```tsx
+<Toast
+  variant="with-title"
+  title="Notification"
+  description="This toast has a title."
+/>
+```
+  </Tab>
+</Tabs>
+
+### With Action
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <Toaster
+      variant="with-action"
+      title="Event Created"
+      description="Sunday, April 20th at 8:00pm"
+      action={<button className="text-blue-500 hover:underline">Undo</button>}
+    />
+  </Tab>
+  <Tab value="Code">
+```tsx
+<Toast
+  variant="with-action"
+  title="Event Created"
+  description="Sunday, April 20th at 8:00 pm"
+  buttonText="Test"
+  action={<button className="text-blue-500 hover:underline">Undo</button>}
+/>
+```
+  </Tab>
+</Tabs>
+
+## Positions
+
+You can position your toast in one of four corners of the screen.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="grid grid-cols-2 gap-4">
+      <Toaster position="top-left" description="Top left toast" />
+      <Toaster position="top-right" description="Top right toast" />
+      <Toaster position="bottom-left" description="Bottom left toast" />
+      <Toaster position="bottom-right" description="Bottom right toast" />
+    </div>
+  </Tab>
+  <Tab value="Code">
+```tsx
+<Toast position="top-left" description="Top left toast" />
+
+<Toast position="top-right" description="Top right toast" />
+
+<Toast position="bottom-left" description="Bottom left toast" />
+
+<Toast position="bottom-right" description="Bottom right toast" />
+```
+  </Tab>
+</Tabs>
+
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash 
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/toast 
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash 
+    npx shadcn@latest add http://snappyui.in/api/registry/toast 
+    ```
+
+  </Tab>
+  <Tab value="yarn">
+    ```bash 
+    yarn dlx shadcn@latest add http://snappyui.in/api/registry/toast 
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash 
+    bunx --bun shadcn@latest add  http://snappyui.in/api/registry/toast  
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Name        | Type                                                                 | Default              | Description                                             |
+| ----------- | -------------------------------------------------------------------- | -------------------- | ------------------------------------------------------- |
+| variant     | `"simple"` \| `"with-title"` \| `"with-action"`                      | `"simple"`           | Type of toast notification                              |
+| title       | `string`                                                             | `-`                  | Toast title for "with-title" and "with-action" variants |
+| description | `string`                                                             | `"This is a toast!"` | Description or message of the toast                     |
+| action      | `React.ReactNode`                                                    | `-`                  | Action element like a button (only for with-action)     |
+| duration    | `number`                                                             | `3000`               | Auto-dismiss time in milliseconds                       |
+| position    | `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"` | `"bottom-right"`     | Placement on screen                                     |
+| className   | `string`                                                             | `-`                  | Custom styles for toast wrapper                         |
+| buttonText  | `string`                                                             | `"Show Toast"`       | Button Text                                             |

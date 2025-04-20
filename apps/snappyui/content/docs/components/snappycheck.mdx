@@ -1,14 +1,262 @@
 ---
-title: "Check"
-description: "A customizable animated checkbox component with animation variants"
+title: Checkbox
+description: A customizable animated checkbox component with dynamic animation variants.
+
 ---
 
 import Check from "@/components/ui/snappy-checkbox";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-# Check Component
+## Basic Usage
 
-The `Check` component provides a collection of beautifully animated checkboxes for React applications using TypeScript and Tailwind CSS.
+```tsx
+import Check from "@/components/ui/snappy-checkbox";
+
+export default function Example() {
+  return (
+    <Check
+      label="Accept terms and conditions"
+      variant="bounce"
+    />
+  );
+}
+```
+
+## Variations
+
+The component comes with 10 unique animation variants to enhance user experience.
+
+### Bounce
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Bounce" variant="bounce" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Bounce" variant="bounce" />
+      ```
+    </Tab>
+</Tabs>
+
+### Fade
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Fade" variant="fade" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="fade" variant="fade" />
+      ```
+    </Tab>
+</Tabs>
+
+### Slide
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Slide" variant="slide" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Slide" variant="slide" />
+      ``` 
+    </Tab>
+</Tabs>
+
+### Pulse
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Pulse" variant="pulse" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Pulse" variant="pulse" />
+      ```
+    </Tab>
+</Tabs>
+
+### Flip
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Flip" variant="flip" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Flip" variant="flip" />
+      ```
+    </Tab>
+</Tabs>
+
+### Scale
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Scale" variant="scale" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Scale" variant="scale" />
+      ```
+    </Tab>
+</Tabs>
+
+### Rotate
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Rotate" variant="rotate" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Rotate" variant="rotate" />
+      ```
+    </Tab>
+</Tabs>
+
+### Jello
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Jello" variant="jello" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Jello" variant="jello" />
+      ```
+    </Tab>
+</Tabs>
+
+### Sweep
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Sweep" variant="sweep" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Sweep" variant="sweep" />
+      ```
+    </Tab>
+</Tabs>
+
+### Wave
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+    <Tab value="Preview">
+      <div className="flex justify-center">
+        <Check label="Wave" variant="wave" />
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+      ```tsx
+      import Check from "@/components/ui/snappy-checkbox";
+
+      <Check label="Wave" variant="wave" />
+      ```
+    </Tab>
+</Tabs>
+
+---
 
 ## Installation
 
@@ -35,80 +283,18 @@ The `Check` component provides a collection of beautifully animated checkboxes f
   </Tab>
 </Tabs>
 
-## Basic Usage
-
-```tsx
-import Check from "@/components/ui/snappy-checkbox";
-
-export default function Example() {
-  
-  return (
-    <Check
-      label="Accept terms and conditions"
-      variant="bounce"
-    />
-  );
-}
-```
-
-## Animation Variants
-
-The component comes with 10 unique animation variants to enhance user experience.
-
-<div className="flex flex-wrap gap-6 my-8 border-1 border-zinc-800 rounded-lg py-5 px-5 justify-center">
-  {[
-    { label: "Click me", variant: "bounce" },
-    { label: "Click me", variant: "fade" },
-    { label: "Click me", variant: "slide" },
-    { label: "Click me", variant: "pulse" },
-    { label: "Click me", variant: "flip" },
-    { label: "Click me", variant: "scale" },
-    { label: "Click me", variant: "rotate" },
-    { label: "Click me", variant: "jello" },
-    { label: "Click me", variant: "sweep" },
-    { label: "Click me", variant: "wave" },
-  ].map(({ label, variant }) => (
-    <div
-      key={variant}
-      className="flex flex-col items-center gap-2 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
-    >
-      <Check label={label} variant={variant} />
-      <code className="text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">
-        {variant}
-      </code>
-    </div>
-  ))}
-</div>
-
 ### Props
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| `label` | `string` | `undefined` | Text label for the checkbox |
-| `variant` | `CheckboxVariant` | `'bounce'` | Animation style to apply |
-| `checked` | `boolean` | `false` | Controlled checked state |
-| `onChange` | `(checked: boolean) => void` | `undefined` | Callback when checked state changes |
-| `disabled` | `boolean` | `false` | Whether the checkbox is disabled |
-| `className` | `string` | `''` | Additional CSS classes |
-| `id` | `string` | `undefined` | HTML ID attribute (auto-generated if not provided) |
+| Prop      | Type                              | Default         | Description                                        |
+| --------- | --------------------------------- | --------------- | -------------------------------------------------- |
+| label     | `string`                          | `undefined`     | Text label for the checkbox                        |
+| variant   | `CheckboxVariant`                 | `bounce`        | Animation style to apply                           |
+| checked   | `boolean`                         | `false`         | Controlled checked state                           |
+| onChange  | `(checked: boolean) => void`      | `undefined`     | Callback when checked state changes                |
+| disabled  | `boolean`                         | `false`         | Whether the checkbox is disabled                   |
+| className | `string`                          | `''`            | Additional CSS classes                             |
+| id        | `string`                          | `undefined`     | HTML ID attribute (auto-generated if not provided) |
 
-### CheckboxVariant Type
-
-```typescript
-type CheckboxVariant =
-  | 'bounce'
-  | 'fade'
-  | 'slide'
-  | 'pulse'
-  | 'flip'
-  | 'scale'
-  | 'rotate'
-  | 'jello'
-  | 'sweep'
-  | 'wave';
-```
-
-## Examples
 
 ### Form Integration
 
@@ -197,4 +383,3 @@ export default function CustomStyleExample() {
   );
 }
 ```
-

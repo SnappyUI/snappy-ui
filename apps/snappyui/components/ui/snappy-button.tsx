@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-type ButtonVariant =
+export type ButtonVariant =
   | "default"
   | "primary"
   | "success"
@@ -47,14 +47,14 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const variantStyles = {
-    "default": "bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200",
-    "primary": "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500",
-    "success": "bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-500",
-    "destructive": "bg-red-600 text-white hover:bg-red-700 dark:bg-red-600 dark:hover:bg-red-500",
-    "outline": "border border-gray-300 bg-transparent text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800",
-    "ghost": "bg-transparent text-gray-900 hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800",
-    "warning": "bg-yellow-600 text-white hover:bg-yellow-700 dark:bg-yellow-600 dark:hover:bg-yellow-500",
-    "gradient": "bg-gradient-to-r from-[#000000] to-[#0060ba] text-white rounded-lg transition-all duration-300 ease-in-out hover:brightness-110",
+    "default": "bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 cursor-pointer",
+    "primary": "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 cursor-pointer",
+    "success": "bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-500 cursor-pointer",
+    "destructive": "bg-red-600 text-white hover:bg-red-700 dark:bg-red-600 dark:hover:bg-red-500 cursor-pointer",
+    "outline": "border border-gray-300 bg-transparent text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800 cursor-pointer",
+    "ghost": "bg-transparent text-gray-900 hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800 cursor-pointer",
+    "warning": "bg-yellow-600 text-white hover:bg-yellow-700 dark:bg-yellow-600 dark:hover:bg-yellow-500 cursor-pointer",
+    "gradient": "bg-gradient-to-r from-[#000000] to-[#0060ba] text-white rounded-lg transition-all duration-300 ease-in-out hover:brightness-110 cursor-pointer",
     "moving-border": "",
   };
 
@@ -82,6 +82,7 @@ export default function Button({
 
   return (
     <button
+      type="button"
       className={cn(
         "inline-flex items-center justify-center rounded-md font-medium transition-colors",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500",
@@ -118,7 +119,8 @@ function MovingBorderButton({
 }) {
   return (
     <button
-      className="relative h-16 w-40 overflow-hidden bg-transparent p-[1px] text-xl"
+      type="button"
+      className="relative h-16 w-40 overflow-hidden bg-transparent p-[1px] text-xl cursor-pointer"
       style={{ borderRadius }}
       onClick={onClick}
       {...otherProps}
@@ -150,7 +152,7 @@ function MovingBorderButton({
       </div>
 
       <div
-        className="relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl"
+        className="relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl cursor-pointer"
         style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
         {children}

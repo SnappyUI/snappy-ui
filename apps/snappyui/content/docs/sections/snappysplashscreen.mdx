@@ -1,0 +1,105 @@
+---
+title: Splash Screen
+description: A fully customizable splash screen component with support for smooth animations.
+
+---
+
+import SplashScreen from '@/components/ui/snappy-splash-screen'
+import Link from 'fumadocs-core/link';
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+## Demo
+
+<Link href="/splash">Click here to view the demo!</Link>
+
+## Usage
+
+```jsx
+import { SplashScreen } from "@/components/ui/splash-screen";
+import Image from "next/image";
+
+export default function AppEntryPoint() {
+  return (
+    <SplashScreen 
+      logo={<Image src="/logo.svg" alt="App Logo" width={120} height={120} />}
+      onAnimationComplete={() => {
+        console.log("Splash animation completed");
+      }}
+    />
+  );
+}
+```
+
+## Examples
+
+### Default Animation
+
+```jsx
+<SplashScreen 
+  logo={<YourLogoComponent />} 
+/>
+```
+
+### Fade Animation
+
+```jsx
+<SplashScreen 
+  logo={<YourLogoComponent />}
+  variant="fade" 
+/>
+```
+
+### With Custom Background
+
+```jsx
+<SplashScreen 
+  logo={<YourLogoComponent />}
+  className="bg-gradient-to-r from-blue-500 to-purple-600" 
+/>
+```
+
+### With Animation Complete Handler
+
+```jsx
+<SplashScreen 
+  logo={<YourLogoComponent />}
+  onAnimationComplete={() => {
+    // Navigate to main app or load content
+    router.push('/dashboard');
+  }}
+/>
+```
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/SplashScreen
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/SplashScreen
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn dlx shadcn@latest add http://snappyui.in/api/registry/SplashScreen
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/SplashScreen
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Name                | Type                    | Default     | Description                                                       |
+| ------------------- | ----------------------- | ----------- | ----------------------------------------------------------------- |
+| logo                | `ReactNode`             | *Required*  | The logo or content to display in the center of the splash screen |
+| className           | `string`                | `undefined` | Additional CSS classes to apply to the splash screen container    |
+| variant             | `"default"` \| `"fade"` | `"default"` | Animation style to use for the splash screen                      |
+| onAnimationComplete | `() => void`            | `undefined` | Callback function that runs after the exit animation completes    |

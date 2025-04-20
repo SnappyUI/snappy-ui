@@ -1,0 +1,135 @@
+---
+title: Hold To Delete
+description: An interactive button that requires a sustained press to trigger deletion
+---
+
+import {
+  BasicPreview,
+  CustomDurationPreview,
+  CustomStylingPreview,
+  CustomIconPreview,
+} from "@/components/hold-to-delete-previews";
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center items-center">
+      <BasicPreview />
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import HoldToDelete from "@/components/ui/snappy-hold-to-delete";
+
+    <HoldToDelete onDelete={() => alert("Item deleted")} />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Variations
+
+### Custom Duration
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center items-center">
+      <CustomDurationPreview />
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import HoldToDelete from "@/components/ui/snappy-hold-to-delete";
+
+    <HoldToDelete 
+      holdDuration={3000} 
+      onDelete={() => alert("Deleted after 3 seconds")} 
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Styling
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center items-center">
+      <CustomStylingPreview />
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import HoldToDelete from "@/components/ui/snappy-hold-to-delete";
+
+    <HoldToDelete 
+      className="bg-blue-100 text-blue-800"
+      deleteClassName="bg-blue-500 text-white"
+      onDelete={() => alert("Styled deletion")}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Icon
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center items-center">
+      <CustomIconPreview />
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import HoldToDelete from "@/components/ui/snappy-hold-to-delete";
+
+    <HoldToDelete 
+      icon={<span className="text-lg">🗑️</span>}
+      onDelete={() => alert("Custom icon deletion")}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/hold-to-delete
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hold-to-delete
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hold-to-delete
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/hold-to-delete
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Name            | Type              | Default            | Description                                        |
+| --------------- | ----------------- | ------------------ | -------------------------------------------------- |
+| holdDuration    | `number`          | `1500`             | Duration in milliseconds to hold before triggering |
+| label           | `string`          | `"Hold to Delete"` | Text to display on the button                      |
+| deleteLabel     | `string`          | `"Hold to Delete"` | Text to display during delete state                |
+| className       | `string`          | `""`               | Custom class for the button                        |
+| deleteClassName | `string`          | `""`               | Class for the delete state overlay                 |
+| icon            | `React.ReactNode` | `<DeleteIcon />`   | Custom icon component                              |
+| onDelete        | `() => void`      | `-`                | Function to call when hold is completed            |
+| showProgress    | `boolean`         | `true`             | Show progress indicator during hold                |

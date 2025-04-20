@@ -1,6 +1,6 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
-import Image from "next/image";
+import { source } from "@/lib/source";
 
 /**
  * Shared layout configurations
@@ -11,14 +11,7 @@ import Image from "next/image";
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: (
-      <>
-        <Image src="./Logo.svg" width={150} height={80} alt="Logo" />
-
-      </>
-    ),
-    // enabled:false,
-    transparentMode: "always",
+    enabled: false,
   },
 
   links: [
@@ -28,6 +21,9 @@ export const baseOptions: BaseLayoutProps = {
       active: "nested-url",
     },
   ],
-  themeSwitch: { enabled: true },
+};
 
+export const docsOptions = {
+  ...baseOptions,
+  tree: source.pageTree,
 };
