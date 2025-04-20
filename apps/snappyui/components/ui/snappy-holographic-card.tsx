@@ -115,7 +115,7 @@ export default function HolographicCard({
           </div>
 
           {/* Card content */}
-          <div className={cn("relative z-10 px-4 py-20 sm:px-10", className)}>
+          <div className={cn("relative z-10 px-4 py-10 sm:px-10", className)}>
             <div
               style={{
                 transform: `translateZ(20px)`,

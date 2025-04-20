@@ -47,6 +47,7 @@ const Features: React.FC<{ className?: string; text: string; disable?: boolean }
 const PurchaseButton: React.FC<{ onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; className?: string }> = ({ onClick, className }) => {
   return (
     <button
+      type="button"
       className={cn(
         "p-2 sm:p-[10px] rounded-[10px] border-2 border-black dark:border-white bg-transparent text-black dark:text-white font-bold sm:font-extrabold w-full text-sm sm:text-base transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black",
         className,

@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=builder /app/out/json/ .
 RUN pnpm install --frozen-lockfile
 COPY --from=builder /app/out/full/ .
-RUN pnpm turbo build
+RUN pnpm turbo build --filter=snappyui
 
 FROM base AS runner
 WORKDIR /app

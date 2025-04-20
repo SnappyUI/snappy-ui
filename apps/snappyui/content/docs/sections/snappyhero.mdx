@@ -1,0 +1,226 @@
+---
+title: Hero
+description: Capture attention instantly with a stylish hero layout perfect for headlines, calls-to-action, and featured content.
+---
+
+import { MinimalHero, ModernHero } from "components/ui/snappy-hero";
+import MinimalHeroDemo from "@/components/demo/minimal-hero";
+import ModernHeroDemo from "@/components/demo/modern-hero";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Minimal Hero Component
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 rounded-lg py-5 px-5">
+      <MinimalHeroDemo />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { MinimalHero } from "components/ui/snappy-hero";
+
+    <MinimalHero
+      title="Welcome to Our Platform"
+      description="Discover amazing features to boost your productivity."
+      getStartedText="Get Started Now"
+      learnMoreText="Learn More"
+      imageUrl="https://images.pexels.com/photos/18264716/pexels-photo-18264716/free-photo-of-man-in-headphones-showing-programming-process-on-a-laptop.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      imageAlt="Platform Overview"
+      className="mb-12"
+      onGetStartedClick={() => {
+        alert("Get Started button clicked!");
+      }}
+      onLearnMoreClick={() => {
+        alert("Learn More Button Clicked");
+      }}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| Name              | Type         | Default       | Required     | Description                                                             |
+| ----------------- | ------------ | ------------- | ------------ | ----------------------------------------------------------------------- |
+| title             | `string`     | `-`           | `Yes`        | The main heading text displayed in the hero section                     |
+| description       | `string`     | `-`           | `Yes`        | Descriptive text that appears below the title                           |
+| getStartedText    | `string`     | `-`           | `Yes`        | Text for the primary call-to-action button                              |
+| learnMoreText     | `string`     | `-`           | `Yes`        | Text for the secondary action button                                    |
+| imageUrl          | `string`     | `-`           | `Yes`        | URL of the image displayed in the hero section                          |
+| imageAlt          | `string`     | `-`           | `Yes`        | Alternative text for the hero image for accessibility                   |
+| className         | `string`     | `-`           | `No`         | Additional CSS classes to apply to the section container                |
+| onGetStartedClick | `function`   | `-`           | `Yes`        | Callback `function` executed when the primary button is clicked         |
+| onLearnMoreClick  | `function`   | `-`           | `Yes`        | Callback function executed when the secondary button is clicked         |
+
+## Modern Hero Component
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 rounded-lg py-5 px-5">
+      <ModernHeroDemo />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { ModernHero } from "components/ui/snappy-hero";
+
+    <ModernHero
+      welcomeText="Welcome to our site"
+      title="Explore The League"
+      description="We provide the best solutions for your needs."
+      learnMoreText="Discover Now"
+      imageUrl="https://images.pexels.com/photos/1144275/pexels-photo-1144275.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      imageAlt="Abstract Design"
+      exploreText="Explore our features"
+      className="mb-12"
+      onDiscoverNowClick={() => {
+        alert("Discover button clicked!");
+      }}
+      onExploreFeatureClick={() => {
+        alert("Explore feature button clicked!");
+      }}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+ 
+| Name                  | Type         | Default | Required | Description                                                            |
+| --------------------- | ------------ | ------- |--------- | ---------------------------------------------------------------------- |
+| welcomeText           | `string`     | `-`     | `Yes`    | Short text displayed above the main title                              |
+| title                 | `string`     | `-`     | `Yes`    | The main heading text displayed in the hero section                    |
+| description           | `string`     | `-`     | `Yes`    | Descriptive text that appears below the main title                     |
+| learnMoreText         | `string`     | `-`     | `Yes`    | Text for the primary action button                                     |
+| imageUrl              | `string`     | `-`     | `Yes`    | URL of the image to be displayed in the hero section                   |
+| imageAlt              | `string`     | `-`     | `Yes`    | Alt text for the hero section image                                    |
+| exploreText           | `string`     | `-`     | `Yes`    | Text for the secondary action button                                   |
+| className             | `string`     | `-`     | `No`     | Additional CSS classes to apply to the section container               |
+| onDiscoverNowClick    | `function`   | `-`     | `Yes`    | Callback `function` executed when the primary action button is clicked |
+| onExploreFeatureClick | `function`   | `-`     | `Yes`    | Callback function executed when the secondary action button is clicked |
+
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/hero
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| Name                 | Type       | Default | Required | Description                                                                     |
+| -------------------- | ---------- | ------- | -------- | ------------------------------------------------------------------------------- |
+| companyName          | `string`   | `-`     | `Yes`    | Name of the company displayed in the navigation                                 |
+| coreFeaturesText     | `string`   | `-`     | `Yes`    | Text for the features navigation link                                           |
+| coreFeaturesLink     | `string`   | `-`     | `Yes`    | URL for the features navigation link                                            | 
+| pricingText          | `string`   | `-`     | `Yes`    | Text for the pricing navigation link                                            |
+| pricingTextLink      | `string`   | `-`     | `Yes`    | URL for the pricing navigation link                                             |
+| integrationsText     | `string`   | `-`     | `Yes`    | Text for the integrations navigation link                                       |
+| integrationsTextLink | `string`   | `-`     | `Yes`    | URL for the integrations navigation link                                        |
+| loginText            | `string`   | `-`     | `Yes`    | Text for the login button in navigation                                         | 
+| getStartedText       | `string`   | `-`     | `Yes`    | Text for the get started buttons                                                |
+| tagline              | `string`   | `-`     | `Yes`    | Short text displayed above the main title                                       |  
+| mainTitle            | `string`   | `-`     | `Yes`    | The main heading text displayed in the hero section                             |
+| description          | `string`   | `-`     | `Yes`    | Descriptive text that appears below the main title                              |
+| freeTrialText        | `string`   | `-`     | `Yes`    | Text promoting the free trial option                                            |
+| learnMoreText2       | `string`   | `-`     | `Yes`    | Text for the secondary action button                                            |
+| className            | `string`   | `-`     | `No`     | Additional CSS classes to apply to the section container                        |
+| onLoginClick         | `function` | `-`     | `Yes`    | Callback function executed when the login button is clicked                     |
+| onGetStartedNavClick | `function` | `-`     | `Yes`    | Callback function executed when the get started button in navigation is clicked |
+| onGetStartedClick    | `function` | `-`     | `Yes`    | Callback function executed when the main get started button is clicked          |
+| onLearnMoreClick     | `function` | `-`     | `Yes`    | Callback function executed when the learn more button is clicked                |
+

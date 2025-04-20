@@ -1,0 +1,368 @@
+---
+title: Star Rating
+description: A highly customizable animated star rating component for interactive feedback.
+---
+
+import { 
+  StarRatingSizesExample,
+  PulseAnimationExample,
+  BounceAnimationExample,
+  WobbleAnimationExample,
+  SparkleAnimationExample,
+  FlipAnimationExample,
+  PopAnimationExample,
+  StarRatingColorsExample,
+  StarRatingReadOnlyExample,
+  StarRatingCustomIconsExample,
+  StarRatingCountExample,
+  StarRatingCompleteExample
+} from "@/components/starrating-demo";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <div className=" flex justify-center items-center ">
+    <StarRatingCompleteExample />
+      </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+    <Rating 
+      size="lg"
+      defaultValue={3.5}
+      precision={0.5}
+      filledColor="#f59e0b"
+      emptyColor="#d1d5db"
+      hoverColor="#fbbf24"
+      animationStyle="sparkle"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Sizes
+
+Our rating component comes in three sizes to fit various design requirements.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <StarRatingSizesExample />
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+    // Small
+    <Rating size="sm" defaultValue={3} />
+
+    // Default
+    <Rating size="default" defaultValue={3} />
+
+    // Large
+    <Rating size="lg" defaultValue={3} />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Animations
+
+Add delightful interactions with various animation styles when users interact with the rating component.
+
+### Pulse
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <div className=" flex justify-center items-center ">
+    <PulseAnimationExample />
+      </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+     <Rating animationStyle="pulse" defaultValue={3} />
+    ```
+  </Tab>
+</Tabs>
+
+### Bounce
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <div className=" flex justify-center items-center ">
+    <BounceAnimationExample />
+      </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+     <Rating animationStyle="bounce" defaultValue={3} />
+    ```
+  </Tab>
+</Tabs>
+
+### Wobble
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <div className=" flex justify-center items-center ">
+    <WobbleAnimationExample />
+      </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+     <Rating animationStyle="wobble" defaultValue={3} />
+    ```
+  </Tab>
+</Tabs>
+
+### Sparkle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <div className=" flex justify-center items-center ">
+    <SparkleAnimationExample />
+      </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+     <Rating animationStyle="sparkle" defaultValue={3} />
+    ```
+  </Tab>
+</Tabs>
+
+### Flip
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <div className=" flex justify-center items-center ">
+    <FlipAnimationExample />
+      </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+     <Rating animationStyle="flip" defaultValue={3} />
+    ```
+  </Tab>
+</Tabs>
+
+### Pop
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+      <div className=" flex justify-center items-center ">
+    <PopAnimationExample />
+      </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+     <Rating animationStyle="pop" defaultValue={3} />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Custom Colors
+
+Customize the colors to match your application's design system.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <StarRatingColorsExample />
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+    // Gold
+    <Rating 
+      filledColor="#fbbf24" 
+      emptyColor="#d1d5db" 
+      defaultValue={3}
+    />
+
+    // Red
+    <Rating 
+      filledColor="#ef4444" 
+      emptyColor="#d1d5db" 
+      defaultValue={3}
+    />
+
+    // Green
+    <Rating 
+      filledColor="#22c55e" 
+      emptyColor="#d1d5db" 
+      defaultValue={3}
+    />
+
+    // Blue
+    <Rating 
+      filledColor="#3b82f6" 
+      emptyColor="#d1d5db" 
+      defaultValue={3}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Read-Only Mode
+
+Display ratings without user interaction functionality.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <StarRatingReadOnlyExample />
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+    // Read-only whole stars
+    <Rating readOnly defaultValue={4} />
+
+    // Read-only half stars
+    <Rating readOnly defaultValue={2.5} precision={0.5} />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Custom Icons
+
+Replace the default star icons with custom icons of your choice.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <StarRatingCustomIconsExample />
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+    // Hearts
+    <Rating 
+      emptyIcon="♡" 
+      filledIcon="♥" 
+      filledColor="#ef4444"
+      defaultValue={3}
+    />
+
+    // Circles
+    <Rating 
+      emptyIcon="○" 
+      filledIcon="●" 
+      filledColor="#3b82f6"
+      defaultValue={3}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Custom Count
+
+Adjust the number of rating items to display.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <StarRatingCountExample />
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import Rating from "@/components/ui/snappy-starrating";
+
+    <Rating count={3} defaultValue={2} />
+    <Rating count={7} defaultValue={4} />
+    <Rating count={10} defaultValue={5} />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/starrating
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/starrating
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/starrating
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/starrating
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| Name               | Type                  | Default     | Description                                       |
+| ------------------ | --------------------- | ----------- | ------------------------------------------------- |
+| **value**          | `number`              | -           | Controlled value for the rating                   |
+| **defaultValue**   | `number`              | `0`         | Default value for uncontrolled component          |
+| **onChange**       | `(value: number) => void` | -       | Callback when rating changes                      |
+| **count**          | `number`              | `5`         | Number of stars to display                        |
+| **size**           | `'sm' \| 'default' \| 'lg'` | `'default'` | Size of the stars                          |
+| **readOnly**       | `boolean`             | `false`     | Whether the rating can be changed                 |
+| **precision**      | `1 \| 0.5`            | `1`         | Allow half-star ratings when set to 0.5           |
+| **emptyIcon**      | `React.ReactNode`     | `'☆'`       | Icon for empty state                              |
+| **filledIcon**     | `React.ReactNode`     | `'★'`       | Icon for filled state                             |
+| **emptyColor**     | `string`              | -           | Color for empty stars                             |
+| **filledColor**    | `string`              | -           | Color for filled stars                            |
+| **hoverColor**     | `string`              | -           | Color for stars on hover                          |
+| **className**      | `string`              | -           | Additional class for the container                |
+| **iconClassName**  | `string`              | -           | Additional class for the icons                    |
+| **animationStyle** | `'pulse' \| 'bounce' \| 'wobble' \| 'sparkle' \| 'flip' \| 'pop' \| 'none'` | `'none'` | Animation style when star is clicked |
+
+---
+
+## Animation Styles
+
+| Style         | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| **pulse**     | Stars smoothly scale up and down                      |
+| **bounce**    | Stars bounce up and down                              |
+| **wobble**    | Stars rotate back and forth                           |
+| **sparkle**   | Stars emit a sparkling effect                         |
+| **flip**      | Stars rotate around y-axis                            |
+| **pop**       | Stars quickly contract and expand                     |
+| **none**      | No animation applied                                  |
+
+---

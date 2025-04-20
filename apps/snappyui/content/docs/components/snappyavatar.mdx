@@ -1,0 +1,95 @@
+---
+title: Avatar
+description: A customizable avatar component with optional tooltip and stacked layout support.
+---
+
+import Avatar from "@/components/ui/snappy-avatar";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex gap-4">
+      <Avatar name="Alice" src="https://i.pravatar.cc/56?img=1" />
+      <Avatar name="Bob" src="https://i.pravatar.cc/56?img=2" />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import Avatar from "@/components/ui/snappy-avatar";
+
+    <Avatar name="Alice" src="https://i.pravatar.cc/56?img=1" />
+    <Avatar name="Bob" src="https://i.pravatar.cc/56?img=2" />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Stacked Avatars
+
+Use the `stacked` prop to create an overlapping avatar layout, useful for showing groups of users or collaborators.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
+      <Avatar name="Alice" src="https://i.pravatar.cc/56?img=3" stacked />
+      <Avatar name="Bob" src="https://i.pravatar.cc/56?img=4" stacked />
+      <Avatar name="Charlie" src="https://i.pravatar.cc/56?img=5" stacked />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import Avatar from "@/components/ui/snappy-avatar";
+
+    <Avatar name="Alice" src="https://i.pravatar.cc/56?img=3" stacked />
+    <Avatar name="Bob" src="https://i.pravatar.cc/56?img=4" stacked />
+    <Avatar name="Charlie" src="https://i.pravatar.cc/56?img=5" stacked />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+### Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/avatar
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/avatar
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/avatar
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/avatar
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+
+## Props
+
+| Name    | Type      | Default | Description                                      |
+| ------- | --------- | ------- | ------------------------------------------------ |
+| name    | `string`  | `-`     | Name shown in tooltip and for accessibility      |
+| src     | `string`  | `-`     | Image source URL                                 |
+| width   | `number`  | `56`    | Width of the avatar in pixels                    |
+| height  | `number`  | `56`    | Height of the avatar in pixels                   |
+| stacked | `boolean` | `false` | Whether to render the avatar in a stacked layout |

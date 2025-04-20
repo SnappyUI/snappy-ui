@@ -14,6 +14,7 @@ export default function NeonCard({
   containerClassName?: string;
   className?: string;
   neonColor?: string;
+  style?: React.CSSProperties;
 }) {
   const [isHovering, setIsHovering] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -66,7 +67,7 @@ export default function NeonCard({
 
       {/* Card content */}
       <div className="relative h-full bg-gray-900 rounded-2xl overflow-hidden z-10">
-        <div className={cn("px-4 py-20 sm:px-10 h-full", className)}>
+        <div className={cn("px-4 py-10 sm:px-10 h-full", className)}>
           {/* Glow effect following cursor */}
           <div
             className="absolute rounded-full opacity-20 blur-2xl"

@@ -1,0 +1,409 @@
+---
+title: Toggle
+description: A versatile toggle switch component with multiple variants for modern web applications
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { ToggleExample, ToggleSizesExample, ToggleWithLabelsExample, ToggleDisabledExample } from "@/components/toggle-demo";
+
+## Basic Usage
+
+The toggle component allows users to switch between two states. By default, it uses the "simple" variant.
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample variant="simple" />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+
+  <Toggle 
+    variant="simple"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+---
+
+## Variants
+
+The toggle component comes with multiple design variants to fit different UI styles.
+
+### Primary
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample variant="primary" />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+
+  <Toggle 
+    variant="primary"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+### Minimal
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample variant="minimal" />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="minimal"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+### Circular
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample variant="circular" />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="circular"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+### Indicator
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample variant="indicator" />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="indicator"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+### Pill
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample 
+      variant="pill"
+      onLabel="Active"
+      offLabel="Inactive"
+    />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="pill"
+    onLabel="Active"
+    offLabel="Inactive"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+### Modern
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample variant="modern" />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="modern"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+### Labeled
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample 
+      variant="labeled"
+      onLabel="ON" 
+      offLabel="OFF"
+    />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="labeled"
+    onLabel="ON"
+    offLabel="OFF"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+### Themed
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleExample 
+      variant="themed"
+      onLabel="Dark" 
+      offLabel="Light"
+    />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  import type { ToggleVariant } from "@/components/ui/snappy-toggle";
+  
+  <Toggle 
+    variant="themed"
+    onLabel="Dark"
+    offLabel="Light"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+---
+
+## Sizes
+
+The toggle component supports three sizes: small, default, and large.
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleSizesExample />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  // Small size
+  <Toggle size="sm" checked={checked} onChange={setChecked} />
+
+  // Default size
+  <Toggle size="default" checked={checked} onChange={setChecked} />
+
+  // Large size
+  <Toggle size="lg" checked={checked} onChange={setChecked} />
+  ```
+  </Tab>
+</Tabs>
+
+## With Labels
+
+Some toggle variants support labels for on and off states.
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleWithLabelsExample />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  // Labeled variant
+  <Toggle 
+    variant="labeled"
+    onLabel="ON"
+    offLabel="OFF"
+    checked={checked}
+    onChange={setChecked}
+  />
+
+  // Pill variant
+  <Toggle 
+    variant="pill"
+    onLabel="Active"
+    offLabel="Inactive"
+    checked={checked}
+    onChange={setChecked}
+  />
+
+  // Themed variant
+  <Toggle 
+    variant="themed"
+    onLabel="Dark"
+    offLabel="Light"
+    checked={checked}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+Toggles can be disabled to prevent user interaction.
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+  <Tab value="Preview">
+    <ToggleDisabledExample />
+  </Tab>
+
+  <Tab value="Code">
+  ```tsx
+  // Disabled in the "on" state
+  <Toggle 
+    disabled
+    checked={true}
+    onChange={setChecked}
+  />
+
+  // Disabled in the "off" state
+  <Toggle 
+    disabled
+    checked={false}
+    onChange={setChecked}
+  />
+  ```
+  </Tab>
+</Tabs>
+
+---
+## Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash 
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/toggle 
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash 
+    npx shadcn@latest add http://snappyui.in/api/registry/toggle 
+    ```
+
+  </Tab>
+  <Tab value="yarn">
+    ```bash 
+    yarn dlx shadcn@latest add http://snappyui.in/api/registry/toggle 
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash 
+    bunx --bun shadcn@latest add  http://snappyui.in/api/registry/toggle 
+    ```
+  </Tab>
+</Tabs>
+
+
+### Props
+
+| Prop           | Type                            | Default     | Description                                                  |
+| -------------- | ------------------------------- | ----------- | ------------------------------------------------------------ |
+| variant        | `string`                        | `"simple"`  | Toggle style variant                                         |
+| size           | `"sm"` \| `"default"` \| `"lg"` | `"default"` | Size of the toggle                                           |
+| checked        | `boolean`                       | `false`     | Controlled checked state                                     |
+| defaultChecked | `boolean`                       | `false`     | Initial checked state (uncontrolled)                         | 
+| onChange       | `(checked: boolean) => void`    | `—`         | Callback when toggle state changes                           |
+| disabled       | `boolean`                       | `false`     | Whether the toggle is disabled                               |
+| onLabel        | `string`                        | `—`         | Label for the "on" state (for variants that support labels)  |
+| offLabel       | `string`                        | `—`         | Label for the "off" state (for variants that support labels) |
+| children       | `ReactNode`                     | `—`         | Optional child elements                                      |

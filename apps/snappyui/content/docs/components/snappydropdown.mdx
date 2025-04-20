@@ -1,34 +1,653 @@
 ---
 title: Dropdown
-description: A highly customizable button component for modern web applications
+description: A flexible, customizable dropdown component for modern web interfaces.
+
 ---
 
 import {
-    DropdownMenu,
-    DropdownMenuTrigger,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuCheckboxItem,
-    DropdownMenuRadioItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuGroup,
-    DropdownMenuSub,
-    DropdownMenuSubTrigger,
-    DropdownMenuSubContent,
-    DropdownMenuRadioGroup,
-    DropdownMenuAction,
-    DropdownMenuHeader,
-    DropdownMenuFooter,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuGroup,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuAction,
+  DropdownMenuHeader,
+  DropdownMenuFooter,
 } from "@/components/ui/snappy-dropdown"
-import { Settings, User, LogOut, Edit, Trash, Plus, FileText, Home, Bell, MoreHorizontal, MoreVertical, ArrowRight } from "lucide-react"
+import {
+  Settings,
+  User,
+  LogOut,
+  Edit,
+  Trash,
+  Plus,
+  FileText,
+  Home,
+  Bell,
+  MoreHorizontal,
+  MoreVertical,
+  ArrowRight
+} from "lucide-react"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center">
+      <DropdownMenu>
+        <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
+        <DropdownMenuContent className="w-56" side="bottom">
+          <DropdownMenuHeader
+            title="John Doe"
+            description="john.doe@example.com"
+            icon={<User />}
+          />
+
+          <DropdownMenuGroup>
+            <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
+            <DropdownMenuItem icon={<User />}>
+              Profile
+              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem
+              icon={<Settings />}
+              description="Manage your account settings and preferences"
+            >
+              Settings
+            </DropdownMenuItem>
+
+            <DropdownMenuItem icon={<Bell />} iconRight={<ArrowRight />}>
+              Notifications
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuGroup>
+            <DropdownMenuLabel>Content</DropdownMenuLabel>
+            <DropdownMenuSub>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem icon={<Plus />}>New Document</DropdownMenuItem>
+                <DropdownMenuItem icon={<Edit />}>Edit</DropdownMenuItem>
+                <DropdownMenuItem icon={<Trash />}>Delete</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+
+            <DropdownMenuCheckboxItem
+              description="Enable dark mode for better viewing at night"
+              checked={true}
+            >
+              Dark Mode
+            </DropdownMenuCheckboxItem>
+          </DropdownMenuGroup>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuRadioGroup value="public">
+            <DropdownMenuLabel>Visibility</DropdownMenuLabel>
+            <DropdownMenuRadioItem
+              value="public"
+              description="Anyone can see this document"
+            >
+              Public
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem
+              value="private"
+              description="Only you can access this document"
+            >
+              Private
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+
+          <DropdownMenuFooter>
+            <DropdownMenuAction variant="outline">Help</DropdownMenuAction>
+            <DropdownMenuAction variant="ghost">
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </DropdownMenuAction>
+          </DropdownMenuFooter>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuContent,
+      DropdownMenuItem,
+      DropdownMenuCheckboxItem,
+      DropdownMenuRadioItem,
+      DropdownMenuLabel,
+      DropdownMenuSeparator,
+      DropdownMenuShortcut,
+      DropdownMenuGroup,
+      DropdownMenuSub,
+      DropdownMenuSubTrigger,
+      DropdownMenuSubContent,
+      DropdownMenuRadioGroup,
+      DropdownMenuAction,
+      DropdownMenuHeader,
+      DropdownMenuFooter,
+    } from "@/components/ui/snappy-dropdown"
+    import {
+      Settings,
+      User,
+      LogOut,
+      Edit,
+      Trash,
+      Plus,
+      FileText,
+      Home,
+      Bell,
+      MoreHorizontal,
+      MoreVertical,
+      ArrowRight
+    } from "lucide-react"
+
+    <DropdownMenu>
+      <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuHeader
+          title="John Doe"
+          description="john.doe@example.com"
+          icon={<User />}
+        />
+
+        <DropdownMenuGroup>
+          <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
+          <DropdownMenuItem icon={<User />}>
+            Profile
+            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          </DropdownMenuItem>
+
+          <DropdownMenuItem
+            icon={<Settings />}
+            description="Manage your account settings and preferences"
+          >
+            Settings
+          </DropdownMenuItem>
+
+          <DropdownMenuItem icon={<Bell />} iconRight={<ArrowRight />}>
+            Notifications
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>Content</DropdownMenuLabel>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger icon={<FileText />}>
+              Documents
+            </DropdownMenuSubTrigger>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem icon={<Plus />}>New Document</DropdownMenuItem>
+              <DropdownMenuItem icon={<Edit />}>Edit</DropdownMenuItem>
+              <DropdownMenuItem icon={<Trash />}>Delete</DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+
+          <DropdownMenuCheckboxItem
+            description="Enable dark mode for better viewing at night"
+            checked={true}
+          >
+            Dark Mode
+          </DropdownMenuCheckboxItem>
+        </DropdownMenuGroup>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuRadioGroup value="public">
+          <DropdownMenuLabel>Visibility</DropdownMenuLabel>
+          <DropdownMenuRadioItem
+            value="public"
+            description="Anyone can see this document"
+          >
+            Public
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem
+            value="private"
+            description="Only you can access this document"
+          >
+            Private
+          </DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+
+        <DropdownMenuFooter>
+          <DropdownMenuAction variant="outline">Help</DropdownMenuAction>
+          <DropdownMenuAction variant="ghost">
+            <LogOut className="mr-2 h-4 w-4" />
+            Logout
+          </DropdownMenuAction>
+        </DropdownMenuFooter>
+      </DropdownMenuContent>
+    </DropdownMenu>
+    ```
+  </Tab>
+</Tabs>
 
 ---
 
-## Installation
+## Variations
 
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
+      <DropdownMenu>
+        <DropdownMenuTrigger>Default</DropdownMenuTrigger>
+        <DropdownMenuContent side="bottom">
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Settings</DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Logout</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuContent,
+      DropdownMenuItem,
+      DropdownMenuSeparator,
+    } from "@/components/ui/snappy-dropdown";
+
+    <DropdownMenu>
+      <DropdownMenuTrigger>Default</DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Logout</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+    ```
+  </Tab>
+</Tabs>
+
+### Outline
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
+      <DropdownMenu>
+        <DropdownMenuTrigger variant="outline">Outline</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Settings</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuContent,
+      DropdownMenuItem,
+    } from "@/components/ui/snappy-dropdown";
+
+    <DropdownMenu>
+      <DropdownMenuTrigger variant="outline">Outline</DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+    ```
+  </Tab>
+</Tabs>
+
+### Ghost
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-between gap-4">
+      <DropdownMenu>
+        <DropdownMenuTrigger variant="ghost">
+          <MoreHorizontal />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Settings</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger variant="ghost">
+          <MoreVertical />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Settings</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuContent,
+      DropdownMenuItem,
+    } from "@/components/ui/snappy-dropdown";
+    import { MoreHorizontal, MoreVertical } from "lucide-react";
+
+    <div className="flex justify-between gap-4">
+      <DropdownMenu>
+        <DropdownMenuTrigger variant="ghost">
+          <MoreHorizontal />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Settings</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger variant="ghost">
+          <MoreVertical />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Settings</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+### Content Size
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex items-center justify-center gap-4">
+      <DropdownMenu>
+        <DropdownMenuTrigger>Default Size</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger>Large Size</DropdownMenuTrigger>
+        <DropdownMenuContent size="large">
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger>Compact Size</DropdownMenuTrigger>
+        <DropdownMenuContent size="compact">
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuContent,
+      DropdownMenuItem,
+    } from "@/components/ui/snappy-dropdown";
+
+    <div className="flex gap-4">
+      <DropdownMenu>
+        <DropdownMenuTrigger>Default Size</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger>Large Size</DropdownMenuTrigger>
+        <DropdownMenuContent size="large">
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger>Compact Size</DropdownMenuTrigger>
+        <DropdownMenuContent size="compact">
+          <DropdownMenuItem>Item 1</DropdownMenuItem>
+          <DropdownMenuItem>Item 2</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+### Complete Menu
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center items-center">
+      <DropdownMenu>
+        <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
+        <DropdownMenuContent className="w-56">
+          <DropdownMenuHeader 
+            title="John Doe" 
+            description="john.doe@example.com" 
+            icon={<User />} 
+          />
+          
+          <DropdownMenuGroup>
+            <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
+            <DropdownMenuItem icon={<User />}>
+              Profile
+              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              icon={<Settings />}
+              description="Manage your account settings and preferences"
+            >
+              Settings
+            </DropdownMenuItem>
+            <DropdownMenuItem icon={<Bell />} iconRight={<ArrowRight />}>
+              Notifications
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuGroup>
+            <DropdownMenuLabel>Content</DropdownMenuLabel>
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger icon={<FileText />}>
+                Documents
+              </DropdownMenuSubTrigger>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem icon={<Plus />}>New Document</DropdownMenuItem>
+                <DropdownMenuItem icon={<Edit />}>Edit</DropdownMenuItem>
+                <DropdownMenuItem icon={<Trash />}>Delete</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+
+            <DropdownMenuCheckboxItem
+              description="Enable dark mode for better viewing at night"
+              checked={true}
+            >
+              Dark Mode
+            </DropdownMenuCheckboxItem>
+          </DropdownMenuGroup>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuRadioGroup value="public">
+            <DropdownMenuLabel>Visibility</DropdownMenuLabel>
+            <DropdownMenuRadioItem
+              value="public"
+              description="Anyone can see this document"
+            >
+              Public
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem
+              value="private"
+              description="Only you can access this document"
+            >
+              Private
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+
+          <DropdownMenuFooter>
+            <DropdownMenuAction variant="outline">
+              Help
+            </DropdownMenuAction>
+            <DropdownMenuAction variant="ghost">
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </DropdownMenuAction>
+          </DropdownMenuFooter>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import {
+      DropdownMenu,
+      DropdownMenuTrigger,
+      DropdownMenuContent,
+      DropdownMenuItem,
+      DropdownMenuCheckboxItem,
+      DropdownMenuRadioItem,
+      DropdownMenuLabel,
+      DropdownMenuSeparator,
+      DropdownMenuShortcut,
+      DropdownMenuGroup,
+      DropdownMenuSub,
+      DropdownMenuSubTrigger,
+      DropdownMenuSubContent,
+      DropdownMenuRadioGroup,
+      DropdownMenuAction,
+      DropdownMenuHeader,
+      DropdownMenuFooter,
+    } from "@/components/ui/snappy-dropdown";
+
+    import {
+      Settings,
+      User,
+      LogOut,
+      Edit,
+      Trash,
+      Plus,
+      FileText,
+      Bell,
+      ArrowRight,
+    } from "lucide-react";
+
+    <DropdownMenu>
+      <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuHeader 
+          title="John Doe" 
+          description="john.doe@example.com" 
+          icon={<User />} 
+        />
+
+        <DropdownMenuGroup>
+          <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
+          <DropdownMenuItem icon={<User />}>
+            Profile
+            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            icon={<Settings />}
+            description="Manage your account settings and preferences"
+          >
+            Settings
+          </DropdownMenuItem>
+          <DropdownMenuItem icon={<Bell />} iconRight={<ArrowRight />}>
+            Notifications
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>Content</DropdownMenuLabel>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger icon={<FileText />}>
+              Documents
+            </DropdownMenuSubTrigger>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem icon={<Plus />}>New Document</DropdownMenuItem>
+              <DropdownMenuItem icon={<Edit />}>Edit</DropdownMenuItem>
+              <DropdownMenuItem icon={<Trash />}>Delete</DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+
+          <DropdownMenuCheckboxItem
+            description="Enable dark mode for better viewing at night"
+            checked={true}
+          >
+            Dark Mode
+          </DropdownMenuCheckboxItem>
+        </DropdownMenuGroup>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuRadioGroup value="public">
+          <DropdownMenuLabel>Visibility</DropdownMenuLabel>
+          <DropdownMenuRadioItem
+            value="public"
+            description="Anyone can see this document"
+          >
+            Public
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem
+            value="private"
+            description="Only you can access this document"
+          >
+            Private
+          </DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+
+        <DropdownMenuFooter>
+          <DropdownMenuAction variant="outline">Help</DropdownMenuAction>
+          <DropdownMenuAction variant="ghost">
+            <LogOut className="mr-2 h-4 w-4" />
+            Logout
+          </DropdownMenuAction>
+        </DropdownMenuFooter>
+      </DropdownMenuContent>
+    </DropdownMenu>
+    ```
+  </Tab>
+</Tabs>
+
+---
+### Installation
 <Tabs items={["pnpm", "npm", "bun", "yarn"]}>
   <Tab value="pnpm">
     ```bash
@@ -42,7 +661,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
   </Tab>
   <Tab value="yarn">
     ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/dropdown
+    yarn dlx shadcn@latest add http://snappyui.in/api/registry/dropdown
     ```
   </Tab>
   <Tab value="bun">
@@ -52,426 +671,17 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
   </Tab>
 </Tabs>
 
-## Basic Usage
-
-<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-  <DropdownMenu>
-      <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuHeader 
-          title="John Doe" 
-          description="john.doe@example.com" 
-          icon={<User />} 
-        />
-        
-        <DropdownMenuGroup>
-          <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
-          <DropdownMenuItem icon={<User />}>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          
-          <DropdownMenuItem 
-            icon={<Settings />} 
-            description="Manage your account settings and preferences">
-            Settings
-          </DropdownMenuItem>
-          
-          <DropdownMenuItem icon={<Bell />} iconRight={<ArrowRight />}>
-            Notifications
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        
-        <DropdownMenuSeparator />
-        
-        <DropdownMenuGroup>
-          <DropdownMenuLabel>Content</DropdownMenuLabel>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger icon={<FileText />}>
-              Documents
-            </DropdownMenuSubTrigger>
-            <DropdownMenuSubContent>
-              <DropdownMenuItem icon={<Plus />}>New Document</DropdownMenuItem>
-              <DropdownMenuItem icon={<Edit />}>Edit</DropdownMenuItem>
-              <DropdownMenuItem icon={<Trash />}>Delete</DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuSub>
-          
-          <DropdownMenuCheckboxItem 
-            description="Enable dark mode for better viewing at night"
-            checked={true}
-          >
-            Dark Mode
-          </DropdownMenuCheckboxItem>
-        </DropdownMenuGroup>
-        
-        <DropdownMenuSeparator />
-        
-        <DropdownMenuRadioGroup value="public">
-          <DropdownMenuLabel>Visibility</DropdownMenuLabel>
-          <DropdownMenuRadioItem value="public" description="Anyone can see this document">
-            Public
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="private" description="Only you can access this document">
-            Private
-          </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-        
-        <DropdownMenuFooter>
-          <DropdownMenuAction variant="outline">
-            Help
-          </DropdownMenuAction>
-          <DropdownMenuAction variant="ghost">
-            <LogOut className="mr-2 h-4 w-4" />
-            Logout
-          </DropdownMenuAction>
-        </DropdownMenuFooter>
-      </DropdownMenuContent>
-    </DropdownMenu>
-    
-</div>
-
-<Tabs
-  items={[
-    "default",
-    "outline",
-    "ghost",
-    "contentSize",
-    "Complete Menu",
-  ]}
->
-  <Tab value="default">
-    <div className="flex items-center justify-center">
-        <DropdownMenu>
-            <DropdownMenuTrigger>Default</DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings </DropdownMenuItem>
-                <DropdownMenuSeparator/>
-                <DropdownMenuItem>Logout </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    </div>
-  </Tab>
-  <Tab value="outline">
-    <div className="flex items-center justify-center">
-        <DropdownMenu>
-            <DropdownMenuTrigger variant="outline">Outline</DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    </div>
-  </Tab>
-  <Tab value="ghost">
-    <div className="flex justify-between gap-4">
-        <DropdownMenu>
-            <DropdownMenuTrigger variant="ghost">
-                <MoreHorizontal/>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-
-        <DropdownMenu>
-            <DropdownMenuTrigger variant="ghost">
-                <MoreVertical/>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuItem >Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    </div>    
-  </Tab>
-  <Tab value="contentSize">
-    <div className="flex gap-4">
-        <DropdownMenu>
-            <DropdownMenuTrigger>Default Size</DropdownMenuTrigger>
-            <DropdownMenuContent>
-            <DropdownMenuItem>Item 1</DropdownMenuItem>
-            <DropdownMenuItem>Item 2</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-
-        <DropdownMenu>
-            <DropdownMenuTrigger>Large Size</DropdownMenuTrigger>
-            <DropdownMenuContent size="large">
-            <DropdownMenuItem>Item 1</DropdownMenuItem>
-            <DropdownMenuItem>Item 2</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-
-        <DropdownMenu>
-            <DropdownMenuTrigger>Size</DropdownMenuTrigger>
-            <DropdownMenuContent size="compact">
-            <DropdownMenuItem>Item 1</DropdownMenuItem>
-            <DropdownMenuItem>Item 2</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    </div>
-  </Tab>
-  <Tab value="Complete Menu">
-    <div className="flex justify-center items-center">
-    <DropdownMenu>
-      <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuHeader 
-          title="John Doe" 
-          description="john.doe@example.com" 
-          icon={<User />} 
-        />
-        
-        <DropdownMenuGroup>
-          <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
-          <DropdownMenuItem icon={<User />}>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          
-          <DropdownMenuItem 
-            icon={<Settings />} 
-            description="Manage your account settings and preferences">
-            Settings
-          </DropdownMenuItem>
-          
-          <DropdownMenuItem icon={<Bell />} iconRight={<ArrowRight />}>
-            Notifications
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        
-        <DropdownMenuSeparator />
-        
-        <DropdownMenuGroup>
-          <DropdownMenuLabel>Content</DropdownMenuLabel>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger icon={<FileText />}>
-              Documents
-            </DropdownMenuSubTrigger>
-            <DropdownMenuSubContent>
-              <DropdownMenuItem icon={<Plus />}>New Document</DropdownMenuItem>
-              <DropdownMenuItem icon={<Edit />}>Edit</DropdownMenuItem>
-              <DropdownMenuItem icon={<Trash />}>Delete</DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuSub>
-          
-          <DropdownMenuCheckboxItem 
-            description="Enable dark mode for better viewing at night"
-            checked={true}
-          >
-            Dark Mode
-          </DropdownMenuCheckboxItem>
-        </DropdownMenuGroup>
-        
-        <DropdownMenuSeparator />
-        
-        <DropdownMenuRadioGroup value="public">
-          <DropdownMenuLabel>Visibility</DropdownMenuLabel>
-          <DropdownMenuRadioItem value="public" description="Anyone can see this document">
-            Public
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="private" description="Only you can access this document">
-            Private
-          </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-        
-        <DropdownMenuFooter>
-          <DropdownMenuAction variant="outline">
-            Help
-          </DropdownMenuAction>
-          <DropdownMenuAction variant="ghost">
-            <LogOut className="mr-2 h-4 w-4" />
-            Logout
-          </DropdownMenuAction>
-        </DropdownMenuFooter>
-      </DropdownMenuContent>
-    </DropdownMenu>
-    </div>
-  </Tab>
-</Tabs>
-
----
-
-## Code Example
-
-<Tabs items={[ "default",
-    "outline",
-    "ghost",
-    "contentSize",
-    "Complete Menu"]}>
-  <Tab value="default">
-    ```tsx
-    import { DropdownMenu,DropdownMenuTrigger,DropdownMenuContent,DropdownMenuItem,DropdownMenuSeparator } from "@/components/ui/snappy-dropdown";
-
-    <DropdownMenu>
-        <DropdownMenuTrigger>Default</DropdownMenuTrigger>
-        <DropdownMenuContent>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings </DropdownMenuItem>
-            <DropdownMenuSeparator/>
-            <DropdownMenuItem>Logout </DropdownMenuItem>
-        </DropdownMenuContent>
-    </DropdownMenu>
-    ```
-  </Tab>
-  <Tab value="outline">
-   ```tsx
-    import { DropdownMenu,DropdownMenuTrigger,DropdownMenuContent,DropdownMenuItem } from "@/components/ui/snappy-dropdown";
-
-    <DropdownMenu>
-        <DropdownMenuTrigger variant="outline">Outline</DropdownMenuTrigger>
-        <DropdownMenuContent>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings </DropdownMenuItem>
-        </DropdownMenuContent>
-    </DropdownMenu>
-    ```  
-  </Tab>
-  <Tab value="ghost">
-    ```tsx
-    import {DropdownMenu,DropdownMenuTrigger,DropdownMenuTrigger,DropdownMenuContent,DropdownMenuItem} from "@/components/ui/snappy-dropdown";
-    import { MoreHorizontal, MoreVertical } from "lucide-react"
-
-    <div className="flex justify-between gap-4">
-        <DropdownMenu>
-            <DropdownMenuTrigger variant="ghost">
-                <MoreHorizontal/>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-
-        <DropdownMenu>
-            <DropdownMenuTrigger variant="ghost">
-                <MoreVertical/>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuItem >Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings </DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    </div>   
-    ``` 
-  </Tab>
-  <Tab value="Complete Menu">
-   ```tsx
-   import{
-    DropdownMenu,
-    DropdownMenuTrigger,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuCheckboxItem,
-    DropdownMenuRadioItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuGroup,
-    DropdownMenuSub,
-    DropdownMenuSubTrigger,
-    DropdownMenuSubContent   
-    DropdownMenuRadioGroup,
-    DropdownMenuAction,
-    DropdownMenuHeader,
-    DropdownMenuFooter,
-    } from "@/components/ui/snappy-dropdown"
-   import { Settings, User, LogOut, Edit, Trash, Plus, FileText, Home, Bell,   MoreHorizontal, 
-   MoreVertical, ArrowRight } from "lucide-react"
-
-   <DropdownMenu>
-      <DropdownMenuTrigger>User Menu</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuHeader 
-          title="John Doe" 
-          description="john.doe@example.com" 
-          icon={<User />} 
-        />
-        
-        <DropdownMenuGroup>
-          <DropdownMenuLabel badge="3">Account</DropdownMenuLabel>
-          <DropdownMenuItem icon={<User />}>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          
-          <DropdownMenuItem 
-            icon={<Settings />} 
-            description="Manage your account settings and preferences">
-            Settings
-          </DropdownMenuItem>
-          
-          <DropdownMenuItem icon={<Bell />} iconRight={<ArrowRight />}>
-            Notifications
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        
-        <DropdownMenuSeparator />
-        
-        <DropdownMenuGroup>
-          <DropdownMenuLabel>Content</DropdownMenuLabel>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger icon={<FileText />}>
-              Documents
-            </DropdownMenuSubTrigger>
-            <DropdownMenuSubContent>
-              <DropdownMenuItem icon={<Plus />}>New Document</DropdownMenuItem>
-              <DropdownMenuItem icon={<Edit />}>Edit</DropdownMenuItem>
-              <DropdownMenuItem icon={<Trash />}>Delete</DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuSub>
-          
-          <DropdownMenuCheckboxItem 
-            description="Enable dark mode for better viewing at night"
-            checked={true}
-          >
-            Dark Mode
-          </DropdownMenuCheckboxItem>
-        </DropdownMenuGroup>
-        
-        <DropdownMenuSeparator />
-        
-        <DropdownMenuRadioGroup value="public">
-          <DropdownMenuLabel>Visibility</DropdownMenuLabel>
-          <DropdownMenuRadioItem value="public" description="Anyone can see this document">
-            Public
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="private" description="Only you can access this document">
-            Private
-          </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-        
-        <DropdownMenuFooter>
-          <DropdownMenuAction variant="outline">
-            Help
-          </DropdownMenuAction>
-          <DropdownMenuAction variant="ghost">
-            <LogOut className="mr-2 h-4 w-4" />
-            Logout
-          </DropdownMenuAction>
-        </DropdownMenuFooter>
-      </DropdownMenuContent>
-    </DropdownMenu>
-      
-     ```  
-  </Tab>
-  
-</Tabs>
-
 ---
 
 ## Props
 
-| Name         | Type      | Default   | Description                       |
-| ------------ | --------- | --------- | --------------------------------- |
-| **variant**  | "default" or  "outline" or "ghost" or  "link"  | 'default' | Style variant for trigger or button             |
-| **inset**     | boolean    | false | Adds left padding to align with icons |
-| **icon** | React.ReactNode   | -     | Optional icon to show before the content       |
-| **iconRight** | React.ReactNode | -         | Optional icon to show on the right side           |
-| **description** | string | -         | Additional descriptive text below the label           |
-| **size** | "default" or "large" or "compact" | 'default'         | Padding size for DropdownMenuContent           |
-| **badge** | React.ReactNode | -         | Optional badge element for labels           |
-| **title** | string | -         | Title text in DropdownMenuHeader           |
+| Name           | Type                                                | Default   | Description                                     |
+|----------------|---------------------------------------------------- | --------- | ----------------------------------------------- |
+| **variant**    | `"default"` \| `"outline"` \| `"ghost"` \| `"link"` | `default` | Style variant for trigger or button             |
+| **inset**      | `boolean`                                           | `false`   | Adds left padding to align with icons           |
+| **icon**       | `React.ReactNode`                                   | `-`       | Optional icon shown before the content          |
+| **iconRight**  | `React.ReactNode`                                   | `-`       | Optional icon shown on the right side           |
+| **description**| `string`                                            | `-`       | Extra description text below the label          |
+| **size**       | `"default"` \| `"large"` \| `"compact"`             | `default` | Size variant for `DropdownMenuContent` padding  |
+| **badge**      | `React.ReactNode`                                   | `-`       | Optional badge element for labels               |
+| **title**      | `string`                                            | `-`       | Title text in `DropdownMenuHeader`              |

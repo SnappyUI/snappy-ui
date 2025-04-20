@@ -59,7 +59,7 @@ export default function GlowCard({
             scale: isHovering ? 1.02 : 1,
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className={cn("h-full px-4 py-20 sm:px-10 relative z-10", className)}
+          className={cn("h-full px-4 py-12 sm:px-10 relative z-10", className)}
         >
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid-white/[0.02]" />
           <div className="absolute inset-0 bg-black/20" />

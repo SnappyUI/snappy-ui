@@ -1,0 +1,201 @@
+---
+title: Animated Text
+description: A customizable, responsive text animation component for modern UIs.
+---
+
+import {
+  TextTypingEffect,
+  TextDirectionalFade,
+  TextColorTransition,
+  TextScaleEffect,
+  TextSplitEffect,
+} from "@/components/ui/snappy-text-generate";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col justify-center mb-6 rounded-lg">
+      <TextTypingEffect
+        words="This text will animate character by character"
+        className="text-3xl"
+      />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { TextTypingEffect } from "@/components/ui/snappy-text-generate";
+
+    <TextTypingEffect
+      words="This text will animate character by character"
+      className="text-3xl"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Variations
+
+### Text Directional Fade
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col justify-center mb-6 rounded-lg">
+      <TextDirectionalFade
+        words="Animated text from different directions"
+        direction="left"
+        staggerTime={0.08}
+        duration={0.6}
+        className="text-3xl text-purple-300"
+      />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { TextDirectionalFade } from "@/components/ui/snappy-text-generate";
+
+    <TextDirectionalFade
+      words="Animated text from different directions"
+      direction="left"
+      staggerTime={0.08}
+      duration={0.6}
+      className="text-3xl text-purple-300"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Text Color Transition
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col justify-center mb-6 rounded-lg">
+      <TextColorTransition
+        words="Text that transitions between colors"
+        fromColor="rgb(100, 100, 100)"
+        toColor="rgb(255, 215, 0)"
+        duration={5}
+        className="text-3xl"
+      />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { TextColorTransition } from "@/components/ui/snappy-text-generate";
+
+    <TextColorTransition
+      words="Text that transitions between colors"
+      fromColor="rgb(100, 100, 100)"
+      toColor="rgb(255, 215, 0)"
+      duration={5}
+      className="text-3xl"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Text Scale Effect
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col justify-center mb-6 rounded-lg">
+      <TextScaleEffect
+        words="Words that scale up with a bounce effect"
+        staggerTime={0.15}
+        duration={0.6}
+        rotation={true}
+        className="text-3xl text-green-500"
+      />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { TextScaleEffect } from "@/components/ui/snappy-text-generate";
+
+    <TextScaleEffect
+      words="Words that scale up with a bounce effect"
+      staggerTime={0.15}
+      duration={0.6}
+      rotation={true}
+      className="text-3xl text-green-500"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Text Split Effect
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col justify-center mb-6 rounded-lg">
+      <TextSplitEffect
+        words="Each letter animates individually"
+        duration={1.2}
+        className="text-3xl text-rose-300"
+      />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import { TextSplitEffect } from "@/components/ui/snappy-text-generate";
+
+    <TextSplitEffect
+      words="Each letter animates individually"
+      duration={1.2}
+      className="text-3xl text-rose-300"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+### Installation
+
+<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/animatedtext
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/animatedtext
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/animatedtext
+    ```
+  </Tab>
+  <Tab value="bun">
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/animatedtext
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Props
+
+| **Name**         | **Type**        | **Default**   | **Description**                                               |
+|------------------|-----------------|---------------|---------------------------------------------------------------|
+| **words**        | `string`        | `-`           | Text which will be animated                                   |
+| **className**    | `string`        | `-`           | Additional CSS classes                                        |
+| **typingSpeed**  | `float`         | `-`           | Speed for the animation                                       |
+| **direction**    | `string`        | `-`           | Choose from "up", "down", "left", "right"                     |
+| **staggerTime**  | `float`         | `-`           | The delay between the animation of each element in a sequence |
+| **fromColor**    | `rgb (color)`   | `-`           | Starting color for transitions                                |
+| **toColor**      | `rgb (color)`   | `-`           | Ending color for transitions                                  |
+| **rotation**     | `boolean`       | `false`       | Enable or disable rotation                                    |

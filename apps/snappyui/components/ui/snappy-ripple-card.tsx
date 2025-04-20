@@ -56,7 +56,7 @@ export default function RippleCard({
       )}
     >
       <div
-        className="relative h-full px-4 py-20 sm:px-10 overflow-hidden"
+        className="relative h-full px-4 py-10 sm:px-10 overflow-hidden"
         style={{
           boxShadow: "0 10px 30px rgba(2, 132, 199, 0.4), 0 0 0 1px rgba(14, 118, 168, 0.2)",
         }}

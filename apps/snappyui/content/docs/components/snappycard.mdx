@@ -1,115 +1,295 @@
 ---
 title: Card
-description: A versatile card component for modern web applications
+description: Organize your content beautifully with a stylish, customizable card layout that fits any design system.
 ---
 
-
-import Card from "@/components/ui/snappy-card";
-
-
-
+import SnappyBlogCard from "@/components/demo/snappy-blog-card";
+import SnappyHorizontalCard from "@/components/demo/snappy-horizontal-card";
+import { HorizontalButton, HorizontalCard, HorizontalCardContent, HorizontalCardFooter, HorizontalCardImage, HorizontalDescription, HorizontalTitle } from "@/components/ui/snappy-horizontal-card";
+import Card, { BlogCard } from "@/components/ui/snappy-blog-card";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-
-# Snappy Card Component
-
-A flexible card component that supports images, titles, and custom content with various styling variants.
+import SnappyProfileCardDemo from "@/components/demo/snappy-profile-card";
+import { ProfileActionButton, ProfileBio, ProfileCard, ProfileContent, ProfileDesignation, ProfileFooter, ProfileImage, ProfileName, ProfileContactInfo, ProfileTags } from '@/components/ui/snappy-profile-card'
 
 ---
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex flex-col items-center justify-center mb-6 rounded-lg py-5">
+      <SnappyBlogCard />
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import Card from "@/components/ui/snappy-card";
+
+    <div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
+      <Card title="Image Card" variant="dark">
+        <img
+          src="https://picsum.photos/300/200"
+          alt="Random Image"
+          className="rounded-lg"
+        />
+        <p>Random image from Lorem Picsum</p>
+      </Card>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Variations
+
+### Horizontal Card
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex items-center justify-center">
+      <HorizontalCard>
+        <HorizontalCardImage
+          imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          imageAlt=""
+        />
+        <HorizontalCardContent>
+          <HorizontalTitle title="Jaipur" />
+          <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
+          <HorizontalCardFooter>
+            <HorizontalButton text="Read More" />
+          </HorizontalCardFooter>
+        </HorizontalCardContent>
+      </HorizontalCard>
+    </div>
+  </Tab>
+
+  <Tab value="Code">
+    ```tsx
+    import {
+      HorizontalButton,
+      HorizontalCard,
+      HorizontalCardContent,
+      HorizontalCardFooter,
+      HorizontalCardImage,
+      HorizontalDescription,
+      HorizontalTitle,
+    } from "@/components/ui/snappy-horizontal-card";
+
+    <HorizontalCard>
+      <HorizontalCardImage
+        imageUrl="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        imageAlt=""
+      />
+      <HorizontalCardContent>
+        <HorizontalTitle title="Jaipur" />
+        <HorizontalDescription description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quia cumque. Dolorum amet provident dolore fuga consequatur laboriosam. Debitis, ipsum." />
+        <HorizontalCardFooter>
+          <HorizontalButton text="Read More" onClick={() => console.log("Clicked")} />
+        </HorizontalCardFooter>
+      </HorizontalCardContent>
+    </HorizontalCard>
+    ```
+  </Tab>
+</Tabs>
+
+### Simple Profile Card
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <div className="flex items-center justify-center">
+      <ProfileCard hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage
+                    imageUrl="https://images.pexels.com/photos/3763152/pexels-photo-3763152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    imageAlt="User avatar"
+                />
+                <ProfileName name="Jane Smith" />
+                <ProfileDesignation designation="Product Designer" />
+                <ProfileBio bio="Creative designer with a passion for user experience." />
+                <ProfileFooter>
+                    <ProfileActionButton text="Follow" variant="primary" />
+                    <ProfileActionButton text="Message" variant="outline" />
+                </ProfileFooter>
+            </ProfileContent>
+        </ProfileCard>
+        </div>
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { ProfileActionButton, ProfileBio, ProfileCard, ProfileContent, ProfileDesignation, ProfileFooter, ProfileImage, ProfileName, ProfileContactInfo, ProfileTags } from '@/components/ui/snappy-profile-card'
+
+      <ProfileCard hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage
+                    imageUrl="https://images.pexels.com/photos/3763152/pexels-photo-3763152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    imageAlt="User avatar"
+                />
+                <ProfileName name="Jane Smith" />
+                <ProfileDesignation designation="Product Designer" />
+                <ProfileBio bio="Creative designer with a passion for user experience." />
+                <ProfileFooter>
+                    <ProfileActionButton text="Follow" variant="primary" />
+                    <ProfileActionButton text="Message" variant="outline" />
+                </ProfileFooter>
+            </ProfileContent>
+        </ProfileCard>
+      ```
+
+    </Tab>
+
+</Tabs>
+ 
+---
+
+### Team Member Card
+
+<Tabs
+  items={[
+    "Preview",
+    "Code",
+  ]}
+>
+
+    <Tab value="Preview">
+      <div className="flex items-center justify-center">
+      <ProfileCard variant="default" hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage imageUrl="https://media.istockphoto.com/id/1399788030/photo/portrait-of-young-confident-indian-woman-pose-on-background.jpg?b=1&s=612x612&w=0&k=20&c=_VfWQI2t_aONL0FEFJ1Eki3QQkRwgxkAve0_z53oeKY=" imageAlt="Team member" />
+                <ProfileName name="Alexa Chen" />
+                <ProfileDesignation designation="Backend Developer" />
+                <ProfileContactInfo email="robert@example.com" />
+                <ProfileTags tags={[
+                    { text: "Node.js", color: "blue" },
+                    { text: "MongoDB", color: "green" }
+                ]} />
+            </ProfileContent>
+        </ProfileCard>
+      </div>
+    </Tab>
+
+    <Tab value="Code">
+
+      ```tsx
+      import { ProfileCard, ProfileContactInfo, ProfileContent, ProfileDesignation, ProfileImage, ProfileName, ProfileTags } from '@/components/ui/snappy-profile-card'
+
+      <ProfileCard variant="default" hoverEffect={true}>
+            <ProfileContent>
+                <ProfileImage imageUrl="https://media.istockphoto.com/id/1399788030/photo/portrait-of-young-confident-indian-woman-pose-on-background.jpg?b=1&s=612x612&w=0&k=20&c=_VfWQI2t_aONL0FEFJ1Eki3QQkRwgxkAve0_z53oeKY=" imageAlt="Team member" />
+                <ProfileName name="Alexa Chen" />
+                <ProfileDesignation designation="Backend Developer" />
+                <ProfileContactInfo email="robert@example.com" />
+                <ProfileTags tags={[
+                    { text: "Node.js", color: "blue" },
+                    { text: "MongoDB", color: "green" }
+                ]} />
+            </ProfileContent>
+      </ProfileCard>
+      ```
+
+    </Tab>
+
+</Tabs>
 
 ## Installation
 
-<Tabs items={["pnpm", "npm", "bun", "yarn"]}>
+<Tabs items={["pnpm", "npm", "yarn", "bun"]}>
   <Tab value="pnpm">
     ```bash
-    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/card
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    pnpm dlx shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
   <Tab value="npm">
     ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/card
+    npx shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
   <Tab value="yarn">
     ```bash
-    npx shadcn@latest add http://snappyui.in/api/registry/card
+    npx shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    npx shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
   <Tab value="bun">
     ```bash
-    bunx --bun shadcn@latest add http://snappyui.in/api/registry/card
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/blogcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/horizontalcard
+    ```
+    ```bash
+    bunx --bun shadcn@latest add http://snappyui.in/api/registry/profilecard
     ```
   </Tab>
 </Tabs>
-
-## Basic Usage
-
-<div className="flex flex-col items-center justify-center mb-6 border-1 border-zinc-800 rounded-lg py-5">
-  <Card
-    title="Image Card"
-    variant="dark"
-  >
-    <img src="https://picsum.photos/300/200" alt="Random Image" className="rounded-lg"/>
-    <p>Random image from Lorem Picsum</p>
-  </Card>
-
-</div>
-
-<Tabs items={["dark", "default", "primary", "success", "warning"]}>
-  <Tab value="dark">
-    <Card title="Default Card" variant="dark" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="default">
-    <Card title="Default Card" variant="default" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="primary">
-    <Card title="Primary Card" variant="primary" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="success">
-    <Card title="Success Card" variant="success" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-  <Tab value="warning">
-    <Card title="Warning Card" variant="warning" className="text-gray-500">
-      Basic card example with title and content.
-    </Card>
-  </Tab>
-</Tabs>
-
----
-
-## Code Example
-
-```tsx
-import Card from "@/components/ui/snappy-card";
-
-<div className="flex flex-col items-center justify-center mb-6">
-  <Card
-    title="Simple Card"
-    variant="primary"
-    image="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-    className="text-gray-500"
-  >
-    Basic card example with title and content.
-  </Card>
-</div>
-```
 
 ---
 
 ## Props
 
+### Horizontal/Blog Card
+
 | <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
 | ------------- | ----------- | -------------- | --------------------------------------------- |
-| **title**     | string      | -              | The title of the card                         |
+| **className**  | string   | -              | 	Tailwind utility classes |
+| **imageUrl**  | string   | -              | 	Source URL of the image |
+| **imageAlt**  | string   | -              | 	Alt text for the image |
+| **title**  | string   | -              | 	Title text for the card |
+| **description	**  | string   | -              | 	Description text |
+| **text	**  | string   | -              | 	Button label text |
+| **onClick**  | cb   | -              | 	Callback function for button click |
+
+### Profile Card
+
+| <b>Name</b>   | <b>Type</b> | <b>Default</b> | <b>Description</b>                            |
+| ------------- | ----------- | -------------- | --------------------------------------------- |
+| **variant**     | default,elevated,bordered,minimal      | default              | Visual style of the card                     |
 | **className** | string      | -              | Additional CSS classes                        |
-| **content**   | string      | -              | The main content of the card                  |
-| **image**     | string      | -              | URL of the card's image                       |
-| **variant**   | string      | 'default'      | The style variant of the card                 |
-| **children**  | ReactNode   | -              | Allows passing React nodes into the component |
+| **hoverEffect**   | boolean      | false              | Enable hover animation                  |
+| **centered**     | boolean      | true              | Center content(card body)                      |
+| **imageUrl**   | string      | 'default'      | Image source URL  |
+| **imageAlt**  | string   | -              | 	Alt text for the image |
+| **size**  | small,medium,large   | medium              | 	Image size |
+| **bordered**  | boolean   | true              | 	Show border ring |
+| **icon**  | ReactNode   | -              | 	Icon to display |
+| **color**  | "blue" , "green" , "red" , "yellow" , "purple"   | "blue"          | 	Badge color |
+| **name**  | string   | -              | 	Name to display |
+| **designation**  | string   | -              | 	Job title or position |
+| **bio**  | string   | -              | 	Short biography text |
+| **stats**  |label: string, value: string , number []   | -              | 	Array of stats |
+| **icon**  | ReactNode   | -              | 		Icon component |
+| **href**  | string   | -              | 		URL for social link |
+| **label**  | string   | -              | 	ARIA label for accessibility |
+| **email**  | string   | -              | 	Email address |
+| **phone**  | string   | -              | 	Phone number |
+| **location**  | string   | -              | 	User's location |
+| **name**  | string   | -              | 	Skill name |
+| **level**  | number   | -              | 	Skill level (0-100) |
+| **skills**  | name: string, level: number []   | -              | 	Array of skill objects |
+
