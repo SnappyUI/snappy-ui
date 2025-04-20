@@ -25,6 +25,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "content/docs/Enhancers/snappyterminal.mdx", "content/docs/enhancers/snappyqr.mdx", "content/docs/responses/snappydialog.mdx", "content/docs/responses/snappybell.mdx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "content/docs/animated/snappyterminal.mdx", "content/docs/components/snappyqr.mdx", "content/docs/components/snappydialog.mdx", "content/docs/components/snappybell.mdx"],
   "exclude": ["node_modules"]
 }
