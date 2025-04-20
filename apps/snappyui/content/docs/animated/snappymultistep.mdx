@@ -1,0 +1,175 @@
+---
+title: Multi Step Component
+description: A customizable, animated multi-step component with support for dynamic content, transitions, and extensive styling options.
+---
+
+import MultiStepComponent from "@/components/ui/snappy-multistep";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+## Basic Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <MultiStepComponent
+      steps={[
+        {
+          title: "This is step one",
+          description:
+            "Explain why this thing exists and what it does. Also, show a button to go to the next step.",
+          skeletonWidths: [256, 192, 160, 384],
+        },
+        {
+          title: "This is step two",
+          description: "You can customize the steps as needed.",
+          skeletonWidths: [256, 192, 384],
+        },
+        {
+          title: "This is step three",
+          description: "Add more details and control the animation.",
+          skeletonWidths: [256, 192, 128, 224, 384],
+        },
+      ]}
+    />
+  </Tab>
+  <Tab value="Code">
+```tsx
+import MultiStepComponent from "@/components/ui/snappy-multistep";
+
+const steps = [
+  {
+    title: "This is step one",
+    description:
+      "Explain why this thing exists and what it does. Also, show a button to go to the next step.",
+    skeletonWidths: [256, 192, 160, 384],
+  },
+  {
+    title: "This is step two",
+    description: "You can customize the steps as needed.",
+    skeletonWidths: [256, 192, 384],
+  },
+  {
+    title: "This is step three",
+    description: "Add more details and control the animation.",
+    skeletonWidths: [256, 192, 128, 224, 384],
+  },
+];
+
+<MultiStepComponent steps={steps} />;
+```
+  </Tab>
+</Tabs>
+
+## Customization Options
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <MultiStepComponent
+      steps={[
+        {
+          title: "Custom Button Styling",
+          description:
+            "You can customize the button text, size, and colors to match your design system.",
+          skeletonWidths: [256, 192, 160, 384],
+        },
+        {
+          title: "Consistent Height",
+          description: "Content area maintains a consistent height to prevent layout shifts.",
+          skeletonWidths: [256, 384],
+        },
+        {
+          title: "Action on Completion",
+          description: "Execute a callback function when the user completes all steps.",
+          skeletonWidths: [256, 192, 384],
+        },
+      ]}
+      backButtonText="Previous"
+      continueButtonText="Next"
+      doneButtonText="Finish"
+      buttonSize="lg"
+      backButtonStyle={{
+        backgroundColor: "#f5f5f5",
+        textColor: "text-gray-800"
+      }}
+      continueButtonStyle={{
+        backgroundColor: "bg-purple-600",
+        textColor: "text-white"
+      }}
+    />
+  </Tab>
+  <Tab value="Code">
+```tsx
+import MultiStepComponent from "@/components/ui/snappy-multistep";
+
+const steps = [
+  {
+    title: "Custom Button Styling",
+    description:
+      "You can customize the button text, size, and colors to match your design system.",
+    skeletonWidths: [256, 192, 160, 384],
+  },
+  {
+    title: "Consistent Height",
+    description: "Content area maintains a consistent height to prevent layout shifts.",
+    skeletonWidths: [256, 384],
+  },
+  {
+    title: "Action on Completion",
+    description: "Execute a callback function when the user completes all steps.",
+    skeletonWidths: [256, 192, 384],
+  },
+];
+
+<MultiStepComponent 
+  steps={steps}
+  backButtonText="Previous"
+  continueButtonText="Next"
+  doneButtonText="Finish"
+  buttonSize="lg"
+  backButtonStyle={{
+    backgroundColor: "#f5f5f5",
+    textColor: "text-gray-800"
+  }}
+  continueButtonStyle={{
+    backgroundColor: "bg-purple-600",
+    textColor: "text-white"
+  }}
+/>;
+```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `steps` | `MultiStepContent[]` | Required | Array of step objects with title, description, and skeleton widths |
+| `initialStep` | `number` | `0` | Index of the initial step to display |
+| `backButtonText` | `string` | `"Back"` | Text displayed in the back button |
+| `continueButtonText` | `string` | `"Continue"` | Text displayed in the continue button |
+| `doneButtonText` | `string` | `"Done"` | Text displayed in the final step button |
+| `buttonSize` | `"sm" \| "md" \| "lg"` | `"md"` | Size of the navigation buttons |
+| `backButtonStyle` | `ButtonStyle` | `{}` | Custom styling for the back button |
+| `continueButtonStyle` | `ButtonStyle` | `{}` | Custom styling for the continue/done button |
+| `onComplete` | `() => void` | `undefined` | Function called when the final step button is clicked |
+
+### MultiStepContent Type
+
+```tsx
+type MultiStepContent = {
+  title: string;
+  description: string;
+  skeletonWidths?: number[];
+};
+```
+
+### ButtonStyle Type
+
+```tsx
+type ButtonStyle = {
+  backgroundColor?: string;
+  textColor?: string;
+  hoverBackgroundColor?: string;
+  hoverTextColor?: string;
+  borderColor?: string;
+};
+```

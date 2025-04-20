@@ -34,6 +34,11 @@ export const contents: Content[] = [
         isNew: true,
       },
       {
+        title: "MultiStep:",
+        href: "/docs/animated/snappymultistep",
+        isNew: true,
+      },
+      {
         title: "Scratch",
         href: "/docs/animated/snappyscratch",
         isNew: true,
